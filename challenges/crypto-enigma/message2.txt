@@ -1,1 +1,1 @@
-3q2+7w==:fVNfoRUJMk8TIsxA9Zo2/Q==
+Solive the Multi-Level Cypher: The cipher uses a combination of Substitution Base64, Vigen%20Cipher, and the Keck key so it requires multiple decoding steps with variedy as the level increases.
