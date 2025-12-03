@@ -1,0 +1,1 @@
+To solve the second message, start with deciphering basic ciphers before trying combinations of encoding. The journey from base64 may be longer than it looks.
