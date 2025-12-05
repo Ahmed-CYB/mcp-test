@@ -1,22 +1,33 @@
 # SMB Hard Difficulty CTF Challenge
 
 ## Challenge Overview
-Welcome to the SMB Hard Difficulty CTF Challenge. This challenge is designed to test your skills in exploiting SMB (Server Message Block) vulnerabilities. Your objective is to find the hidden flag by investigating and exploiting the SMB service vulnerabilities.
 
-## Objectives
-- Enumerate open SMB shares
-- Identify vulnerabilities within the SMB service
-- Exploit vulnerabilities to gain unauthorized access
-- Locate and retrieve the CTF flag hidden in the system
+Welcome, daring cyber detective, to the labyrinth of secrets embedded within our SMB challenge. This task will test your wits against a web of deception where not everything is as it seems. Your mission, should you choose to accept it, involves navigating through an intricate network of shares, some housing mere distractions, others riddled with traps, and one containing the flag you seek.
 
-## Challenge Instructions
-1. Connect to the challenge environment using the provided network details.
-2. Enumerate SMB services and shares to uncover weak points.
-3. Use appropriate tools and techniques to exploit identified vulnerabilities.
-4. Locate and extract the flag, following the format `CTF{...}`.
+## Story
+
+In a small digital fortress designed by an enigmatic architect lies a series of interconnected rooms, each echoing with the whispers of long-forgotten secrets. Your journey begins in the 'Public_Entry', an innocuous looking directory. Beware, as not all paths lead to safety or truth.
+
+## Objective
+
+Locate and retrieve the hidden flag hidden within a maze of deceitful directories and camouflaged permissions. The path is fraught with cleverly disguised red herrings tailored to mislead and mystify.
+
+## Instructions
+
+- Connect to the SMB server using the provided credentials.
+- Navigate through the various SMB shares.
+- Each directory may contain clues or diversions; only those with a keen eye will discern their true value.
+- The flag format is CTF{...}.
 
 ## Hints
-- Remember to check permissions on shared folders.
-- Certain older protocols might expose vulnerabilities.
 
-Good luck and enjoy the challenge!
+- Not all that glitters is gold. Some shares are designed to waste time, look beyond the obvious.
+- Pay attention to file and share names - they often have hidden meanings.
+
+## Tools
+
+- Recommended: `smbclient`, `smbmap`
+
+## Flag Validation
+
+Be sure to double-check the flag format before submitting your answer. Happy hunting!
