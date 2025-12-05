@@ -1,33 +1,49 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && \
-    apt-get install -y openssh-server nginx vsftpd samba nmap net-tools iproute2 && \
-    rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Configure SSH
-RUN mkdir /var/run/sshd && \
-    useradd -m ctf && echo 'ctf:ctfpassword' | chpasswd
+RUN apt-get update && apt-get install -y \
+    openssh-server \
+    vsftpd \
+    apache2 \
+    samba \
+    net-tools \
+    inetutils-inetd \
+    telnetd \
+    xinetd \
+    python3 \
+    iproute2 \
+    tcpdump \
+    && rm -rf /var/lib/apt/lists/*
 
-# Configure Nginx
-RUN echo '<h1>Nmap Practice Web Service</h1>' > /var/www/html/index.html
+# SSH setup
+RUN mkdir /var/run/sshd \
+    && useradd -m ctfuser \
+    && echo 'ctfuser:ctfpassword' | chpasswd
 
-# Configure vsftpd
-RUN echo 'listen=NO' >> /etc/vsftpd.conf && \
-    echo 'listen_ipv6=YES' >> /etc/vsftpd.conf && \
-    echo 'anonymous_enable=YES' >> /etc/vsftpd.conf && \
-    echo 'anon_root=/var/ftp' >> /etc/vsftpd.conf && \
-    mkdir -p /var/ftp && echo 'Welcome to FTP service' > /var/ftp/readme.txt
+# FTP setup
+RUN echo "listen=YES" >> /etc/vsftpd.conf \
+    && echo "anonymous_enable=YES" >> /etc/vsftpd.conf \
+    && echo "local_enable=YES" >> /etc/vsftpd.conf \
+    && echo "write_enable=YES" >> /etc/vsftpd.conf
 
-# Simple SMB share
-RUN mkdir -p /srv/share && echo 'Demo SMB share for Nmap' > /srv/share/info.txt
+# Apache setup
+RUN echo "<html><body><h1>Nmap Practice Web</h1></body></html>" > /var/www/html/index.html
+
+# Samba setup
 COPY smb.conf /etc/samba/smb.conf
-RUN useradd smbuser && echo 'smbuser:smbpass' | chpasswd && smbpasswd -a -s smbuser <<EOF
-smbpass
-smbpass
-EOF
+RUN mkdir -p /srv/share && chmod 777 /srv/share
 
-# Expose multiple ports for scanning
-EXPOSE 22 80 21 139 445 8080 9999
+# Custom UDP service for version detection and NSE
+RUN echo '#!/bin/sh\nwhile true; do echo "NMAP-UDP-SERVICE" | nc -u -l -p 9999; done' > /usr/local/bin/udp_service.sh \
+    && chmod +x /usr/local/bin/udp_service.sh
+
+# Xinetd-based bannered TCP service on 5555
+RUN useradd banneruser || true
+RUN echo 'service banner\n{\n    disable     = no\n    type        = UNLISTED\n    port        = 5555\n    socket_type = stream\n    protocol    = tcp\n    wait        = no\n    user        = root\n    server      = /bin/echo\n    server_args = "Custom Nmap Banner Service"\n}' > /etc/xinetd.d/banner
+
+# Expose multiple ports to practice most Nmap techniques
+EXPOSE 21/tcp 22/tcp 23/tcp 25/tcp 53/tcp 53/udp 80/tcp 110/tcp 139/tcp 143/tcp 445/tcp 8080/tcp 5555/tcp 9999/udp
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
