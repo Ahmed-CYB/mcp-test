@@ -1,19 +1,31 @@
 #!/bin/bash
 set -e
 
-service ssh start
-service vsftpd start
-service apache2 start
-service smbd start || service samba start || true
+# Write flag in an unobvious place for the CTF
+mkdir -p /opt/.secrets
+# Hidden flag file; students will likely find it by thorough enumeration
+cat << 'EOF' > /opt/.secrets/.nmap_lab_flag
+FLAG{nmap_all_the_things_UDP_TCP_NSE_2025}
+EOF
+chmod 600 /opt/.secrets/.nmap_lab_flag
 
-# Start inetd/xinetd for extra TCP services
-service xinetd start || true
+# Start standard services
+service ssh start || /usr/sbin/sshd || true
+service vsftpd start || true
+service apache2 start || true
+service smbd start || true
 
-# Start UDP custom service
-/usr/local/bin/udp_service.sh &
+# Start xinetd for custom TCP banner service
+service xinetd start || /usr/sbin/xinetd -stayalive -dontfork || true
 
-# Optional: simple TCP listener on 8080 for banner grabbing
-while true; do echo "Nmap TCP Test Service" | nc -l -p 8080; done &
+# Simple HTTP banner on 8080 (if not already in Apache config)
+# python3 -m http.server 8080 &>/dev/null &
 
-# Keep container running
+# Custom UDP echo-like service for Nmap UDP scans on 9999/udp
+while true; do
+  # Use nc in UDP listen mode to respond with a fixed banner
+  echo "Nmap-UDP-Lab-Service" | nc -u -l -p 9999 -q 1 || true
+done &
+
+# Keep container alive
 sleep infinity
