@@ -1,0 +1,1 @@
+CTF{fortiweb_unauth_rce_simulated_lab_flag}
