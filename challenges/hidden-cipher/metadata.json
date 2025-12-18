@@ -1,0 +1,11 @@
+{
+  "title": "Hidden Cipher",
+  "description": "Decrypt the given message which is encrypted using a custom cipher.",
+  "difficulty": "medium",
+  "category": "crypto",
+  "flag": "CTF{cryptomaster}",
+  "hints": [
+    "The cipher uses a simple character mapping.",
+    "The original message is in lowercase letters."
+  ]
+}
