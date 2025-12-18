@@ -1,0 +1,22 @@
+{
+  "title": "FTP Misconfiguration Mayhem",
+  "description": "Exploit the misconfigured FTP server to capture the flag",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{ftp_config_gone_wrong}",
+  "hints": [
+    "Try connecting to the FTP server using anonymous login",
+    "Look for directories and files that shouldn't be publicly accessible",
+    "Remember, not all files are meant to be read in text mode"
+  ],
+  "learningObjectives": [
+    "Understand the risks associated with FTP misconfigurations",
+    "Learn to identify and exploit common FTP server misconfigurations",
+    "Practice working with FTP commands and navigating FTP servers"
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "web-security"
+  ]
+}
