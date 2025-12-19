@@ -1,0 +1,22 @@
+{
+  "title": "Leaky Login Portal",
+  "description": "Exploit a SQL Injection vulnerability in a login portal to retrieve the flag.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{sql_injection_success}",
+  "hints": [
+    "Consider how SQL queries can be manipulated.",
+    "Think about how you can bypass the password check.",
+    "Try using SQL injections like ' OR '1'='1' -- to bypass the login."
+  ],
+  "learningObjectives": [
+    "Understand SQL Injection vulnerabilities",
+    "Learn how to exploit basic SQL Injection to bypass authentication",
+    "Practice identifying insecure database queries"
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
