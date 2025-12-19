@@ -1,0 +1,3 @@
+# Multi-stage build with comments
+FROM python:3.11-slim
+...
