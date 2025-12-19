@@ -1,0 +1,22 @@
+{
+  "title": "Injection Gauntlet",
+  "description": "Exploit SQL and Command Injection vulnerabilities to capture the flag.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{injection_makes_perfection}",
+  "hints": [
+    "Looks like this login form doesn't properly sanitize its inputs.",
+    "SQLmap might come in handy here.",
+    "After bypassing login, is there another command you can run? Netcat could help."
+  ],
+  "learningObjectives": [
+    "Understand and exploit SQL Injection vulnerabilities",
+    "Understand and exploit Command Injection vulnerabilities",
+    "Learn to use tools like SQLmap and Netcat"
+  ],
+  "tags": [
+    "sql-injection",
+    "command-injection",
+    "web-security"
+  ]
+}
