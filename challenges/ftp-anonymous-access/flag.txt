@@ -1,0 +1,1 @@
+CTF{anonymous_ftp_access}

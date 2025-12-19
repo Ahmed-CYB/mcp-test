@@ -1,0 +1,23 @@
+{
+  "title": "FTP Anonymous Access Challenge",
+  "description": "Gain access to a misconfigured FTP server with anonymous login enabled.",
+  "difficulty": "easy",
+  "category": "misc",
+  "flag": "CTF{anonymous_ftp_access}",
+  "hints": [
+    "Anonymous FTP login might be enabled. Try logging in with a username 'anonymous' and any password.",
+    "Check the available files on the FTP server after logging in.",
+    "Find and read the file named `flag.txt` in the FTP directory."
+  ],
+  "learningObjectives": [
+    "Understand the risks of enabling anonymous access on FTP servers.",
+    "Learn to identify and exploit FTP misconfigurations.",
+    "Practice retrieving sensitive information exposed on misconfigured services."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "anonymous-access",
+    "network-security"
+  ]
+}
