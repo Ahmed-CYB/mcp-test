@@ -1,0 +1,21 @@
+{
+  "title": "FTP Unauthorised Access Challenge",
+  "description": "Exploit vulnerabilities in an FTP server",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_is_not_as_secure_as_you_think}",
+  "hints": [
+    "FTP uses clear text for most of its commands, try to sniff the traffic",
+    "Some FTP servers allow anonymous access, check for that",
+    "Some directories may have improper permission settings"
+  ],
+  "learningObjectives": [
+    "Understand FTP protocol vulnerabilities",
+    "Learn to exploit weak permission settings"
+  ],
+  "tags": [
+    "ftp",
+    "authentication",
+    "web-security"
+  ]
+}
