@@ -1,0 +1,22 @@
+{
+  "title": "SQL Injection Login Bypass",
+  "description": "Exploit a vulnerable login form using SQL Injection to access the dashboard.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{login_bypass_success}",
+  "hints": [
+    "Try inputting basic SQL syntax into the username or password fields.",
+    "Pay attention to how queries are constructed in the backend.",
+    "You might only need to bypass one field to gain access."
+  ],
+  "learningObjectives": [
+    "Understand SQL Injection vulnerabilities.",
+    "Learn to identify and exploit insecure SQL query construction.",
+    "Practice formulating and executing SQL Injection attacks."
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
