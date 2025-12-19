@@ -1,0 +1,22 @@
+{
+  "title": "Library Portal SQL Injection",
+  "description": "You've been hired by a fictional university to test their library's web portal for vulnerabilities. The portal allows students to search for books, but initial reports suggest there might be some security issues. Your task is to identify and exploit these issues to retrieve the hidden flag.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{extracted_sql_data_successfully}",
+  "hints": [
+    "Look for input fields that interact with the database.",
+    "Try injecting SQL commands to manipulate query results.",
+    "Use union-based SQL Injection to extract additional data."
+  ],
+  "learningObjectives": [
+    "Understand SQL Injection vulnerabilities",
+    "Learn to identify and exploit SQL Injection",
+    "Practice using union-based SQL Injection"
+  ],
+  "tags": [
+    "sql-injection",
+    "web-security",
+    "database"
+  ]
+}
