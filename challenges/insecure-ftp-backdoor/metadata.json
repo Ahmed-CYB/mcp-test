@@ -1,0 +1,22 @@
+{
+  "title": "Insecure FTP Backdoor",
+  "description": "Break into a poorly configured FTP server and uncover the hidden flag.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_backdoor_exposed}",
+  "hints": [
+    "Consider the implications of anonymous FTP access.",
+    "Look for files that might have been unintentionally exposed.",
+    "Use FTP clients to connect and explore the server."
+  ],
+  "learningObjectives": [
+    "Understand the importance of secure FTP configurations.",
+    "Learn about the risks of allowing anonymous FTP access.",
+    "Practice vulnerability identification and exploitation."
+  ],
+  "tags": [
+    "ftp",
+    "web-security",
+    "misconfiguration"
+  ]
+}
