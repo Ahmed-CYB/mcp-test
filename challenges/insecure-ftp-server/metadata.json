@@ -1,0 +1,22 @@
+{
+  "title": "Insecure FTP Server",
+  "description": "Your task is to exploit an FTP server misconfiguration to retrieve a sensitive file.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_server_misconfig}",
+  "hints": [
+    "Anonymous access might give you more than expected.",
+    "Check the files available in the FTP root directory.",
+    "Use common FTP client commands to download the flag."
+  ],
+  "learningObjectives": [
+    "Understand the implications of allowing anonymous FTP access.",
+    "Learn to identify potentially dangerous FTP server settings.",
+    "Practice using FTP client tools for penetration testing."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "web-security"
+  ]
+}
