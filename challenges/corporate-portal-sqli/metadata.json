@@ -1,0 +1,22 @@
+{
+  "title": "Corporate Portal SQLi",
+  "description": "Test the login mechanism of XYZ Corp's internal portal for SQL Injection vulnerabilities.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{unauthorized_access_granted}",
+  "hints": [
+    "Pay attention to how user input is being handled in SQL queries.",
+    "Experiment with SQL Injection techniques to bypass authentication.",
+    "Consider what happens when the query returns more than one result."
+  ],
+  "learningObjectives": [
+    "Understand the implications of SQL Injection vulnerabilities",
+    "Learn to exploit SQL Injection to bypass authentication",
+    "Practice analyzing and modifying SQL queries dynamically"
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
