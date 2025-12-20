@@ -1,20 +1,18 @@
 version: '3.8'
 services:
-  ftp_server:
-    image: stilliard/pure-ftpd:hardened
-    container_name: ctf-ftp-hidden-flag-server
-    hostname: ftp_server
+  ftpserver:
+    build:
+      context: ./ftpserver
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-hidden-flag-victim
+    hostname: victim
     ports:
-      - "21:21"
+      - "2121:21"
+      - "30000-30009:30000-30009"
     networks:
       - ctf-network
-    environment:
-      - FTP_USER_NAME=testuser
-      - FTP_USER_PASS=testpass
-      - FTP_USER_HOME=/home/testuser
     volumes:
-      - ./ftp_root:/home/testuser
-
+      - ./ftpserver/data:/home/ftp
   attacker:
     image: kasmweb/kali-rolling-desktop:1.15.0
     container_name: ctf-ftp-hidden-flag-attacker
@@ -27,7 +25,6 @@ services:
     environment:
       - VNC_PW=password
       - KASM_PORT=6901
-
 networks:
   ctf-network:
     driver: bridge

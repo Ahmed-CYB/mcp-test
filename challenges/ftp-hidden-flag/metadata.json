@@ -1,22 +1,22 @@
 {
-  "title": "FTP Hidden Flag Challenge",
-  "description": "Explore the FTP server for hidden flag due to a misconfiguration.",
+  "title": "FTP Hidden Flag",
+  "description": "Retrieve the flag hidden on an unsecured FTP server.",
   "difficulty": "medium",
-  "category": "misc",
-  "flag": "CTF{hidden_ftp_flag}",
+  "category": "web",
+  "flag": "CTF{ftp_flag_discovered}",
   "hints": [
-    "Try listing all files and directories, including hidden ones.",
-    "Use FTP commands effectively to navigate the server.",
-    "The flag might not be in the main user directory."
+    "Try exploring directories that are not immediately visible.",
+    "Use commands like `ls -a` to list all files, including hidden ones.",
+    "The flag might be hidden in a directory that requires some digging."
   ],
   "learningObjectives": [
-    "Understand basic FTP server operations",
-    "Explore directory listing and hidden files",
-    "Learn how to use FTP clients for accessing remote servers"
+    "Understand FTP server security basics.",
+    "Explore file permissions and visibility on FTP servers.",
+    "Use FTP commands for file exploration."
   ],
   "tags": [
     "ftp",
-    "directory-listing",
-    "file-exploration"
+    "hidden-files",
+    "directory-exploration"
   ]
 }
