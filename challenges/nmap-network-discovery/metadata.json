@@ -1,0 +1,22 @@
+{
+  "title": "Nmap Network Discovery Challenge",
+  "description": "Use Nmap to find hidden services and capture the flag.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{nmap_discovery_success}",
+  "hints": [
+    "Use Nmap to identify live hosts on the network.",
+    "Scan for open ports on the victim's IP.",
+    "Look for unusual services that might host the flag."
+  ],
+  "learningObjectives": [
+    "Understand network discovery with Nmap",
+    "Identify and exploit open ports",
+    "Retrieve information from hidden services"
+  ],
+  "tags": [
+    "nmap",
+    "network-discovery",
+    "web-security"
+  ]
+}
