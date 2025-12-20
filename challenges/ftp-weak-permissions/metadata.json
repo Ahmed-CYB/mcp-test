@@ -1,0 +1,23 @@
+{
+  "title": "FTP Weak Permissions Challenge",
+  "description": "Engage in an exploration of a company's FTP server that has weak file permissions.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{weak_ftp_permissions}",
+  "hints": [
+    "Try connecting to the FTP server using anonymous access.",
+    "Look for files that might have been uploaded by mistake.",
+    "Check the permissions on the FTP directory and files."
+  ],
+  "learningObjectives": [
+    "Understand the implications of weak permissions on FTP servers.",
+    "Learn how to navigate and exploit FTP server configurations.",
+    "Identify security flaws in file permissions settings."
+  ],
+  "tags": [
+    "ftp",
+    "permissions",
+    "forensics",
+    "misconfiguration"
+  ]
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  victim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-weak-permissions-victim
+    hostname: victim
+    networks:
+      ctf-network:
+        ipv4_address: 10.251.193.10
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-ftp-weak-permissions-attacker
+    hostname: attacker
+    networks:
+      ctf-network:
+        ipv4_address: 10.251.193.100
+    shm_size: 512m
+networks:
+  ctf-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.251.193.0/24
+          gateway: 10.251.193.1
