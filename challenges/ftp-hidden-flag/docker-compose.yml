@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  ftp_server:
+    image: stilliard/pure-ftpd:hardened
+    container_name: ctf-ftp-hidden-flag-server
+    hostname: ftp_server
+    ports:
+      - "21:21"
+    networks:
+      - ctf-network
+    environment:
+      - FTP_USER_NAME=testuser
+      - FTP_USER_PASS=testpass
+      - FTP_USER_HOME=/home/testuser
+    volumes:
+      - ./ftp_root:/home/testuser
+
+  attacker:
+    image: kasmweb/kali-rolling-desktop:1.15.0
+    container_name: ctf-ftp-hidden-flag-attacker
+    hostname: attacker
+    ports:
+      - "6901:6901"
+    networks:
+      - ctf-network
+    shm_size: "512m"
+    environment:
+      - VNC_PW=password
+      - KASM_PORT=6901
+
+networks:
+  ctf-network:
+    driver: bridge
