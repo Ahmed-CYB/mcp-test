@@ -1,0 +1,22 @@
+{
+  "title": "Nmap Discovery Mystery",
+  "description": "Use nmap to uncover services and potential vulnerabilities on a closed network segment.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{nmap_findings_reveal}",
+  "hints": [
+    "Start with a simple nmap scan: nmap 10.10.10.10",
+    "Look for services running on ports other than the default ones.",
+    "Analyze service banners for potential misconfigurations."
+  ],
+  "learningObjectives": [
+    "Understand basic network scanning with nmap",
+    "Identify open ports and services on a network",
+    "Analyze scan results for potential vulnerabilities"
+  ],
+  "tags": [
+    "network-scanning",
+    "nmap",
+    "forensics"
+  ]
+}
