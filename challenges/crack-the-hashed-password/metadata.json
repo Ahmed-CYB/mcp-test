@@ -1,0 +1,23 @@
+{
+  "title": "Crack the Hashed Password",
+  "description": "A challenge focusing on exploiting weak password storage using hashcat.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{unsalted_md5_compromised}",
+  "hints": [
+    "MD5 hashes can be cracked using tools like hashcat.",
+    "The password is a common word followed by numbers.",
+    "Use a wordlist and hashcat to crack the hash."
+  ],
+  "learningObjectives": [
+    "Understand the risks of unsalted hash usage.",
+    "Learn to identify weak hash storage practices.",
+    "Practice using hashcat for cracking hashed passwords."
+  ],
+  "tags": [
+    "md5",
+    "hashcat",
+    "password-cracking",
+    "web-security"
+  ]
+}

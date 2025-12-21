@@ -1,0 +1,2 @@
+flask==3.0.0
+# NOTE: DO NOT include sqlite3 - it's built into Python!
