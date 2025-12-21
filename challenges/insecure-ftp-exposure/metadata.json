@@ -1,0 +1,23 @@
+{
+  "title": "Insecure FTP Exposure",
+  "description": "A company FTP server misconfiguration exposes sensitive files. Exploit this misconfiguration to capture the flag.",
+  "difficulty": "medium",
+  "category": "misc",
+  "flag": "CTF{ftp_misconfiguration_exposed}",
+  "hints": [
+    "Explore open directories on the FTP server.",
+    "Anonymous FTP might be a clue.",
+    "Look for files that should not be publicly accessible."
+  ],
+  "learningObjectives": [
+    "Understand FTP server configurations.",
+    "Learn about common misconfigurations in FTP services.",
+    "Practice exploiting unsecured FTP access."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "anonymous-access",
+    "file-exposure"
+  ]
+}
