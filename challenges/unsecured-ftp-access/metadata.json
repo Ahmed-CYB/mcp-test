@@ -1,0 +1,23 @@
+{
+  "title": "Unsecured FTP Access",
+  "description": "Explore how unsecured FTP servers can be accessed and exploited to retrieve sensitive information.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{ftp_flag_accessed}",
+  "hints": [
+    "Anonymous FTP access means you don't need a password. Just use 'ftp victim'.",
+    "Check for files that might not be immediately visible.",
+    "Remember, FTP might hide files that are not visible through normal directory listings."
+  ],
+  "learningObjectives": [
+    "Understand how FTP servers can be misconfigured to allow unintended access.",
+    "Learn to navigate and retrieve files from an FTP server.",
+    "Recognize the importance of securing FTP servers."
+  ],
+  "tags": [
+    "ftp",
+    "anonymous-access",
+    "forensics",
+    "file-retrieval"
+  ]
+}
