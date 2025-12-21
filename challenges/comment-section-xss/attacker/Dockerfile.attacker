@@ -1,0 +1,39 @@
+# Custom Kali Linux Attacker Machine
+# Challenge: comment-section-xss
+# Type: web
+# Generated with minimal toolset
+
+FROM kalilinux/kali-rolling
+
+# Avoid interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update and install essential packages
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    dbus-x11 \
+    supervisor \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install challenge-specific tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    curl \
+    wget \
+    python3 python3-pip \
+    burpsuite \
+    sqlmap \
+    nikto \
+    gobuster \
+    ffuf \
+    git \
+    nano \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /root
+
+# Keep container running
+CMD ["/bin/bash", "-c", "tail -f /dev/null"]

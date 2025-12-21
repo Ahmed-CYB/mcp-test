@@ -1,0 +1,22 @@
+{
+  "title": "Comment Section XSS Challenge",
+  "description": "Exploit a stored XSS vulnerability in a blog platform's comment section.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{st0red_xss_vuln3rability}",
+  "hints": [
+    "Look for places where user input is stored and displayed back.",
+    "Try injecting basic JavaScript payloads to see if they're executed.",
+    "Consider how you might use JavaScript to access document.cookie."
+  ],
+  "learningObjectives": [
+    "Understand the impact of stored XSS vulnerabilities",
+    "Learn how to inject JavaScript payloads into input fields",
+    "Practice exploiting XSS to capture cookies using attacker-controlled scripts"
+  ],
+  "tags": [
+    "xss",
+    "stored-xss",
+    "web-security"
+  ]
+}
