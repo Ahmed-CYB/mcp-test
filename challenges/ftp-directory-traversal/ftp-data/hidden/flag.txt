@@ -1,0 +1,1 @@
+CTF{exposed_ftp_config}
