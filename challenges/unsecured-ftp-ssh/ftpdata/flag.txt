@@ -1,0 +1,1 @@
+CTF{ftp_and_ssh_exposure}

@@ -1,0 +1,23 @@
+{
+  "title": "Unsecured FTP and SSH Challenge",
+  "description": "Explore an FTP server with misconfigured SSH access to uncover sensitive data.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_and_ssh_exposure}",
+  "hints": [
+    "Check for writable directories on the FTP server.",
+    "Look for weak credentials that might be reused for SSH.",
+    "Consider what the SSH access might allow you to do with FTP data."
+  ],
+  "learningObjectives": [
+    "Understand the risks of FTP and SSH misconfigurations",
+    "Learn to identify weak credentials",
+    "Practice pivoting from one service to another"
+  ],
+  "tags": [
+    "ftp",
+    "ssh",
+    "misconfiguration",
+    "weak-credentials"
+  ]
+}
