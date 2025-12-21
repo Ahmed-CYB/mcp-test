@@ -1,0 +1,22 @@
+{
+  "title": "Nmap Network Scanning Challenge",
+  "description": "Practice using Nmap to identify open ports and services on a target network.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{nmap_success}",
+  "hints": [
+    "Start with a basic Nmap scan to identify open ports.",
+    "Check common ports like 22 (SSH) and 80 (HTTP).",
+    "The flag is a file served by the web server."
+  ],
+  "learningObjectives": [
+    "Understand basic network scanning techniques.",
+    "Learn to identify open ports and network services.",
+    "Practice using Nmap in a controlled environment."
+  ],
+  "tags": [
+    "nmap",
+    "network-scanning",
+    "web-security"
+  ]
+}
