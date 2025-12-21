@@ -1,0 +1,22 @@
+{
+  "title": "Reflected XSS Shop",
+  "description": "This challenge involves exploiting a reflected XSS vulnerability in a small online shop.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{reflected_xss_victory}",
+  "hints": [
+    "Check how the search query is processed and displayed.",
+    "Reflective XSS occurs when user input is immediately returned in the response.",
+    "Attempt to insert script tags into the search query."
+  ],
+  "learningObjectives": [
+    "Understand reflected XSS vulnerabilities",
+    "Learn to identify potential XSS entry points",
+    "Practice exploiting and mitigating XSS"
+  ],
+  "tags": [
+    "xss",
+    "web-security",
+    "input-validation"
+  ]
+}
