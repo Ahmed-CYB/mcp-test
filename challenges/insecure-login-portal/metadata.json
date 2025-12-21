@@ -1,0 +1,22 @@
+{
+  "title": "Insecure Login Portal",
+  "description": "Explore vulnerabilities in a login portal to gain unauthorized access.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{sql_injection_bypass}",
+  "hints": [
+    "Vague hint about general approach",
+    "Try using single quotes in your input to manipulate SQL queries.",
+    "Review how SQL queries handle user input and how they can be bypassed."
+  ],
+  "learningObjectives": [
+    "Understand SQL Injection",
+    "Learn to identify authentication vulnerabilities",
+    "Practice exploiting web application vulnerabilities"
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
