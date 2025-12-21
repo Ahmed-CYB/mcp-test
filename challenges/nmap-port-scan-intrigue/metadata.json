@@ -1,0 +1,22 @@
+{
+  "title": "Nmap Port Scan Intrigue",
+  "description": "Clear, engaging description",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{nmap_found_me}",
+  "hints": [
+    "Vague hint about using Nmap to discover network services",
+    "More specific hint about checking non-standard ports",
+    "Very specific hint about the /hidden route revealing the flag"
+  ],
+  "learningObjectives": [
+    "Understand network scanning with Nmap",
+    "Learn to identify open ports and hidden services",
+    "Gain insights into network security"
+  ],
+  "tags": [
+    "nmap",
+    "network-scanning",
+    "web-security"
+  ]
+}
