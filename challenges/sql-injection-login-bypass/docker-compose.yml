@@ -6,22 +6,22 @@ services:
       dockerfile: Dockerfile
     container_name: ctf-sql-injection-login-bypass-victim
     hostname: victim
-    ports:
-      - '8080:8080'
     networks:
-      - ctf-network
+      ctf-network:
+        ipv4_address: 172.22.194.10
   attacker:
-    image: kasmweb/kali-rolling-desktop:1.15.0
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
     container_name: ctf-sql-injection-login-bypass-attacker
     hostname: attacker
-    ports:
-      - '6901:6901'
     networks:
-      - ctf-network
-    shm_size: '512m'
-    environment:
-      - VNC_PW=password
-      - KASM_PORT=6901
+      ctf-network:
+        ipv4_address: 172.22.194.100
 networks:
   ctf-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.194.0/24
+          gateway: 172.22.194.1
