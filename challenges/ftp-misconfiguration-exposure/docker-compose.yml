@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  victim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-misconfiguration-exposure-victim
+    hostname: victim
+    networks:
+      ctf-network:
+        ipv4_address: 172.28.193.10
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-ftp-misconfiguration-exposure-attacker
+    hostname: attacker
+    networks:
+      ctf-network:
+        ipv4_address: 172.28.193.100
+networks:
+  ctf-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.193.0/24
+          gateway: 172.28.193.1

@@ -1,0 +1,22 @@
+{
+  "title": "FTP Misconfiguration Exposure",
+  "description": "Discover and exploit misconfigured permissions on an FTP server to access sensitive data.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_misconfig_leak}",
+  "hints": [
+    "FTP allows anonymous access. Try connecting without credentials.",
+    "Look for public files that shouldn't normally be accessible.",
+    "Check the home directory of the FTP service for hidden treasures."
+  ],
+  "learningObjectives": [
+    "Understand the implications of FTP misconfigurations",
+    "Learn to explore FTP directories with read access",
+    "Identify and exploit misconfigured file permissions on FTP servers"
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "web-security"
+  ]
+}
