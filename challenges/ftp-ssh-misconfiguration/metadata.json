@@ -1,0 +1,23 @@
+{
+  "title": "FTP and SSH Misconfiguration",
+  "description": "Explore and exploit FTP and SSH misconfigurations to capture the flag.",
+  "difficulty": "medium",
+  "category": "misc",
+  "flag": "CTF{ftp_ssh_misconfig_flag}",
+  "hints": [
+    "Check the SSH configuration for any permissive settings like 'PermitRootLogin yes'.",
+    "FTP directory permissions and chroot settings might expose more than intended.",
+    "Explore FTP user directories to find sensitive files."
+  ],
+  "learningObjectives": [
+    "Understand the security implications of SSH and FTP configurations.",
+    "Learn to identify and exploit common misconfigurations in network services.",
+    "Practice using SSH and FTP in a capture the flag context."
+  ],
+  "tags": [
+    "ftp",
+    "ssh",
+    "misconfiguration",
+    "network-security"
+  ]
+}
