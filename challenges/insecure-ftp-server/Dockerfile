@@ -1,11 +1,11 @@
-# Multi-stage build for secure and minimal setup
-FROM alpine:3.17
+# Set up vsftpd server
+FROM debian:bookworm-slim
 
-RUN apk --no-cache add vsftpd
+RUN apt-get update && apt-get install -y \
+    vsftpd && rm -rf /var/lib/apt/lists/*
 
-COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
-COPY flag.txt /var/ftp/flag.txt
+COPY vsftpd.conf /etc/vsftpd.conf
 
 EXPOSE 21
 
-CMD ["/usr/sbin/vsftpd", "/etc/vsftpd/vsftpd.conf"]
+CMD ["/usr/sbin/vsftpd", "/etc/vsftpd.conf"]

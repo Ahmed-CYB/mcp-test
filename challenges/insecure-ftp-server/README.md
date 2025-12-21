@@ -1,18 +1,18 @@
 # Insecure FTP Server Challenge
 
 ## Learning Objectives
-- Understand the risks associated with misconfigured anonymous FTP servers
-- Explore FTP command-line utilities
-- Exploit FTP server misconfigurations to gain unauthorized access
+- Understand FTP server misconfigurations
+- Explore anonymous access to sensitive files
+- Use FTP commands and tools
 
-## Scenario
-A company has set up an FTP server for sharing files internally. However, it has been misconfigured, allowing anonymous access to sensitive files. Your mission is to exploit this vulnerability to retrieve a file containing a secret flag.
+## Challenge Description
+A small company has left their FTP server open to the public. Your task is to identify the vulnerability and retrieve the sensitive file containing the flag.
 
-## Deployment
-- Use Docker Compose to set up the victim and attacker environments.
-- Access the FTP server from the Kali Linux container at `ftp://victim:21`
+## Accessing the Challenge
+- Use a web browser to access the Kali Linux desktop.
+- The FTP server is available at ftp://victim:21
 
 ## Hints
-1. Consider the access level granted by the FTP server's configuration.
-2. What kind of operations does anonymous access allow?
-3. The flag is stored in the FTP server's root directory.
+1. Check if anonymous access is enabled.
+2. Try uploading or modifying files in the FTP server.
+3. Look for sensitive files that are world-readable.
