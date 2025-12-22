@@ -1,0 +1,22 @@
+{
+  "title": "Insecure FTP Credentials",
+  "description": "Explore weak password management in an FTP service.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_weak_creds_exposed}",
+  "hints": [
+    "Think about common default passwords used for FTP accounts.",
+    "Consider using basic password cracking tools to automate the process.",
+    "The username might be something simple like 'ftpuser'."
+  ],
+  "learningObjectives": [
+    "Understand how weak credentials can be exploited.",
+    "Learn to use automated tools for brute force attacks.",
+    "Gain insights into FTP server configurations and security risks."
+  ],
+  "tags": [
+    "ftp",
+    "weak-passwords",
+    "web-security"
+  ]
+}
