@@ -1,0 +1,22 @@
+{
+  "title": "FTP Weak Credentials Challenge",
+  "description": "Exploit an FTP server with weak credentials to retrieve the flag.",
+  "difficulty": "easy",
+  "category": "misc",
+  "flag": "CTF{ftp_access_with_weak_passwords}",
+  "hints": [
+    "Consider trying anonymous login.",
+    "Check for common passwords used in FTP servers.",
+    "The username might be 'anonymous'."
+  ],
+  "learningObjectives": [
+    "Understand FTP protocol basics.",
+    "Identify and exploit weak credential configurations.",
+    "Learn the significance of secure authentication practices."
+  ],
+  "tags": [
+    "ftp",
+    "weak-credentials",
+    "misc"
+  ]
+}
