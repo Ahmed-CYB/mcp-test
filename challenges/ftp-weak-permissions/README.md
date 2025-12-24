@@ -1,13 +1,18 @@
 # FTP Weak Permissions Challenge
 
-## Learning Objectives
-- Understand how FTP server permissions can lead to unauthorized access.
-- Explore and interact with an FTP server to identify configuration flaws.
-- Gain hands-on experience in exploiting weak permissions to access sensitive files.
-
 ## Scenario
-Employees often upload files to the company's FTP server without realizing the implications of default permissions. Your task is to exploit this misconfiguration and retrieve the hidden flag located in the FTP directory.
+TechCorp has deployed an FTP server for internal file sharing. However, due to a configuration oversight, a sensitive file is accessible to the public. Your goal is to exploit the FTP configuration to retrieve the flag.
 
-## Access Instructions
-- Use the Kali Linux attacker environment provided.
-- Access the FTP server using the hostname `ftp-server` and explore its contents.
+## Instructions
+- Use the Kali Linux container to interact with the FTP server at `ftp://victim:21`
+- The target file is inside the FTP directory with improper permissions.
+
+## Learning Objectives
+- Understand FTP server configuration and file permissions
+- Learn to exploit misconfigured file permissions in FTP
+- Practice using FTP client tools for enumeration
+
+## Hints
+1. Consider the default permissions that might allow public access.
+2. The anonymous user might have more access than expected.
+3. Look for files with world-readable permissions.

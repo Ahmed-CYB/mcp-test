@@ -8,12 +8,10 @@ FROM kalilinux/kali-rolling
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install essential packages
+# Update and install essential packages including VNC
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     kali-desktop-xfce \
-    xfce4 \
-    xfce4-terminal \
     tigervnc-standalone-server \
     tigervnc-common \
     dbus-x11 \
@@ -37,35 +35,20 @@ RUN apt-get update && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Setup VNC
+# Configure VNC server for Guacamole access
+# Create VNC password file directly (password: "password")
 RUN mkdir -p /root/.vnc && \
-    echo "password" | vncpasswd -f > /root/.vnc/passwd && \
-    chmod 600 /root/.vnc/passwd
-
-# Create VNC startup script
-RUN echo '#!/bin/bash\n\
-xrdb $HOME/.Xresources\n\
-startxfce4 &' > /root/.vnc/xstartup && \
+    python3 -c "open('/root/.vnc/passwd', 'wb').write(b'\xd7\xd6\xf9\xb3\x0c\x1e\xce\x85')" && \
+    chmod 600 /root/.vnc/passwd && \
+    echo "#!/bin/bash" > /root/.vnc/xstartup && \
+    echo "startxfce4 &" >> /root/.vnc/xstartup && \
     chmod +x /root/.vnc/xstartup
-
-# Setup supervisor to manage VNC
-RUN mkdir -p /var/log/supervisor
-COPY <<EOF /etc/supervisor/conf.d/supervisord.conf
-[supervisord]
-nodaemon=true
-logfile=/var/log/supervisor/supervisord.log
-pidfile=/var/run/supervisord.pid
-
-[program:vnc]
-command=/usr/bin/vncserver :1 -geometry 1280x720 -depth 24 -localhost no
-autostart=true
-autorestart=true
-stdout_logfile=/var/log/supervisor/vnc.log
-stderr_logfile=/var/log/supervisor/vnc_err.log
-EOF
 
 # Expose VNC port
 EXPOSE 5901
 
-# Start supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Set working directory
+WORKDIR /root
+
+# Start VNC server and keep container running
+CMD ["/bin/bash", "-c", "vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*.log"]
