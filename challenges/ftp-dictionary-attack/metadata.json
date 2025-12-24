@@ -1,0 +1,23 @@
+{
+  "title": "FTP Dictionary Attack",
+  "description": "Explore FTP vulnerabilities through dictionary attacks",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_weak_password}",
+  "hints": [
+    "The FTP server uses common credentials.",
+    "Try using a tool like Hydra for brute-forcing.",
+    "The password is a simple, lowercase word."
+  ],
+  "learningObjectives": [
+    "Understand FTP protocol weaknesses",
+    "Learn to perform dictionary attacks",
+    "Practice using brute-forcing tools"
+  ],
+  "tags": [
+    "ftp",
+    "dictionary attack",
+    "weak passwords",
+    "web-security"
+  ]
+}
