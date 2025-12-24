@@ -1,0 +1,1 @@
+CTF{weak_ftp_permissions_exploited}

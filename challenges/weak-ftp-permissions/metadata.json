@@ -1,0 +1,22 @@
+{
+  "title": "Weak FTP Permissions",
+  "description": "Find the flag by exploiting weak permissions on an FTP server.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{weak_ftp_permissions_exploited}",
+  "hints": [
+    "Try connecting to the FTP server using anonymous access.",
+    "Look for files that are accessible to the anonymous user.",
+    "Check directories for readable files."
+  ],
+  "learningObjectives": [
+    "Learn about common FTP server misconfigurations",
+    "Understand how to exploit anonymous FTP access",
+    "Practice navigating file structures over FTP"
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "forensics"
+  ]
+}
