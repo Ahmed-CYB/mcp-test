@@ -1,0 +1,22 @@
+{
+  "title": "SQL Injection Shopping Portal",
+  "description": "Exploit an SQL injection vulnerability to access the admin panel of a shopping portal.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{sql_injection_conquered}",
+  "hints": [
+    "Try to manipulate the SQL query with special characters.",
+    "Look for ways to bypass the login check without a valid password.",
+    "Consider how SQL injection can be used to change the logic of the query."
+  ],
+  "learningObjectives": [
+    "Understand the basics of SQL injection",
+    "Learn how to exploit authentication vulnerabilities",
+    "Gain hands-on experience with web application security testing"
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
