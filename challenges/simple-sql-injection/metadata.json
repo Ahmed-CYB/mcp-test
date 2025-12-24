@@ -1,0 +1,22 @@
+{
+  "title": "Simple SQL Injection Challenge",
+  "description": "A basic challenge to teach SQL Injection vulnerabilities in web applications.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{sql_injection_successful}",
+  "hints": [
+    "Look at the login form and consider how inputs might be incorporated into SQL queries.",
+    "Think about how you can inject SQL that changes the logic of the query.",
+    "Consider how to comment out parts of SQL queries to manipulate execution."
+  ],
+  "learningObjectives": [
+    "Understand the basics of SQL Injection",
+    "Learn to identify SQL injection vulnerabilities",
+    "Practice exploiting SQL Injection to bypass authentication"
+  ],
+  "tags": [
+    "sql-injection",
+    "web-security",
+    "authentication"
+  ]
+}
