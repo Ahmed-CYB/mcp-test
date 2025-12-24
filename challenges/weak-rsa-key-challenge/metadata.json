@@ -1,0 +1,23 @@
+{
+  "title": "Weak RSA Key Challenge",
+  "description": "Exploit a vulnerable RSA implementation to recover a confidential message.",
+  "difficulty": "medium",
+  "category": "crypto",
+  "flag": "CTF{rsa_key_factored}",
+  "hints": [
+    "Vague hint about general approach",
+    "Investigate the key size used in the encryption process.",
+    "Use tools like `rsatool` or `yafu` to factorize the modulus."
+  ],
+  "learningObjectives": [
+    "Understand the importance of key size in RSA encryption",
+    "Learn how to factorize weak RSA keys",
+    "Use mathematical tools to break encryption"
+  ],
+  "tags": [
+    "rsa",
+    "cryptography",
+    "key-size",
+    "factorization"
+  ]
+}
