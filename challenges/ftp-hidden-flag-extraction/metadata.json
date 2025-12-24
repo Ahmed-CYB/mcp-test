@@ -1,0 +1,22 @@
+{
+  "title": "FTP Hidden Flag Extraction",
+  "description": "Exploit an FTP configuration mishap to extract a hidden flag.",
+  "difficulty": "medium",
+  "category": "misc",
+  "flag": "CTF{found_the_hidden_flag}",
+  "hints": [
+    "Try connecting anonymously to see what is exposed.",
+    "Explore hidden directories or files that might not be listed at first glance.",
+    "Look for classic mistakes in FTP configurations that might expose sensitive files."
+  ],
+  "learningObjectives": [
+    "Understand FTP server configuration and common misconfigurations.",
+    "Learn to explore FTP servers for accessible data.",
+    "Practice using FTP clients to interact with servers."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "information-disclosure"
+  ]
+}
