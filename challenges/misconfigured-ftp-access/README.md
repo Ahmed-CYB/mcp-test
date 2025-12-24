@@ -1,17 +1,24 @@
 # Misconfigured FTP Access
 
 ## Learning Objectives
-- Understand FTP misconfigurations
-- Exploit anonymous access
+- Understand how FTP services can be misconfigured
+- Learn to exploit misconfigurations for unauthorized file access
+- Practice using FTP clients from Kali Linux to access the server
 
-## Challenge
-A company has an FTP server mistakenly allowing anonymous access to sensitive files. Use the provided Kali Linux environment to exploit this vulnerability and retrieve the flag from the server.
+## Challenge Description
+An organization has set up an FTP server to allow employees to share files securely. However, due to misconfigurations, sensitive information can be accessed without proper authentication. The challenge is to exploit this misconfiguration to retrieve the flag from the server.
 
-## Access
-- The FTP server is accessible at ftp://victim
-- Login anonymously to view the contents
+## Deployment
+1. Use the provided `docker-compose.yml` to start the challenge environment.
+2. Access the FTP server from Kali Linux using the hostname `ftpserver`.
+3. Find and retrieve the flag from the FTP server.
+
+## Accessing the Challenge
+- Start the attacker container using Docker Compose.
+- Use a web browser to access the Kali Linux desktop on port 6901.
+- The default VNC password is `password`.
 
 ## Hints
-1. Check open ports and services on the victim machine.
-2. Try logging in as an anonymous user on the FTP server.
-3. Look for files that may contain sensitive information.
+1. Review the FTP server's user access and authentication settings.
+2. Consider using anonymous FTP login to explore accessible directories.
+3. Search for the `flag.txt` file within the accessible directories.
