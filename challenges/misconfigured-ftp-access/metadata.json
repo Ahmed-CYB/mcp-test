@@ -1,0 +1,22 @@
+{
+  "title": "Misconfigured FTP Access",
+  "description": "Exploit a misconfigured FTP server that allows unauthorized access.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{ftp_configuration_flaw}",
+  "hints": [
+    "Check if the FTP server allows anonymous login.",
+    "Try listing files in the FTP server as an anonymous user.",
+    "Look for any file that stands out, such as 'flag.txt'."
+  ],
+  "learningObjectives": [
+    "Understand the implications of FTP configuration errors.",
+    "Learn to identify and exploit anonymous FTP access.",
+    "Gain experience with basic FTP commands."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "web-security"
+  ]
+}
