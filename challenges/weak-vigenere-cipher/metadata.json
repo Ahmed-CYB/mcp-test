@@ -1,0 +1,22 @@
+{
+  "title": "Weak Vigenère Cipher Challenge",
+  "description": "Participants will decrypt a message encrypted with a Vigenère cipher using a weak key to discover the hidden flag.",
+  "difficulty": "easy",
+  "category": "crypto",
+  "flag": "CTF{vigenere_decryption_success}",
+  "hints": [
+    "The key is very short; consider trying possible key lengths.",
+    "The Vigenère cipher is a repeating pattern cipher; frequency analysis might help.",
+    "The key is 'KEY'. Use it to decrypt the message."
+  ],
+  "learningObjectives": [
+    "Understand the Vigenère cipher mechanism",
+    "Learn the importance of strong keys in cryptography",
+    "Gain skills in basic cryptanalysis techniques"
+  ],
+  "tags": [
+    "vigenere",
+    "cryptography",
+    "crypto-analysis"
+  ]
+}
