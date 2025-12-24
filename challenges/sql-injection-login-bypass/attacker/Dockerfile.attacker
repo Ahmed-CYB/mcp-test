@@ -1,6 +1,6 @@
 # Custom Kali Linux Attacker Machine
 # Challenge: sql-injection-login-bypass
-# Type: web
+# Type: misc
 # Generated with minimal toolset
 
 FROM kalilinux/kali-rolling
@@ -8,9 +8,13 @@ FROM kalilinux/kali-rolling
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install essential packages
+# Update and install essential packages including VNC
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    kali-desktop-xfce \
+    tigervnc-standalone-server \
+    tigervnc-common \
+    tigervnc-tools \
     dbus-x11 \
     supervisor \
     && apt-get clean \
@@ -19,21 +23,31 @@ RUN apt-get update && \
 # Install challenge-specific tools
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    python3 python3-pip \
     curl \
     wget \
-    python3 python3-pip \
-    burpsuite \
-    sqlmap \
-    nikto \
-    gobuster \
-    ffuf \
     git \
     nano \
+    nmap \
+    netcat-traditional \
+    binutils \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Configure VNC server for Guacamole access
+# Create VNC password file directly (password: "password")
+RUN mkdir -p /root/.vnc && \
+    python3 -c "open('/root/.vnc/passwd', 'wb').write(b'\xd7\xd6\xf9\xb3\x0c\x1e\xce\x85')" && \
+    chmod 600 /root/.vnc/passwd && \
+    echo "#!/bin/bash" > /root/.vnc/xstartup && \
+    echo "startxfce4 &" >> /root/.vnc/xstartup && \
+    chmod +x /root/.vnc/xstartup
+
+# Expose VNC port
+EXPOSE 5901
 
 # Set working directory
 WORKDIR /root
 
-# Keep container running
-CMD ["/bin/bash", "-c", "tail -f /dev/null"]
+# Start VNC server and keep container running
+CMD ["/bin/bash", "-c", "mkdir -p /root/.config/tigervnc && vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*.log"]

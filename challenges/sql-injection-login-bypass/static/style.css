@@ -1,11 +1,25 @@
-/* Basic styling for the login page */
+/* Custom styles for challenge */
 body {
-    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+    padding-top: 50px;
 }
-.container {
-    max-width: 400px;
-    margin-top: 50px;
+form {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-h2 {
-    color: #343a40;
+label {
+    display: block;
+    margin-top: 10px;
+}
+input {
+    margin-top: 5px;
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

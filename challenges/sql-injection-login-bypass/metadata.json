@@ -1,18 +1,18 @@
 {
   "title": "SQL Injection Login Bypass",
-  "description": "Exploit a SQL Injection vulnerability to bypass login authentication.",
+  "description": "Explore and exploit SQL injection to bypass login authentication.",
   "difficulty": "easy",
   "category": "web",
-  "flag": "CTF{sql_injection_success}",
+  "flag": "CTF{sql_injection_bypass}",
   "hints": [
-    "Check the SQL query structure in the source code.",
-    "Try to bypass the authentication using common SQL Injection techniques.",
-    "Use payloads like ' OR '1'='1' to manipulate the query results."
+    "Try common SQL injection payloads on the login form.",
+    "Think about how SQL queries could be manipulated to bypass authentication.",
+    "Use conditional statements like OR to modify the query logic."
   ],
   "learningObjectives": [
-    "Understand the basic concepts of SQL Injection.",
-    "Learn how SQL Injection vulnerabilities occur due to improper input validation.",
-    "Practice crafting payloads to exploit SQL Injection."
+    "Understand SQL injection",
+    "Learn to identify authentication vulnerabilities",
+    "Practice exploiting SQL injection for login bypass"
   ],
   "tags": [
     "sql-injection",

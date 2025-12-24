@@ -1,22 +1,15 @@
-# SQL Injection Login Bypass Challenge
+# SQL Injection Login Bypass
 
 ## Learning Objectives
-- Understand how SQL Injection can be used to bypass authentication
-- Explore the effects of insufficient input validation
-- Learn to craft SQL payloads to manipulate queries
+- Understand SQL injection vulnerabilities
+- Learn how to bypass authentication mechanisms
+- Practice SQL injection techniques
 
-## Challenge Description
-The goal of this challenge is to exploit a SQL Injection vulnerability in the login form of a corporate portal. Due to improper sanitization of user inputs, it's possible to bypass authentication and gain access to the internal portal.
+## Instructions
+1. Use the Kali Linux GUI provided via VNC to explore the application hosted on the victim server.
+2. Attempt to log in using SQL injection techniques to extract sensitive information.
+3. The goal is to retrieve the flag stored in the application upon successful login.
 
-## How to Access
-- This challenge can be accessed from the attacker container (Kali Linux) at http://victim:8080.
-
-## Hints
-1. Pay attention to the SQL query structure in the source code.
-2. Think about how you can manipulate the query to always return true.
-3. Consider using common SQL Injection payloads like `' OR '1'='1`. 
-
-## Tags
-- sql-injection
-- web-security
-- authentication
+## Access
+- The victim application is accessible at http://victim:8080
+- Use the Kali Linux desktop at http://localhost:6901 with the password 'password'
