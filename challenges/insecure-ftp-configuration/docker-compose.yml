@@ -4,26 +4,28 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ctf-insecure-ftp-victim
+    container_name: ctf-insecure-ftp-configuration-victim
     hostname: victim
-    ports:
-      - '21:21'
     networks:
-      - ctf-network
-  
+      ctf-network:
+        ipv4_address: 172.22.193.10
   attacker:
-    image: kasmweb/kali-rolling-desktop:1.15.0
-    container_name: ctf-insecure-ftp-attacker
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-insecure-ftp-configuration-attacker
     hostname: attacker
-    ports:
-      - '6901:6901'
     networks:
-      - ctf-network
-    shm_size: '512m'
-    environment:
-      - VNC_PW=password
-      - KASM_PORT=6901
-
+      ctf-network:
+        ipv4_address: 172.22.193.100
+      ctf-instances-network: {}
 networks:
   ctf-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.193.0/24
+          gateway: 172.22.193.1
+  ctf-instances-network:
+    external: true
+    name: ctf-instances-network

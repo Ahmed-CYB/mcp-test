@@ -1,23 +1,23 @@
 {
   "title": "Insecure FTP Configuration Challenge",
-  "description": "Explore FTP misconfigurations and gain unauthorized access to retrieve the flag.",
+  "description": "Exploit misconfigurations in an FTP server to retrieve sensitive information.",
   "difficulty": "medium",
-  "category": "pwn",
-  "flag": "CTF{ftp_config_missteps}",
+  "category": "forensics",
+  "flag": "CTF{insecure_ftp_configuration_exploited}",
   "hints": [
-    "Check the FTP server configuration for anonymous access permissions.",
-    "Look for unusual files or directories accessible without authentication.",
-    "The flag is hidden in the publicly accessible directory."
+    "Check for anonymous access.",
+    "Look at the configuration settings in the vsftpd.conf file.",
+    "Navigate to the FTP server directory to find accessible files."
   ],
   "learningObjectives": [
-    "Understand the risks of enabling anonymous FTP access.",
-    "Identify insecure FTP configurations.",
-    "Learn how to exploit weak FTP settings."
+    "Understand the security implications of FTP configurations",
+    "Learn how to exploit misconfigured FTP servers",
+    "Use common tools to interact with FTP services"
   ],
   "tags": [
     "ftp",
-    "misconfiguration",
+    "configuration",
     "anonymous-access",
-    "information-disclosure"
+    "forensics"
   ]
 }
