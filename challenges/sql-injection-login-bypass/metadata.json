@@ -1,18 +1,18 @@
 {
   "title": "SQL Injection Login Bypass",
-  "description": "Explore and exploit SQL injection to bypass login authentication.",
+  "description": "Gain unauthorized access to SecureCorp's employee portal using SQL Injection.",
   "difficulty": "easy",
   "category": "web",
-  "flag": "CTF{sql_injection_bypass}",
+  "flag": "CTF{sql_injection_success}",
   "hints": [
-    "Try common SQL injection payloads on the login form.",
-    "Think about how SQL queries could be manipulated to bypass authentication.",
-    "Use conditional statements like OR to modify the query logic."
+    "Vague hint about general approach",
+    "Consider how user input affects database queries",
+    "Try common SQL Injection payloads to bypass authentication"
   ],
   "learningObjectives": [
-    "Understand SQL injection",
-    "Learn to identify authentication vulnerabilities",
-    "Practice exploiting SQL injection for login bypass"
+    "Understand SQL Injection vulnerabilities",
+    "Learn techniques for authentication bypass using SQL Injection",
+    "Practice identifying SQL query manipulation"
   ],
   "tags": [
     "sql-injection",

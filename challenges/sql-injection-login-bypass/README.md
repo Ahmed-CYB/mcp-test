@@ -1,15 +1,18 @@
 # SQL Injection Login Bypass
 
 ## Learning Objectives
-- Understand SQL injection vulnerabilities
-- Learn how to bypass authentication mechanisms
-- Practice SQL injection techniques
+- Understand the impact of SQL Injection vulnerabilities
+- Learn how to exploit SQL Injection for authentication bypass
+- Practice identifying and exploiting SQL vulnerabilities
 
-## Instructions
-1. Use the Kali Linux GUI provided via VNC to explore the application hosted on the victim server.
-2. Attempt to log in using SQL injection techniques to extract sensitive information.
-3. The goal is to retrieve the flag stored in the application upon successful login.
+## Challenge Description
+Your task is to gain unauthorized access to the SecureCorp employee portal. By exploiting SQL Injection vulnerabilities, bypass the login system and retrieve the flag from the admin dashboard.
 
-## Access
-- The victim application is accessible at http://victim:8080
-- Use the Kali Linux desktop at http://localhost:6901 with the password 'password'
+## Access Instructions
+- Run `docker-compose up` to start the challenge
+- Access the portal via the Kali Linux environment at `http://victim:8080`
+
+## Hints
+1. Look for ways to manipulate SQL queries with user input.
+2. Consider how authentication systems verify credentials.
+3. What classic SQL Injection payload could bypass such a system?
