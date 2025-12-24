@@ -1,0 +1,22 @@
+{
+  "title": "Simple Network Protocol Misconfiguration",
+  "description": "Identify a misconfigured network protocol to extract sensitive data.",
+  "difficulty": "easy",
+  "category": "web",
+  "flag": "CTF{unauthorized_data_extraction}",
+  "hints": [
+    "Try sending different commands to the server.",
+    "Think about what kind of command might retrieve data.",
+    "A simple command might be all you need to extract the flag."
+  ],
+  "learningObjectives": [
+    "Understand basic network protocol communication.",
+    "Identify vulnerabilities in network protocol configurations.",
+    "Practice data extraction through network communication."
+  ],
+  "tags": [
+    "network",
+    "misconfiguration",
+    "data-extraction"
+  ]
+}

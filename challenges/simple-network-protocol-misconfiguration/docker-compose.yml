@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  victim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ctf-simple-network-protocol-misconfiguration-victim
+    hostname: victim
+    networks:
+      ctf-network:
+        ipv4_address: 172.20.193.10
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-simple-network-protocol-misconfiguration-attacker
+    hostname: attacker
+    networks:
+      ctf-network:
+        ipv4_address: 172.20.193.100
+      ctf-instances-network: {}
+networks:
+  ctf-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.193.0/24
+          gateway: 172.20.193.1
+  ctf-instances-network:
+    external: true
+    name: ctf-instances-network
