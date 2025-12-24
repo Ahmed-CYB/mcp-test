@@ -1,0 +1,4 @@
+User data:
+- Username: user1
+- Password: pass123
+- Note: Look for the flag.txt file for sensitive content.

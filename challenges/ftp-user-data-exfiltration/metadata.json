@@ -1,0 +1,22 @@
+{
+  "title": "FTP User Data Exfiltration",
+  "description": "An insecure FTP server exposes sensitive user data. Discover the leak and retrieve the flag.",
+  "difficulty": "medium",
+  "category": "forensics",
+  "flag": "CTF{ftp_data_exfiltration_success}",
+  "hints": [
+    "Start by connecting to the FTP server using a basic FTP client.",
+    "Explore the directory structure to find interesting files.",
+    "The flag is in a file named 'flag.txt' in the home directory."
+  ],
+  "learningObjectives": [
+    "Understand FTP server operations and potential misconfigurations.",
+    "Learn to explore and extract data from FTP directories.",
+    "Identify and retrieve sensitive data."
+  ],
+  "tags": [
+    "ftp",
+    "data-exfiltration",
+    "forensics"
+  ]
+}
