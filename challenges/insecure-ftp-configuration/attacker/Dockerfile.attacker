@@ -8,20 +8,17 @@ FROM kalilinux/kali-rolling
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install essential packages including VNC
+# Update and install SSH server (lightweight alternative to VNC)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    kali-desktop-xfce \
-    tigervnc-standalone-server \
-    tigervnc-common \
-    dbus-x11 \
-    supervisor \
+    openssh-server \
+    sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install challenge-specific tools
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends --fix-missing \
     nmap \
     wireshark \
     tcpdump \
@@ -32,23 +29,34 @@ RUN apt-get update && \
     python3 python3-pip \
     git \
     nano \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    || (echo "⚠️ Some packages failed, retrying..." && \
+        apt-get update && \
+        apt-get install -y --fix-missing \
+        nmap \
+        wireshark \
+        tcpdump \
+        netcat-traditional \
+        hping3 \
+        curl \
+        wget \
+        python3 python3-pip \
+        git \
+        nano \
+    ) && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Configure VNC server for Guacamole access
-# Create VNC password file directly (password: "password")
-RUN mkdir -p /root/.vnc && \
-    python3 -c "open('/root/.vnc/passwd', 'wb').write(b'\xd7\xd6\xf9\xb3\x0c\x1e\xce\x85')" && \
-    chmod 600 /root/.vnc/passwd && \
-    echo "#!/bin/bash" > /root/.vnc/xstartup && \
-    echo "startxfce4 &" >> /root/.vnc/xstartup && \
-    chmod +x /root/.vnc/xstartup
+# Configure SSH server for Guacamole access
+RUN mkdir -p /var/run/sshd && \
+    echo 'root:kali' | chpasswd && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
-# Expose VNC port
-EXPOSE 5901
+# Expose SSH port
+EXPOSE 22
 
 # Set working directory
 WORKDIR /root
 
-# Start VNC server and keep container running
-CMD ["/bin/bash", "-c", "vncserver :1 -geometry 1280x800 -depth 24 && tail -f /root/.vnc/*.log"]
+# Start SSH server
+CMD ["/usr/sbin/sshd", "-D"]

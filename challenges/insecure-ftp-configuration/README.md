@@ -1,18 +1,19 @@
-# Insecure FTP Configuration Challenge
+# Insecure FTP Configuration
+
+## Scenario
+A company has configured an FTP server using default settings, which exposes sensitive files to unauthorized users. As an attacker, your task is to exploit the misconfiguration to retrieve the flag stored in a text file.
 
 ## Learning Objectives
-- Understand the security implications of FTP configurations
-- Learn how to exploit misconfigured FTP servers
-- Use common tools to interact with FTP services
+- Understand common FTP server misconfigurations
+- Exploit weak FTP credentials
+- Learn about FTP command-line tools
 
-## Challenge Details
-A small company has set up an FTP server that allows anonymous access. Due to misconfigurations, sensitive information is available to unauthorized users. Your task is to exploit the server and retrieve the flag stored in the FTP directory.
-
-## Accessing the Challenge
-- Start the challenge using Docker Compose.
-- Use the Kali Linux container to connect to the victim FTP server at `ftp://victim`.
+## Setup Instructions
+1. Start the challenge using `docker-compose up -d`.
+2. Access the Kali Linux desktop at `http://localhost:6901` with the password `password`.
+3. Use your penetration testing skills to access the FTP server hosted at `ftpserver` (172.25.0.10).
 
 ## Hints
-1. Consider how FTP configurations might allow unauthorized access.
-2. Check if you can access the server anonymously.
-3. Explore the FTP directory structure to find sensitive files.
+1. Check for common FTP credentials.
+2. Understand how FTP directory permissions might expose critical files.
+3. Use tools available in Kali Linux to connect and explore the FTP server.

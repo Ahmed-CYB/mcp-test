@@ -1,23 +1,23 @@
 {
-  "title": "Insecure FTP Configuration Challenge",
-  "description": "Exploit misconfigurations in an FTP server to retrieve sensitive information.",
+  "title": "Insecure FTP Configuration",
+  "description": "Explore and exploit common FTP misconfigurations to retrieve a flag stored on the server.",
   "difficulty": "medium",
-  "category": "forensics",
-  "flag": "CTF{insecure_ftp_configuration_exploited}",
+  "category": "web",
+  "flag": "CTF{ftp_misconfiguration_exploited}",
   "hints": [
-    "Check for anonymous access.",
-    "Look at the configuration settings in the vsftpd.conf file.",
-    "Navigate to the FTP server directory to find accessible files."
+    "Consider the implications of weak or default FTP passwords.",
+    "Check if directory permissions allow unauthorized access.",
+    "Use FTP tools in Kali Linux to enumerate directories and files."
   ],
   "learningObjectives": [
-    "Understand the security implications of FTP configurations",
-    "Learn how to exploit misconfigured FTP servers",
-    "Use common tools to interact with FTP services"
+    "Learn how to exploit FTP misconfigurations.",
+    "Understand the significance of secure FTP credentials.",
+    "Practice using command-line FTP tools."
   ],
   "tags": [
     "ftp",
-    "configuration",
-    "anonymous-access",
-    "forensics"
+    "misconfiguration",
+    "weak-credentials",
+    "network-security"
   ]
 }
