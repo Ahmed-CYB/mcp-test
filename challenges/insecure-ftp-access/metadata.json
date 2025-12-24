@@ -1,0 +1,23 @@
+{
+  "title": "Insecure FTP Access",
+  "description": "A file server has been exposed to the internet with a misconfigured FTP server allowing anonymous access. Exploit this configuration to retrieve sensitive data.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{insecure_ftp_exposure}",
+  "hints": [
+    "Try connecting to the FTP server using anonymous login.",
+    "Look for any files that might contain sensitive information.",
+    "Remember to download the file once you find it."
+  ],
+  "learningObjectives": [
+    "Understand FTP service configuration and common vulnerabilities",
+    "Identify misconfigurations leading to information exposure",
+    "Practice using FTP client tools to navigate and retrieve files"
+  ],
+  "tags": [
+    "ftp",
+    "forensics",
+    "misconfiguration",
+    "anonymous-access"
+  ]
+}
