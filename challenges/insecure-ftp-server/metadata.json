@@ -1,22 +1,22 @@
 {
   "title": "Insecure FTP Server",
-  "description": "Exploit an anonymous FTP server misconfiguration to find the flag.",
+  "description": "Explore an FTP server with insecure configurations",
   "difficulty": "medium",
   "category": "misc",
-  "flag": "CTF{ftp_misconfiguration_exploited}",
+  "flag": "CTF{ftp_misconfig_access_granted}",
   "hints": [
-    "Check if anonymous access is enabled.",
-    "Explore write permissions for anonymous users.",
-    "Look for files that might contain sensitive information."
+    "Check the FTP server configurations for anonymous access.",
+    "Try connecting as an anonymous user - what directories can you list?",
+    "Look for world-readable files that might contain the flag."
   ],
   "learningObjectives": [
-    "Understand common FTP server misconfigurations.",
-    "Learn to exploit write permissions on anonymous FTP servers.",
-    "Retrieve sensitive files using FTP commands."
+    "Understand FTP configuration and its security implications",
+    "Learn how anonymous FTP access can lead to data leakage",
+    "Practice navigating FTP services using command-line tools"
   ],
   "tags": [
     "ftp",
     "misconfiguration",
-    "anonymous-access"
+    "data-exposure"
   ]
 }

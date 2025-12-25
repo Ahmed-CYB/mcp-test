@@ -8,22 +8,17 @@ FROM kalilinux/kali-rolling
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install essential packages
+# Update and install SSH server (lightweight alternative to VNC)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    kali-desktop-xfce \
-    xfce4 \
-    xfce4-terminal \
-    tigervnc-standalone-server \
-    tigervnc-common \
-    dbus-x11 \
-    supervisor \
+    openssh-server \
+    sudo \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install challenge-specific tools
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends --fix-missing \
     nmap \
     wireshark \
     tcpdump \
@@ -34,38 +29,34 @@ RUN apt-get update && \
     python3 python3-pip \
     git \
     nano \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    || (echo "⚠️ Some packages failed, retrying..." && \
+        apt-get update && \
+        apt-get install -y --fix-missing \
+        nmap \
+        wireshark \
+        tcpdump \
+        netcat-traditional \
+        hping3 \
+        curl \
+        wget \
+        python3 python3-pip \
+        git \
+        nano \
+    ) && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Setup VNC
-RUN mkdir -p /root/.vnc && \
-    echo "password" | vncpasswd -f > /root/.vnc/passwd && \
-    chmod 600 /root/.vnc/passwd
+# Configure SSH server for Guacamole access
+RUN mkdir -p /var/run/sshd && \
+    echo 'root:kali' | chpasswd && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
-# Create VNC startup script
-RUN echo '#!/bin/bash\n\
-xrdb $HOME/.Xresources\n\
-startxfce4 &' > /root/.vnc/xstartup && \
-    chmod +x /root/.vnc/xstartup
+# Expose SSH port
+EXPOSE 22
 
-# Setup supervisor to manage VNC
-RUN mkdir -p /var/log/supervisor
-COPY <<EOF /etc/supervisor/conf.d/supervisord.conf
-[supervisord]
-nodaemon=true
-logfile=/var/log/supervisor/supervisord.log
-pidfile=/var/run/supervisord.pid
+# Set working directory
+WORKDIR /root
 
-[program:vnc]
-command=/usr/bin/vncserver :1 -geometry 1280x720 -depth 24 -localhost no
-autostart=true
-autorestart=true
-stdout_logfile=/var/log/supervisor/vnc.log
-stderr_logfile=/var/log/supervisor/vnc_err.log
-EOF
-
-# Expose VNC port
-EXPOSE 5901
-
-# Start supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Start SSH server
+CMD ["/usr/sbin/sshd", "-D"]

@@ -1,18 +1,18 @@
 # Insecure FTP Server Challenge
 
 ## Learning Objectives
-- Understand FTP server misconfigurations
-- Explore anonymous access to sensitive files
-- Use FTP commands and tools
+- Understand FTP server configurations
+- Identify common FTP misconfigurations leading to data leakage
+- Use Kali Linux to connect to an FTP server
 
 ## Challenge Description
-A small company has left their FTP server open to the public. Your task is to identify the vulnerability and retrieve the sensitive file containing the flag.
+A small company has an FTP server setup to store and share files. However, due to some misconfigurations, sensitive files might be exposed to anonymous users. Your task is to exploit this misconfiguration to retrieve the secret flag file.
 
 ## Accessing the Challenge
-- Use a web browser to access the Kali Linux desktop.
-- The FTP server is available at ftp://victim:21
+- The FTP server is running on `ftp://victim` within the provided Kali Linux environment.
+- No additional tools are needed beyond those provided in Kali.
 
 ## Hints
-1. Check if anonymous access is enabled.
-2. Try uploading or modifying files in the FTP server.
-3. Look for sensitive files that are world-readable.
+1. Consider what services are enabled for anonymous users.
+2. Check if you can list directories and access files as an anonymous user.
+3. You may not need credentials; explore what anonymous access provides.
