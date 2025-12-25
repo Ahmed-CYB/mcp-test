@@ -1,0 +1,22 @@
+{
+  "title": "FTP Hidden Treasure",
+  "description": "Explore the FTP server for hidden files and discover the treasure.",
+  "difficulty": "easy",
+  "category": "forensics",
+  "flag": "CTF{found_the_hidden_file}",
+  "hints": [
+    "Try logging in with the provided credentials.",
+    "Ensure to explore all directories on the server.",
+    "Look for files that seem out of place or hidden."
+  ],
+  "learningObjectives": [
+    "Learn to use FTP clients for directory exploration.",
+    "Understand the implications of improper FTP permission configurations.",
+    "Develop skills to look for hidden or unusual files."
+  ],
+  "tags": [
+    "ftp",
+    "file-exploration",
+    "hidden-files"
+  ]
+}
