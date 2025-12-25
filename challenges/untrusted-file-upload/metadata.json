@@ -1,0 +1,22 @@
+{
+  "title": "Untrusted File Upload",
+  "description": "Explore the dangers of unrestricted file uploads by exploiting a vulnerable file sharing service.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{unsecured_file_upload}",
+  "hints": [
+    "Consider what types of files could be dangerous if allowed to execute on a server.",
+    "Look for ways to execute code server-side after uploading a file.",
+    "The flag is hidden in a location accessible by web shell operations."
+  ],
+  "learningObjectives": [
+    "Understand the risks of insecure file uploads",
+    "Learn to exploit unrestricted file uploads",
+    "Practice using web shells to gather information"
+  ],
+  "tags": [
+    "file-upload",
+    "web-security",
+    "web-shell"
+  ]
+}
