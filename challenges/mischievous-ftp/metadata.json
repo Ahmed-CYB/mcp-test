@@ -1,0 +1,23 @@
+{
+  "title": "Mischievous FTP",
+  "description": "Exploit misconfigured permissions on an FTP server to retrieve sensitive information.",
+  "difficulty": "easy",
+  "category": "misc",
+  "flag": "CTF{misconfigured_permissions_lead_to_exposure}",
+  "hints": [
+    "Start by connecting to the FTP server using an anonymous login.",
+    "Look for directories or files that seem out of place or have unusual permissions.",
+    "The flag is stored in a file that should normally be secured."
+  ],
+  "learningObjectives": [
+    "Understand how FTP servers manage file permissions.",
+    "Practice identifying and exploiting weak configurations in FTP services.",
+    "Learn to navigate and search through FTP directories efficiently."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "permissions",
+    "security"
+  ]
+}

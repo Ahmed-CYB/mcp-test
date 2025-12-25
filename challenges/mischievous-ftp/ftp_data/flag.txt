@@ -1,0 +1,1 @@
+CTF{misconfigured_permissions_lead_to_exposure}
