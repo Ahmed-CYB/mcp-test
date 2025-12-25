@@ -1,0 +1,24 @@
+{
+  "title": "Corporate Intranet Breach",
+  "description": "A corporate intranet portal is suspected to have multiple vulnerabilities that can be exploited to gain sensitive information. Your mission is to identify and exploit these vulnerabilities to capture the flag hidden within their systems.",
+  "difficulty": "hard",
+  "category": "web",
+  "flag": "CTF{comprehensive_pentest_success}",
+  "hints": [
+    "Try injecting JavaScript in the search bar to find hidden paths.",
+    "Check out the routes that leak server information.",
+    "Use common FTP and SSH enumeration techniques to find hidden files."
+  ],
+  "learningObjectives": [
+    "Understand cross-site scripting (XSS)",
+    "Learn to exploit FTP and SSH vulnerabilities",
+    "Practice chaining multiple vulnerabilities for a successful attack"
+  ],
+  "tags": [
+    "xss",
+    "ftp",
+    "ssh",
+    "vsftp-exploit",
+    "web-security"
+  ]
+}
