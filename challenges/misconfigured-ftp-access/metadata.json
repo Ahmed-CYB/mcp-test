@@ -1,23 +1,23 @@
 {
   "title": "Misconfigured FTP Access",
-  "description": "An organization's FTP server allows unauthorized access due to misconfigurations. Exploit the vulnerability and retrieve the flag.",
-  "difficulty": "easy",
-  "category": "misc",
-  "flag": "CTF{unauthorized_ftp_access}",
+  "description": "Exploit a misconfigured FTP server to retrieve sensitive information.",
+  "difficulty": "medium",
+  "category": "forensics",
+  "flag": "CTF{ftp_misconfiguration_leak}",
   "hints": [
-    "Review the FTP server's user access and authentication settings.",
-    "Consider using anonymous FTP login to explore accessible directories.",
-    "Search for the `flag.txt` file within the accessible directories."
+    "The server might allow anonymous access.",
+    "Explore the folders available to anonymous users.",
+    "Look for files that might contain sensitive information accessible anonymously."
   ],
   "learningObjectives": [
-    "Understand how FTP services can be misconfigured",
-    "Learn to exploit misconfigurations for unauthorized file access",
-    "Practice using FTP clients from Kali Linux to access the server"
+    "Understand common FTP server misconfigurations.",
+    "Identify the security implications of enabling anonymous FTP access.",
+    "Gain practical experience in exploiting misconfigured FTP services."
   ],
   "tags": [
     "ftp",
     "misconfiguration",
-    "unauthorized-access",
-    "file-retrieval"
+    "anonymous-access",
+    "forensics"
   ]
 }
