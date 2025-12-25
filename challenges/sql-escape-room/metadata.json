@@ -1,0 +1,22 @@
+{
+  "title": "SQL Escape Room",
+  "description": "Infiltrate the corporate login portal of 'Escape Room Inc.' where a disgruntled employee has left a backdoor. Unravel the SQL Injection vulnerabilities to extract the sensitive flag.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{sql_injection_escape}",
+  "hints": [
+    "Think about how SQL queries can be manipulated with input data.",
+    "Consider what happens if you close off a string literal in SQL.",
+    "Try to comment out the rest of the query to bypass password checks."
+  ],
+  "learningObjectives": [
+    "Understand SQL Injection vulnerabilities",
+    "Learn to identify unsafe SQL query practices",
+    "Practice crafting injection payloads"
+  ],
+  "tags": [
+    "sql-injection",
+    "authentication",
+    "web-security"
+  ]
+}
