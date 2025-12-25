@@ -1,10 +1,11 @@
 FROM debian:bookworm-slim
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    vsftpd && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends vsftpd && \
+    rm -rf /var/lib/apt/lists/*
 COPY vsftpd.conf /etc/vsftpd.conf
-COPY ftpusers /etc/ftpusers
-COPY flag.txt /home/ftp/flag.txt
-RUN chmod 644 /home/ftp/flag.txt && \
-    chown nobody:nogroup /home/ftp/flag.txt
+RUN useradd -m user && \
+    echo "user:pass123" | chpasswd
+COPY flag.txt /srv/ftp/flag.txt
+RUN chmod 644 /srv/ftp/flag.txt
 EXPOSE 21
 CMD ["vsftpd", "/etc/vsftpd.conf"]

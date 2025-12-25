@@ -1,22 +1,23 @@
 {
   "title": "FTP Weak Permissions",
-  "description": "Exploit an FTP server with weak file permissions to obtain a sensitive file.",
+  "description": "A challenge focused on exploiting weak file permissions in an FTP setup.",
   "difficulty": "medium",
-  "category": "forensics",
-  "flag": "CTF{ftp_permissions_misconfig}",
+  "category": "misc",
+  "flag": "CTF{ftp_permission_misconfig}",
   "hints": [
-    "Consider the default permissions that might allow public access.",
-    "The anonymous user might have more access than expected.",
-    "Look for files with world-readable permissions."
+    "Check for directories or files that might be accessible without proper authentication.",
+    "Anonymous FTP login might lead to interesting files being accessible.",
+    "Focus on file permissions that might allow unintended access."
   ],
   "learningObjectives": [
-    "Understand FTP server configuration and file permissions",
-    "Learn to exploit misconfigured file permissions in FTP",
-    "Practice using FTP client tools for enumeration"
+    "Understand how weak file permissions can lead to security vulnerabilities.",
+    "Learn to navigate and exploit FTP servers with misconfigurations.",
+    "Identify and exploit permission issues in server configurations."
   ],
   "tags": [
     "ftp",
     "permissions",
-    "forensics"
+    "misconfiguration",
+    "file-access"
   ]
 }

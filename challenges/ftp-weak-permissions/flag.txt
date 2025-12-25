@@ -1,1 +1,1 @@
-CTF{ftp_permissions_misconfig}
+CTF{ftp_permission_misconfig}
