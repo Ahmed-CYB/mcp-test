@@ -1,0 +1,22 @@
+{
+  "title": "Open FTP Anonymous Access",
+  "description": "Explore an open FTP server that allows anonymous access to find the hidden flag.",
+  "difficulty": "easy",
+  "category": "misc",
+  "flag": "CTF{anonymous_ftp_access}",
+  "hints": [
+    "Try using an FTP client to connect anonymously.",
+    "Look for the flag file in the root directory of the FTP server.",
+    "The flag file is named `flag.txt`."
+  ],
+  "learningObjectives": [
+    "Understand FTP server misconfigurations.",
+    "Recognize the risks of allowing anonymous FTP access.",
+    "Learn to navigate and explore FTP directories."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "anonymous-access"
+  ]
+}
