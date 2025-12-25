@@ -1,22 +1,15 @@
 # Insecure Login Portal
 
 ## Learning Objectives
-- Understand SQL Injection
-- Explore authentication vulnerabilities
-- Practice exploiting web application vulnerabilities
+- Understand SQL Injection vulnerabilities
+- Learn about weak authentication mechanisms
+- Practice exploiting SQL Injection to bypass login
 
-## Challenge Description
-A fictional company's internal application login portal contains vulnerabilities. Your mission is to gain unauthorized access using SQL Injection.
+## Scenario
+In this challenge, you will attempt to gain access to a corporate login portal that is vulnerable to SQL Injection. Use your skills to find a way to log in without knowing the actual credentials.
 
-Access the application at http://victim:8080 and try to log in without valid credentials.
+## Access the Challenge
+- Use Kali Linux (attacker) to connect to the victim web server at http://victim:8080
 
-## Deployment
-Run the following command to start the challenge:
-```sh
-docker-compose up --build
-```
-
-## Hints
-1. Try common SQL Injection payloads.
-2. Consider how authentication queries can be bypassed.
-3. String concatenation in SQL queries can lead to vulnerabilities.
+## Flag
+The flag is located in `/var/www/html/flag.txt` once you successfully log in.

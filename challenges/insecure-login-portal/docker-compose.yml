@@ -18,7 +18,7 @@ services:
     networks:
       ctf-network:
         ipv4_address: 172.27.193.100
-    shm_size: 512m
+      ctf-instances-network: {}
 networks:
   ctf-network:
     driver: bridge
@@ -26,3 +26,6 @@ networks:
       config:
         - subnet: 172.27.193.0/24
           gateway: 172.27.193.1
+  ctf-instances-network:
+    external: true
+    name: ctf-instances-network

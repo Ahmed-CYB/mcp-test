@@ -8,22 +8,44 @@ FROM kalilinux/kali-rolling
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Update and install essential packages
+# Update and install SSH server + essential Kali tools
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    kali-desktop-xfce \
-    xfce4 \
-    xfce4-terminal \
-    tigervnc-standalone-server \
-    tigervnc-common \
-    dbus-x11 \
-    supervisor \
+    openssh-server \
+    sudo \
+    net-tools \
+    iproute2 \
+    iputils-ping \
+    dnsutils \
+    traceroute \
+    whois \
+    netcat-traditional \
+    vim \
+    nano \
+    less \
+    man-db \
+    procps \
+    psmisc \
+    lsof \
+    htop \
+    wget \
+    curl \
+    git \
+    unzip \
+    zip \
+    tar \
+    gzip \
+    bzip2 \
+    file \
+    tree \
+    ca-certificates \
+    openssl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Install challenge-specific tools
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends --fix-missing \
     python3 python3-pip \
     curl \
     wget \
@@ -32,39 +54,38 @@ RUN apt-get update && \
     nmap \
     netcat-traditional \
     binutils \
-    vim \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    || (echo "⚠️ Some packages failed, retrying..." && \
+        apt-get update && \
+        apt-get install -y --fix-missing \
+        python3 python3-pip \
+        curl \
+        wget \
+        git \
+        nano \
+        nmap \
+        netcat-traditional \
+        binutils \
+    ) && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Setup VNC
-RUN mkdir -p /root/.vnc && \
-    echo "password" | vncpasswd -f > /root/.vnc/passwd && \
-    chmod 600 /root/.vnc/passwd
+# Configure SSH server for Guacamole access
+RUN mkdir -p /var/run/sshd && \
+    echo 'root:kali' | chpasswd && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
+    echo > /etc/motd && \
+    chmod -x /etc/update-motd.d/* 2>/dev/null || true && \
+    echo 'export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "' >> /root/.bashrc && \
+    echo 'export TERM=xterm-256color' >> /root/.bashrc && \
+    sed -i 's/session    optional     pam_motd.so/# session    optional     pam_motd.so/' /etc/pam.d/sshd && \
+    sed -i 's/session    optional     pam_mail.so/# session    optional     pam_mail.so/' /etc/pam.d/sshd
 
-# Create VNC startup script
-RUN echo '#!/bin/bash\n\
-xrdb $HOME/.Xresources\n\
-startxfce4 &' > /root/.vnc/xstartup && \
-    chmod +x /root/.vnc/xstartup
+# Expose SSH port
+EXPOSE 22
 
-# Setup supervisor to manage VNC
-RUN mkdir -p /var/log/supervisor
-COPY <<EOF /etc/supervisor/conf.d/supervisord.conf
-[supervisord]
-nodaemon=true
-logfile=/var/log/supervisor/supervisord.log
-pidfile=/var/run/supervisord.pid
+# Set working directory
+WORKDIR /root
 
-[program:vnc]
-command=/usr/bin/vncserver :1 -geometry 1280x720 -depth 24 -localhost no
-autostart=true
-autorestart=true
-stdout_logfile=/var/log/supervisor/vnc.log
-stderr_logfile=/var/log/supervisor/vnc_err.log
-EOF
-
-# Expose VNC port
-EXPOSE 5901
-
-# Start supervisor
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+# Start SSH server
+CMD ["/usr/sbin/sshd", "-D"]
