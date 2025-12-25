@@ -1,0 +1,22 @@
+{
+  "title": "Insecure FTP Storage",
+  "description": "Exploit an FTP server with improper access controls to retrieve sensitive data.",
+  "difficulty": "medium",
+  "category": "misc",
+  "flag": "CTF{insecure_ftp_access}",
+  "hints": [
+    "Try connecting to the FTP server using an anonymous account.",
+    "Check the default directories accessible by anonymous users.",
+    "The flag is in the root directory of the FTP server."
+  ],
+  "learningObjectives": [
+    "Understand FTP server misconfigurations.",
+    "Learn to exploit anonymous FTP access.",
+    "Practice file enumeration techniques."
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "file-access"
+  ]
+}
