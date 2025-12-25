@@ -1,0 +1,22 @@
+{
+  "title": "FTP Vulnerable File Disclosure",
+  "description": "An FTP server is misconfigured, allowing unauthorized access to sensitive files. Exploit the misconfiguration to find the flag.",
+  "difficulty": "medium",
+  "category": "misc",
+  "flag": "CTF{ftp_misconfig_flag}",
+  "hints": [
+    "Check if anonymous FTP access is enabled.",
+    "Look around the directories for any accessible sensitive files.",
+    "Try different FTP commands to see file listings."
+  ],
+  "learningObjectives": [
+    "Understand FTP server misconfigurations",
+    "Learn to enumerate FTP servers for publicly accessible files",
+    "Practice accessing FTP services from a penetration testing perspective"
+  ],
+  "tags": [
+    "ftp",
+    "misconfiguration",
+    "file-disclosure"
+  ]
+}
