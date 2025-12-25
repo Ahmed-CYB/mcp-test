@@ -1,0 +1,22 @@
+{
+  "title": "FTP Weak Password Challenge",
+  "description": "A challenge that focuses on the dangers of weak password policies in FTP servers.",
+  "difficulty": "easy",
+  "category": "misc",
+  "flag": "CTF{weak_password_exploited}",
+  "hints": [
+    "Try using common password cracking tools available in Kali Linux.",
+    "The password is a simple numeric sequence.",
+    "Consider how passwords are often guessed based on common patterns."
+  ],
+  "learningObjectives": [
+    "Understand the importance of strong password policies.",
+    "Learn to identify weak passwords using FTP.",
+    "Practice using password cracking tools."
+  ],
+  "tags": [
+    "ftp",
+    "password-cracking",
+    "security"
+  ]
+}
