@@ -1,0 +1,23 @@
+{
+  "title": "FTP Sensitive Data Leak",
+  "description": "Exploit a misconfigured FTP server to discover sensitive information.",
+  "difficulty": "medium",
+  "category": "forensics",
+  "flag": "CTF{sensitive_ftp_data_leak}",
+  "hints": [
+    "Connect to the FTP server using anonymous login.",
+    "Explore the directories for misplaced sensitive files.",
+    "The flag is in a file that is not typically meant to be publicly accessible."
+  ],
+  "learningObjectives": [
+    "Understand the risks of misconfigured FTP servers.",
+    "Learn to identify and explore accessible directories.",
+    "Practice using FTP clients for exploration and data retrieval."
+  ],
+  "tags": [
+    "ftp",
+    "data-leak",
+    "misconfiguration",
+    "forensics"
+  ]
+}
