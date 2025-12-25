@@ -1,0 +1,22 @@
+{
+  "title": "FTP Unprotected Access Exploit",
+  "description": "Leverage a misconfigured FTP server to gain unauthorized access and retrieve sensitive data.",
+  "difficulty": "medium",
+  "category": "web",
+  "flag": "CTF{ftp_access_vulnerability}",
+  "hints": [
+    "Check if anonymous login is allowed.",
+    "Use standard FTP clients to connect.",
+    "Look for a file named `flag.txt` in accessible directories."
+  ],
+  "learningObjectives": [
+    "Understand FTP server misconfigurations.",
+    "Learn about anonymous FTP access.",
+    "Practice exploiting unauthorized access vulnerabilities."
+  ],
+  "tags": [
+    "ftp",
+    "anonymous-access",
+    "web-security"
+  ]
+}
