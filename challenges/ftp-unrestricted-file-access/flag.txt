@@ -1,0 +1,1 @@
+CTF{ftp_directory_traversal}
