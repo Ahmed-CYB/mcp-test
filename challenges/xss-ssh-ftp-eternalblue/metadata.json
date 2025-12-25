@@ -1,0 +1,24 @@
+{
+  "title": "XSS, SSH, FTP, and EternalBlue Exploitation Challenge",
+  "description": "Explore a range of vulnerabilities across multiple services in this complex CTF challenge.",
+  "difficulty": "hard",
+  "category": "web",
+  "flag": "CTF{exploiting_the_eternal_blue}",
+  "hints": [
+    "The web application might echo user inputs unsafely.",
+    "Try default credentials for accessing SSH and FTP.",
+    "EternalBlue requires Metasploit or similar tools to exploit."
+  ],
+  "learningObjectives": [
+    "Understand and exploit cross-site scripting vulnerabilities.",
+    "Learn to identify and attack services with weak credentials.",
+    "Execute a real-world attack using EternalBlue."
+  ],
+  "tags": [
+    "xss",
+    "ssh",
+    "ftp",
+    "eternalblue",
+    "web-security"
+  ]
+}
