@@ -1,0 +1,2 @@
+Congratulations! You have found the flag.
+CTF{ftp_eternalblue_success}
