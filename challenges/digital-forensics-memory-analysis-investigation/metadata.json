@@ -1,0 +1,34 @@
+{
+  "name": "digital-forensics-memory-analysis-investigation",
+  "title": "Digital Forensics: Memory Analysis Investigation",
+  "description": "A suspicious workstation has been seized during a cybersecurity incident. As a digital forensic investigator, you must analyze the memory dump to uncover evidence of malicious activity, extract artifacts, and piece together what happened on the compromised system.",
+  "category": "forensics",
+  "subcategories": [
+    "forensics"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{forensics_3afzztr1wec9}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "kali-attacker",
+      "type": "attacker",
+      "ip": "172.28.193.3",
+      "services": [
+        "ssh"
+      ]
+    },
+    {
+      "name": "evidence-server",
+      "type": "victim",
+      "ip": "172.28.193.10",
+      "services": [
+        "ftp",
+        "http"
+      ]
+    }
+  ],
+  "stages": 6,
+  "created": "2025-12-28T15:42:34.776Z",
+  "generator": "universal-structure-agent"
+}

