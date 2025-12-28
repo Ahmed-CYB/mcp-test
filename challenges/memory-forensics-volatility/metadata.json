@@ -1,0 +1,22 @@
+{
+  "title": "Memory Forensics with Volatility",
+  "description": "Analyze a memory dump to find traces of a compromise and extract the hidden flag.",
+  "difficulty": "medium",
+  "category": "forensics",
+  "flag": "CTF{memory_dump_analysis_2024}",
+  "hints": [
+    "Start by listing the processes running at the time of the dump.",
+    "Check for any unusual or hidden processes.",
+    "Look for any strings that might indicate a flag hidden in memory."
+  ],
+  "learningObjectives": [
+    "Understand the basics of memory forensics",
+    "Use Volatility to identify and analyze suspicious activities",
+    "Practice extracting information from a memory dump"
+  ],
+  "tags": [
+    "memory-forensics",
+    "volatility",
+    "digital-forensics"
+  ]
+}
