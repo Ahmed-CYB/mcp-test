@@ -1,0 +1,33 @@
+FROM kalilinux/kali-rolling
+
+# Update and install base tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo vim nano curl wget git net-tools iputils-ping \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install forensics tools
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    binwalk foremost autopsy sleuthkit exiftool steghide strings file hexedit \
+    p7zip-full unrar unzip volatility3 python3 python3-pip \
+    nmap netcat-traditional tcpdump wireshark-common tshark \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages for forensics
+RUN pip3 install --no-cache-dir volatility3 pycryptodome
+
+# Configure SSH and users
+RUN mkdir -p /var/run/sshd && \
+    echo 'root:toor' | chpasswd && \
+    useradd -m -s /bin/bash kali && \
+    echo 'kali:kali' | chpasswd && \
+    usermod -aG sudo kali && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+# Create challenge directory
+RUN mkdir -p /challenge && chmod 755 /challenge
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]

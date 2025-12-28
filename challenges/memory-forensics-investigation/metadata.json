@@ -1,0 +1,26 @@
+{
+  "name": "memory-forensics-investigation",
+  "title": "Memory Forensics Investigation",
+  "description": "You are a digital forensics investigator who has been provided with a memory dump from a compromised system. Use your forensics workstation equipped with Volatility tools to analyze the memory dump and uncover hidden evidence, malicious processes, network connections, and extract critical information to solve the case.",
+  "category": "forensics",
+  "subcategories": [
+    "forensics"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{mb3phfd2frl73p5o}",
+  "machines": 1,
+  "machineDetails": [
+    {
+      "name": "forensics-workstation",
+      "type": "attacker",
+      "ip": "172.23.198.3",
+      "services": [
+        "ssh",
+        "desktop-environment"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2025-12-28T16:18:42.639Z",
+  "generator": "universal-structure-agent"
+}

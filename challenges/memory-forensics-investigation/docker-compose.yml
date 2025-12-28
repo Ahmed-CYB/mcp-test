@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  ctf-memory-forensics-investigation-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-memory-forensics-investigation-attacker
+    hostname: forensics-workstation
+    networks:
+      ctf-memory-forensics-investigation-net:
+        ipv4_address: 172.23.198.3
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-memory-forensics-investigation-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.198.0/24
+          gateway: 172.23.198.1
