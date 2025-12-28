@@ -1,29 +1,20 @@
 # Memory Forensics Challenge
 
+## Objective
+Analyze the provided memory dump using Volatility to uncover hidden information and find the flag.
+
+## Instructions
+1. Deploy the challenge using Docker.
+2. Access the attacker machine through the provided Kali Linux environment.
+3. Use Volatility to analyze `memory.raw` and find the hidden flag.
+
 ## Learning Objectives
-- Understand the basics of memory forensics
-- Use Volatility to analyze memory dumps
-- Extract sensitive information from a memory image
-
-## Challenge Description
-A compromised server's memory dump is available for analysis. Your task is to investigate the memory using Volatility and uncover the hidden flag.
-
-### Connect to the Attacker Machine
-You can use the provided attacker machine with a full suite of forensic tools.
-
-### Access the Memory Dump
-Download the memory dump from the victim container:
-```
-curl http://172.28.0.10:8080/memory.raw -o memory.raw
-```
-
-### Analyze the Memory Dump
-Use Volatility on the attacker machine to analyze the memory and extract the flag.
+- Understand memory forensics concepts.
+- Use Volatility for memory analysis.
+- Extract useful information from memory dumps.
 
 ## Hints
-1. Start by listing the processes in the memory dump.
-2. Look for unusual processes or hidden data structures.
-3. The flag is stored within a process related to suspicious activity.
+1. Start by identifying the memory profile with Volatility.
+2. Look for processes and network connections.
+3. Search for strings that may hint at sensitive information.
 
-## Flag
-The flag format is CTF{memory_analysis_with_volatility}

@@ -1,22 +1,22 @@
 {
   "title": "Memory Forensics with Volatility",
-  "description": "Investigate a compromised server's memory dump using Volatility.",
+  "description": "Analyze a memory dump to find hidden information using Volatility.",
   "difficulty": "medium",
   "category": "forensics",
-  "flag": "CTF{memory_analysis_with_volatility}",
+  "flag": "CTF{memory_forensics_hidden_flag_2024}",
   "hints": [
-    "Start by listing the processes in the memory dump.",
-    "Look for unusual processes or hidden data structures.",
-    "The flag is stored within a process related to suspicious activity."
+    "Start by identifying the correct memory profile with Volatility.",
+    "Check for running processes and recently accessed files.",
+    "Use the strings plugin to search for text within the memory dump."
   ],
   "learningObjectives": [
-    "Understand memory forensics principles.",
-    "Learn to use Volatility for memory analysis.",
-    "Practice extracting sensitive information from memory dumps."
+    "Understand the basics of memory forensics.",
+    "Learn to use Volatility for analyzing memory dumps.",
+    "Identify and extract useful information from memory dumps."
   ],
   "tags": [
-    "memory-forensics",
-    "volatility",
-    "digital-forensics"
+    "memory-analysis",
+    "forensics",
+    "volatility"
   ]
 }
