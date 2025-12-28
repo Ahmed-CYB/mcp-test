@@ -1,0 +1,28 @@
+VOLATILITY MEMORY ANALYSIS - Internal Victim
+===========================================
+Memory Dump: internal-victim-memory.raw
+Profile: Linux x64
+Analysis Date: 2024-01-27 15:30:00
+
+PROCESS LIST (Suspicious Activity):
+PID  PPID Process          Start Time
+5678 1    sshd             14:22:15
+5690 5678 sudo             14:22:18
+5695 5678 sudo             14:22:25
+5698 5695 openssl          14:22:30
+5701 5678 bash             14:22:20
+
+COMMAND LINE ANALYSIS:
+PID 5690: sudo /bin/ls /root/sensitive
+PID 5695: sudo /bin/cp /root/sensitive/flag.txt.encrypted /tmp/
+PID 5698: openssl enc -aes-256-cbc -d -in /tmp/flag.txt.encrypted -out /tmp/decrypted.txt -k [REDACTED]
+PID 5701: bash -c 'echo Q1RGe2Z0cF9zZXJ2ZXJfZXhwb3NlZF9jcmVkZW50aWFsc19hbmRfa2V5c30K | base64 -d'
+
+FILE SYSTEM ARTIFACTS:
+/tmp/flag.txt.encrypted - Encrypted flag file
+/tmp/decrypted.txt - Temporary decryption output
+/home/serviceaccount/.ssh/authorized_keys - SSH access logs
+
+NETWORK CONNECTIONS:
+203.45.67.89:45231 -> 192.168.1.50:22 (SSH)
+192.168.1.50:35678 -> 192.168.1.100:21 (FTP - prior connection)

@@ -1,0 +1,27 @@
+SECURITY INCIDENT REPORT
+======================
+Incident ID: INC-2024-0342
+Date: 2024-01-27 14:23:00 UTC
+Severity: HIGH
+Reporting Analyst: J. Martinez
+
+SUMMARY:
+Suspicious network activity detected on corporate network.
+Unauthorized access to FTP server (192.168.1.100) followed by
+lateral movement to internal victim machine (192.168.1.50).
+
+TIMELINE:
+14:15 - Anomalous FTP login attempts detected
+14:18 - Successful FTP authentication from 203.45.67.89
+14:22 - SSH connection established to internal-victim
+14:25 - File encryption activity observed
+
+AFFECTED SYSTEMS:
+- FTP Server: ftp.corpnet.local (192.168.1.100)
+- Internal Victim: internal-victim.corpnet.local (192.168.1.50)
+
+EVIDENCE COLLECTED:
+- Network packet capture (network_traffic.pcap)
+- FTP server logs (ftp_access.log)
+- System memory dump from internal victim
+- Encrypted files recovered

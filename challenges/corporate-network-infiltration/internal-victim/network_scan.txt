@@ -1,0 +1,30 @@
+NMAP SCAN RESULTS - Corporate Network Reconnaissance
+===================================================
+Scan Date: 2024-01-27 14:10:00
+Target Range: 192.168.1.0/24
+
+Host: 192.168.1.100 (ftp.corpnet.local)
+Ports:
+21/tcp   open  ftp     vsftpd 3.0.3
+22/tcp   open  ssh     OpenSSH 7.4
+80/tcp   open  http    Apache/2.4.6
+
+Host: 192.168.1.50 (internal-victim.corpnet.local)
+Ports:
+22/tcp   open  ssh     OpenSSH 8.0
+3389/tcp open  rdp     Microsoft Terminal Services
+
+Host: 192.168.1.1 (gateway)
+Ports:
+53/tcp   open  domain  ISC BIND 9.11.4
+80/tcp   open  http    nginx 1.14.1
+443/tcp  open  https   nginx 1.14.1
+
+VULNERABILITIES IDENTIFIED:
+- FTP server allows anonymous login
+- Weak SSH configuration on internal victim
+- Outdated Apache version on FTP server
+
+RECOMMENDATION:
+Investigate FTP server for credential exposure
+Analyze internal victim for data exfiltration
