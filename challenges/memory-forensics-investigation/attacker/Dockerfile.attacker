@@ -14,6 +14,8 @@ RUN apt-get update && \
     git \
     net-tools \
     iputils-ping \
+    ca-certificates \
+    unzip \
     binwalk \
     binutils \
     foremost \

@@ -6,7 +6,7 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-memory-forensics-investigation-attacker
-    hostname: attacker-workstation
+    hostname: attacker-machine
     networks:
       ctf-memory-forensics-investigation-net:
         ipv4_address: 172.23.198.3
@@ -22,6 +22,8 @@ services:
     networks:
       ctf-memory-forensics-investigation-net:
         ipv4_address: 172.23.198.10
+    ports:
+      - "22"
     stdin_open: true
     tty: true
 
