@@ -1,0 +1,23 @@
+{
+  "title": "Advanced Memory Forensics Challenge",
+  "description": "Uncover the hidden flag in a complex memory dump analysis scenario.",
+  "difficulty": "hard",
+  "category": "forensics",
+  "flag": "CTF{hidden_in_memory_analysis_2024}",
+  "hints": [
+    "Start with `pslist` to get an overview of running processes.",
+    "Look into network connections with `netstat` for anomalies.",
+    "Dump specific process memory to find encoded data."
+  ],
+  "learningObjectives": [
+    "Understand advanced memory analysis techniques",
+    "Learn to use Volatility plugins effectively",
+    "Practice extracting encoded data from process memory"
+  ],
+  "tags": [
+    "memory-forensics",
+    "volatility",
+    "process-analysis",
+    "data-exfiltration"
+  ]
+}
