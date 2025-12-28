@@ -1,19 +1,19 @@
 {
   "name": "ftp-misconfiguration-challenge",
   "title": "FTP Misconfiguration Challenge",
-  "description": "A company has deployed an FTP server with security misconfigurations. Your task is to identify and exploit these vulnerabilities to retrieve the hidden flag.",
+  "description": "A company has deployed an FTP server for file sharing but has made several configuration mistakes. Exploit these misconfigurations to gain unauthorized access and retrieve sensitive information.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_t4u7rqs7sqs1}",
+  "flag": "CTF{ftp_anon_access_leads_to_credential_exposure_9a8b7c6d}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.26.193.145",
+      "ip": "172.23.193.69",
       "services": [
         "ftp",
         "ssh"
@@ -22,13 +22,13 @@
     {
       "name": "attacker",
       "type": "attacker",
-      "ip": "172.26.193.3",
+      "ip": "172.23.193.3",
       "services": [
         "ssh"
       ]
     }
   ],
   "stages": 4,
-  "created": "2025-12-28T21:54:29.641Z",
+  "created": "2025-12-28T21:58:44.985Z",
   "generator": "universal-structure-agent"
 }

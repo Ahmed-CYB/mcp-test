@@ -1,0 +1,1 @@
+CTF{ftp_anon_access_leads_to_credential_exposure_9a8b7c6d}

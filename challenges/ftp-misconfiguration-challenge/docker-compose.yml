@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "ftp-misconfiguration-challenge"
     networks:
       ctf-ftp-misconfiguration-challenge-net:
-        ipv4_address: 172.26.193.145
+        ipv4_address: 172.23.193.69
     ports:
       - "21"
       - "22"
@@ -30,7 +30,7 @@ services:
       com.ctf.challenge: "ftp-misconfiguration-challenge"
     networks:
       ctf-ftp-misconfiguration-challenge-net:
-        ipv4_address: 172.26.193.3
+        ipv4_address: 172.23.193.3
       ctf-instances-network:
     stdin_open: true
     tty: true
@@ -40,7 +40,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.26.193.0/24
-          gateway: 172.26.193.1
+        - subnet: 172.23.193.0/24
+          gateway: 172.23.193.1
   ctf-instances-network:
     external: true
