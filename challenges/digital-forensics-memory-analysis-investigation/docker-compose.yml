@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  ctf-digital-forensics-memory-analysis-investigation-kali-attacker:
+  ctf-digital-forensics-memory-analysis-investigation-attacker:
     build:
       context: ./attacker
       dockerfile: Dockerfile.attacker
-    container_name: ctf-digital-forensics-memory-analysis-investigation-kali-attacker
-    hostname: kali-attacker
+    container_name: ctf-digital-forensics-memory-analysis-investigation-attacker
+    hostname: attacker-workstation
     networks:
       ctf-digital-forensics-memory-analysis-investigation-net:
         ipv4_address: 172.28.193.3

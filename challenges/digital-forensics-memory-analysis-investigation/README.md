@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A suspicious workstation has been seized during a cybersecurity incident. As a digital forensic investigator, you must analyze the memory dump to uncover evidence of malicious activity, extract artifacts, and piece together what happened on the compromised system.
+A security incident has occurred and you've been provided with a memory dump from the compromised system. Use volatility to analyze the memory dump and uncover evidence of the attack.
 
 ## Challenge Information
 
@@ -14,34 +14,34 @@ A suspicious workstation has been seized during a cybersecurity incident. As a d
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| kali-attacker | attacker | 172.28.193.3 | ssh |
+| attacker-workstation | attacker | 172.28.193.3 | ssh, volatility3, forensics-tools |
 | evidence-server | victim | 172.28.193.10 | ftp, http |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Download and examine the memory dump file from the evidence server
+Access the evidence server and download the memory dump
 
 ### Stage 2
 
-Use volatility to identify the operating system profile and basic system information
+Identify the correct memory profile using volatility
 
 ### Stage 3
 
-Extract process lists and identify suspicious running processes
+Extract process information and identify suspicious processes
 
 ### Stage 4
 
-Analyze network connections and identify potential command & control communications
+Analyze network connections and recover network artifacts
 
 ### Stage 5
 
-Extract files, registry keys, and other artifacts from memory
+Extract files and strings from memory to find hidden data
 
 ### Stage 6
 
-Reconstruct the timeline of malicious activity and find hidden evidence
+Reconstruct the attack timeline and find all flags
 
 ## Getting Started
 
