@@ -1,0 +1,26 @@
+VOLATILITY2 ANALYSIS WORKFLOW
+============================
+
+STEP 1: Identify memory profile
+vol.py -f memory.raw imageinfo
+
+STEP 2: List running processes
+vol.py -f memory.raw --profile=Win7SP1x64 pslist
+
+STEP 3: Check process tree
+vol.py -f memory.raw --profile=Win7SP1x64 pstree
+
+STEP 4: Examine suspicious process (PID 2847)
+vol.py -f memory.raw --profile=Win7SP1x64 dlllist -p 2847
+
+STEP 5: Extract command line arguments
+vol.py -f memory.raw --profile=Win7SP1x64 cmdline
+
+STEP 6: Dump process memory
+vol.py -f memory.raw --profile=Win7SP1x64 memdump -p 2847 -D ./
+
+STEP 7: Search for encoded data
+strings 2847.dmp | grep -E '[A-Za-z0-9+/]{20,}='
+
+STEP 8: Decode base64 strings
+echo 'Q1RGe21lbTByeV9mb3JlbnNpY3NfaDRja2VyX2YwdW5kfQ==' | base64 -d

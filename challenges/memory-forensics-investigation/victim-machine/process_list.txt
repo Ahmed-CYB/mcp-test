@@ -1,21 +1,25 @@
-SUSPICIOUS PROCESS ANALYSIS
-===========================
-Extracted from memory.raw using pslist
+MEMORY PROCESS ANALYSIS
+======================
+Profile: Win7SP1x64
+Capture Time: 2024-01-27 14:30:00
 
-PID  PPID Process Name        Start Time           Exit Time
-4    0    System             2024-01-27 12:00:01  
-288  4    smss.exe           2024-01-27 12:00:02  
-376  288  csrss.exe          2024-01-27 12:00:03  
-424  288  wininit.exe        2024-01-27 12:00:04  
-436  424  services.exe       2024-01-27 12:00:05  
-444  424  lsass.exe          2024-01-27 12:00:06  
-552  436  svchost.exe        2024-01-27 12:00:08  
-620  436  svchost.exe        2024-01-27 12:00:09  
-1248 436  spoolsv.exe        2024-01-27 12:00:15  
-1456 552  explorer.exe       2024-01-27 12:01:22  
-2184 1456 notepad.exe        2024-01-27 13:45:12  
-2256 1456 powershell.exe     2024-01-27 13:45:18  
-2344 2256 conhost.exe        2024-01-27 13:45:19  
-2468 2256 svchost.exe        2024-01-27 13:45:25  *** SUSPICIOUS ***
-2512 2468 rundll32.exe       2024-01-27 13:45:28  *** SUSPICIOUS ***
-2588 2512 cmd.exe            2024-01-27 13:45:32  *** SUSPICIOUS ***
+PID   PPID  Process Name        Threads  Handles
+4     0     System              78       512
+272   4     smss.exe            2        29
+344   272   csrss.exe           9        385
+392   272   wininit.exe         3        74
+404   392   services.exe        7        204
+412   392   lsass.exe           6        610
+584   404   svchost.exe         10       356
+648   404   svchost.exe         7        245
+724   404   svchost.exe         20       445
+1456  724   dwm.exe             3        71
+1484  1464  explorer.exe        25       719
+2847  1484  powershell.exe      11       287
+2891  2847  cmd.exe             1        21
+2934  2891  notepad.exe         1        56
+
+SUSPICIOUS ACTIVITY:
+- Process 2847 (powershell.exe) spawned by explorer.exe
+- Process 2891 (cmd.exe) child of PowerShell
+- Notepad process opened by cmd.exe

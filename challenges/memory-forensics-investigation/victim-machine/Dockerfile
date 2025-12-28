@@ -3,7 +3,7 @@ FROM kalilinux/kali-rolling
 # Update and install services
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    openssh-server sudo vim nano simulated-processes evidence-traces \
+    openssh-server sudo vim nano web-server mysql-server \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server

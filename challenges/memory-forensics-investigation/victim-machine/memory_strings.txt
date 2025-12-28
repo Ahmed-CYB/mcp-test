@@ -1,25 +1,28 @@
-MEMORY STRINGS ANALYSIS
-=======================
-Extracted from process 2468 (suspicious svchost.exe)
+MEMORY STRINGS EXTRACTION
+========================
+Extracted from process 2847 (powershell.exe)
 
-COMMAND LINE ARTIFACTS:
-powershell.exe -enc JABmAGwAYQBnAD0AJwBDAFQARgB7AG0AZQBtAF8AZgBvAHIAZQBuAHMAaQBjAHMAXwByAGUAdgBlAGEAbABzAF8AYQBsAGwAfQAnAA==
-cmd.exe /c echo "Data exfiltration complete"
-rundll32.exe advapi32.dll,ProcessIdleTasks
+BASE64 ENCODED STRINGS:
+Q1RGe21lbTByeV9mb3JlbnNpY3NfaDRja2VyX2YwdW5kfQ==
+SUVYIChOZXctT2JqZWN0IE5ldC5XZWJDbGllbnQp
+U3RhcnQtUHJvY2VzcyBub3RlcGFkLmV4ZQ==
 
-NETWORK ARTIFACTS:
-POST /upload HTTP/1.1
-Host: 185.243.115.42:8080
-User-Agent: Mozilla/5.0 (Windows NT 6.1) Malware/1.0
-Content-Type: application/octet-stream
-Content-Length: 2048576
+SUSPICIOUS URLS:
+http://185.243.115.42/payload.ps1
+https://malware-c2.darkweb.com/exfil
+http://pastebin.com/raw/xK9mN2pQ
 
 FILE PATHS:
-C:\Windows\Temp\backup.exe
-C:\Windows\Temp\stolen_data.zip
-C:\Users\victim\Documents\passwords.txt
-C:\Users\victim\Desktop\financial_data.xlsx
+C:\Windows\Temp\update.exe
+C:\Windows\Temp\log.txt
+C:\Windows\Temp\payload.ps1
+C:\Users\administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
 
-ENCRYPTION KEYS:
-AES_KEY: 4d61676963616c4b6579466f7246696c65456e6372797074696f6e
-IV: 496e697469616c697a6174696f6e566563746f72
+COMMAND FRAGMENTS:
+-WindowStyle Hidden
+-ExecutionPolicy Bypass
+IEX (New-Object
+DownloadString
+FromBase64String
+Add-Content -Path
+Remove-Item -Force

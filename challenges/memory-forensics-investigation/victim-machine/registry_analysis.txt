@@ -1,24 +1,24 @@
-REGISTRY HIVE ANALYSIS
-======================
-Extracted using hivelist and printkey commands
+REGISTRY FORENSICS RESULTS
+==========================
+Analysis of registry hives from memory
 
-HIVE LOCATIONS:
-0x8b21c008 \SystemRoot\System32\Config\SOFTWARE
-0x8b23d008 \SystemRoot\System32\Config\SYSTEM  
-0x8b2a5008 \SystemRoot\System32\Config\SAM
-0x90ab7008 \Users\victim\NTUSER.DAT
+MODIFIED KEYS:
+1. HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+   Value: SecurityUpdate
+   Data: C:\Windows\Temp\update.exe
+   Modified: 2024-01-27 14:25:12
 
-AUTORUN ENTRIES (CurrentVersion\Run):
-WindowsUpdate: C:\Windows\System32\svchost.exe -k netsvcs
-SecurityCenter: C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL
-SystemBackup: C:\Windows\Temp\backup.exe /silent
-*** SUSPICIOUS: SystemBackup entry points to temp directory ***
+2. HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce
+   Value: DataBackup
+   Data: powershell.exe -enc Q1RGe21lbTByeV9mb3JlbnNpY3NfaDRja2VyX2YwdW5kfQ==
+   Modified: 2024-01-27 14:27:33
 
-RECENT REGISTRY MODIFICATIONS:
-KEY: Software\Microsoft\Windows\CurrentVersion\Run\SystemBackup
-VALUE: C:\Windows\Temp\backup.exe /silent
-TIMESTAMP: 2024-01-27 13:44:55
+3. HKLM\System\CurrentControlSet\Services\Themes
+   Value: ImagePath
+   Data: %SystemRoot%\system32\svchost.exe -k netsvcs -p -s Themes
+   Modified: 2024-01-27 14:26:45
 
-KEY: Software\Classes\txtfile\shell\open\command  
-VALUE: C:\Windows\Temp\backup.exe "%1"
-TIMESTAMP: 2024-01-27 13:45:02
+ANALYSIS NOTES:
+- Base64 encoded PowerShell command found in RunOnce
+- Suspicious executable in Temp directory
+- Service modification indicates persistence mechanism

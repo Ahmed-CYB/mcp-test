@@ -1,17 +1,17 @@
 {
   "name": "memory-forensics-investigation",
   "title": "Memory Forensics Investigation",
-  "description": "A Windows machine was compromised and a memory dump was captured. Use Volatility2 to analyze the memory dump and extract the hidden flag from the compromised system's memory.",
+  "description": "A security incident has occurred and you have obtained a memory dump from the compromised system. Use volatility2 to analyze the memory dump and extract the hidden flag.",
   "category": "forensics",
   "subcategories": [
     "forensics"
   ],
   "difficulty": "medium",
-  "flag": "CTF{forensics_iyqsdwkr7bga}",
+  "flag": "CTF{mem0ry_forensics_h4cker_f0und}",
   "machines": 2,
   "machineDetails": [
     {
-      "name": "attacker-kali",
+      "name": "attacker-machine",
       "type": "attacker",
       "ip": "172.23.198.3",
       "services": [
@@ -20,17 +20,16 @@
       ]
     },
     {
-      "name": "victim-windows",
+      "name": "victim-machine",
       "type": "victim",
       "ip": "172.23.198.10",
       "services": [
-        "rdp",
-        "smb",
-        "http"
+        "web-server",
+        "database"
       ]
     }
   ],
   "stages": 5,
-  "created": "2025-12-28T18:55:34.427Z",
+  "created": "2025-12-28T19:10:05.280Z",
   "generator": "universal-structure-agent"
 }

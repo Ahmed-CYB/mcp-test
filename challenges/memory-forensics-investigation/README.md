@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A Windows machine was compromised and a memory dump was captured. Use Volatility2 to analyze the memory dump and extract the hidden flag from the compromised system's memory.
+A security incident has occurred and you have obtained a memory dump from the compromised system. Use volatility2 to analyze the memory dump and extract the hidden flag.
 
 ## Challenge Information
 
@@ -14,18 +14,18 @@ A Windows machine was compromised and a memory dump was captured. Use Volatility
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| attacker-kali | attacker | 172.23.198.3 | ssh, file-server |
-| victim-windows | victim | 172.23.198.10 | rdp, smb, http |
+| attacker-machine | attacker | 172.23.198.3 | ssh, file-server |
+| victim-machine | victim | 172.23.198.10 | web-server, database |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Access the attacker machine containing the memory dump file
+Access the attacker machine and locate the memory dump file
 
 ### Stage 2
 
-Use Volatility2 to identify the operating system profile
+Use volatility2 to identify the operating system profile
 
 ### Stage 3
 
@@ -37,7 +37,7 @@ Extract suspicious files or data from memory
 
 ### Stage 5
 
-Locate and decode the hidden flag within the memory artifacts
+Locate and retrieve the hidden flag using various volatility2 plugins
 
 ## Getting Started
 
