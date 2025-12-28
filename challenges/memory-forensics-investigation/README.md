@@ -2,41 +2,42 @@
 
 ## Scenario Description
 
-You are a digital forensics investigator who has been provided with a memory dump from a compromised system. Use your forensics workstation equipped with Volatility tools to analyze the memory dump and uncover hidden evidence, malicious processes, network connections, and extract critical information to solve the case.
+A system has been compromised and a memory dump was captured during the incident. Analyze the memory dump using Volatility2 to uncover the hidden flag and understand what happened during the attack.
 
 ## Challenge Information
 
 - **Categories:** forensics
-- **Machines:** 1
+- **Machines:** 2
 - **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| forensics-workstation | attacker | 172.23.198.3 | ssh, desktop-environment |
+| attacker-machine | attacker | 172.23.198.3 | ssh, file-server |
+| victim-machine | victim | 172.23.198.10 | web-server, database |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Initial memory dump analysis - identify OS profile and basic system info
+Access the attacker machine containing the memory dump file
 
 ### Stage 2
 
-Process analysis - discover running processes and suspicious activities
+Use Volatility2 to identify the memory dump profile and basic system information
 
 ### Stage 3
 
-Network forensics - extract network connections and communications
+Analyze running processes and network connections at time of capture
 
 ### Stage 4
 
-File system artifacts - recover deleted or hidden files from memory
+Extract suspicious artifacts, strings, or hidden data containing the flag
 
 ### Stage 5
 
-Advanced analysis - decrypt or decode obfuscated data to find final flags
+Correlate findings to reconstruct the attack timeline
 
 ## Getting Started
 
