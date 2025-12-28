@@ -1,0 +1,24 @@
+DIGITAL FORENSICS INCIDENT REPORT
+========================================
+DATE: 2024-01-27 14:32:15 UTC
+INVESTIGATOR: Agent Smith
+CASE ID: MEM-2024-0127
+VICTIM: victim-machine (192.168.1.100)
+
+INCIDENT SUMMARY:
+Suspicious activity detected on victim-machine at 13:45 UTC.
+User reported system slowdown and unusual network traffic.
+Memory dump captured before system isolation.
+
+INITIAL OBSERVATIONS:
+- Unknown process consuming high CPU
+- Outbound connections to suspicious IPs
+- Modified system registry entries
+- Encrypted files found in temp directory
+
+EVIDENCE COLLECTED:
+- memory.raw (2.1GB memory dump)
+- network_logs.txt
+- system_timeline.csv
+
+PRIORITY: Analyze memory dump for malware artifacts and data exfiltration

@@ -1,0 +1,24 @@
+REGISTRY HIVE ANALYSIS
+======================
+Extracted using hivelist and printkey commands
+
+HIVE LOCATIONS:
+0x8b21c008 \SystemRoot\System32\Config\SOFTWARE
+0x8b23d008 \SystemRoot\System32\Config\SYSTEM  
+0x8b2a5008 \SystemRoot\System32\Config\SAM
+0x90ab7008 \Users\victim\NTUSER.DAT
+
+AUTORUN ENTRIES (CurrentVersion\Run):
+WindowsUpdate: C:\Windows\System32\svchost.exe -k netsvcs
+SecurityCenter: C:\Windows\System32\rundll32.exe shell32.dll,Control_RunDLL
+SystemBackup: C:\Windows\Temp\backup.exe /silent
+*** SUSPICIOUS: SystemBackup entry points to temp directory ***
+
+RECENT REGISTRY MODIFICATIONS:
+KEY: Software\Microsoft\Windows\CurrentVersion\Run\SystemBackup
+VALUE: C:\Windows\Temp\backup.exe /silent
+TIMESTAMP: 2024-01-27 13:44:55
+
+KEY: Software\Classes\txtfile\shell\open\command  
+VALUE: C:\Windows\Temp\backup.exe "%1"
+TIMESTAMP: 2024-01-27 13:45:02

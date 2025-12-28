@@ -1,0 +1,18 @@
+NETWORK ANALYSIS - NETSCAN OUTPUT
+==================================
+Active connections at time of memory capture
+
+Protocol Local Address        Foreign Address       State    PID  Process
+TCP      192.168.1.100:1234   185.243.115.42:4444   ESTAB    2468 svchost.exe
+TCP      192.168.1.100:1235   185.243.115.42:8080   ESTAB    2512 rundll32.exe
+TCP      192.168.1.100:49152  DNS_SERVER:53         ESTAB    552  svchost.exe
+TCP      192.168.1.100:49153  UPDATE_SERVER:80      ESTAB    620  svchost.exe
+TCP      192.168.1.100:49154  185.243.115.42:443    CLOSE_W  2588 cmd.exe
+UDP      192.168.1.100:137    *:*                   LISTEN   4    System
+UDP      192.168.1.100:138    *:*                   LISTEN   4    System
+
+SUSPICIOUS INDICATORS:
+- Multiple connections to 185.243.115.42 (known C2 server)
+- Unusual ports 4444, 8080 (common backdoor ports)
+- Processes svchost.exe, rundll32.exe with network activity
+- Process names masquerading as legitimate Windows services

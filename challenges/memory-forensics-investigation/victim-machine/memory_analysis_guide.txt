@@ -1,0 +1,27 @@
+VOLATILITY 2 ANALYSIS WORKFLOW
+==============================
+
+STEP 1: Identify OS Profile
+vol.py -f memory.raw imageinfo
+
+STEP 2: List Running Processes
+vol.py -f memory.raw --profile=Win7SP1x64 pslist
+
+STEP 3: Scan for Hidden Processes
+vol.py -f memory.raw --profile=Win7SP1x64 psscan
+
+STEP 4: Examine Process Command Lines
+vol.py -f memory.raw --profile=Win7SP1x64 cmdline
+
+STEP 5: Check Network Connections
+vol.py -f memory.raw --profile=Win7SP1x64 netscan
+
+STEP 6: Extract Process Memory
+vol.py -f memory.raw --profile=Win7SP1x64 memdump -p [PID] -D ./
+
+STEP 7: Search for Strings in Memory
+strings [PID].dmp | grep -i "flag\|password\|key"
+
+STEP 8: Analyze Registry Hives
+vol.py -f memory.raw --profile=Win7SP1x64 hivelist
+vol.py -f memory.raw --profile=Win7SP1x64 printkey -K "Software\\Microsoft\\Windows\\CurrentVersion\\Run"

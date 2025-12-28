@@ -1,22 +1,22 @@
 {
   "name": "memory-forensics-investigation",
   "title": "Memory Forensics Investigation",
-  "description": "A system has been compromised and a memory dump was captured during the incident. Analyze the memory dump using Volatility2 to uncover the hidden flag and understand what happened during the attack.",
+  "description": "A system has been compromised and a memory dump was captured. Analyze the memory dump using Volatility2 to uncover the hidden flag and understand what happened to the victim system.",
   "category": "forensics",
   "subcategories": [
     "forensics"
   ],
   "difficulty": "medium",
-  "flag": "CTF{forensics_roz21e5nf5y_}",
+  "flag": "CTF{mem_forensics_reveals_all}",
   "machines": 2,
   "machineDetails": [
     {
-      "name": "attacker-machine",
+      "name": "attacker-workstation",
       "type": "attacker",
       "ip": "172.23.198.3",
       "services": [
         "ssh",
-        "file-server"
+        "local-filesystem"
       ]
     },
     {
@@ -24,12 +24,12 @@
       "type": "victim",
       "ip": "172.23.198.10",
       "services": [
-        "web-server",
-        "database"
+        "simulated-processes",
+        "malware-artifacts"
       ]
     }
   ],
   "stages": 5,
-  "created": "2025-12-28T18:07:28.378Z",
+  "created": "2025-12-28T18:12:19.293Z",
   "generator": "universal-structure-agent"
 }

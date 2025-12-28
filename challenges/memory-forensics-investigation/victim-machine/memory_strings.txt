@@ -1,0 +1,25 @@
+MEMORY STRINGS ANALYSIS
+=======================
+Extracted from process 2468 (suspicious svchost.exe)
+
+COMMAND LINE ARTIFACTS:
+powershell.exe -enc JABmAGwAYQBnAD0AJwBDAFQARgB7AG0AZQBtAF8AZgBvAHIAZQBuAHMAaQBjAHMAXwByAGUAdgBlAGEAbABzAF8AYQBsAGwAfQAnAA==
+cmd.exe /c echo "Data exfiltration complete"
+rundll32.exe advapi32.dll,ProcessIdleTasks
+
+NETWORK ARTIFACTS:
+POST /upload HTTP/1.1
+Host: 185.243.115.42:8080
+User-Agent: Mozilla/5.0 (Windows NT 6.1) Malware/1.0
+Content-Type: application/octet-stream
+Content-Length: 2048576
+
+FILE PATHS:
+C:\Windows\Temp\backup.exe
+C:\Windows\Temp\stolen_data.zip
+C:\Users\victim\Documents\passwords.txt
+C:\Users\victim\Desktop\financial_data.xlsx
+
+ENCRYPTION KEYS:
+AES_KEY: 4d61676963616c4b6579466f7246696c65456e6372797074696f6e
+IV: 496e697469616c697a6174696f6e566563746f72
