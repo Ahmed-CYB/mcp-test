@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  victim:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ctf-memory-forensics-volatility-challenge-victim
+    hostname: victim
+    networks:
+      ctf-network:
+        ipv4_address: 172.23.196.156
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-memory-forensics-volatility-challenge-attacker
+    hostname: attacker
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    networks:
+      ctf-network:
+        ipv4_address: 172.23.196.3
+      ctf-instances-network: {}
+networks:
+  ctf-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.196.0/24
+          gateway: 172.23.196.1
+  ctf-instances-network:
+    external: true
+    name: ctf-instances-network
