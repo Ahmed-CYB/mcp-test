@@ -6,24 +6,25 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-memory-forensics-investigation-attacker
-    hostname: attacker-machine
+    hostname: attacker-kali
     networks:
       ctf-memory-forensics-investigation-net:
         ipv4_address: 172.23.198.3
     stdin_open: true
     tty: true
 
-  ctf-memory-forensics-investigation-victim-workstation:
+  ctf-memory-forensics-investigation-victim-windows:
     build:
-      context: ./victim-workstation
+      context: ./victim-windows
       dockerfile: Dockerfile
-    container_name: ctf-memory-forensics-investigation-victim-workstation
-    hostname: victim-workstation
+    container_name: ctf-memory-forensics-investigation-victim-windows
+    hostname: victim-windows
     networks:
       ctf-memory-forensics-investigation-net:
         ipv4_address: 172.23.198.10
     ports:
       - "445"
+      - "80"
     stdin_open: true
     tty: true
 
