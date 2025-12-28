@@ -48,15 +48,28 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends --fix-missing \
     binwalk \
     foremost \
+    file \
     binutils \
     libimage-exiftool-perl \
     steghide \
-    file \
+    default-jdk \
+    ruby ruby-dev \
+    python3-pip \
+    sleuthkit \
+    autopsy \
+    unzip \
+    zip \
+    tar \
+    gzip \
+    bzip2 \
+    p7zip-full \
+    unrar \
+    hexedit \
+    xxd \
     python3 python3-pip \
     git \
     nano \
-    unzip \
-    volatility3 \
+    vim \
     curl \
     wget \
     || (echo "⚠️ Some packages failed, retrying..." && \
@@ -64,20 +77,39 @@ RUN apt-get update && \
         apt-get install -y --fix-missing \
         binwalk \
         foremost \
+        file \
         binutils \
         libimage-exiftool-perl \
         steghide \
-        file \
+        default-jdk \
+        ruby ruby-dev \
+        python3-pip \
+        sleuthkit \
+        autopsy \
+        unzip \
+        zip \
+        tar \
+        gzip \
+        bzip2 \
+        p7zip-full \
+        unrar \
+        hexedit \
+        xxd \
         python3 python3-pip \
         git \
         nano \
-        unzip \
-        volatility3 \
+        vim \
         curl \
         wget \
     ) && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+
+# Install Python packages via pip
+RUN pip3 install --no-cache-dir volatility3 && \
+    echo '✅ Python tools installed: volatility3'
+
 
 # Configure SSH server for Guacamole access
 RUN mkdir -p /var/run/sshd && \
