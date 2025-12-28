@@ -1,0 +1,19 @@
+INCIDENT TIMELINE
+Based on memory dump analysis
+
+08:15:22 - System boot initiated
+08:16:45 - User logon, explorer.exe started (PID 2048)
+14:25:30 - Suspicious email attachment opened
+14:28:12 - PowerShell execution with encoded command (PID 3456)
+14:28:15 - Malicious svchost32.exe spawned (PID 3724)
+14:28:18 - Network connection established to 185.243.115.42
+14:28:45 - Registry modification for persistence
+14:29:03 - Command prompt spawned (PID 3892)
+14:29:15 - Base64 encoded data processed
+14:29:30 - Additional C2 connection to 94.156.79.23
+14:30:15 - Memory dump captured
+
+KEY OBSERVATION:
+The malicious activity spans approximately 5 minutes
+Flag appears to be embedded in cmd.exe process memory
+Base64 encoding used to obfuscate the flag data

@@ -1,25 +1,19 @@
-MEMORY PROCESS ANALYSIS
-======================
-Profile: Win7SP1x64
-Capture Time: 2024-01-27 14:30:00
+PROCESS LISTING FROM MEMORY DUMP
+Generated: 2024-01-27 14:30:15 UTC
 
-PID   PPID  Process Name        Threads  Handles
-4     0     System              78       512
-272   4     smss.exe            2        29
-344   272   csrss.exe           9        385
-392   272   wininit.exe         3        74
-404   392   services.exe        7        204
-412   392   lsass.exe           6        610
-584   404   svchost.exe         10       356
-648   404   svchost.exe         7        245
-724   404   svchost.exe         20       445
-1456  724   dwm.exe             3        71
-1484  1464  explorer.exe        25       719
-2847  1484  powershell.exe      11       287
-2891  2847  cmd.exe             1        21
-2934  2891  notepad.exe         1        56
-
-SUSPICIOUS ACTIVITY:
-- Process 2847 (powershell.exe) spawned by explorer.exe
-- Process 2891 (cmd.exe) child of PowerShell
-- Notepad process opened by cmd.exe
+PID   PPID  Process Name          Start Time           Path
+4     0     System                2024-01-27 08:15:22  
+88    4     Registry              2024-01-27 08:15:20  
+412   4     smss.exe              2024-01-27 08:15:22  C:\Windows\System32\smss.exe
+524   412   csrss.exe             2024-01-27 08:15:25  C:\Windows\System32\csrss.exe
+596   412   wininit.exe           2024-01-27 08:15:26  C:\Windows\System32\wininit.exe
+604   412   csrss.exe             2024-01-27 08:15:26  C:\Windows\System32\csrss.exe
+668   596   services.exe          2024-01-27 08:15:28  C:\Windows\System32\services.exe
+684   596   lsass.exe             2024-01-27 08:15:28  C:\Windows\System32\lsass.exe
+1248  668   svchost.exe           2024-01-27 08:15:35  C:\Windows\System32\svchost.exe
+1356  668   svchost.exe           2024-01-27 08:15:36  C:\Windows\System32\svchost.exe
+2048  1356  explorer.exe          2024-01-27 08:16:45  C:\Windows\explorer.exe
+3456  2048  powershell.exe        2024-01-27 14:28:12  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+3724  3456  svchost32.exe         2024-01-27 14:28:15  C:\Windows\Temp\svchost32.exe
+3892  3724  cmd.exe               2024-01-27 14:29:03  C:\Windows\System32\cmd.exe
+4012  3892  conhost.exe           2024-01-27 14:29:03  C:\Windows\System32\conhost.exe

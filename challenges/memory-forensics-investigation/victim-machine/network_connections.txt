@@ -1,19 +1,15 @@
-NETWORK CONNECTION ANALYSIS
-===========================
-Extracted from memory dump using netscan
+NETWORK CONNECTIONS FROM MEMORY ANALYSIS
+Extracted using: volatility netscan
 
-Active Connections:
-Offset     Proto Local Address      Foreign Address     State    PID
-0x7d8a5010 TCPv4 192.168.1.105:1337 185.243.115.42:443 ESTABLISHED 2847
-0x7d8b2340 TCPv4 192.168.1.105:49152 8.8.8.8:53        ESTABLISHED 584
-0x7d8c1560 TCPv4 192.168.1.105:80   0.0.0.0:0          LISTENING   2048
-0x7d8d4780 TCPv4 192.168.1.105:135  0.0.0.0:0          LISTENING   724
-
-SUSPICIOUS FINDINGS:
-- PowerShell (PID 2847) connected to 185.243.115.42:443
-- Connection established at 14:28:45
-- Foreign IP resolves to suspicious domain: malware-c2.darkweb.com
-- HTTPS connection likely for command and control
-
-RECOMMENDATION:
-Analyze PowerShell process memory for embedded payloads
+Offset     Proto Local Address      Foreign Address     State    PID   Owner
+0x7d60f010 TCPv4 192.168.1.105:445  0.0.0.0:0           LISTENING 4     System
+0x7d60f890 TCPv4 192.168.1.105:135  0.0.0.0:0           LISTENING 1248  svchost.exe
+0x7d610230 TCPv4 127.0.0.1:49152   0.0.0.0:0           LISTENING 684   lsass.exe
+0x7d611450 TCPv4 192.168.1.105:3389 0.0.0.0:0           LISTENING 1356  svchost.exe
+0x7d612890 TCPv4 192.168.1.105:49234 185.243.115.42:443 ESTABLISHED 3724 svchost32.exe
+0x7d613120 TCPv4 192.168.1.105:49235 185.243.115.42:80  ESTABLISHED 3724 svchost32.exe
+0x7d614560 TCPv4 192.168.1.105:49236 94.156.79.23:8080  ESTABLISHED 3724 svchost32.exe
+0x7d615780 UDPv4 0.0.0.0:68          *:*                          1248  svchost.exe
+0x7d616890 UDPv4 127.0.0.1:53       *:*                          1248  svchost.exe
+0x7d617234 UDPv4 192.168.1.105:137  *:*                          4     System
+0x7d618456 UDPv4 192.168.1.105:138  *:*                          4     System

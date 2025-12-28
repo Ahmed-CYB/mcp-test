@@ -6,25 +6,23 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-memory-forensics-investigation-attacker
-    hostname: attacker-workstation
+    hostname: attacker-machine
     networks:
       ctf-memory-forensics-investigation-net:
-        ipv4_address: 172.23.198.3
+        ipv4_address: 172.23.199.3
       ctf-instances-network:
     stdin_open: true
     tty: true
 
-  ctf-memory-forensics-investigation-compromised-victim:
+  ctf-memory-forensics-investigation-victim-machine:
     build:
-      context: ./compromised-victim
+      context: ./victim-machine
       dockerfile: Dockerfile
-    container_name: ctf-memory-forensics-investigation-compromised-victim
-    hostname: compromised-victim
+    container_name: ctf-memory-forensics-investigation-victim-machine
+    hostname: victim-machine
     networks:
       ctf-memory-forensics-investigation-net:
-        ipv4_address: 172.23.198.10
-    ports:
-      - "22"
+        ipv4_address: 172.23.199.10
     stdin_open: true
     tty: true
 
@@ -33,7 +31,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.198.0/24
-          gateway: 172.23.198.1
+        - subnet: 172.23.199.0/24
+          gateway: 172.23.199.1
   ctf-instances-network:
     external: true

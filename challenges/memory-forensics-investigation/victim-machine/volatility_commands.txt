@@ -1,32 +1,26 @@
-COMPLETE VOLATILITY ANALYSIS COMMANDS
-=====================================
+ESSENTIAL VOLATILITY2 COMMANDS FOR THIS CASE
 
-# Step 1: Determine OS profile
-vol.py -f memory.raw imageinfo
+# Basic system information
+volatility -f memory.raw imageinfo
+volatility -f memory.raw --profile=Win10x64_19041 pslist
+volatility -f memory.raw --profile=Win10x64_19041 pstree
 
-# Step 2: List all processes
-vol.py -f memory.raw --profile=Win7SP1x64 pslist
+# Network analysis
+volatility -f memory.raw --profile=Win10x64_19041 netscan
+volatility -f memory.raw --profile=Win10x64_19041 connscan
 
-# Step 3: Find hidden/terminated processes
-vol.py -f memory.raw --profile=Win7SP1x64 psscan
+# Process analysis
+volatility -f memory.raw --profile=Win10x64_19041 cmdline
+volatility -f memory.raw --profile=Win10x64_19041 dlllist -p 3724
+volatility -f memory.raw --profile=Win10x64_19041 handles -p 3724
 
-# Step 4: Extract command line arguments
-vol.py -f memory.raw --profile=Win7SP1x64 cmdline
+# Memory extraction
+volatility -f memory.raw --profile=Win10x64_19041 memdump -p 3892 -D output/
+volatility -f memory.raw --profile=Win10x64_19041 procdump -p 3724 -D output/
 
-# Step 5: Analyze network connections
-vol.py -f memory.raw --profile=Win7SP1x64 netscan
+# Registry analysis
+volatility -f memory.raw --profile=Win10x64_19041 hivelist
+volatility -f memory.raw --profile=Win10x64_19041 printkey -K "Software\Microsoft\Windows\CurrentVersion\Run"
 
-# Step 6: Dump suspicious process memory (PID 2468)
-vol.py -f memory.raw --profile=Win7SP1x64 memdump -p 2468 -D ./dumps/
-
-# Step 7: Extract strings from process dump
-strings dumps/2468.dmp | grep -E "CTF\{|flag|password"
-
-# Step 8: Check for code injection
-vol.py -f memory.raw --profile=Win7SP1x64 malfind
-
-# Step 9: Examine registry entries
-vol.py -f memory.raw --profile=Win7SP1x64 printkey -K "Software\Microsoft\Windows\CurrentVersion\Run"
-
-# Step 10: Search for PowerShell artifacts
-vol.py -f memory.raw --profile=Win7SP1x64 consoles
+# String analysis
+strings output/3892.dmp | grep -E "[A-Za-z0-9+/]{20,}==?" | head -10

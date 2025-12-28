@@ -1,26 +1,26 @@
-SECURITY INCIDENT REPORT
-========================
-DATE: 2024-01-27 14:32:15
-ANALYST: J. Martinez
-SYSTEM: victim-machine (192.168.1.105)
-INCIDENT ID: SEC-2024-0127-001
+INCIDENT RESPONSE REPORT
+INCIDENT ID: INC-2024-0127-001
+DATE: January 27, 2024 14:32 UTC
+SYSTEM: victim-machine (Windows 10)
+ANALYST: Sarah Chen
 
 SUMMARY:
-Suspicious activity detected on victim-machine during routine monitoring.
-Memory dump successfully captured at 14:30:00 UTC.
+Suspicious network activity detected on corporate workstation.
+Employee reported system slowdown and unusual pop-ups.
+Memory dump captured at 14:30 UTC during active infection.
 
-INITIAL INDICATORS:
+KEY INDICATORS:
 - Unusual PowerShell execution detected
-- Unknown process spawning cmd.exe
-- Suspicious network connections to external IPs
+- Suspicious process spawning from explorer.exe
+- Network connections to unknown IP addresses
 - Modified registry entries
-- Encoded data found in memory
+- Encrypted payload in memory
 
-MEMORY DUMP INFO:
-File: memory.raw
-Size: 2.1 GB
-Capture Time: 2024-01-27 14:30:00
-Profile: Win7SP1x64
+EVIDENCE COLLECTED:
+- Full memory dump (memory.raw - 4GB)
+- Network traffic logs
+- System event logs
 
 NEXT STEPS:
-Perform volatility2 analysis to identify malicious processes and extract artifacts.
+Perform memory analysis using Volatility2 framework
+Identify malicious processes and extract IOCs
