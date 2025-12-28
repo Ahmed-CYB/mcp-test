@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "ftp-misconfiguration-challenge"
     networks:
       ctf-ftp-misconfiguration-challenge-net:
-        ipv4_address: 172.23.193.69
+        ipv4_address: 172.23.193.128
     ports:
       - "21"
       - "22"
