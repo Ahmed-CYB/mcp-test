@@ -1,19 +1,32 @@
-# Advanced Memory Forensics
+# Advanced Memory Forensics Challenge
+
+## Description
+A mysterious incident occurred on a corporate workstation. The memory dump has been extracted for investigation. Analyze the memory dump using Volatility to uncover the hidden secrets.
+
+## Objective
+Your task is to find and retrieve the flag hidden within the memory dump.
 
 ## Learning Objectives
-- Understand advanced memory analysis techniques
-- Use Volatility plugins to uncover hidden data
-- Perform process and network forensics
+- Understand how to use Volatility for memory forensics
+- Practice analyzing process memory and environment variables
 
-## Task
-Analyze the provided memory dump using Volatility to find the hidden flag.
+## Setup Instructions
+1. Deploy the Docker container using the provided `docker-compose.yml`.
+2. Access the Kali Linux instance through the web interface.
+3. Use Volatility to analyze the memory dump located at `/root/challenge/memory.dmp`.
 
-### Hints
-1. Start with the `linux.pslist` plugin to identify running processes.
-2. Investigate network connections and process memory using `linux.netstat` and `linux.dump`.
-3. The flag is hidden within a suspicious process's memory space, encoded for obfuscation.
+## Hints
+1. Focus on running processes and their command-line arguments.
+2. Check for environment variables set by suspicious processes.
+3. Explore memory sections for encrypted data.
 
-## Steps
-1. Load the memory dump into Volatility using the `vol` command.
-2. Perform analysis with appropriate plugins.
-3. Extract and decode the flag hidden in process memory.
+## Tools Required
+- Volatility 3
+
+## Example Commands
+- `vol -f memory.dmp linux.pslist`
+- `vol -f memory.dmp linux.bash`
+- `vol -f memory.dmp linux.envars`
+
+## Flag
+`CTF{adv4nc3d_m3m0ry_f0r3ns1cs}`
