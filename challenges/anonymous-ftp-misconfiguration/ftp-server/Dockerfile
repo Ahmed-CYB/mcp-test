@@ -3,7 +3,7 @@ FROM kalilinux/kali-rolling
 # Update and install services
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    openssh-server sudo vim nano vsftpd \
+    openssh-server sudo vim nano vsftpd openssh-server \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server

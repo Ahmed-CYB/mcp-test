@@ -1,13 +1,13 @@
 {
   "name": "anonymous-ftp-misconfiguration",
   "title": "Anonymous FTP Misconfiguration",
-  "description": "A company's FTP server has been misconfigured to allow anonymous access. Players must discover the service and exploit the misconfiguration to retrieve sensitive information.",
+  "description": "A company's FTP server has been misconfigured to allow anonymous access. Participants must discover and exploit this misconfiguration to retrieve sensitive information.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_92oixp9ex9jv}",
+  "flag": "CTF{network_yrxs8jx4isrr}",
   "machines": 2,
   "machineDetails": [
     {
@@ -15,7 +15,8 @@
       "type": "victim",
       "ip": "172.23.194.151",
       "services": [
-        "ftp"
+        "ftp",
+        "ssh"
       ]
     },
     {
@@ -27,7 +28,7 @@
       ]
     }
   ],
-  "stages": 3,
-  "created": "2025-12-28T22:43:46.187Z",
+  "stages": 4,
+  "created": "2025-12-28T22:44:29.057Z",
   "generator": "universal-structure-agent"
 }
