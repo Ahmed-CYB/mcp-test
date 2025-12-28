@@ -1,24 +1,29 @@
-# Memory Forensics Challenge: Volatility
+# Memory Forensics Challenge
 
-## Scenario
-A company's server was compromised, and a memory dump was captured before the attacker could erase their traces. As a digital forensic analyst, your task is to analyze the memory image using Volatility to uncover the hidden flag.
+## Learning Objectives
+- Understand the basics of memory forensics
+- Use Volatility to analyze memory dumps
+- Extract sensitive information from a memory image
 
-## Objectives
-- Use Volatility to analyze the memory dump.
-- Identify suspicious processes or artifacts within the memory image.
-- Extract the hidden flag.
+## Challenge Description
+A compromised server's memory dump is available for analysis. Your task is to investigate the memory using Volatility and uncover the hidden flag.
 
-## Instructions
-1. Start the Docker environment using the provided docker-compose.yml file.
-2. Access the Kali Linux container at http://172.25.0.100:6901 using a VNC client (password: password).
-3. Use Volatility commands to investigate the memory-dump.img file located in the /memory-dump directory.
+### Connect to the Attacker Machine
+You can use the provided attacker machine with a full suite of forensic tools.
 
-## Flag
-The flag is hidden within a suspicious process in the memory dump. Extract the flag to complete the challenge.
+### Access the Memory Dump
+Download the memory dump from the victim container:
+```
+curl http://172.28.0.10:8080/memory.raw -o memory.raw
+```
 
-## Tools
-- [Volatility](https://www.volatilityfoundation.org/): An advanced memory forensics framework.
+### Analyze the Memory Dump
+Use Volatility on the attacker machine to analyze the memory and extract the flag.
 
 ## Hints
-1. Focus on process enumeration to find anomalies.
-2. Explore hidden processes using Volatility plugins.
+1. Start by listing the processes in the memory dump.
+2. Look for unusual processes or hidden data structures.
+3. The flag is stored within a process related to suspicious activity.
+
+## Flag
+The flag format is CTF{memory_analysis_with_volatility}
