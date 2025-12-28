@@ -1,0 +1,25 @@
+VOLATILITY2 MEMORY ANALYSIS WORKFLOW
+
+STEP 1: Identify OS Profile
+vol.py -f victim_memory.raw imageinfo
+
+STEP 2: List Running Processes
+vol.py -f victim_memory.raw --profile=Win7SP1x64 pslist
+
+STEP 3: Check Process Tree
+vol.py -f victim_memory.raw --profile=Win7SP1x64 pstree
+
+STEP 4: Examine Suspicious Process (PID 2847)
+vol.py -f victim_memory.raw --profile=Win7SP1x64 dlllist -p 2847
+
+STEP 5: Extract Process Memory
+vol.py -f victim_memory.raw --profile=Win7SP1x64 memdump -p 2847 -D output/
+
+STEP 6: Search for Strings in Process Memory
+strings output/2847.dmp | grep -i "flag\|ctf\|password"
+
+STEP 7: Check Command Line Arguments
+vol.py -f victim_memory.raw --profile=Win7SP1x64 cmdline
+
+STEP 8: Analyze Network Connections
+vol.py -f victim_memory.raw --profile=Win7SP1x64 netscan

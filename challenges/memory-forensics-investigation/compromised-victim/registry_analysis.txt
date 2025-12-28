@@ -1,0 +1,21 @@
+REGISTRY MODIFICATIONS DETECTED
+
+Key: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+Value: MaliciousStartup
+Data: C:\Users\victim\AppData\Local\Temp\malicious.exe --autostart
+
+Key: HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+Value: UpdateCheck
+Data: powershell.exe -WindowStyle Hidden -File C:\Users\victim\AppData\Local\Temp\update.ps1
+
+Key: HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters
+Value: DataBasePath
+Data: %SystemRoot%\system32\drivers\etc (Modified)
+
+Key: HKCU\Software\Microsoft\Internet Explorer\Main
+Value: Start Page
+Data: http://192.168.45.23/redirect.html (Modified)
+
+TIMESTAMP ANALYSIS:
+All modifications occurred between 14:25:00 - 14:30:00 UTC
+Coincides with malicious.exe execution timeframe

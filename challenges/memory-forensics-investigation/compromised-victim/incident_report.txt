@@ -1,0 +1,23 @@
+INCIDENT REPORT - CASE #2024-0127-001
+
+DATE: 2024-01-27 14:32:00 UTC
+SYSTEM: compromised-victim (Windows 7 SP1 x64)
+INVESTIGATOR: Sarah Chen
+
+SUMMARY:
+Employee reported suspicious activity on workstation. System became unresponsive
+after clicking email attachment. Memory dump captured before system restart.
+
+INITIAL FINDINGS:
+- Suspicious PowerShell activity detected
+- Unknown process spawned from explorer.exe
+- Network connections to external IP: 192.168.45.23
+- Modified registry entries found
+
+EVIDENCE COLLECTED:
+- Memory dump: victim_memory.raw (2.1GB)
+- System logs archived
+- Network packet capture available
+
+NEXT STEPS:
+Analyze memory dump with Volatility2 to identify malware and extract IOCs

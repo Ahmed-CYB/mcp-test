@@ -1,0 +1,20 @@
+INCIDENT TIMELINE RECONSTRUCTION
+
+14:23:15 - User opens suspicious email attachment
+14:23:45 - PowerShell process spawned (PID 2156)
+14:24:12 - Malicious payload downloaded from 192.168.45.23
+14:24:30 - malicious.exe executed (PID 2847)
+14:24:45 - Registry persistence keys created
+14:25:00 - Reverse shell connection established
+14:25:30 - System files modification detected
+14:26:15 - Network scanning activity begins
+14:28:00 - User reports system slowdown
+14:30:45 - IT department intervenes
+14:32:00 - Memory dump captured
+14:35:00 - System isolated from network
+
+KEY ARTIFACTS:
+- Initial vector: Email attachment
+- Persistence: Registry Run keys
+- C2 Communication: 192.168.45.23:4444
+- Flag embedded in malicious process command line

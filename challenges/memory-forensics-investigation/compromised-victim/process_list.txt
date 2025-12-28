@@ -1,0 +1,17 @@
+PROCESS LISTING FROM MEMORY DUMP
+
+Offset(V)  Name           PID   PPID  Thds  Hnds  Sess  Wow64
+0x85a42030 System         4     0     78    489   -     -
+0x86f85030 smss.exe       272   4     2     29    -     -
+0x87234578 csrss.exe      348   340   9     436   0     -
+0x87456890 winlogon.exe   392   340   3     113   0     -
+0x87612345 services.exe   436   392   6     194   0     -
+0x87789012 lsass.exe      448   392   6     557   0     -
+0x87890123 svchost.exe    564   436   10    354   0     -
+0x87901234 svchost.exe    628   436   7     267   0     -
+0x88012345 explorer.exe   1456  1424  33    863   1     -
+0x88123456 cmd.exe        1824  1456  1     21    1     -
+0x88234567 powershell.exe 2156  1824  12    345   1     -
+0x88345678 malicious.exe  2847  2156  4     87    1     -
+0x88456789 notepad.exe    3124  1456  1     60    1     -
+0x88567890 chrome.exe     3456  1456  28    1024  1     -

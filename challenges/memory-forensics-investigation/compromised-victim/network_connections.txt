@@ -1,0 +1,15 @@
+NETWORK CONNECTIONS ANALYSIS
+
+Active Connections from Memory:
+
+Protocol  Local Address     Foreign Address    State    PID   Process
+TCP       192.168.1.105:49152  192.168.45.23:4444   ESTABLISHED  2847  malicious.exe
+TCP       192.168.1.105:49153  74.125.224.72:443    ESTABLISHED  3456  chrome.exe
+TCP       192.168.1.105:49154  52.96.171.83:443     ESTABLISHED  3456  chrome.exe
+UDP       192.168.1.105:53     8.8.8.8:53          -            564   svchost.exe
+TCP       192.168.1.105:139    0.0.0.0:0           LISTENING    4     System
+TCP       192.168.1.105:445    0.0.0.0:0           LISTENING    4     System
+
+SUSPICIOUS CONNECTION IDENTIFIED:
+malicious.exe (PID 2847) connected to 192.168.45.23:4444
+This appears to be a reverse shell connection to external C2 server
