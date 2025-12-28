@@ -5,6 +5,6 @@ PID    PPID   Name                Command Line
 456    1      apache2             /usr/sbin/apache2 -k start
 789    1      mysql               /usr/sbin/mysqld
 1024   456    apache2             /usr/sbin/apache2 -k worker
-1337   1      secret_process      /usr/local/bin/secret --flag=CTF{forensics_orkydpykg0z8}
+1337   1      secret_process      /usr/local/bin/secret --flag=CTF{forensics_7xp9lqr5oo0c}
 2048   789    mysql               /usr/sbin/mysqld --worker
 4096   1      cron                /usr/sbin/cron -f
