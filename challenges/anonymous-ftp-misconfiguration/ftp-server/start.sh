@@ -9,7 +9,7 @@ chmod 755 /ftp/public
 chmod 755 /ftp/data
 
 # Place flag in data directory
-echo "CTF{network_xy08qyyp0_op}" > /ftp/data/flag.txt
+echo "CTF{network_92oixp9ex9jv}" > /ftp/data/flag.txt
 chmod 644 /ftp/data/flag.txt
 
 # Create welcome message

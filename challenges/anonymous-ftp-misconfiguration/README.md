@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A company's FTP server has been misconfigured to allow anonymous access. Participants must discover and exploit this vulnerability to retrieve sensitive information.
+A company's FTP server has been misconfigured to allow anonymous access. Players must discover the service and exploit the misconfiguration to retrieve sensitive information.
 
 ## Challenge Information
 
@@ -14,8 +14,8 @@ A company's FTP server has been misconfigured to allow anonymous access. Partici
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.193.63 | ftp |
-| attacker-machine | attacker | 172.23.193.3 | ssh |
+| ftp-server | victim | 172.23.194.151 | ftp |
+| attacker | attacker | 172.23.194.3 | ssh |
 
 ## Challenge Stages
 
