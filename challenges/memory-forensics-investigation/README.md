@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A system has been compromised and you've obtained a memory dump. Use Volatility2 to analyze the dump and uncover the hidden flag within the system's memory structures.
+A corporate workstation was suspected of being compromised. A memory dump was captured and needs to be analyzed to find evidence of the attack and recover the hidden flag.
 
 ## Challenge Information
 
@@ -14,8 +14,8 @@ A system has been compromised and you've obtained a memory dump. Use Volatility2
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| attacker-machine | attacker | 172.23.198.3 | ssh, file-transfer |
-| victim-machine | victim | 172.23.198.10 | web, ssh, background-processes |
+| attacker-machine | attacker | 172.23.198.3 | ssh, file-server |
+| victim-workstation | victim | 172.23.198.10 | rdp, smb |
 
 ## Challenge Stages
 
@@ -25,19 +25,19 @@ Access the attacker machine and locate the memory dump file
 
 ### Stage 2
 
-Use Volatility2 to identify the operating system profile
+Use volatility2 to analyze the memory dump structure and identify the operating system profile
 
 ### Stage 3
 
-Analyze running processes to find suspicious activity
+Extract running processes, network connections, and loaded modules from the dump
 
 ### Stage 4
 
-Extract memory artifacts (network connections, files, registry keys)
+Analyze suspicious processes and memory artifacts to locate the hidden flag
 
 ### Stage 5
 
-Locate and decode the flag hidden in memory structures
+Validate findings against the victim machine's expected behavior
 
 ## Getting Started
 

@@ -13,17 +13,17 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-memory-forensics-investigation-victim-machine:
+  ctf-memory-forensics-investigation-victim-workstation:
     build:
-      context: ./victim-machine
+      context: ./victim-workstation
       dockerfile: Dockerfile
-    container_name: ctf-memory-forensics-investigation-victim-machine
-    hostname: victim-machine
+    container_name: ctf-memory-forensics-investigation-victim-workstation
+    hostname: victim-workstation
     networks:
       ctf-memory-forensics-investigation-net:
         ipv4_address: 172.23.198.10
     ports:
-      - "22"
+      - "445"
     stdin_open: true
     tty: true
 

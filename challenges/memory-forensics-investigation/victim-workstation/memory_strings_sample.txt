@@ -1,0 +1,25 @@
+MEMORY STRINGS ANALYSIS SAMPLE
+Relevant strings extracted from memory.raw
+
+C:\Windows\System32
+kernel32.dll
+ntdll.dll
+user32.dll
+advapi32.dll
+C:\temp\backdoor.exe
+C:\temp\payload.ps1
+203.0.113.47
+HTTP/1.1 200 OK
+Content-Type: application/octet-stream
+User-Agent: PowerShell/5.1
+Mozilla/5.0 (Windows NT 6.1; Win64; x64)
+SystemUpdate
+SecurityCheck
+powershell.exe -WindowStyle Hidden
+CTF{m3m0ry_4n4lys1s_m4st3r_2024}
+Flag hidden in memory
+backdoor.exe -connect
+Invoke-WebRequest
+Set-ExecutionPolicy Bypass
+Get-NetTCPConnection
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Run

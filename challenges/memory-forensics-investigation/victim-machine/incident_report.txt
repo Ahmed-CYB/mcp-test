@@ -1,24 +1,24 @@
-DIGITAL FORENSICS INCIDENT REPORT
-========================================
-DATE: 2024-01-27 14:32:15 UTC
-INVESTIGATOR: Agent Smith
-CASE ID: MEM-2024-0127
-VICTIM: victim-machine (192.168.1.100)
+SECURITY INCIDENT REPORT
+======================
+DATE: 2024-01-27 14:32:15
+SYSTEM: victim-machine (Windows 7 SP1)
+ANALYST: J. Smith
 
 INCIDENT SUMMARY:
-Suspicious activity detected on victim-machine at 13:45 UTC.
-User reported system slowdown and unusual network traffic.
-Memory dump captured before system isolation.
+Suspicious activity detected on victim-machine. User reported
+slow performance and unknown processes. Memory dump captured
+at 14:30 UTC for forensic analysis.
 
 INITIAL OBSERVATIONS:
-- Unknown process consuming high CPU
-- Outbound connections to suspicious IPs
-- Modified system registry entries
-- Encrypted files found in temp directory
+- Unusual network connections to 192.168.45.123
+- Unknown executable: svchost32.exe (suspicious name)
+- PowerShell activity detected
+- Possible data exfiltration
 
-EVIDENCE COLLECTED:
-- memory.raw (2.1GB memory dump)
-- network_logs.txt
-- system_timeline.csv
+MEMORY DUMP: memdump.raw (captured via DumpIt)
+SIZE: 2.1 GB
+MD5: a4b2c8d9e1f3a5b7c9d2e4f6a8b1c3d5
 
-PRIORITY: Analyze memory dump for malware artifacts and data exfiltration
+RECOMMENDATION:
+Analyze memory dump with Volatility2 to identify malware
+and extract any embedded artifacts or flags.
