@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  ctf-ftp-misconfiguration-challenge-ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-misconfiguration-challenge-ftp-server
+    hostname: ftp-server
+    networks:
+      ctf-ftp-misconfiguration-challenge-net:
+        ipv4_address: 172.26.193.10
+    ports:
+      - "21"
+      - "22"
+    stdin_open: true
+    tty: true
+
+  ctf-ftp-misconfiguration-challenge-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-ftp-misconfiguration-challenge-attacker
+    hostname: attacker
+    networks:
+      ctf-ftp-misconfiguration-challenge-net:
+        ipv4_address: 172.26.193.3
+      ctf-instances-network:
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-ftp-misconfiguration-challenge-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.26.193.0/24
+          gateway: 172.26.193.1
+  ctf-instances-network:
+    external: true
