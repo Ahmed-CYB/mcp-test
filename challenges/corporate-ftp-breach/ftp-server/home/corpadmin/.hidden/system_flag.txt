@@ -1,0 +1,26 @@
+CTF{ftp_anonymous_directory_traversal_pwned}
+
+Congratulations! You successfully exploited the FTP misconfigurations:
+
+1. Anonymous FTP access enabled
+2. No chroot jail configured
+3. Directory traversal allowed
+4. Read access to sensitive system files
+5. Weak file permissions
+
+This flag represents a complete compromise of the corporate FTP server
+through enumeration, anonymous access, and directory traversal.
+
+Challenge completed by: [Your Team Name]
+Timestamp: $(date)
+
+=== Attack Vector Summary ===
+- Port scan discovered FTP service on port 21
+- Anonymous login successful (no password required)
+- Directory traversal to access /etc/passwd and /etc/shadow
+- Enumeration of user directories
+- Discovery of sensitive corporate documents
+- Flag retrieval from hidden directory
+
+Real-world impact: Complete system compromise, data exfiltration,
+credential harvesting, and corporate espionage potential.

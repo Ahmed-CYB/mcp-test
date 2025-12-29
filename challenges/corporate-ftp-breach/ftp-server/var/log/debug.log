@@ -1,0 +1,18 @@
+2024-01-15 09:30:15 [DEBUG] FTP Service started
+2024-01-15 09:30:16 [DEBUG] Anonymous access enabled for emergency remote work
+2024-01-15 09:30:17 [WARN] Chroot disabled - SECURITY RISK!
+2024-01-15 09:31:22 [DEBUG] User ftpuser created with weak password
+2024-01-15 09:31:45 [DEBUG] Permissions set to 755 for all files
+2024-01-15 09:32:10 [ERROR] Failed to restrict directory access
+2024-01-15 09:32:11 [DEBUG] Directory traversal protection DISABLED
+2024-01-15 09:45:33 [DEBUG] Admin uploaded sensitive files to /home/corpadmin/
+2024-01-15 10:15:22 [DEBUG] Flag file created: CTF{ftp_anonymous_directory_traversal_pwned}
+2024-01-15 10:15:23 [DEBUG] Flag location: /home/corpadmin/.hidden/system_flag.txt
+2024-01-15 10:16:01 [WARN] Security audit postponed due to urgent deployment
+2024-01-15 11:30:45 [DEBUG] SSH service configured with default settings
+2024-01-15 11:31:12 [DEBUG] Root login enabled for SSH (SECURITY RISK!)
+2024-01-15 14:22:18 [DEBUG] Anonymous FTP user can access entire filesystem
+2024-01-15 14:22:19 [CRITICAL] Configuration allows read access to /etc/passwd
+2024-01-15 14:22:20 [CRITICAL] Configuration allows read access to /etc/shadow
+2024-01-15 16:45:33 [DEBUG] Logging will be disabled after initial setup
+2024-01-15 16:45:34 [DEBUG] Remember to fix security issues after go-live

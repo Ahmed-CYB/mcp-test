@@ -1,0 +1,48 @@
+# Corporate SSH Configuration
+# WARNING: Insecure configuration for emergency access
+
+Port 22
+Protocol 2
+
+# Dangerous: Root login allowed
+PermitRootLogin yes
+
+# Authentication
+PasswordAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+# Weak security settings
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+
+# Logging
+SyslogFacility AUTH
+LogLevel INFO
+
+# Session settings
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+
+# Banner
+Banner /etc/ssh/ssh_banner
+
+# Subsystem
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# Allow specific users (including weak accounts)
+AllowUsers root ftpuser corpadmin
+
+# Weak ciphers allowed for compatibility
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+
+# Connection limits
+MaxAuthTries 6
+MaxSessions 10
+ClientAliveInterval 300
+ClientAliveCountMax 2
