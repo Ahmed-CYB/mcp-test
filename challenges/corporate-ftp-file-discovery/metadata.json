@@ -1,0 +1,35 @@
+{
+  "name": "corporate-ftp-file-discovery",
+  "title": "Corporate FTP File Discovery",
+  "description": "A corporate FTP server contains sensitive files within a realistic directory structure. Players must enumerate the FTP service, navigate the file system, and discover flags hidden in various corporate documents and configuration files.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "forensics"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{ftp_config_discovery_2024}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.23.196.107",
+      "services": [
+        "ftp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker-machine",
+      "type": "attacker",
+      "ip": "172.23.196.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2025-12-29T13:22:03.462Z",
+  "generator": "universal-structure-agent"
+}

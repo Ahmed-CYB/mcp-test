@@ -1,0 +1,25 @@
+DIGITAL FORENSICS INVESTIGATION REPORT
+CASE: FTP-2024-001
+DATE: 2024-01-27
+SYSTEM: ftp-server (192.168.1.100)
+
+INCIDENT SUMMARY:
+Suspicious FTP activity detected on corporate server.
+Unauthorized access to sensitive directories reported.
+Multiple file downloads from restricted areas.
+
+KEY FINDINGS:
+- FTP service running on port 21
+- Anonymous access enabled
+- Corporate documents exposed
+- Configuration files accessible
+- Suspicious login attempts logged
+
+EVIDENCE COLLECTED:
+- FTP server logs
+- Directory listings
+- Configuration backups
+- Corporate file samples
+
+INVESTIGATOR: J. Smith
+STATUS: Under investigation

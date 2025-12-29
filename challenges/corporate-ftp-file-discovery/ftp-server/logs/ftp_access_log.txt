@@ -1,0 +1,20 @@
+FTP ACCESS LOG - ftp-server
+=========================
+
+2024-01-27 08:15:23 [INFO] FTP server started on port 21
+2024-01-27 08:16:45 [CONN] 192.168.1.50 connected
+2024-01-27 08:16:47 [AUTH] anonymous login successful
+2024-01-27 08:17:12 [CMD] LIST /corporate
+2024-01-27 08:17:23 [CMD] CWD /corporate/hr
+2024-01-27 08:17:35 [CMD] RETR employee_data.xlsx
+2024-01-27 08:18:02 [CMD] CWD /corporate/finance
+2024-01-27 08:18:15 [CMD] LIST
+2024-01-27 08:18:28 [CMD] RETR budget_2024.pdf
+2024-01-27 08:19:45 [CMD] CWD /system/config
+2024-01-27 08:19:52 [CMD] RETR ftp_config.conf
+2024-01-27 08:20:15 [DISC] 192.168.1.50 disconnected
+2024-01-27 09:32:18 [CONN] 10.0.0.25 connected
+2024-01-27 09:32:21 [AUTH] ftpadmin login successful
+2024-01-27 09:33:05 [CMD] CWD /system/backups
+2024-01-27 09:33:12 [CMD] RETR database_backup.sql
+2024-01-27 09:34:28 [DISC] 10.0.0.25 disconnected

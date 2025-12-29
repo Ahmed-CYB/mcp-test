@@ -1,0 +1,30 @@
+ACME CORPORATION NETWORK TOPOLOGY
+=================================
+
+DMZ SEGMENT (10.0.1.0/24):
+- Web Server: 10.0.1.10
+- Mail Server: 10.0.1.20
+- FTP Server: 10.0.1.30 (THIS SERVER)
+- DNS Server: 10.0.1.40
+
+INTERNAL SEGMENT (192.168.1.0/24):
+- Domain Controller: 192.168.1.10
+- File Server: 192.168.1.20
+- Database Server: 192.168.1.30
+- Backup Server: 192.168.1.40
+
+MANAGEMENT SEGMENT (172.16.1.0/24):
+- Network Monitoring: 172.16.1.10
+- Jump Host: 172.16.1.20
+- Admin Workstation: 172.16.1.30
+
+FIREWALL RULES:
+- DMZ -> Internet: HTTP/HTTPS outbound
+- Internal -> DMZ: FTP, SSH allowed
+- Management -> All: Full access
+
+VPN CONCENTRATOR: 203.0.113.50
+Default Gateway: 10.0.1.1
+
+Last Updated: 2024-02-15
+By: netadmin@acme.corp

