@@ -1,34 +1,34 @@
 {
   "name": "corporate-ftp-server-penetration",
   "title": "Corporate FTP Server Penetration",
-  "description": "A corporate FTP server contains sensitive files across various directory paths. Players must use network reconnaissance and FTP enumeration techniques to discover and retrieve multiple flags hidden throughout the filesystem.",
+  "description": "A corporate FTP server contains sensitive employee data and confidential files. The server has realistic directory structures, user accounts, and security misconfigurations typical of real-world environments.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_pke67prn2pv9}",
+  "flag": "CTF{network_h7oxgd1t1o2i}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.198.141",
+      "ip": "172.23.199.103",
       "services": [
         "ftp",
         "ssh"
       ]
     },
     {
-      "name": "attacker-kali",
+      "name": "attacker-machine",
       "type": "attacker",
-      "ip": "172.23.198.3",
+      "ip": "172.23.199.3",
       "services": [
         "ssh"
       ]
     }
   ],
-  "stages": 4,
-  "created": "2025-12-29T17:26:10.656Z",
+  "stages": 5,
+  "created": "2025-12-29T18:01:12.503Z",
   "generator": "universal-structure-agent"
 }
