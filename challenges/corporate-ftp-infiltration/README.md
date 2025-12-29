@@ -2,38 +2,42 @@
 
 ## Scenario Description
 
-A corporate FTP server contains sensitive files in a realistic directory structure. Players must use network reconnaissance to discover and exploit FTP vulnerabilities to access hidden files and directories.
+A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to enumerate the FTP service, exploit misconfigurations, and retrieve the hidden flag.
 
 ## Challenge Information
 
 - **Categories:** network
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.24.193.109 | ftp, ssh |
-| attacker | attacker | 172.24.193.3 | ssh |
+| ftp-server | victim | 172.23.199.83 | ftp, ssh |
+| attacker-machine | attacker | 172.23.199.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network discovery and port scanning to identify FTP service
+Network reconnaissance to discover the FTP service
 
 ### Stage 2
 
-FTP enumeration and authentication bypass attempts
+FTP enumeration to identify anonymous access and available directories
 
 ### Stage 3
 
-Directory traversal and file system exploration
+Directory traversal and file discovery to find credentials
 
 ### Stage 4
 
-Extraction of sensitive files and flag discovery
+Credential-based authentication to access restricted areas
+
+### Stage 5
+
+Flag extraction from protected directory
 
 ## Getting Started
 
