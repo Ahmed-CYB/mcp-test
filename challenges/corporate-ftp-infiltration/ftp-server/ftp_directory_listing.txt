@@ -1,0 +1,16 @@
+FTP DIRECTORY STRUCTURE
+
+ANONYMOUS ACCESS (/pub):
+-rw-r--r-- 1 ftp ftp  245 Jan 27 12:00 readme.txt
+-rw-r--r-- 1 ftp ftp 1024 Jan 27 12:00 company_info.txt
+drwxr-xr-x 2 ftp ftp 4096 Jan 27 12:00 downloads
+
+AUTHENTICATED ACCESS (/home/backup):
+-rw------- 1 backup backup  156 Jan 27 11:30 .hidden_config
+-rw-r--r-- 1 backup backup 8192 Jan 27 11:45 financial_report.docx
+-rw-r--r-- 1 backup backup 2048 Jan 27 11:50 system_backup.tar.gz
+drwx------ 2 backup backup 4096 Jan 27 11:55 private
+
+AUTHENTICATED ACCESS (/home/backup/private):
+-rw------- 1 backup backup  89 Jan 27 11:55 credentials.txt
+-rw------- 1 backup backup 512 Jan 27 11:55 access_keys.txt

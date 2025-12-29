@@ -1,0 +1,10 @@
+Jan 27 14:25:12 ftp-server vsftpd[1234]: CONNECT: Client "192.168.1.100"
+Jan 27 14:25:15 ftp-server vsftpd[1234]: ANONYMOUS FTP LOGIN from 192.168.1.100
+Jan 27 14:25:18 ftp-server vsftpd[1234]: OK LIST: Client "192.168.1.100", "/pub"
+Jan 27 14:25:22 ftp-server vsftpd[1234]: OK RETR: Client "192.168.1.100", "/pub/readme.txt"
+Jan 27 14:26:01 ftp-server vsftpd[1234]: FAIL LOGIN: Client "192.168.1.100", user "admin"
+Jan 27 14:26:15 ftp-server vsftpd[1234]: OK LOGIN: Client "192.168.1.100", user "backup"
+Jan 27 14:26:18 ftp-server vsftpd[1234]: OK LIST: Client "192.168.1.100", "/home/backup"
+Jan 27 14:26:25 ftp-server vsftpd[1234]: OK RETR: Client "192.168.1.100", "/home/backup/.hidden_config"
+Jan 27 14:26:35 ftp-server vsftpd[1234]: OK RETR: Client "192.168.1.100", "/home/backup/financial_report.docx"
+Jan 27 14:26:45 ftp-server vsftpd[1234]: DISCONNECT: Client "192.168.1.100"

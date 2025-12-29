@@ -1,0 +1,25 @@
+SECURITY INCIDENT REPORT
+DATE: 2024-01-27 14:30:00 UTC
+SYSTEM: ftp-server.corporate.local
+SEVERITY: HIGH
+
+INCIDENT SUMMARY:
+Unauthorized FTP access detected on corporate server.
+Suspicious file transfers and directory enumeration observed.
+Multiple authentication attempts logged.
+
+KEY FINDINGS:
+- Anonymous FTP access enabled on port 21
+- Authenticated access using weak credentials
+- Hidden files in public directories
+- Suspicious .docx file with embedded data
+- Network scanner activity from 192.168.1.100
+
+EVIDENCE COLLECTED:
+- FTP server logs
+- Network packet capture
+- File system snapshot
+- User account audit
+
+RECOMMENDATION:
+Perform full forensic analysis of FTP service configuration and accessed files.

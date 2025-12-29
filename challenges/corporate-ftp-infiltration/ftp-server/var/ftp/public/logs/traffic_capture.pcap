@@ -1,0 +1,16 @@
+# PCAP Generation Method:
+# 1. Create FTP session with credentials visible in plaintext
+# 2. Include FTP commands: USER backup_svc, PASS B4ckup_S3rv1c3_2024!
+# 3. Show file transfer of sensitive document
+# 4. Include flag in FTP response: 230 Login successful. CTF{ftp_tr4ff1c_4n4ly515}
+# 
+# Use tcpdump or Wireshark to generate:
+# tcpdump -w traffic_capture.pcap -i eth0 port 21
+# 
+# Simulate FTP session:
+# - Connection establishment
+# - AUTH negotiation (failed)
+# - Plain text login with backup_svc credentials
+# - Directory listing showing sensitive files
+# - File download attempt
+# - Flag embedded in server response message
