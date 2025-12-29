@@ -1,34 +1,34 @@
 {
   "name": "corporate-ftp-infiltration",
   "title": "Corporate FTP Infiltration",
-  "description": "A corporate FTP server contains sensitive files within a realistic directory structure. Players must use network reconnaissance and FTP enumeration techniques to navigate the file system and locate the hidden flag.",
+  "description": "A corporate FTP server contains sensitive files in a realistic directory structure. Players must use network reconnaissance to discover and exploit FTP vulnerabilities to access hidden files and directories.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_xiog_zci8q1z}",
+  "flag": "CTF{network_dkb4tfzbtagu}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.197.198",
+      "ip": "172.24.193.109",
       "services": [
         "ftp",
         "ssh"
       ]
     },
     {
-      "name": "attacker-machine",
+      "name": "attacker",
       "type": "attacker",
-      "ip": "172.23.197.3",
+      "ip": "172.24.193.3",
       "services": [
         "ssh"
       ]
     }
   ],
-  "stages": 5,
-  "created": "2025-12-29T15:04:00.082Z",
+  "stages": 4,
+  "created": "2025-12-29T15:09:33.102Z",
   "generator": "universal-structure-agent"
 }
