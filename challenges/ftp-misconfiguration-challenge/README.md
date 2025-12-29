@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A company's FTP server has been misconfigured, potentially exposing sensitive data. Your task is to identify the misconfiguration and retrieve the flag.
+A company's FTP server has been misconfigured, allowing unauthorized access to sensitive files. Your task is to identify and exploit the FTP misconfiguration to retrieve the hidden flag.
 
 ## Challenge Information
 
@@ -14,26 +14,26 @@ A company's FTP server has been misconfigured, potentially exposing sensitive da
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.193.128 | ftp, ssh |
-| attacker | attacker | 172.23.193.3 | ssh |
+| ftp-server | victim | 172.23.195.65 | ftp, ssh |
+| attacker | attacker | 172.23.195.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network reconnaissance to discover FTP service
+Network reconnaissance to discover the FTP service
 
 ### Stage 2
 
-Identify FTP misconfiguration (anonymous access, weak permissions, etc.)
+Analyze FTP configuration and identify misconfigurations
 
 ### Stage 3
 
-Exploit the misconfiguration to access restricted files
+Exploit FTP vulnerabilities to gain unauthorized access
 
 ### Stage 4
 
-Retrieve the flag from the compromised FTP server
+Navigate the file system and locate the flag
 
 ## Getting Started
 
