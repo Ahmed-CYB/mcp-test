@@ -1,0 +1,34 @@
+{
+  "name": "ftp-directory-navigation-challenge",
+  "title": "FTP Directory Navigation Challenge",
+  "description": "A realistic FTP server challenge focusing on directory traversal, file discovery, and FTP protocol exploitation. Players must navigate complex directory structures to find hidden flags.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{network_251ewqv_tipa}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.23.197.134",
+      "services": [
+        "ftp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker",
+      "type": "attacker",
+      "ip": "172.23.197.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2025-12-29T17:20:30.780Z",
+  "generator": "universal-structure-agent"
+}
