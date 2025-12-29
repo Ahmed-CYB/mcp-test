@@ -1,25 +1,21 @@
-# FTP Anonymous Access
+# FTP Anonymous Access Challenge
 
 ## Learning Objectives
-- Understand FTP server misconfigurations
-- Exploit anonymous access to find sensitive information
+- Understand FTP service configuration and common misconfigurations
+- Learn how anonymous FTP access can lead to sensitive data exposure
+- Practice exploiting an FTP server with open anonymous access
 
 ## Challenge Description
-A small company's FTP server has been misconfigured to allow anonymous access without requiring a password. Your task is to find a way to exploit this misconfiguration to access the server and retrieve the hidden flag.
+A small company has set up an FTP server for file sharing among employees. However, due to misconfigured permissions, the server allows anonymous access, exposing sensitive data. Your task is to exploit this vulnerability and retrieve a confidential file.
 
-## Instructions
-1. Access the FTP server from the Kali Linux attacker container.
-2. Use the FTP anonymous login feature to explore the server.
-3. Find and retrieve the flag from the '/srv/ftp/public' directory.
-
-## Access Information
-- FTP Server IP: 172.25.0.10
-- Use anonymous login with any email as a password.
-
-## Flag
-Retrieve the flag by accessing the FTP server.
+## Access Details
+- Attacker machine can be accessed through a VNC interface using Kali Linux.
+- The FTP server is located at `172.25.0.10`.
 
 ## Hints
 1. Try connecting to the FTP server using anonymous login.
-2. Look for directories and files that are publicly accessible.
-3. The flag might be stored in a file that doesn't require special permissions to read.
+2. Explore the directories available on the FTP server.
+3. Locate and read the flag file.
+
+## Flag
+Retrieve the flag by accessing the server and find the file containing the flag in the public directory.
