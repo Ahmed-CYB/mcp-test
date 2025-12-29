@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "corporate-ftp-infiltration"
     networks:
       ctf-corporate-ftp-infiltration-net:
-        ipv4_address: 172.24.193.166
+        ipv4_address: 172.24.193.82
     ports:
       - "21"
       - "22"
@@ -24,7 +24,7 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-ftp-infiltration-attacker
-    hostname: attacker-machine
+    hostname: attacker
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "corporate-ftp-infiltration"

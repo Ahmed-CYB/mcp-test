@@ -2,11 +2,11 @@
 
 ## Scenario Description
 
-A corporate FTP server contains sensitive files with realistic directory structures. Players must enumerate the service, discover access methods, and extract hidden information from various file types.
+A corporate FTP server contains sensitive documents in a realistic file structure. Players must use FTP enumeration and navigation techniques to discover and retrieve hidden flags scattered throughout the directory tree.
 
 ## Challenge Information
 
-- **Categories:** network, forensics
+- **Categories:** network
 - **Machines:** 2
 - **Stages:** 5
 
@@ -14,8 +14,8 @@ A corporate FTP server contains sensitive files with realistic directory structu
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.24.193.166 | ftp, ssh |
-| attacker-machine | attacker | 172.24.193.3 | ssh |
+| ftp-server | victim | 172.24.193.82 | ftp, ssh |
+| attacker | attacker | 172.24.193.3 | ssh |
 
 ## Challenge Stages
 
@@ -25,19 +25,19 @@ Network reconnaissance to discover FTP service
 
 ### Stage 2
 
-FTP enumeration and access testing (anonymous/authenticated)
+FTP connection and authentication (anonymous or credential discovery)
 
 ### Stage 3
 
-Directory traversal and file discovery
+Directory traversal and file enumeration
 
 ### Stage 4
 
-File download and local analysis
+Flag extraction from various realistic file locations
 
 ### Stage 5
 
-Flag extraction from various file types and locations
+Advanced FTP techniques for accessing restricted areas
 
 ## Getting Started
 
@@ -49,4 +49,3 @@ Flag extraction from various file types and locations
 ## Learning Objectives
 
 - Network scanning and service exploitation
-- Digital forensics and artifact analysis
