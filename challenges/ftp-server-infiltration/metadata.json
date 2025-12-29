@@ -1,0 +1,34 @@
+{
+  "name": "ftp-server-infiltration",
+  "title": "FTP Server Infiltration",
+  "description": "A simple FTP server challenge where participants must discover and access an FTP service to retrieve the flag",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{network_hvqgff2orp2e}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.27.193.178",
+      "services": [
+        "ftp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker",
+      "type": "attacker",
+      "ip": "172.27.193.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 3,
+  "created": "2025-12-29T06:57:16.546Z",
+  "generator": "universal-structure-agent"
+}
