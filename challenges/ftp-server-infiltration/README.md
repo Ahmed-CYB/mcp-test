@@ -2,34 +2,38 @@
 
 ## Scenario Description
 
-A company runs an FTP server for file sharing. Your task is to discover, enumerate, and extract sensitive information from the FTP service.
+A company's FTP server contains sensitive files. Your goal is to gain access to the FTP service and retrieve the hidden flag.
 
 ## Challenge Information
 
 - **Categories:** network
 - **Machines:** 2
-- **Stages:** 3
+- **Stages:** 4
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.198.71 | ftp, ssh |
-| attacker | attacker | 172.23.198.3 | ssh |
+| ftp-server | victim | 172.27.193.149 | ftp, ssh |
+| attacker | attacker | 172.27.193.3 | terminal |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network discovery and port scanning to locate FTP service
+Network reconnaissance to discover FTP service
 
 ### Stage 2
 
-FTP service enumeration and authentication bypass/brute force
+FTP service enumeration and vulnerability identification
 
 ### Stage 3
 
-File system exploration and flag extraction
+Exploit FTP vulnerabilities to gain access
+
+### Stage 4
+
+Navigate FTP directory structure to locate flag
 
 ## Getting Started
 

@@ -1,19 +1,19 @@
 {
   "name": "ftp-server-infiltration",
   "title": "FTP Server Infiltration",
-  "description": "A company runs an FTP server for file sharing. Your task is to discover, enumerate, and extract sensitive information from the FTP service.",
+  "description": "A company's FTP server contains sensitive files. Your goal is to gain access to the FTP service and retrieve the hidden flag.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{ftp_anonymous_access_leads_to_secrets_exposure_2023}",
+  "flag": "CTF{network_75ek71nmc_v9}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.198.71",
+      "ip": "172.27.193.149",
       "services": [
         "ftp",
         "ssh"
@@ -22,13 +22,13 @@
     {
       "name": "attacker",
       "type": "attacker",
-      "ip": "172.23.198.3",
+      "ip": "172.27.193.3",
       "services": [
-        "ssh"
+        "terminal"
       ]
     }
   ],
-  "stages": 3,
-  "created": "2025-12-30T10:21:12.334Z",
+  "stages": 4,
+  "created": "2025-12-30T14:08:41.978Z",
   "generator": "universal-structure-agent"
 }
