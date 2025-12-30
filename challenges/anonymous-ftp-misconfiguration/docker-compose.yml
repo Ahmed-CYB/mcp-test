@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "anonymous-ftp-misconfiguration"
     networks:
       ctf-anonymous-ftp-misconfiguration-net:
-        ipv4_address: 172.23.194.151
+        ipv4_address: 172.23.200.112
     ports:
       - "21"
       - "22"
@@ -30,7 +30,8 @@ services:
       com.ctf.challenge: "anonymous-ftp-misconfiguration"
     networks:
       ctf-anonymous-ftp-misconfiguration-net:
-        ipv4_address: 172.23.194.3
+        ipv4_address: 172.23.200.3
+      ctf-instances-network:
     stdin_open: true
     tty: true
 
@@ -39,7 +40,9 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.194.0/24
-          gateway: 172.23.194.1
+        - subnet: [object Object]
+  ctf-instances-network:
+    external: true
+          gateway: 172.23.200.1
   ctf-instances-network:
     external: true
