@@ -1,0 +1,14 @@
+Welcome to SecureCorp FTP Server
+================================
+
+This server contains company documents and system backups.
+Only authorized personnel should access this system.
+
+For technical support, contact admin@securecorp.local
+
+System Information:
+- Server: ftp-server.securecorp.local
+- OS: Ubuntu 20.04 LTS
+- Last updated: 2024-01-15
+
+NOTE: Maintenance credentials stored in /backup/system/ for emergency access

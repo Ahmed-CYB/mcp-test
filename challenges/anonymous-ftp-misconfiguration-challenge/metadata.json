@@ -1,34 +1,34 @@
 {
   "name": "anonymous-ftp-misconfiguration-challenge",
   "title": "Anonymous FTP Misconfiguration Challenge",
-  "description": "A corporate FTP server has been misconfigured to allow anonymous access, exposing sensitive company data. Players must discover and exploit this misconfiguration to retrieve the flag.",
+  "description": "A company's FTP server has been misconfigured to allow anonymous access, exposing sensitive files and system information. Exploit this misconfiguration to gain unauthorized access and retrieve the flag.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_dul47c3jromd}",
+  "flag": "CTF{4n0nym0u5_ftp_3xp0535_53n51t1v3_d4t4_4nd_cr3d5}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.200.85",
+      "ip": "172.23.201.18",
       "services": [
         "ftp",
         "ssh"
       ]
     },
     {
-      "name": "attacker-machine",
+      "name": "attacker",
       "type": "attacker",
-      "ip": "172.23.200.3",
+      "ip": "172.23.201.3",
       "services": [
         "ssh"
       ]
     }
   ],
-  "stages": 4,
-  "created": "2025-12-30T10:41:30.972Z",
+  "stages": 5,
+  "created": "2025-12-30T10:52:23.998Z",
   "generator": "universal-structure-agent"
 }

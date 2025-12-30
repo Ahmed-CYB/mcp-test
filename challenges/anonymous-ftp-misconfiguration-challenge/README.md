@@ -2,20 +2,20 @@
 
 ## Scenario Description
 
-A corporate FTP server has been misconfigured to allow anonymous access, exposing sensitive company data. Players must discover and exploit this misconfiguration to retrieve the flag.
+A company's FTP server has been misconfigured to allow anonymous access, exposing sensitive files and system information. Exploit this misconfiguration to gain unauthorized access and retrieve the flag.
 
 ## Challenge Information
 
 - **Categories:** network
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.200.85 | ftp, ssh |
-| attacker-machine | attacker | 172.23.200.3 | ssh |
+| ftp-server | victim | 172.23.201.18 | ftp, ssh |
+| attacker | attacker | 172.23.201.3 | ssh |
 
 ## Challenge Stages
 
@@ -25,15 +25,19 @@ Network reconnaissance to discover FTP service
 
 ### Stage 2
 
-Exploit anonymous FTP access to browse server contents
+Exploit anonymous FTP login to access files
 
 ### Stage 3
 
-Analyze downloaded files for sensitive information
+Analyze discovered files for credentials or system information
 
 ### Stage 4
 
-Locate and retrieve the flag from accessible directories
+Use gathered intelligence for privilege escalation
+
+### Stage 5
+
+Retrieve the final flag
 
 ## Getting Started
 

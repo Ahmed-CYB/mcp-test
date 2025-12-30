@@ -1,0 +1,21 @@
+# This represents a compressed backup file
+# In reality, this would be a tar.gz file containing system configurations
+# For CTF purposes, this contains extracted sensitive data:
+
+=== /etc/passwd extract ===
+root:x:0:0:root:/root:/bin/bash
+admin:x:1001:1001:System Administrator:/home/admin:/bin/bash
+backup:x:1002:1002:Backup User:/home/backup:/bin/bash
+ftpadmin:x:1003:1003:FTP Admin:/home/ftpadmin:/bin/bash
+
+=== SSH Keys ===
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAyK8QvP7BwqDJT8QG8n5Kz9F2mN3vR7sL1wX9Y2pQ4tE6vB8jH5
+...[truncated for brevity]...
+-----END OPENSSH PRIVATE KEY-----
+
+=== Configuration Files ===
+SSH_CONFIG: PasswordAuthentication yes
+SSH_CONFIG: PermitRootLogin yes
+SSH_CONFIG: PubkeyAuthentication yes

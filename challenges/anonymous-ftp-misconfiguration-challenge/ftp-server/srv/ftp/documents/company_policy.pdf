@@ -1,0 +1,19 @@
+# Company Security Policy Document
+
+## Password Requirements
+- Minimum 8 characters
+- Must contain uppercase, lowercase, numbers
+- Changed every 90 days
+
+## Default Accounts
+The following default accounts are maintained:
+- admin: SecureP@ss2024
+- backup: BackupUser123
+- ftpadmin: FtpAdmin2024
+
+## Network Access
+- SSH access restricted to admin users
+- FTP should be disabled for anonymous access
+- All file transfers must be logged
+
+This document contains sensitive information - CONFIDENTIAL

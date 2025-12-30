@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "anonymous-ftp-misconfiguration-challenge"
     networks:
       ctf-anonymous-ftp-misconfiguration-challenge-net:
-        ipv4_address: 172.23.200.85
+        ipv4_address: 172.23.201.18
     ports:
       - "21"
       - "22"
@@ -24,13 +24,13 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-anonymous-ftp-misconfiguration-challenge-attacker
-    hostname: attacker-machine
+    hostname: attacker
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "anonymous-ftp-misconfiguration-challenge"
     networks:
       ctf-anonymous-ftp-misconfiguration-challenge-net:
-        ipv4_address: 172.23.200.3
+        ipv4_address: 172.23.201.3
       ctf-instances-network:
     stdin_open: true
     tty: true
@@ -43,6 +43,6 @@ networks:
         - subnet: [object Object]
   ctf-instances-network:
     external: true
-          gateway: 172.23.200.1
+          gateway: 172.23.201.1
   ctf-instances-network:
     external: true
