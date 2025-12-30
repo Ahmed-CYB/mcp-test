@@ -12,7 +12,7 @@ services:
       com.ctf.challenge: "ftp-server-infiltration"
     networks:
       ctf-ftp-server-infiltration-net:
-        ipv4_address: 172.27.193.178
+        ipv4_address: 172.23.198.71
     ports:
       - "21"
       - "22"
@@ -30,7 +30,7 @@ services:
       com.ctf.challenge: "ftp-server-infiltration"
     networks:
       ctf-ftp-server-infiltration-net:
-        ipv4_address: 172.27.193.3
+        ipv4_address: 172.23.198.3
       ctf-instances-network:
     stdin_open: true
     tty: true
@@ -40,7 +40,9 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.27.193.0/24
-          gateway: 172.27.193.1
+        - subnet: [object Object]
+  ctf-instances-network:
+    external: true
+          gateway: 172.23.198.1
   ctf-instances-network:
     external: true

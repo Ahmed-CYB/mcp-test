@@ -1,0 +1,29 @@
+# Configuration Backup - DO NOT DISTRIBUTE
+# Created: 2023-10-15
+# Author: System Administrator
+
+=== Database Configuration ===
+DB_HOST=192.168.1.100
+DB_USER=dbadmin
+DB_PASS=P@ssw0rd123!
+DB_NAME=company_data
+
+=== API Keys ===
+AWS_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+AWS_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+GOOGLE_API_KEY=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI
+
+=== Internal Services ===
+LDAP_SERVER=ldap.internal.company.com
+LDAP_BIND_DN=cn=admin,dc=company,dc=com
+LDAP_BIND_PW=ldap_admin_2023
+
+=== ADMIN FLAG ===
+CTF{ftp_anonymous_access_leads_to_secrets_exposure_2023}
+
+=== Backup Schedule ===
+Daily: 02:00 AM
+Weekly: Sunday 01:00 AM
+Monthly: 1st day 00:30 AM
+
+--- End of Configuration ---
