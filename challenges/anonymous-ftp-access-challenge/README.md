@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A misconfigured FTP server allows anonymous access. Players must discover and exploit this vulnerability to retrieve sensitive information.
+A misconfigured FTP server allows anonymous access. Participants must discover the service, connect anonymously, and navigate the file system to find the hidden flag.
 
 ## Challenge Information
 
@@ -14,8 +14,8 @@ A misconfigured FTP server allows anonymous access. Players must discover and ex
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.202.33 | ftp, ssh |
-| attacker | attacker | 172.23.202.3 | ssh |
+| ftp-server | victim | 172.23.203.78 | ftp, ssh |
+| attacker | attacker | 172.23.203.3 | ssh |
 
 ## Challenge Stages
 
@@ -25,15 +25,15 @@ Network reconnaissance to discover FTP service
 
 ### Stage 2
 
-Test anonymous FTP login credentials
+Connect to FTP server using anonymous credentials
 
 ### Stage 3
 
-Navigate FTP directory structure
+Navigate directory structure and find hidden flag file
 
 ### Stage 4
 
-Locate and retrieve the flag file
+Retrieve and read the flag
 
 ## Getting Started
 
