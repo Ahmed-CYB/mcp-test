@@ -1,0 +1,12 @@
+COMPANY SECURITY POLICY
+
+All employees must:
+1. Use strong passwords
+2. Never share credentials
+3. Report suspicious activity
+4. Access only authorized resources
+
+Confidential files are stored in restricted shares.
+Contact IT for access requests.
+
+-- IT Security Team

@@ -1,0 +1,1 @@
+CTF{smb_null_session_guest_access_2024}

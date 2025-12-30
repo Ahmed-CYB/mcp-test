@@ -1,0 +1,6 @@
+[Binary tar.gz file - System configuration backup]
+Contains:
+- /etc/passwd
+- /etc/shadow (encrypted)
+- Application configs
+- Database dumps
