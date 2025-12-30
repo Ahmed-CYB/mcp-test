@@ -1,0 +1,14 @@
+# This would be a PDF file in real scenario
+# PDF Header simulation
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+# Company Security Policy Document
+# Contains standard corporate policies
+# Nothing sensitive here, just a decoy file
+# Real sensitive data is elsewhere...

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  ftp-server:
+    image: fauria/vsftpd
+    container_name: ftp-server
+    ports:
+      - "21:21"
+      - "30000-31000:30000-31000"
+    environment:
+      - FTP_USER=admin
+      - FTP_PASS=admin123
+      - PASV_ADDRESS=127.0.0.1
+      - PASV_MIN_PORT=30000
+      - PASV_MAX_PORT=31000
+    volumes:
+      - ./vsftpd.conf:/etc/vsftpd/vsftpd.conf:ro
+      - ./ftp_data:/srv/ftp:ro
+    restart: unless-stopped
+
+  ssh-server:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: ssh-server
+    ports:
+      - "22:2222"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PUBLIC_KEY_FILE=/config/authorized_keys
+      - SUDO_ACCESS=false
+      - PASSWORD_ACCESS=true
+      - USER_PASSWORD=secure123
+      - USER_NAME=sshuser
+    volumes:
+      - ./ssh_config:/config
+    restart: unless-stopped
+
+networks:
+  default:
+    name: ctf-network

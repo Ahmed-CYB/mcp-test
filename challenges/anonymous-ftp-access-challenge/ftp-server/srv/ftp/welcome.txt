@@ -1,0 +1,16 @@
+=== Corporate FTP Server ===
+
+Welcome to our file sharing service!
+
+This server contains important company documents.
+Please ensure you have proper authorization before accessing files.
+
+For technical support, contact: admin@company.local
+
+--- Directory Structure ---
+/public     - Public documents
+/reports    - Monthly reports (Restricted)
+/backups    - System backups (Admin only)
+/temp       - Temporary files
+
+Last updated: 2024-01-15

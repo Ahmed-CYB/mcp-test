@@ -1,0 +1,20 @@
+Temporary Processing Log
+=======================
+
+Timestamp: 2024-01-15 14:30:22
+Process: data_migration
+Status: In Progress
+
+Processing files:
+- customer_data.csv (15MB) - Complete
+- transaction_log.txt (8MB) - Complete  
+- user_profiles.json (22MB) - 78% Complete
+- system_config.xml (2MB) - Pending
+
+Errors encountered: 0
+Warnings: 3
+
+Next scheduled run: 2024-01-16 02:00:00
+
+--- Cleanup required ---
+This file will be automatically deleted after 24 hours.

@@ -1,0 +1,34 @@
+{
+  "name": "anonymous-ftp-access-challenge",
+  "title": "Anonymous FTP Access Challenge",
+  "description": "A misconfigured FTP server allows anonymous access. Players must discover and exploit this vulnerability to retrieve sensitive information.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{4n0nym0u5_ftp_15_d4ng3r0u5_af73r_4ll}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.23.202.33",
+      "services": [
+        "ftp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker",
+      "type": "attacker",
+      "ip": "172.23.202.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 4,
+  "created": "2025-12-30T13:21:03.246Z",
+  "generator": "universal-structure-agent"
+}

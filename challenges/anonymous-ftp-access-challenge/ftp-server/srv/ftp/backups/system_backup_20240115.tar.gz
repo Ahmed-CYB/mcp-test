@@ -1,0 +1,17 @@
+# This simulates a compressed backup file
+# In reality, this would be a binary tar.gz file
+# Contains system configuration and sensitive data
+
+# Simulated tar.gz header
+1f8b0800000000000003
+
+# Backup Contents (simulated):
+# - /etc/passwd
+# - /etc/shadow
+# - /var/log/auth.log
+# - /home/admin/.ssh/
+# - Database dumps
+# - Application configs
+
+# Hidden flag in backup metadata
+# CTF{4n0nym0u5_ftp_15_d4ng3r0u5_af73r_4ll}
