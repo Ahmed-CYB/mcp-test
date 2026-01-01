@@ -1,0 +1,27 @@
+BACKUP ROTATION SCHEDULE
+
+Daily: 11:30 PM EST
+Weekly: Sunday 2:00 AM EST
+Monthly: 1st day, 3:00 AM EST
+
+Backup Location: /backup/ftp_data/
+Retention: 90 days
+
+User Data Locations:
+- projectmgr: /home/projectmgr/ftp/
+- devlead: /home/devlead/ftp/
+- analyst: /home/analyst/ftp/
+
+Last Successful Backup: 2024-11-15 23:30:01
+Next Scheduled: 2024-11-16 23:30:00
+
+Backup Status: ACTIVE
+Encryption: AES-256 (key rotated monthly)
+
+--- Recovery Procedures ---
+1. Contact system administrator
+2. Submit recovery request ticket
+3. Verify identity and authorization
+4. Restore from appropriate backup set
+
+Emergency Recovery Contact: backup-admin@corptech.com

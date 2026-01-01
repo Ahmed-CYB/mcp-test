@@ -1,0 +1,35 @@
+ACTIVE PROJECTS - Q4 2024
+
+[CONFIDENTIAL] - Internal Use Only
+
+Project Alpha - Cloud Migration Initiative
+Status: 75% Complete
+Lead: Sarah Chen
+Budget: $2.4M
+Deadline: Dec 2024
+
+Project Beta - Security Infrastructure Overhaul  
+Status: 45% Complete
+Lead: Marcus Rodriguez
+Budget: $1.8M
+Deadline: Mar 2025
+
+Project Gamma - Data Analytics Platform
+Status: 30% Complete
+Lead: Jennifer Walsh
+Budget: $3.2M
+Deadline: Jun 2025
+
+Project Delta - Mobile Application Suite
+Status: 60% Complete
+Lead: David Kim
+Budget: $1.5M
+Deadline: Jan 2025
+
+--- Access Levels ---
+Level 1: Public documentation
+Level 2: Project specifications (requires auth)
+Level 3: Financial data (restricted)
+Level 4: Source code repositories (highly restricted)
+
+Note: Temporary credentials may be found in legacy user accounts.

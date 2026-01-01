@@ -1,0 +1,23 @@
+INTERNAL SECURITY MEMO
+TO: IT Security Team
+FROM: Chief Information Officer
+RE: Legacy Encryption Standards
+
+Team,
+
+Due to compatibility requirements with our legacy systems, we continue to use our traditional cipher method for project data encryption. Please note:
+
+1. All sensitive data is first converted to binary representation
+2. The binary data then undergoes character substitution using ROT13
+3. This dual-layer approach ensures backward compatibility
+
+Reminder: The substitution cipher shifts each letter by exactly 13 positions in the alphabet. Numbers and special characters remain unchanged.
+
+For decryption procedures, reverse the process:
+- Apply ROT13 to decode the substituted characters
+- Convert the resulting binary back to ASCII text
+
+Please ensure all staff with Level 3 clearance are familiar with this process.
+
+Regards,
+CIO Office
