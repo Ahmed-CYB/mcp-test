@@ -1,0 +1,12 @@
+FTP Server Access Log - Corporate File Server
+===========================================
+
+2024-01-15 09:23:41 - LOGIN ATTEMPT: admin / 5d41402abc4b2a76b9719d911017c592
+2024-01-15 09:23:45 - LOGIN FAILED: Invalid credentials
+2024-01-15 09:24:12 - LOGIN ATTEMPT: backup_user / 098f6bcd4621d373cade4e832627b4f6
+2024-01-15 09:24:15 - LOGIN SUCCESS: backup_user authenticated
+2024-01-15 09:24:23 - DOWNLOAD: /hidden/.project_secrets/encrypted_db.txt
+2024-01-15 09:24:31 - LOGOUT: backup_user disconnected
+
+NOTE: Password hashes stored in legacy MD5 format for compatibility
+Security Advisory: Upgrade authentication system - current implementation vulnerable

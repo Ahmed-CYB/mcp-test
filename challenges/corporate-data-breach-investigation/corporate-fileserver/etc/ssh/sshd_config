@@ -1,4 +1,4 @@
-Port 27
+Port 22
 Protocol 2
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_dsa_key
@@ -17,7 +17,7 @@ PubkeyAuthentication yes
 IgnoreRhosts yes
 RhostsRSAAuthentication no
 HostbasedAuthentication no
-PermitEmptyPasswords yes
+PermitEmptyPasswords no
 ChallengeResponseAuthentication no
 PasswordAuthentication yes
 X11Forwarding yes
@@ -25,14 +25,11 @@ X11DisplayOffset 10
 PrintMotd no
 PrintLastLog yes
 TCPKeepAlive yes
-PermitUserEnvironment no
-Compression delayed
-ClientAliveInterval 0
-ClientAliveCountMax 3
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
-AllowUsers anonymous guest backup
-Match User anonymous
-    PasswordAuthentication no
+AllowUsers projectmgr devuser testuser
+Match User testuser
+    PasswordAuthentication yes
     PubkeyAuthentication no
-    PermitEmptyPasswords yes
     ForceCommand /bin/bash

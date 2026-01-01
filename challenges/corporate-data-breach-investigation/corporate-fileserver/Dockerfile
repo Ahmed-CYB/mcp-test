@@ -3,7 +3,7 @@ FROM kalilinux/kali-rolling
 # Update and install services
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    openssh-server sudo vim nano samba openssh-server \
+    openssh-server sudo vim nano vsftpd openssh-server \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server
@@ -18,5 +18,5 @@ RUN mkdir -p /var/run/sshd && \
 # Create challenge directory
 RUN mkdir -p /challenge && chmod 755 /challenge
 
-EXPOSE 22  
+EXPOSE 22 21 
 CMD ["/usr/sbin/sshd", "-D"]

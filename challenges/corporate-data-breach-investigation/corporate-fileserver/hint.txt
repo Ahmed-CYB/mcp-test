@@ -1,0 +1,25 @@
+Investigation Hints for Security Audit:
+=======================================
+
+1. FTP Authentication Analysis:
+   - Check the login logs for failed/successful attempts
+   - MD5 hashes can be cracked using rainbow tables or brute force
+   - Look for common passwords in corporate environments
+
+2. Data Recovery Process:
+   - The encrypted database uses multiple encoding layers
+   - Start with the outermost encoding and work inward
+   - Common encoding types: Hex, Base64, ROT13
+
+3. Tools Recommended:
+   - hashcat or john for hash cracking
+   - CyberChef for multi-layer decoding
+   - Online MD5 databases for quick lookups
+
+4. Attack Vector:
+   - Compromise FTP credentials first
+   - Use credentials to decrypt the stolen database
+   - Corporate flag format: CTF{...}
+
+Remember: This is a controlled security assessment.
+Document all findings for the final report.

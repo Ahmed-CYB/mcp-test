@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A corporate file server has been reported as potentially compromised. The server runs Samba services for internal file sharing, but security audits suggest weak configurations. Your task is to investigate the server's SMB implementation and recover sensitive data that may have been exposed.
+A major corporation suspects their file server has been compromised. As a security consultant, you must demonstrate how an attacker could breach their FTP server and access sensitive project data.
 
 ## Challenge Information
 
@@ -14,30 +14,30 @@ A corporate file server has been reported as potentially compromised. The server
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.193.123 | samba, ssh |
-| attacker-workstation | attacker | 172.23.193.3 | ssh |
+| corporate-fileserver | victim | 172.23.197.167 | ftp, ssh |
+| penetration-tester | attacker | 172.23.197.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network reconnaissance to identify the target server and running services
+Reconnaissance - Discover and enumerate FTP service on target server
 
 ### Stage 2
 
-SMB service enumeration to discover available shares and permissions
+Exploitation - Bypass FTP authentication using discovered vulnerability
 
 ### Stage 3
 
-Exploit weak SMB configurations to gain unauthorized access
+Data Extraction - Access and download encrypted corporate files
 
 ### Stage 4
 
-Navigate shared directories to locate sensitive files and the hidden flag
+Decryption - Crack encryption using credentials hidden in FTP directory structure
 
 ### Stage 5
 
-Decrypt or decode any protected files using discovered credentials or keys
+Flag Capture - Decrypt final database backup to retrieve the flag
 
 ## Getting Started
 

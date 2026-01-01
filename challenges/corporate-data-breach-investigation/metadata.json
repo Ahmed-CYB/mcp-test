@@ -1,35 +1,35 @@
 {
   "name": "corporate-data-breach-investigation",
   "title": "Corporate Data Breach Investigation",
-  "description": "A corporate file server has been reported as potentially compromised. The server runs Samba services for internal file sharing, but security audits suggest weak configurations. Your task is to investigate the server's SMB implementation and recover sensitive data that may have been exposed.",
+  "description": "A major corporation suspects their file server has been compromised. As a security consultant, you must demonstrate how an attacker could breach their FTP server and access sensitive project data.",
   "category": "network",
   "subcategories": [
     "network",
     "crypto"
   ],
   "difficulty": "medium",
-  "flag": "CTF{atbash_cipher_reveals_corporate_secrets}",
+  "flag": "CTF{corporate_data_breach_multi_layer_encoding_exposed}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "corporate-fileserver",
       "type": "victim",
-      "ip": "172.23.193.123",
+      "ip": "172.23.197.167",
       "services": [
-        "samba",
+        "ftp",
         "ssh"
       ]
     },
     {
-      "name": "attacker-workstation",
+      "name": "penetration-tester",
       "type": "attacker",
-      "ip": "172.23.193.3",
+      "ip": "172.23.197.3",
       "services": [
         "ssh"
       ]
     }
   ],
   "stages": 5,
-  "created": "2026-01-01T07:05:08.118Z",
+  "created": "2026-01-01T11:01:47.486Z",
   "generator": "universal-structure-agent"
 }
