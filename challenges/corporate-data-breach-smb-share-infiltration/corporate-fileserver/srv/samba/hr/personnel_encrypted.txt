@@ -1,0 +1,11 @@
+=== CONFIDENTIAL PERSONNEL FILE ===
+Encryption: ROT13 + Base64
+Access Level: RESTRICTED
+
+Rapelcgrq Qngn:
+PGS{f0z3_p0ecbengr_frperg_v5_uvqqra_va_gur_f0zr_cynpr}
+
+Note: Decryption key stored in system configuration files.
+Refer to legacy system documentation for cipher details.
+
+=== END FILE ===

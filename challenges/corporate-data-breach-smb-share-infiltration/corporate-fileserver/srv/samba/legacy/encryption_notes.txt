@@ -1,0 +1,20 @@
+Legacy System Encryption Documentation
+======================================
+
+Cipher Implementation: Dual Layer Security
+1. ROT13 substitution cipher (13 character rotation)
+2. Base64 encoding for obfuscation
+
+Decryption Process:
+- First decode Base64
+- Then apply ROT13 decryption
+
+Example:
+'Uryyb' (ROT13) -> 'Hello'
+'SGVsbG8=' (Base64) -> 'Hello'
+
+System Administrator: J.Smith
+Last Updated: 2023-01-15
+
+IMPORTANT: This encryption method is deprecated.
+Migration to AES-256 scheduled for Q2 2024.

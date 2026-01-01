@@ -1,0 +1,23 @@
+Corporate Security Policy Document
+=================================
+
+SECTION 1: ACCESS CONTROL
+All file shares must implement proper authentication.
+Guest access should be limited to public resources only.
+
+SECTION 2: DATA CLASSIFICATION
+- PUBLIC: General company information
+- INTERNAL: Employee access required
+- CONFIDENTIAL: Department specific access
+- RESTRICTED: Executive/HR access only
+
+SECTION 3: LEGACY SYSTEMS
+Departments maintaining legacy systems must:
+1. Document encryption methods
+2. Maintain access logs
+3. Schedule regular security audits
+
+Violations of this policy may result in disciplinary action.
+
+Document Version: 2.1
+Effective Date: January 1, 2024

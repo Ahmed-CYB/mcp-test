@@ -1,0 +1,10 @@
+LEGACY HASH VERIFICATION TABLE
+==============================
+
+Known Hash Collisions (MD5 truncated to 31 chars):
+d3b7a5fc21aa6cfe3ddeafefe7e -> "corporate_secret_2024"
+5f4dcc3b5aa765d61d8327deb88 -> "password123"
+a665a45920422f9d417e4867ef -> "hello_world"
+
+Note: System vulnerable to hash collision attacks
+Upgrade scheduled for Q2 2024
