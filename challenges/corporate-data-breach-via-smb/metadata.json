@@ -1,0 +1,34 @@
+{
+  "name": "corporate-data-breach-via-smb",
+  "title": "Corporate Data Breach via SMB",
+  "description": "A corporate file server running Samba has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the shared resources, and retrieve the confidential flag file.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{ftp_bbf7079d_mjv1tk_5ed27bdd}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "samba-fileserver",
+      "type": "victim",
+      "ip": "172.23.193.152",
+      "services": [
+        "samba",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker-workstation",
+      "type": "attacker",
+      "ip": "172.23.193.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-01T06:13:05.306Z",
+  "generator": "universal-structure-agent"
+}
