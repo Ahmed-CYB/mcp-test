@@ -1,0 +1,21 @@
+DataFlow Industries - Security Assessment Flag
+==============================================
+
+Congratulations! You have successfully identified the network misconfigurations.
+
+Flag Fragment 1: CTF{DataFlow_Network_
+Flag Fragment 2: Located in SSH service banner
+
+To complete this challenge:
+1. Enumerate SMB shares using null session
+2. Access FTP anonymous service for network documentation
+3. Use discovered credentials for SSH access
+4. Combine flag fragments
+
+Security Findings:
+- Anonymous FTP access enabled
+- SMB null session enumeration
+- Weak SSH authentication policies
+- Guest account misconfiguration
+
+Remediation required for all identified services.

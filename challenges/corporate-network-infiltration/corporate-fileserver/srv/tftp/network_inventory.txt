@@ -1,0 +1,20 @@
+DataFlow Industries Network Inventory
+=====================================
+Last Updated: 2023-10-15
+
+Legacy Systems (Manufacturing Floor):
+- PLC Controller 1: 192.168.100.10
+- PLC Controller 2: 192.168.100.11
+- HMI Terminal: 192.168.100.20
+- File Server: 192.168.100.50 (SMB enabled)
+
+Credentials Archive:
+- Service Account: manufacturing\svc_plc
+- Backup stored in: \\192.168.100.50\legacy$\credentials
+
+Note: TFTP server configured for PLC firmware updates
+Warning: DES encryption deprecated but required for legacy compatibility
+
+First flag component: Q1RGe2xlZ2FjeV90
+
+Contact: admin@dataflow-industries.com

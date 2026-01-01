@@ -35,12 +35,12 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-infiltration-backup-storage:
+  ctf-corporate-network-infiltration-hr-department:
     build:
-      context: ./backup-storage
+      context: ./hr-department
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-infiltration-backup-storage
-    hostname: backup-storage
+    container_name: ctf-corporate-network-infiltration-hr-department
+    hostname: hr-department
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-infiltration"

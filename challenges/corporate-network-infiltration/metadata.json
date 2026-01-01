@@ -1,14 +1,13 @@
 {
   "name": "corporate-network-infiltration",
   "title": "Corporate Network Infiltration",
-  "description": "A mid-sized technology company has deployed legacy file sharing services with critical misconfigurations. Security audit reveals that both FTP and SMB services contain vulnerabilities that could lead to complete data compromise.",
+  "description": "A security audit of DataFlow Industries reveals critical misconfigurations in their file sharing infrastructure. The corporate file server runs an FTP service with dangerous anonymous access, while the HR department's Samba server allows null session enumeration. Each system contains pieces of sensitive information that must be combined to complete the assessment.",
   "category": "network",
   "subcategories": [
-    "network",
-    "crypto"
+    "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{t3lnet_pr1v_3sc_sm6_cr3ds_l34k}",
+  "flag": "CTF{legacy_infrastructure_manufacturing}",
   "machines": 3,
   "machineDetails": [
     {
@@ -21,7 +20,7 @@
       ]
     },
     {
-      "name": "backup-storage",
+      "name": "hr-department",
       "type": "victim",
       "ip": "172.27.193.11",
       "services": [
@@ -40,6 +39,6 @@
     }
   ],
   "stages": 4,
-  "created": "2026-01-01T09:59:07.537Z",
+  "created": "2026-01-01T10:06:41.019Z",
   "generator": "universal-structure-agent"
 }
