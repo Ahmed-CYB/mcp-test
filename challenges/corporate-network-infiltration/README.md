@@ -2,43 +2,39 @@
 
 ## Scenario Description
 
-A corporate network with an exposed FTP server that serves as the entry point to internal systems containing encrypted sensitive data.
+A mid-sized technology company has deployed legacy file sharing services with critical misconfigurations. Security audit reveals that both FTP and SMB services contain vulnerabilities that could lead to complete data compromise.
 
 ## Challenge Information
 
-- **Categories:** network, crypto, forensics
+- **Categories:** network, crypto
 - **Machines:** 3
-- **Stages:** 5
+- **Stages:** 4
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| attacker-machine | attacker | 172.27.193.3 | ssh |
-| ftp-server | victim | 172.27.193.10 | ftp, ssh |
-| internal-victim | victim | 172.27.193.11 | ssh, http |
+| corporate-fileserver | victim | 172.27.193.36 | ftp, ssh |
+| backup-storage | victim | 172.27.193.11 | smb, netbios, ssh |
+| attacker-workstation | attacker | 172.27.193.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network reconnaissance to discover FTP service
+Network reconnaissance to discover active services and ports
 
 ### Stage 2
 
-FTP exploitation to gain initial access and gather encryption materials
+Exploit FTP anonymous access to gather intelligence and credentials
 
 ### Stage 3
 
-Lateral movement to internal victim machine
+Leverage discovered credentials to access misconfigured SMB shares
 
 ### Stage 4
 
-Forensic analysis to locate final encrypted flag
-
-### Stage 5
-
-Cryptographic analysis to decrypt the flag using collected materials
+Decrypt final flag using information gathered from both services
 
 ## Getting Started
 
@@ -51,4 +47,3 @@ Cryptographic analysis to decrypt the flag using collected materials
 
 - Network scanning and service exploitation
 - Cryptographic analysis and decryption techniques
-- Digital forensics and artifact analysis

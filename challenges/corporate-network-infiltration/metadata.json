@@ -1,45 +1,45 @@
 {
   "name": "corporate-network-infiltration",
   "title": "Corporate Network Infiltration",
-  "description": "A corporate network with an exposed FTP server that serves as the entry point to internal systems containing encrypted sensitive data.",
+  "description": "A mid-sized technology company has deployed legacy file sharing services with critical misconfigurations. Security audit reveals that both FTP and SMB services contain vulnerabilities that could lead to complete data compromise.",
   "category": "network",
   "subcategories": [
     "network",
-    "crypto",
-    "forensics"
+    "crypto"
   ],
-  "difficulty": "hard",
-  "flag": "CTF{crypto_f7g3btsv8ft_}",
+  "difficulty": "medium",
+  "flag": "CTF{t3lnet_pr1v_3sc_sm6_cr3ds_l34k}",
   "machines": 3,
   "machineDetails": [
     {
-      "name": "attacker-machine",
-      "type": "attacker",
-      "ip": "172.27.193.3",
-      "services": [
-        "ssh"
-      ]
-    },
-    {
-      "name": "ftp-server",
+      "name": "corporate-fileserver",
       "type": "victim",
-      "ip": "172.27.193.10",
+      "ip": "172.27.193.36",
       "services": [
         "ftp",
         "ssh"
       ]
     },
     {
-      "name": "internal-victim",
+      "name": "backup-storage",
       "type": "victim",
       "ip": "172.27.193.11",
       "services": [
-        "ssh",
-        "http"
+        "smb",
+        "netbios",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker-workstation",
+      "type": "attacker",
+      "ip": "172.27.193.3",
+      "services": [
+        "ssh"
       ]
     }
   ],
-  "stages": 5,
-  "created": "2025-12-28T20:47:32.522Z",
+  "stages": 4,
+  "created": "2026-01-01T09:59:07.537Z",
   "generator": "universal-structure-agent"
 }

@@ -1,0 +1,22 @@
+# FTP Server Configuration
+# backup-storage.techcorp.local
+
+[SERVER]
+port=21
+max_connections=50
+passive_mode=true
+
+[USERS]
+admin=disabled
+backup_user=active
+guest=active
+
+[SMB_CREDENTIALS]
+# Encoded for security - corporate policy requires obfuscation
+# Format: username:password (reverse alphabet encoding)
+smb_auth=yzhpfnizglo:Gvxs4OrXflmW
+
+[DIRECTORIES]
+root=/var/ftp
+backup=/var/ftp/backups
+logs=/var/ftp/logs

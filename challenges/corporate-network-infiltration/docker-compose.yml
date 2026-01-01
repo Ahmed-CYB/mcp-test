@@ -6,7 +6,10 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-network-infiltration-attacker
-    hostname: attacker-machine
+    hostname: attacker-workstation
+    labels:
+      com.ctf.machine.type: "attacker"
+      com.ctf.challenge: "corporate-network-infiltration"
     networks:
       ctf-corporate-network-infiltration-net:
         ipv4_address: 172.27.193.3
@@ -14,33 +17,39 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-infiltration-ftp-server:
+  ctf-corporate-network-infiltration-corporate-fileserver:
     build:
-      context: ./ftp-server
+      context: ./corporate-fileserver
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-infiltration-ftp-server
-    hostname: ftp-server
+    container_name: ctf-corporate-network-infiltration-corporate-fileserver
+    hostname: corporate-fileserver
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-infiltration"
     networks:
       ctf-corporate-network-infiltration-net:
-        ipv4_address: 172.27.193.10
+        ipv4_address: 172.27.193.36
     ports:
       - "21"
       - "22"
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-infiltration-internal-victim:
+  ctf-corporate-network-infiltration-backup-storage:
     build:
-      context: ./internal-victim
+      context: ./backup-storage
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-infiltration-internal-victim
-    hostname: internal-victim
+    container_name: ctf-corporate-network-infiltration-backup-storage
+    hostname: backup-storage
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-infiltration"
     networks:
       ctf-corporate-network-infiltration-net:
         ipv4_address: 172.27.193.11
     ports:
+      - "445"
       - "22"
-      - "80"
     stdin_open: true
     tty: true
 
