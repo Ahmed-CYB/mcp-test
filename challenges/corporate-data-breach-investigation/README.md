@@ -2,38 +2,42 @@
 
 ## Scenario Description
 
-A multinational corporation suspects unauthorized access to their file server. As a security consultant, investigate their SMB infrastructure and demonstrate potential data exposure through misconfigured network shares.
+A corporate file server has been reported as potentially compromised. The server runs Samba services for internal file sharing, but security audits suggest weak configurations. Your task is to investigate the server's SMB implementation and recover sensitive data that may have been exposed.
 
 ## Challenge Information
 
-- **Categories:** network
+- **Categories:** network, crypto
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.194.108 | samba, ssh |
-| attacker-workstation | attacker | 172.23.194.3 | ssh |
+| corporate-fileserver | victim | 172.23.193.123 | samba, ssh |
+| attacker-workstation | attacker | 172.23.193.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network reconnaissance to identify SMB services and available shares
+Network reconnaissance to identify the target server and running services
 
 ### Stage 2
 
-Enumerate share permissions and accessible directories without authentication
+SMB service enumeration to discover available shares and permissions
 
 ### Stage 3
 
-Discover credentials through exposed configuration files or weak security practices
+Exploit weak SMB configurations to gain unauthorized access
 
 ### Stage 4
 
-Access restricted shares containing sensitive corporate data and retrieve the flag
+Navigate shared directories to locate sensitive files and the hidden flag
+
+### Stage 5
+
+Decrypt or decode any protected files using discovered credentials or keys
 
 ## Getting Started
 
@@ -45,3 +49,4 @@ Access restricted shares containing sensitive corporate data and retrieve the fl
 ## Learning Objectives
 
 - Network scanning and service exploitation
+- Cryptographic analysis and decryption techniques

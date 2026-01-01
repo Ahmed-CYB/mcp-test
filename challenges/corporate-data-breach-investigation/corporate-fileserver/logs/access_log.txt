@@ -1,0 +1,9 @@
+2024-01-15 09:23:12 - SMB connection from 192.168.1.45 to share 'public'
+2024-01-15 09:24:33 - Authentication success: user 'guest' accessing 'public'
+2024-01-15 10:15:42 - SMB connection from 192.168.1.67 to share 'secure'
+2024-01-15 10:16:01 - Authentication failure: invalid credentials for 'secure'
+2024-01-15 11:32:18 - SMB connection from 192.168.1.67 to share 'secure'
+2024-01-15 11:32:45 - Authentication success: user 'watchyst3m' accessing 'secure'
+2024-01-15 11:45:23 - File access: /srv/samba/secure/confidential/encrypted_memo.txt
+2024-01-15 14:22:11 - SMB connection from 192.168.1.89 to share 'financial'
+2024-01-15 14:22:33 - Authentication failure: user not in @finance group
