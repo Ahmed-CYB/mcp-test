@@ -1,0 +1,23 @@
+[mysqld]
+user = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket = /var/run/mysqld/mysqld.sock
+port = 3306
+basedir = /usr
+datadir = /var/lib/mysql
+tmpdir = /tmp
+lc-messages-dir = /usr/share/mysql
+# Network configuration
+bind-address = 0.0.0.0
+# Security misconfiguration - root accessible remotely
+skip-name-resolve
+# Logging enabled for reconnaissance
+general_log = 1
+general_log_file = /var/log/mysql/mysql.log
+log_error = /var/log/mysql/error.log
+# Weak authentication
+validate_password.policy = LOW
+validate_password.length = 4
+# Information disclosure
+show_compatibility_56 = ON
+sql_mode = ""

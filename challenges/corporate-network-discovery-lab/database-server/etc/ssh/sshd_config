@@ -1,0 +1,30 @@
+# SSH configuration with security issues
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+# Authentication settings
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile %h/.ssh/authorized_keys
+# Password authentication enabled with weak passwords
+PasswordAuthentication yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+# Information disclosure
+ServerKeyBits 1024
+SyslogFacility AUTH
+LogLevel INFO
+# Weak configuration
+ClientAliveInterval 0
+ClientAliveCountMax 3
+UsePAM yes
+# Banner that reveals system information
+Banner /etc/ssh/banner
+# Weak ciphers allowed
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128,aes128-cbc,3des-cbc
+MACs hmac-md5,hmac-sha1,umac-64@openssh.com,hmac-ripemd160

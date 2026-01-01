@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CorpNet Database Server</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .service { background: #ecf0f1; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .warning { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CorpNet Database Infrastructure</h1>
+        <p>Central Database Server - Internal Use Only</p>
+    </div>
+    
+    <div class="service">
+        <h3>Available Services</h3>
+        <ul>
+            <li><strong>MySQL Database</strong> - Port 3306 (Primary customer data)</li>
+            <li><strong>PostgreSQL Database</strong> - Port 5432 (Analytics and reporting)</li>
+            <li><strong>Redis Cache</strong> - Port 6379 (Session management)</li>
+            <li><strong>SSH Access</strong> - Port 22 (Administrative access)</li>
+            <li><strong>SMTP Relay</strong> - Port 25 (Internal mail routing)</li>
+        </ul>
+    </div>
+    
+    <div class="service">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="/phpmyadmin">Database Administration</a></li>
+            <li><a href="/server-status">Server Status</a></li>
+            <li><a href="/server-info">Server Information</a></li>
+            <li><a href="/backups">Backup Files</a></li>
+        </ul>
+    </div>
+    
+    <div class="warning">
+        <p>⚠️ This system contains sensitive corporate data. Unauthorized access is prohibited.</p>
+        <p>For technical support, contact: dbadmin@corpnet.local</p>
+    </div>
+    
+    <!-- Development note: Default credentials still active on some services -->
+    <!-- TODO: Update service configurations before production deployment -->
+</body>
+</html>
