@@ -1,0 +1,9 @@
+Binary Excel file containing:
+- Employee salary information
+- Social security numbers
+- Performance reviews
+- Disciplinary actions
+
+[This would be an actual Excel file in a real scenario]
+
+Embedded flag in cell A1: CTF{smb_enum_leads_to_data_exposure_2024}

@@ -2,42 +2,38 @@
 
 ## Scenario Description
 
-A financial consulting firm's file server has been reported as potentially compromised. The IT department suspects unauthorized access to their SMB shares. As a security consultant, investigate the server's SMB configuration and recover the sensitive client data flag that may have been accessed by attackers.
+A multinational corporation suspects unauthorized access to their file server. As a security consultant, investigate their SMB infrastructure and demonstrate potential data exposure through misconfigured network shares.
 
 ## Challenge Information
 
-- **Categories:** network, crypto
+- **Categories:** network
 - **Machines:** 2
-- **Stages:** 5
+- **Stages:** 4
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.193.180 | samba, ssh |
-| attacker-workstation | attacker | 172.23.193.3 | ssh |
+| corporate-fileserver | victim | 172.23.194.108 | samba, ssh |
+| attacker-workstation | attacker | 172.23.194.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Enumerate SMB shares and identify accessible directories
+Network reconnaissance to identify SMB services and available shares
 
 ### Stage 2
 
-Extract user credentials or password hashes from accessible files
+Enumerate share permissions and accessible directories without authentication
 
 ### Stage 3
 
-Crack obtained credentials using appropriate tools
+Discover credentials through exposed configuration files or weak security practices
 
 ### Stage 4
 
-Access restricted shares using discovered credentials
-
-### Stage 5
-
-Decrypt the flag file using recovered passwords
+Access restricted shares containing sensitive corporate data and retrieve the flag
 
 ## Getting Started
 
@@ -49,4 +45,3 @@ Decrypt the flag file using recovered passwords
 ## Learning Objectives
 
 - Network scanning and service exploitation
-- Cryptographic analysis and decryption techniques

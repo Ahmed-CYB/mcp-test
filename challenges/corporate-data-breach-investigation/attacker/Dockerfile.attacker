@@ -23,9 +23,10 @@ RUN apt-get update && \
     wireshark \
     tcpdump \
     netcat-traditional \
+    hping3 \
     masscan \
-    bash \
     openssh-server openssh-client \
+    bash \
     ftp \
     lftp \
     telnet \
@@ -34,10 +35,6 @@ RUN apt-get update && \
     nfs-common \
     snmp \
     tftp-hpa \
-    hashcat \
-    john \
-    openssl \
-    gnupg \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server
