@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CorpNet Portal - Network Tools</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .tool-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 4px; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-right: 10px; }
+        button { padding: 10px 20px; background: #27ae60; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #229954; }
+        .output { background: #2c3e50; color: #ecf0f1; padding: 15px; border-radius: 4px; font-family: monospace; white-space: pre-wrap; margin-top: 15px; min-height: 100px; }
+        .targets { background: #e8f5e8; padding: 15px; border-radius: 4px; margin: 15px 0; }
+    </style>
+    <script>
+        async function performScan() {
+            const target = document.getElementById('target').value;
+            const scanType = document.getElementById('scanType').value;
+            const outputDiv = document.getElementById('scanOutput');
+            
+            if (!target) {
+                outputDiv.textContent = 'Please enter a target IP or hostname';
+                return;
+            }
+            
+            outputDiv.textContent = 'Scanning ' + target + '... Please wait.';
+            
+            try {
+                const response = await fetch('/scan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'target=' + encodeURIComponent(target) + '&scanType=' + scanType
+                });
+                
+                const result = await response.text();
+                outputDiv.textContent = result;
+                
+            } catch (error) {
+                outputDiv.textContent = 'Scan failed: ' + error.message;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>🔧 Network Reconnaissance Tools</h2>
+        
+        <div class="targets">
+            <h4>🎯 Known Target Machines:</h4>
+            <ul>
+                <li><strong>web-portal.corpnet.local</strong> (192.168.100.10) - Primary web server</li>
+                <li><strong>db-server.corpnet.local</strong> (192.168.100.20) - Database server</li>
+                <li><strong>file-server.corpnet.local</strong> (192.168.100.30) - File sharing server</li>
+            </ul>
+            <p><em>Use different nmap techniques to fully enumerate each target.</em></p>
+        </div>
+        
+        <div class="tool-section">
+            <h3>📡 Port Scanner (Nmap Simulation)</h3>
+            <div class="form-group">
+                <label for="target">Target:</label>
+                <input type="text" id="target" placeholder="192.168.100.10 or hostname" style="width: 250px;">
+                <select id="scanType">
+                    <option value="tcp">TCP Scan</option>
+                    <option value="udp">UDP Scan</option>
+                </select>
+                <button onclick="performScan()">Start Scan</button>
+            </div>
+            <div id="scanOutput" class="output">Scan results will appear here...</div>
+        </div>
+        
+        <div class="tool-section">
+            <h4>💡 Reconnaissance Tips:</h4>
+            <ul>
+                <li>Try different scan types (TCP/UDP) for comprehensive enumeration</li>
+                <li>Some services may be running on non-standard ports</li>
+                <li>Look for patterns in service configurations</li>
+                <li>Administrative interfaces might require special access tokens</li>
+                <li>Timing-based attacks can reveal information through response delays</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="/" style="color: #3498db; text-decoration: none;">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

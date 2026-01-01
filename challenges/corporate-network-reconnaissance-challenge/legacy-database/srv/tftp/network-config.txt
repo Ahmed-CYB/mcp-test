@@ -1,0 +1,24 @@
+LEGACY CORP NETWORK CONFIGURATION
+=================================
+
+Subnet: 192.168.100.0/24
+Gateway: 192.168.100.1
+DNS: 192.168.100.10, 8.8.8.8
+
+Critical Servers:
+- Database Server: 192.168.100.50 (MySQL)
+- File Server: 192.168.100.51 (SMB/CIFS)
+- Mail Server: 192.168.100.52 (SMTP/IMAP)
+
+Monitoring:
+- SNMP Community: private
+- Monitoring Station: 192.168.100.100
+
+Security Notes:
+- Telnet enabled on port 20 for legacy support
+- TFTP used for configuration backups
+- MySQL accessible from internal network
+- SNMP v2c with weak community strings
+
+TODO: Migrate legacy services to secure alternatives
+Scheduled maintenance: Next quarter

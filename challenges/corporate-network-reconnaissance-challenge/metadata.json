@@ -1,0 +1,80 @@
+{
+  "name": "corporate-network-reconnaissance-challenge",
+  "title": "Corporate Network Reconnaissance Challenge",
+  "description": "A corporate network penetration test where participants must use nmap and other network tools to discover and enumerate three target machines with different service configurations. Each machine presents unique scanning challenges and contains flags accessible through proper service enumeration.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "web"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{null_session_ftp_enum_success_26}",
+  "machines": 4,
+  "machineDetails": [
+    {
+      "name": "scanner-workstation",
+      "type": "attacker",
+      "ip": "172.23.193.3",
+      "services": [
+        "nmap",
+        "wireshark",
+        "tcpdump",
+        "netcat",
+        "hping3",
+        "masscan",
+        "nc",
+        "net-tools",
+        "iputils-ping",
+        "python3",
+        "curl",
+        "wget",
+        "git",
+        "vim",
+        "nano",
+        "bash",
+        "ssh-client",
+        "smbclient",
+        "nfs-common",
+        "snmp",
+        "tftp"
+      ]
+    },
+    {
+      "name": "corporate-fileserver",
+      "type": "victim",
+      "ip": "172.23.193.45",
+      "services": [
+        "ftp",
+        "ssh",
+        "smb",
+        "nfs",
+        "snmp"
+      ]
+    },
+    {
+      "name": "legacy-database",
+      "type": "victim",
+      "ip": "172.23.193.11",
+      "services": [
+        "telnet",
+        "mysql",
+        "snmp",
+        "tftp"
+      ]
+    },
+    {
+      "name": "web-portal",
+      "type": "victim",
+      "ip": "172.23.193.12",
+      "services": [
+        "http",
+        "https",
+        "ssh",
+        "dns"
+      ]
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-01T15:35:33.615Z",
+  "generator": "universal-structure-agent"
+}

@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  ctf-corporate-network-reconnaissance-challenge-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-corporate-network-reconnaissance-challenge-attacker
+    hostname: scanner-workstation
+    labels:
+      com.ctf.machine.type: "attacker"
+      com.ctf.challenge: "corporate-network-reconnaissance-challenge"
+    networks:
+      ctf-corporate-network-reconnaissance-challenge-net:
+        ipv4_address: 172.23.193.3
+      ctf-instances-network:
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-reconnaissance-challenge-corporate-fileserver:
+    build:
+      context: ./corporate-fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-reconnaissance-challenge-corporate-fileserver
+    hostname: corporate-fileserver
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-reconnaissance-challenge"
+    networks:
+      ctf-corporate-network-reconnaissance-challenge-net:
+        ipv4_address: 172.23.193.45
+    ports:
+      - "21"
+      - "22"
+      - "445"
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-reconnaissance-challenge-legacy-database:
+    build:
+      context: ./legacy-database
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-reconnaissance-challenge-legacy-database
+    hostname: legacy-database
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-reconnaissance-challenge"
+    networks:
+      ctf-corporate-network-reconnaissance-challenge-net:
+        ipv4_address: 172.23.193.11
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-reconnaissance-challenge-web-portal:
+    build:
+      context: ./web-portal
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-reconnaissance-challenge-web-portal
+    hostname: web-portal
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-reconnaissance-challenge"
+    networks:
+      ctf-corporate-network-reconnaissance-challenge-net:
+        ipv4_address: 172.23.193.12
+    ports:
+      - "80"
+      - "443"
+      - "22"
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-corporate-network-reconnaissance-challenge-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.193.0/24
+          gateway: 172.23.193.1
+  ctf-instances-network:
+    external: true

@@ -1,0 +1,21 @@
+=== LEGACY CORP PUBLIC ACCESS TERMINAL ===
+
+Welcome to the Legacy Corporation public information kiosk.
+This system provides access to:
+- Company directory
+- Public documents
+- Network utilities
+
+For technical support, contact: support@legacycorp.com
+
+System Status: OPERATIONAL
+Last Updated: 2024-01-15
+
+Note: This terminal allows file browsing for authorized personnel.
+Use 'ls' and 'cat' commands to navigate available resources.
+
+=== Security Notice ===
+All activities are logged for security purposes.
+Unauthorized access attempts will be reported.
+
+CTF{telnet_enum_reveals_network_secrets_2024}
