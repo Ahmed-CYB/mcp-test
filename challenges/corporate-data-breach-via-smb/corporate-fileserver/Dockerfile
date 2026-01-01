@@ -1,40 +1,9 @@
 FROM kalilinux/kali-rolling
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-# CRITICAL: Always update package lists before installing
-# Update and install base tools + SSH
+# Update and install services
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    openssh-server \
-    sudo \
-    vim \
-    nano \
-    curl \
-    wget \
-    git \
-    net-tools \
-    iputils-ping \
-    ca-certificates \
-    unzip \
-    python3 \
-    python3-pip \
-    nmap \
-    wireshark \
-    tcpdump \
-    netcat-traditional \
-    hping3 \
-    masscan \
-    openssh-server openssh-client \
-    bash \
-    ftp \
-    lftp \
-    telnet \
-    openssh-client \
-    smbclient \
-    nfs-common \
-    snmp \
-    tftp-hpa \
+    openssh-server sudo vim nano samba openssh-server \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server
@@ -49,5 +18,5 @@ RUN mkdir -p /var/run/sshd && \
 # Create challenge directory
 RUN mkdir -p /challenge && chmod 755 /challenge
 
-EXPOSE 22
+EXPOSE 22  
 CMD ["/usr/sbin/sshd", "-D"]

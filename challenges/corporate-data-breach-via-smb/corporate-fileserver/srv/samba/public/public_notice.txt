@@ -1,0 +1,26 @@
+CORPORATE NETWORK POLICY UPDATE
+===============================
+
+Effective Date: October 1, 2024
+
+All employees must comply with the following:
+
+1. Password Policy:
+   - Minimum 8 characters
+   - Must include uppercase, lowercase, numbers
+   - Change every 90 days
+
+2. Network Access:
+   - VPN required for remote access
+   - Guest accounts disabled on critical systems
+   - Regular security audits scheduled
+
+3. File Sharing:
+   - No sensitive data on public shares
+   - Finance data requires department approval
+   - Backup systems restricted to IT staff
+
+For questions, contact IT Security at security@corpnet.local
+
+Note: This server is currently undergoing security updates.
+Some legacy configurations may still be active during transition.

@@ -2,38 +2,42 @@
 
 ## Scenario Description
 
-A corporate file server running Samba has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the shared resources, and retrieve the confidential flag file.
+A corporate file server is running an outdated Samba service with misconfigurations. The attacker must identify vulnerable SMB shares, exploit authentication weaknesses, and extract sensitive corporate data including the final flag.
 
 ## Challenge Information
 
 - **Categories:** network
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| samba-fileserver | victim | 172.23.193.152 | samba, ssh |
-| attacker-workstation | attacker | 172.23.193.3 | ssh |
+| corporate-fileserver | victim | 172.23.194.48 | samba, ssh |
+| attacker-workstation | attacker | 172.23.194.3 | ssh |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Network reconnaissance to discover the Samba service
+Network reconnaissance to discover SMB service
 
 ### Stage 2
 
-SMB enumeration to identify accessible shares and permissions
+Enumerate available SMB shares and permissions
 
 ### Stage 3
 
-Exploit misconfigured shares or weak authentication to access restricted files
+Exploit null session or weak authentication
 
 ### Stage 4
 
-Locate and retrieve the encrypted flag from the file server
+Navigate shared directories to locate sensitive files
+
+### Stage 5
+
+Extract and decrypt the corporate flag
 
 ## Getting Started
 

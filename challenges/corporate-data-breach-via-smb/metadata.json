@@ -1,19 +1,19 @@
 {
   "name": "corporate-data-breach-via-smb",
   "title": "Corporate Data Breach via SMB",
-  "description": "A corporate file server running Samba has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the shared resources, and retrieve the confidential flag file.",
+  "description": "A corporate file server is running an outdated Samba service with misconfigurations. The attacker must identify vulnerable SMB shares, exploit authentication weaknesses, and extract sensitive corporate data including the final flag.",
   "category": "network",
   "subcategories": [
     "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{ftp_bbf7079d_mjv1tk_5ed27bdd}",
+  "flag": "CTF{null_session_samba_exposed_credentials}",
   "machines": 2,
   "machineDetails": [
     {
-      "name": "samba-fileserver",
+      "name": "corporate-fileserver",
       "type": "victim",
-      "ip": "172.23.193.152",
+      "ip": "172.23.194.48",
       "services": [
         "samba",
         "ssh"
@@ -22,13 +22,13 @@
     {
       "name": "attacker-workstation",
       "type": "attacker",
-      "ip": "172.23.193.3",
+      "ip": "172.23.194.3",
       "services": [
         "ssh"
       ]
     }
   ],
-  "stages": 4,
-  "created": "2026-01-01T06:13:05.306Z",
+  "stages": 5,
+  "created": "2026-01-01T07:09:22.045Z",
   "generator": "universal-structure-agent"
 }
