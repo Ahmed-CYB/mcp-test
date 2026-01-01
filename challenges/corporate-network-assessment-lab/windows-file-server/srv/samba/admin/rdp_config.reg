@@ -1,0 +1,24 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fDenyTSConnections"=dword:00000000
+"fSingleSessionPerUser"=dword:00000001
+"TSEnabled"=dword:00000001
+"TSUserEnabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp]
+"PortNumber"=dword:00000d3d
+"UserAuthentication"=dword:00000000
+"SecurityLayer"=dword:00000000
+"MinEncryptionLevel"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services]
+"fAllowToGetHelp"=dword:00000001
+"fAllowUnsolicited"=dword:00000001
+"Shadow"=dword:00000001
+
+; RDP Configuration Notes:
+; Port changed to 3389 (0x0d3d) for "security"
+; Weak encryption enabled
+; Network Level Authentication disabled
+; Multiple sessions allowed per user

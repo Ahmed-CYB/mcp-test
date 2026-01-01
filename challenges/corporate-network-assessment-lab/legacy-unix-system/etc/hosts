@@ -1,0 +1,9 @@
+127.0.0.1	localhost
+192.168.1.10	legacy-unix-system
+192.168.1.50	scanner-station
+192.168.1.100	admin-workstation
+10.10.10.5	backup-server
+172.16.0.25	database-server
+# Legacy system entries - do not modify
+# Maintenance access: legacy_admin:unix1995
+# Service port mapping documented in /var/adm/messages

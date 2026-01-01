@@ -1,0 +1,10 @@
+Nov 15 14:23:45 legacy-unix-system syslogd: restart
+Nov 15 14:24:01 legacy-unix-system cron[1234]: (root) CMD (/usr/lib/sa/sa1)
+Nov 15 14:25:12 legacy-unix-system login: ROOT LOGIN console
+Nov 15 14:30:45 legacy-unix-system su: 'su root' succeeded for legacy_admin on /dev/pts/1
+Nov 15 14:31:02 legacy-unix-system security_audit: FLAG_DISCOVERED CTF{l3g4cy_unix_r3c0nn41ss4nc3_m4st3r}
+Nov 15 14:31:15 legacy-unix-system ftpd[5678]: connection from scanner-station
+Nov 15 14:32:30 legacy-unix-system rshd[9012]: connection from 192.168.1.100
+Nov 15 14:33:45 legacy-unix-system fingerd[3456]: finger request for user list
+Nov 15 14:34:12 legacy-unix-system security_audit: Reconnaissance detected from multiple sources
+Nov 15 14:35:00 legacy-unix-system custom-service[7890]: Authentication attempt - username: legacy_admin

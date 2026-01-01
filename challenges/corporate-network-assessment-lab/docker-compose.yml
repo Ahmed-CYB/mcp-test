@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  ctf-corporate-network-assessment-lab-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-corporate-network-assessment-lab-attacker
+    hostname: scanner-station
+    labels:
+      com.ctf.machine.type: "attacker"
+      com.ctf.challenge: "corporate-network-assessment-lab"
+    networks:
+      ctf-corporate-network-assessment-lab-net:
+        ipv4_address: 172.26.193.3
+      ctf-instances-network:
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-assessment-lab-linux-web-server:
+    build:
+      context: ./linux-web-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-assessment-lab-linux-web-server
+    hostname: linux-web-server
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-assessment-lab"
+    networks:
+      ctf-corporate-network-assessment-lab-net:
+        ipv4_address: 172.26.193.178
+    ports:
+      - "80"
+      - "443"
+      - "22"
+      - "21"
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-assessment-lab-windows-file-server:
+    build:
+      context: ./windows-file-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-assessment-lab-windows-file-server
+    hostname: windows-file-server
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-assessment-lab"
+    networks:
+      ctf-corporate-network-assessment-lab-net:
+        ipv4_address: 172.26.193.11
+    ports:
+      - "445"
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-assessment-lab-embedded-iot-device:
+    build:
+      context: ./embedded-iot-device
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-assessment-lab-embedded-iot-device
+    hostname: embedded-iot-device
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-assessment-lab"
+    networks:
+      ctf-corporate-network-assessment-lab-net:
+        ipv4_address: 172.26.193.12
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-assessment-lab-legacy-unix-system:
+    build:
+      context: ./legacy-unix-system
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-assessment-lab-legacy-unix-system
+    hostname: legacy-unix-system
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-assessment-lab"
+    networks:
+      ctf-corporate-network-assessment-lab-net:
+        ipv4_address: 172.26.193.13
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-corporate-network-assessment-lab-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.26.193.0/24
+          gateway: 172.26.193.1
+  ctf-instances-network:
+    external: true

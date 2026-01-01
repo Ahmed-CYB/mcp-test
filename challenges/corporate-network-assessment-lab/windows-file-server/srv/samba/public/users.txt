@@ -1,0 +1,34 @@
+CORPNET Domain Users - Contact Directory
+========================================
+
+Administrators:
+- administrator (Domain Admin)
+- backup.admin (Backup Operators)
+- service.account (Service Account)
+
+Finance Department:
+- john.smith (Finance Manager)
+- sarah.jones (Accountant)
+- mike.wilson (Financial Analyst)
+- finance.svc (Finance Service Account)
+
+IT Department:
+- it.admin (IT Administrator)
+- helpdesk (Help Desk)
+- monitoring.svc (Monitoring Service)
+
+Default Accounts (FOR TESTING ONLY - REMOVE IN PROD):
+- guest (Guest Account) - DISABLED
+- test.user (Test Account) - Password: Test123!
+- temp.admin (Temporary Admin) - Password: TempPass2024
+
+Service Accounts:
+- snmp.readonly (SNMP Read-Only) - Community: public
+- backup.service (Backup Service) - Password: BackupSvc2024!
+- winrm.service (WinRM Service) - Password: WinRM_P@ss
+
+NOTE: All service accounts use default passwords.
+Scheduled password rotation: OVERDUE (Last updated: 6 months ago)
+
+Emergency Contact: IT Support ext. 2847
+SNMP Community Strings: public (RO), private (RW), admin123 (RW)

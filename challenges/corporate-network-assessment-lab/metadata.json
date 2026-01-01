@@ -1,0 +1,77 @@
+{
+  "name": "corporate-network-assessment-lab",
+  "title": "Corporate Network Assessment Lab",
+  "description": "A simulated corporate environment with diverse systems requiring comprehensive network reconnaissance. Practice advanced nmap techniques across different operating systems and service configurations.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "hard",
+  "flag": "CTF{t3ln3t_l3g4cy_syst3ms_n33d_upd4t3s}",
+  "machines": 5,
+  "machineDetails": [
+    {
+      "name": "scanner-station",
+      "type": "attacker",
+      "ip": "172.26.193.3",
+      "services": [
+        "ssh"
+      ]
+    },
+    {
+      "name": "linux-web-server",
+      "type": "victim",
+      "ip": "172.26.193.178",
+      "services": [
+        "http",
+        "https",
+        "ssh",
+        "ftp",
+        "telnet",
+        "snmp",
+        "mysql"
+      ]
+    },
+    {
+      "name": "windows-file-server",
+      "type": "victim",
+      "ip": "172.26.193.11",
+      "services": [
+        "smb",
+        "rdp",
+        "winrm",
+        "dns",
+        "ldap",
+        "rpc"
+      ]
+    },
+    {
+      "name": "embedded-iot-device",
+      "type": "victim",
+      "ip": "172.26.193.12",
+      "services": [
+        "custom-8080",
+        "custom-9999",
+        "tftp",
+        "upnp",
+        "coap"
+      ]
+    },
+    {
+      "name": "legacy-unix-system",
+      "type": "victim",
+      "ip": "172.26.193.13",
+      "services": [
+        "rsh",
+        "finger",
+        "echo",
+        "daytime",
+        "chargen",
+        "custom-31337"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2026-01-01T12:13:15.789Z",
+  "generator": "universal-structure-agent"
+}

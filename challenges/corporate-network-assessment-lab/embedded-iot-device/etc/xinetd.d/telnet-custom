@@ -1,0 +1,13 @@
+service telnet-custom
+{
+    disable     = no
+    flags       = REUSE
+    socket_type = stream
+    wait        = no
+    user        = root
+    server      = /usr/sbin/in.telnetd
+    server_args = -h -L /opt/corporate/bin/custom_shell.sh
+    log_on_failure += USERID
+    port        = 28
+    bind        = 0.0.0.0
+}
