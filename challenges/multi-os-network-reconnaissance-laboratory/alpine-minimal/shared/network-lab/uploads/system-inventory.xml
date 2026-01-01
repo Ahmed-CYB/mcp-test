@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<network_lab_inventory>
+  <metadata>
+    <created>2024-01-15</created>
+    <purpose>nmap_training_environment</purpose>
+    <administrator>labadmin</administrator>
+  </metadata>
+  
+  <systems>
+    <system id="alpine-minimal">
+      <hostname>alpine-recon.lab</hostname>
+      <os>Alpine Linux 3.18</os>
+      <services>
+        <service name="ssh" port="22" version="OpenSSH_9.3" />
+        <service name="ftp" port="28" version="vsftpd_3.0.5" />
+        <service name="tftp" port="69" version="tftp-hpa_5.2" />
+        <service name="netcat" port="1337" version="netcat_1.10" />
+      </services>
+      <vulnerabilities>
+        <vuln type="anonymous_ftp" severity="medium" />
+        <vuln type="tftp_write_access" severity="high" />
+        <vuln type="netcat_shell" severity="critical" />
+      </vulnerabilities>
+    </system>
+    
+    <system id="ubuntu-server">
+      <hostname>ubuntu-web.lab</hostname>
+      <os>Ubuntu Server 22.04</os>
+      <services>
+        <service name="http" port="80" version="Apache_2.4.52" />
+        <service name="https" port="443" version="Apache_2.4.52" />
+        <service name="mysql" port="3306" version="MySQL_8.0.35" />
+        <service name="ssh" port="2222" version="OpenSSH_8.9" />
+      </services>
+    </system>
+    
+    <system id="centos-stream">
+      <hostname>centos-mail.lab</hostname>
+      <os>CentOS Stream 9</os>
+      <services>
+        <service name="smtp" port="25" version="Postfix_3.7.2" />
+        <service name="pop3" port="110" version="Dovecot_2.3.16" />
+        <service name="imap" port="143" version="Dovecot_2.3.16" />
+        <service name="ftp" port="21" version="vsftpd_3.0.5" />
+      </services>
+    </system>
+    
+    <system id="debian-stable">
+      <hostname>debian-auth.lab</hostname>
+      <os>Debian 12 Bookworm</os>
+      <services>
+        <service name="dns" port="53" version="BIND_9.18.19" />
+        <service name="ldap" port="389" version="OpenLDAP_2.5.13" />
+        <service name="kerberos" port="88" version="MIT_Kerberos_1.20" />
+        <service name="ssh" port="22" version="OpenSSH_9.2" />
+      </services>
+    </system>
+  </systems>
+  
+  <scanning_exercises>
+    <exercise name="port_discovery">
+      <description>Identify all open ports across the network range</description>
+      <commands>
+        <command>nmap -sS -p- 192.168.100.0/24</command>
+        <command>nmap -sU --top-ports 1000 192.168.100.0/24</command>
+      </commands>
+    </exercise>
+    
+    <exercise name="os_fingerprinting">
+      <description>Determine operating systems of target hosts</description>
+      <commands>
+        <command>nmap -O -sS 192.168.100.0/24</command>
+        <command>nmap -A -T4 192.168.100.0/24</command>
+      </commands>
+    </exercise>
+    
+    <exercise name="service_enumeration">
+      <description>Enumerate service versions and configurations</description>
+      <commands>
+        <command>nmap -sV -sC 192.168.100.0/24</command>
+        <command>nmap --script vuln 192.168.100.0/24</command>
+      </commands>
+    </exercise>
+  </scanning_exercises>
+  
+  <!-- Hidden flag for privilege escalation challenge -->
+  <admin_notes>
+    <note>Lab credentials stored in /shared/network-lab/uploads/.hidden/</note>
+    <note>FTP anonymous access allows file upload to shared directory</note>
+    <note>TFTP service has write permissions - potential for file overwrite</note>
+    <note>NetCat listener provides direct shell access on port 1337</note>
+    <flag>CTF{n3tw0rk_r3c0n_pr1v_3sc_4lp1n3}</flag>
+  </admin_notes>
+</network_lab_inventory>

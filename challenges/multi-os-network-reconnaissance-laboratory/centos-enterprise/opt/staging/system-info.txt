@@ -1,0 +1,33 @@
+System Information
+==================
+
+Hostname: centos-enterprise.staging.local
+OS: CentOS 8.4 Enterprise
+Kernel: 4.18.0-305.el8.x86_64
+Architecture: x86_64
+
+Network Configuration:
+- Primary IP: 192.168.100.10
+- SSH Port: 26 (non-standard)
+- Services: Multi-protocol environment
+
+Security Configuration:
+- SELinux: Enforcing
+- Firewall: Custom rules
+- Anonymous access: ENABLED (staging only)
+
+Application Stack:
+- Web Server: Apache 2.4
+- Database: MariaDB 10.3
+- PHP: 7.4
+- Python: 3.6
+
+Monitoring:
+- SNMP Community: staging_readonly
+- Logs: /var/log/staging/
+- Metrics: Collected via SNMP
+
+Development Tools:
+- Git repositories in /opt/repos
+- Docker containers for testing
+- CI/CD pipeline integration

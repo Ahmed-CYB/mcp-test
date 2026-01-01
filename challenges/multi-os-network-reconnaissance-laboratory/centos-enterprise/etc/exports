@@ -1,0 +1,5 @@
+# NFS exports for CentOS Enterprise Staging
+/opt/staging    192.168.100.0/24(rw,sync,no_root_squash,no_subtree_check)
+/opt/development 192.168.100.0/24(ro,sync,root_squash,no_subtree_check)
+/var/shared     *(rw,sync,all_squash,anonuid=1001,anongid=1001)
+/home/staging-admin 192.168.100.0/24(rw,sync,root_squash)

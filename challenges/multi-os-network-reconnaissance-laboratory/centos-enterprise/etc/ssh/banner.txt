@@ -1,0 +1,14 @@
+=====================================
+   CentOS Enterprise Staging Server
+=====================================
+
+WARNING: This is a staging environment
+for development and testing purposes.
+
+Authorized users only!
+All activities are monitored.
+
+For anonymous access, use username: anonymous
+with no password for staging area access.
+
+=====================================

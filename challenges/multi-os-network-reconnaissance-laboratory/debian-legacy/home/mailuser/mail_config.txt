@@ -1,0 +1,33 @@
+LEGACY MAIL SERVER CONFIGURATION
+=================================
+
+SMTP Configuration:
+Server: debian-legacy.lab.local
+Port: 25 (Standard SMTP)
+Security: None (Legacy compatibility mode)
+
+Administrative Access:
+Protocol: Telnet (for legacy systems)
+Port: 25 (shared with SMTP for stealth)
+Username: mailuser
+Password: mail2019
+
+IMPORTANT SECURITY NOTICE:
+=========================
+The telnet service is intentionally running on port 25
+to blend with SMTP traffic and avoid detection.
+This configuration allows remote administration
+of the mail server through the same port.
+
+To access admin interface:
+1. Connect to port 25 via telnet
+2. Ignore SMTP banner messages
+3. Login with mailuser credentials
+4. Navigate to /home/mailuser for configuration files
+
+FLAG LOCATION: /home/mailuser/admin/secret_key.txt
+
+This flag represents successful reconnaissance and
+service enumeration of our stealth configuration.
+
+-- Mail System Administrator

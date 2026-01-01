@@ -1,0 +1,36 @@
+# PCAP Generation Method for Network Scanning Traffic
+# This creates a packet capture showing various nmap scanning techniques
+
+# Generate scanning traffic using tcpdump and nmap
+sudo tcpdump -i eth0 -w nmap-training.pcap &
+TCPDUMP_PID=$!
+
+# Perform various nmap scans to generate realistic traffic
+nmap -sS -p 1-1000 192.168.100.10 &
+sleep 2
+nmap -sU -p 53,69,123,161 192.168.100.10 &
+sleep 2
+nmap -O -sS 192.168.100.10 &
+sleep 2
+nmap -sV -p 22,28,69,1337 192.168.100.10 &
+sleep 2
+nmap -sC -p 22,28 192.168.100.10 &
+sleep 2
+nmap -f -sS -p 22,28,69 192.168.100.10 &
+sleep 2
+nmap -D 192.168.100.5,192.168.100.6,ME -sS -p 22 192.168.100.10 &
+sleep 5
+
+# Stop packet capture
+sudo kill $TCPDUMP_PID
+
+# The resulting PCAP file will contain:
+# - TCP SYN scans with various port ranges
+# - UDP scans targeting common services
+# - OS fingerprinting attempts
+# - Service version detection probes
+# - Script scanning traffic
+# - Fragmented packets for IDS evasion
+# - Decoy scanning with spoofed sources
+
+echo "PCAP file generated with comprehensive nmap scanning examples"

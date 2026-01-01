@@ -1,0 +1,36 @@
+# Network Reconnaissance Targets
+# Multi-OS Laboratory Environment
+
+# Primary Web Server (Ubuntu 20.04)
+192.168.1.100
+
+# Database Server (CentOS 8)
+192.168.1.101
+
+# File Server (Debian 11)
+192.168.1.102
+
+# Development Server (Arch Linux)
+192.168.1.103
+
+# Scanner Machine (Kali Linux)
+192.168.1.50
+
+# Network Range
+192.168.1.0/24
+
+# Service Discovery Notes:
+# - Ubuntu: HTTP/HTTPS, SSH, MySQL, FTP, DNS, TFTP
+# - CentOS: SSH, MySQL, PostgreSQL, Redis
+# - Debian: SSH, SMB, NFS, LDAP
+# - Arch: SSH, MongoDB, Elasticsearch, Custom services
+
+# Scanning Techniques to Practice:
+# 1. TCP SYN Scan: nmap -sS target
+# 2. UDP Scan: nmap -sU target
+# 3. Service Version: nmap -sV target
+# 4. OS Detection: nmap -O target
+# 5. Aggressive Scan: nmap -A target
+# 6. Stealth Scan: nmap -sS -f target
+# 7. Timing: nmap -T4 target
+# 8. Port Range: nmap -p1-65535 target
