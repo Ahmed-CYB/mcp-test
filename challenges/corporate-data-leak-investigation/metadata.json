@@ -1,0 +1,35 @@
+{
+  "name": "corporate-data-leak-investigation",
+  "title": "Corporate Data Leak Investigation",
+  "description": "A corporate whistleblower claims sensitive financial data is being stored insecurely on the company's FTP server. Your task is to investigate the FTP infrastructure and recover the encrypted evidence file.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{falsity_vf0uatvatzfxz}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.23.195.130",
+      "services": [
+        "ftp",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker",
+      "type": "attacker",
+      "ip": "172.23.195.3",
+      "services": [
+        "ssh"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2026-01-01T10:16:43.223Z",
+  "generator": "universal-structure-agent"
+}

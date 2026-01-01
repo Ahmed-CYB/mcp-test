@@ -1,0 +1,31 @@
+# FTP User Access Log - Internal Use Only
+# Generated: 2024-03-15 09:32:17
+
+Username: anonymous
+Password: guest@company.com
+Access Level: read-only
+Last Login: 2024-03-14 16:45:33
+
+Username: backup_admin
+Password Hash: 5d41402abc4b2a76b9719d911017c592
+Access Level: full
+Last Login: 2024-03-13 22:18:41
+Notes: Automated backup service account
+
+Username: finance_audit
+Password: $2b$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+Access Level: restricted
+Last Login: 2024-03-12 14:27:19
+Directory Access: /financial_reports/, /audit_logs/
+
+Username: temp_contractor
+Password Hash: e99a18c428cb38d5f260853678922e03
+Access Level: limited
+Last Login: 2024-03-10 11:55:02
+Account Status: DISABLED
+
+# Password policy reminder:
+# - Minimum 8 characters
+# - Must contain alphanumeric
+# - Special characters recommended
+# - Monthly rotation required

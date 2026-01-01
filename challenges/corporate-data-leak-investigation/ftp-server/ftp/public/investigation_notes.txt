@@ -1,0 +1,31 @@
+Corporate Data Leak Investigation Notes
+
+Whistleblower Report Summary:
+- Claims of financial data mishandling
+- Mentions insecure storage practices
+- References "hidden backup files"
+- Suggests weak password policies
+
+Initial Findings:
+1. FTP server allows anonymous access
+2. Multiple user accounts with varying access levels
+3. Backup directory structure appears compromised
+4. Legacy encryption methods potentially in use
+
+Investigation Steps:
+- Analyze user credential security
+- Check backup file integrity
+- Review encryption implementations
+- Examine directory access controls
+
+Potential Evidence Locations:
+- Administrative backup directories
+- Encrypted financial reports
+- User credential stores
+- System configuration files
+
+Security Concerns:
+- Weak password hashing detected
+- Unencrypted sensitive data
+- Inadequate access controls
+- Poor key management practices
