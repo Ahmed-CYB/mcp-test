@@ -1,0 +1,35 @@
+DEVELOPMENT ENVIRONMENT SETUP NOTES
+=====================================
+
+Server: DEVBOX01 (192.168.1.15)
+OS: Windows Server 2019 (Simulated)
+Purpose: Development and Testing
+
+SERVICE CONFIGURATIONS:
+- SMB: Port 445 (File sharing for dev team)
+- RDP: Port 3389 (Remote desktop access)
+- NetBIOS: Port 137-139 (Legacy Windows networking)
+- WMI: Port 135 + dynamic (Windows Management)
+- WinRM: Port 5985/5986 (PowerShell remoting)
+
+KNOWN ISSUES:
+- Guest access enabled on DevShare (temporary for testing)
+- ProjectDocs share misconfigured - browseable should be false
+- Some sensitive config files accidentally copied to shares
+- Need to review share permissions before going live
+
+TODO:
+- Disable guest access
+- Move sensitive files to secure location
+- Implement proper authentication
+- Review firewall rules
+
+DEV TEAM ACCESS:
+Username: developer
+Password: DevPass123!
+
+ADMIN ACCESS:
+Username: admin
+Password: AdminSecure2024
+
+NOTE: This is a development environment - security is relaxed for testing purposes.

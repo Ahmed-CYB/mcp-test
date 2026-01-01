@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embedded Device Management Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .section { margin: 20px 0; padding: 15px; background-color: #f8f9fa; border-radius: 5px; }
+        .warning { color: #e74c3c; font-weight: bold; }
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Corporate Network Device Manager v2.4.1</h1>
+        <p>Authorized Personnel Only</p>
+    </div>
+    
+    <div class="section">
+        <h2>Device Information</h2>
+        <p><strong>Device Type:</strong> Network Storage Appliance</p>
+        <p><strong>Model:</strong> NetStore-3000</p>
+        <p><strong>Firmware:</strong> 2.4.1-beta</p>
+        <p><strong>Last Update:</strong> 2023-11-15</p>
+    </div>
+    
+    <div class="section">
+        <h2>Available Services</h2>
+        <ul>
+            <li><a href="/files/">Shared File Repository</a> - Browse shared network files</li>
+            <li><a href="/admin/">Administration Panel</a> - Device configuration (Restricted)</li>
+            <li><a href="/status.html">System Status</a> - Current system information</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <p class="warning">Note: This device is configured for internal network access only. External connections may be monitored.</p>
+    </div>
+</body>
+</html>

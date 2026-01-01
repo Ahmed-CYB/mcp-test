@@ -1,0 +1,51 @@
+NETWORK RECONNAISSANCE RESULTS
+==============================
+Scan Date: 2024-03-15
+Target: Corporate Development Network
+Scanner: Nmap 7.94
+
+HOST DISCOVERY:
+192.168.1.15 - DEVBOX01 (Windows Server 2019)
+192.168.1.20 - FILESERVER01 (Windows Server 2016)
+192.168.1.25 - WEBDEV01 (Ubuntu 20.04)
+
+PORT SCAN RESULTS - DEVBOX01 (192.168.1.15):
+21/tcp    open   ftp
+22/tcp    closed ssh
+23/tcp    closed telnet
+53/tcp    closed dns
+80/tcp    closed http
+135/tcp   open   msrpc        (WMI endpoint)
+139/tcp   open   netbios-ssn  (NetBIOS Session Service)
+443/tcp   closed https
+445/tcp   open   microsoft-ds (SMB)
+3389/tcp  open   ms-wbt-server (RDP)
+5985/tcp  open   wsman        (WinRM HTTP)
+5986/tcp  open   wsmans       (WinRM HTTPS)
+
+SERVICE ENUMERATION:
+SMB (445/tcp):
+- Allows anonymous/guest access
+- Shares discovered: DevShare, ProjectDocs, BackupShare
+- Potential information disclosure
+
+RDP (3389/tcp):
+- Network Level Authentication disabled
+- Allows password authentication
+- Extended session timeouts configured
+
+WinRM (5985/5986):
+- HTTP and HTTPS listeners active
+- Basic authentication enabled
+- Unencrypted communication allowed
+
+WMI (135/tcp):
+- DCOM endpoint accessible
+- May allow remote management
+
+RECOMMENDations:
+1. Restrict anonymous SMB access
+2. Enable NLA for RDP
+3. Disable unencrypted WinRM
+4. Implement proper access controls
+5. Remove sensitive files from shares

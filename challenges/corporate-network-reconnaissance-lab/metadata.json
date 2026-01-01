@@ -1,0 +1,73 @@
+{
+  "name": "corporate-network-reconnaissance-lab",
+  "title": "Corporate Network Reconnaissance Lab",
+  "description": "A simulated corporate network environment designed for comprehensive nmap training. Practice various scanning techniques across different operating systems and services to master network discovery and enumeration.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "hard",
+  "flag": "CTF{ssh_pr0t0c01_d0wngr4d3_4tt4ck}",
+  "machines": 5,
+  "machineDetails": [
+    {
+      "name": "scanner-workstation",
+      "type": "attacker",
+      "ip": "172.23.193.3",
+      "services": [
+        "ssh"
+      ]
+    },
+    {
+      "name": "linux-server",
+      "type": "victim",
+      "ip": "172.23.193.194",
+      "services": [
+        "ssh",
+        "ftp",
+        "http",
+        "mysql",
+        "smtp",
+        "dns"
+      ]
+    },
+    {
+      "name": "windows-workstation",
+      "type": "victim",
+      "ip": "172.23.193.11",
+      "services": [
+        "smb",
+        "rdp",
+        "netbios",
+        "wmi",
+        "winrm"
+      ]
+    },
+    {
+      "name": "embedded-device",
+      "type": "victim",
+      "ip": "172.23.193.12",
+      "services": [
+        "telnet",
+        "snmp",
+        "tftp",
+        "http"
+      ]
+    },
+    {
+      "name": "network-appliance",
+      "type": "victim",
+      "ip": "172.23.193.13",
+      "services": [
+        "ssh",
+        "snmp",
+        "ntp",
+        "syslog",
+        "dhcp"
+      ]
+    }
+  ],
+  "stages": 6,
+  "created": "2026-01-01T12:03:01.596Z",
+  "generator": "universal-structure-agent"
+}
