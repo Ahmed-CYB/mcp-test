@@ -1,0 +1,12 @@
+CORPORATE USERS LIST
+
+Active Accounts:
+- finance_user:Finance123!
+- hr_admin:HRSecure2023
+- backup_service:B4ckup$erv1ce
+- guest:guest (disabled)
+
+Note: This file should not be publicly accessible!
+Move to secure location ASAP.
+
+Last updated: 2023-10-20
