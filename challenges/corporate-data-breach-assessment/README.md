@@ -2,38 +2,46 @@
 
 ## Scenario Description
 
-A multinational corporation has hired you to perform a security audit of their file server infrastructure. Intelligence suggests that sensitive project data is stored on an FTP server with questionable security practices. Your mission is to gain unauthorized access and retrieve the classified project flag.
+A financial consulting firm has hired you to conduct a security assessment of their file server infrastructure. Intelligence suggests their FTP server may have critical misconfigurations that could expose sensitive client data. Your task is to identify vulnerabilities and retrieve the encrypted client reports to demonstrate the security risk.
 
 ## Challenge Information
 
 - **Categories:** network, crypto
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 6
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.193.78 | ftp |
-| penetration-tester | attacker | 172.23.193.3 | N/A |
+| corporate-fileserver | victim | 172.23.201.61 | ftp |
+| security-auditor | attacker | 172.23.201.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Perform network reconnaissance to identify the FTP service
+Discover and enumerate the FTP server services and misconfigurations
 
 ### Stage 2
 
-Enumerate FTP service for authentication weaknesses
+Exploit anonymous access or weak authentication to gain initial access
 
 ### Stage 3
 
-Gain authenticated access to the file repository
+Navigate through misconfigured directory permissions to find sensitive files
 
 ### Stage 4
 
-Locate and decrypt the classified project flag
+Locate configuration files containing encryption keys or credentials
+
+### Stage 5
+
+Decrypt the client financial reports to complete the assessment
+
+### Stage 6
+
+Document the security vulnerabilities for the final report
 
 ## Getting Started
 

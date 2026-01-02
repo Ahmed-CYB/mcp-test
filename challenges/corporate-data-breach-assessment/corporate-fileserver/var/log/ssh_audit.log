@@ -1,0 +1,21 @@
+2023-12-01 08:15:22 INFO: SSH daemon started on port 26
+2023-12-01 08:15:22 WARN: Protocol 1 enabled - security risk detected
+2023-12-01 08:15:22 WARN: Weak ciphers configured - consider upgrading
+2023-12-01 08:15:22 WARN: Empty passwords permitted - high security risk
+2023-12-01 09:30:45 INFO: Connection from 192.168.1.100 on port 26
+2023-12-01 09:30:46 INFO: User 'backup-svc' login attempt with empty password
+2023-12-01 09:30:46 SUCCESS: User 'backup-svc' authenticated successfully
+2023-12-01 09:31:02 INFO: SFTP session started for user 'backup-svc'
+2023-12-01 09:31:15 INFO: File access: /home/backup-svc/backup_config.txt
+2023-12-01 09:31:28 INFO: Connection closed for user 'backup-svc'
+2023-12-01 10:45:12 INFO: Connection from 192.168.1.105 on port 26
+2023-12-01 10:45:13 FAIL: User 'finance-backup' authentication failed
+2023-12-01 10:45:18 SUCCESS: User 'finance-backup' authenticated with password
+2023-12-01 11:20:33 INFO: Connection from 10.0.0.50 on port 26
+2023-12-01 11:20:34 INFO: Protocol 1 connection established - deprecated
+2023-12-01 11:20:35 WARN: Weak cipher 3des-cbc selected by client
+2023-12-01 11:20:36 SUCCESS: User 'admin' authenticated successfully
+2023-12-01 14:15:20 ERROR: Multiple failed login attempts from 203.0.113.15
+2023-12-01 14:15:21 INFO: IP 203.0.113.15 temporarily blocked
+2023-12-01 16:30:45 INFO: Backup service accessed encrypted files directory
+2023-12-01 16:30:46 INFO: Archive operation completed successfully

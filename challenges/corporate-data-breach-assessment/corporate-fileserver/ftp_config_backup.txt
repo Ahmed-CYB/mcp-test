@@ -1,0 +1,22 @@
+# FTP Server Configuration Backup
+# Date: 2024-01-15
+# Administrator: John Smith
+
+[SECURITY_SETTINGS]
+encryption_enabled=true
+default_cipher=vigenere
+
+[CLIENT_DATA_ENCRYPTION]
+# Legacy encryption key for client reports
+# Key stored in reverse for security: YEKECNEIDUA
+# Note: This is the audience key backwards
+
+[ACCESS_LOGS]
+last_breach_attempt=2024-01-10
+vulnerable_directories=/client_reports/
+
+[ADMIN_NOTES]
+# Remember to update encryption method
+# Current Vigenère implementation uses standard alphabet
+# Client complained about binary encoded reports being hard to read
+# TODO: Migrate to AES encryption next quarter
