@@ -1,0 +1,27 @@
+CLIENT PORTFOLIO SUMMARY - Q4 2024
+=====================================
+
+CLIENT: Meridian Holdings LLC
+ACCOUNT: MH-4471
+PORTFOLIO VALUE: $2,847,500
+RISK LEVEL: Conservative
+
+ASSET ALLOCATION:
+- Bonds: 45% ($1,281,375)
+- Stocks: 35% ($996,625)
+- Cash: 15% ($427,125)
+- Alternatives: 5% ($142,375)
+
+PERFORMANCE NOTES:
+- YTD Return: +8.2%
+- Benchmark: +7.1%
+- Alpha: +1.1%
+
+NEXT REVIEW: January 15, 2025
+ADVISOR: Sarah Chen, CFA
+
+--- CONFIDENTIAL DATA BELOW ---
+Encryption Key Hint: The advisor's certification
+Encrypted Flag: RkxBR3tGVFBfQW5vbl9BY2Nlc3NfRXhwb3Nlc19GaW5hbmNpYWxfRGF0YX0K
+
+Note: Use base64 decoding with the hint above

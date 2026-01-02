@@ -1,0 +1,20 @@
+FTP Server Configuration - Financial Consulting Firm
+
+System: corporate-fileserver
+FTP Service: vsftpd 3.0.3
+Port: 21 (Standard)
+Anonymous Access: ENABLED (Misconfiguration)
+Root Directory: /var/ftp/public
+
+Security Notes:
+- Client data files stored in plaintext directories
+- Backup encryption keys stored in config files
+- Multi-layer encoding used for data protection
+
+Admin Notes:
+- Remember: Client data uses standard encoding chain
+- Format: Base64 -> Hex -> ROT13 for sensitive information
+- Decryption key stored separately in authentication table
+
+Warning: This server contains confidential financial data!
+Access should be restricted to authorized personnel only.

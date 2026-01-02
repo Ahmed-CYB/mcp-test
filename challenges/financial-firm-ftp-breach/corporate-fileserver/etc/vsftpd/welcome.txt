@@ -1,0 +1,25 @@
+=========================================
+Welcome to FinanceCorp File Server
+=========================================
+
+NOTICE: This system contains confidential
+client financial data. Unauthorized access
+is strictly prohibited and will be prosecuted.
+
+For technical support, contact:
+IT Admin: admin@financecorp.local
+Phone: (555) 123-4567
+
+System Information:
+- Server: corporate-fileserver
+- Version: FTP 2.1.3
+- Last Updated: 2024-01-15
+
+REMINDER: All file transfers are logged
+and monitored for compliance purposes.
+
+Default credentials for emergency access:
+Username: backup_user
+Password: Finance2024!
+
+=========================================
