@@ -1,0 +1,6 @@
+# This would be an Excel file containing:
+# Employee ID | Name | Department | Salary | SSN (last 4)
+# 1001 | John Smith | IT | 75000 | 4829
+# 1002 | Mary Wilson | Finance | 68000 | 7362
+# 1003 | Bob Johnson | HR | 62000 | 9184
+# Hidden in metadata: Username hint - jsmith has weak password 'consulting123'

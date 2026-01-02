@@ -1,0 +1,32 @@
+{
+  "name": "corporate-data-breach-misconfigured-file-server",
+  "title": "Corporate Data Breach: Misconfigured File Server",
+  "description": "A mid-size consulting firm's file server has been misconfigured by a junior system administrator. The server contains sensitive client data, employee information, and administrative credentials. Multiple Samba misconfigurations allow unauthorized access to different levels of sensitive information.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{SMB_M1sc0nf1g_L3ads_T0_D4ta_Br3ach_2024}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "corporate-fileserver",
+      "type": "victim",
+      "ip": "172.29.193.116",
+      "services": [
+        "smb",
+        "ssh"
+      ]
+    },
+    {
+      "name": "attacker-workstation",
+      "type": "attacker",
+      "ip": "172.29.193.3",
+      "services": []
+    }
+  ],
+  "stages": 5,
+  "created": "2026-01-02T11:13:36.635Z",
+  "generator": "universal-structure-agent"
+}

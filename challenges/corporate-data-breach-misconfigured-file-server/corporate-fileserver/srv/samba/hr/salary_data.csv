@@ -1,0 +1,10 @@
+Employee_ID,Name,Department,Annual_Salary,Bonus_Eligible,Manager
+1001,John Smith,IT,75000,Yes,CTO
+1002,Mary Wilson,Finance,68000,Yes,CFO
+1003,Bob Johnson,HR,62000,No,CHRO
+1004,Alice Brown,Marketing,58000,Yes,CMO
+1005,David Lee,Operations,72000,Yes,COO
+
+# Note: This file should be restricted to HR personnel only
+# Emergency access code for payroll system: HR2024PAYROLL
+# System admin password reset token: AdminReset456

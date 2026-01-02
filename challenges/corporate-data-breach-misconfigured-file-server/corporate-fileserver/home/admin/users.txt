@@ -1,0 +1,19 @@
+# Corporate File Server User List
+# Created by: Junior Admin
+# Last Updated: 2024-01-15
+
+Active Users:
+- admin (System Administrator)
+- jsmith (IT Administrator) - Password: consulting123
+- mwilson (Finance Lead) - Password: finance2024
+- employee (Default Account) - Password: TempPass2024
+
+Disabled Accounts:
+- testuser (Development) - Password: BackupKey789
+- guest (Temporary) - Disabled
+
+NOTE: All users have SMB access based on group membership
+HR group: Restricted to HR personnel
+Admin group: Full system access
+
+Security reminder: Change default passwords!

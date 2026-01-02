@@ -1,0 +1,11 @@
+# Document metadata would contain:
+# ACME Corp Consulting Proposal
+# Project: Network Security Assessment
+# Budget: $150,000
+# Timeline: 6 months
+# 
+# Internal notes:
+# Client requested penetration testing
+# Credentials for test environment stored in backup folder
+# Test server: 192.168.100.50
+# Service account: testuser / BackupKey789
