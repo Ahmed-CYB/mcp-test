@@ -1,0 +1,51 @@
+{
+  "name": "network-topology-infiltration",
+  "title": "Network Topology Infiltration",
+  "description": "Navigate complex network segmentation using precise network scanning and reconnaissance techniques",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{ftp_0d23bb54_mjwygh_2c7ff5d3}",
+  "machines": 4,
+  "machineDetails": [
+    {
+      "name": "attacker-machine",
+      "type": "attacker",
+      "ip": "172.23.206.3",
+      "services": []
+    },
+    {
+      "name": "hidden-network-alpha",
+      "type": "victim",
+      "ip": "172.23.206.114",
+      "services": [
+        "ssh",
+        "ftp",
+        "snmp"
+      ]
+    },
+    {
+      "name": "restricted-subnet-beta",
+      "type": "victim",
+      "ip": "172.23.206.11",
+      "services": [
+        "telnet",
+        "http"
+      ]
+    },
+    {
+      "name": "monitoring-gateway",
+      "type": "victim",
+      "ip": "172.23.206.12",
+      "services": [
+        "ssh",
+        "nfs"
+      ]
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-02T14:14:28.308Z",
+  "generator": "universal-structure-agent"
+}
