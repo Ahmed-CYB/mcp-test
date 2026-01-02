@@ -1,5 +1,0 @@
-# Simulated compressed backup file
-# Contains: configuration files, user data, system logs
-# Extract command: tar -xzf system_backup.tar.gz
-# Flag location: backup/config/app.conf
-# CTF{legacy_systems_expose_corporate_secrets_2024}

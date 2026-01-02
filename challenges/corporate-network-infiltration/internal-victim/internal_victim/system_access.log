@@ -1,9 +1,0 @@
-Jan 27 14:22:15 internal-victim sshd[5678]: Accepted publickey for serviceaccount from 203.45.67.89 port 45231 ssh2: RSA SHA256:abc123def456
-Jan 27 14:22:16 internal-victim systemd-logind[890]: New session 15 of user serviceaccount.
-Jan 27 14:22:18 internal-victim sudo[5690]: serviceaccount : TTY=pts/0 ; PWD=/home/serviceaccount ; USER=root ; COMMAND=/bin/ls /root/sensitive
-Jan 27 14:22:25 internal-victim sudo[5695]: serviceaccount : TTY=pts/0 ; PWD=/home/serviceaccount ; USER=root ; COMMAND=/bin/cp /root/sensitive/flag.txt.encrypted /tmp/
-Jan 27 14:22:30 internal-victim openssl[5698]: AES-256-CBC encryption started for /tmp/flag.txt.encrypted
-Jan 27 14:22:33 internal-victim kernel: [12345.678901] TCP: 192.168.1.50:22 -> 203.45.67.89:45231 FIN_WAIT1
-Jan 27 14:22:35 internal-victim sshd[5678]: Received disconnect from 203.45.67.89 port 45231:11: disconnected by user
-Jan 27 14:22:35 internal-victim sshd[5678]: Disconnected from user serviceaccount 203.45.67.89 port 45231
-Jan 27 14:22:36 internal-victim systemd-logind[890]: Session 15 logged out. Waiting for processes to exit.

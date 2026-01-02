@@ -1,1 +1,0 @@
-CTF{ftp_leak_vulnerability}

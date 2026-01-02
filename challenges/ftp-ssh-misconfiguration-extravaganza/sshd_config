@@ -1,4 +1,0 @@
-# SSH daemon configuration
-Port 22
-PermitRootLogin yes
-PasswordAuthentication yes

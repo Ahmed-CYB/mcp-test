@@ -1,1 +1,0 @@
-CTF{comprehensive_pentest_success}

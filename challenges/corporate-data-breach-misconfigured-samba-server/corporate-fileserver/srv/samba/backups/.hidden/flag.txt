@@ -1,1 +1,0 @@
-CTF{smb_misconfig_guest_access_exposed_27}

@@ -1,1 +1,0 @@
-CTF{redacted_flag_value}

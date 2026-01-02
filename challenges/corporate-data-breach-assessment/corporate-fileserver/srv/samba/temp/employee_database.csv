@@ -1,9 +1,0 @@
-employee_id,username,department,email,temp_password,status
-1001,jsmith,hr,j.smith@consulting.corp,Welcome2024,active
-1002,mwilson,finance,m.wilson@consulting.corp,Finance123,active
-1003,rbrown,hr,r.brown@consulting.corp,HRpass2024,active
-1004,admin,it,admin@consulting.corp,AdminBackup2024,active
-1005,dlee,finance,d.lee@consulting.corp,Budget2024,active
-1006,backup,it,backup@consulting.corp,BackupSys2024,service
-1007,kjones,marketing,k.jones@consulting.corp,Marketing1,active
-1008,tgreen,hr,t.green@consulting.corp,Personnel24,active

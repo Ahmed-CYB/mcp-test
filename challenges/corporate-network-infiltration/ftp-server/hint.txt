@@ -1,1 +1,0 @@
-This looks like a rotation cipher. Try ROT13.

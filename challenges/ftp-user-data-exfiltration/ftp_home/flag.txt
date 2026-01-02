@@ -1,1 +1,0 @@
-CTF{ftp_data_exfiltration_success}

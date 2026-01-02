@@ -1,7 +1,0 @@
-AES Decryption Key: corp2024security
-Algorithm: AES-256-CBC
-Salt: standard
-
-Usage: openssl enc -aes-256-cbc -d -in encrypted_flag.enc -k corp2024security
-
-Original flag: CTF{network_enum_leads_to_corporate_secrets_2024}

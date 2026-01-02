@@ -1,9 +1,0 @@
-# Internal user credentials - DO NOT SHARE
-# Format: username:password:department
-admin:P@ssw0rd123:IT
-backup:backup2023:Operations
-ftpuser:Welcome123:Support
-guest:guest:Public
-# Service accounts
-db_backup:MyS3cur3P@ss:Database
-file_sync:SyncM3Now!:FileOps

@@ -1,1 +1,0 @@
-CTF{weak_ssh_password_exploited}

@@ -1,1 +1,0 @@
-CTF{ftp_configuration_flaw}

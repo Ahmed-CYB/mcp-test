@@ -1,4 +1,0 @@
-# SSHD configuration that is intentionally misconfigured for CTF challenge
-Port 22
-PermitRootLogin yes
-PasswordAuthentication yes

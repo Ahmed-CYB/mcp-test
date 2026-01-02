@@ -1,5 +1,0 @@
-# This would be a tar.gz file containing:
-# - SSH private keys
-# - Database connection strings
-# - Additional configuration files
-# Generate with: tar -czf backup_config.tar.gz ssh_keys/ db_configs/ app_configs/

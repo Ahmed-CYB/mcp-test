@@ -1,7 +1,0 @@
-Access Denied: This file requires administrator privileges.
-Contact IT support for access to sensitive corporate data.
-
-Hint: Sometimes the most valuable information is protected,
-but poor security practices can expose everything.
-
-Look for archived documents that might contain what you seek.

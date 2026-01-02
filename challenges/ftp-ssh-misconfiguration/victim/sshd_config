@@ -1,5 +1,0 @@
-# SSHD Config
-PermitRootLogin yes
-PasswordAuthentication yes
-ChallengeResponseAuthentication no
-UsePAM yes

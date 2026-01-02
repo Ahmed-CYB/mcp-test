@@ -1,6 +1,0 @@
-# XOR Decryption Key Found in SMB Share
-# Location: //corporate-fileserver/confidential_docs/keys/
-# Key Type: Repeating XOR Key
-# Key: ACME2018
-# Usage: XOR the base64 decoded data with this repeating key
-# Note: The encrypted document contains base64 encoded data that must be decoded first

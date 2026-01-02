@@ -1,1 +1,0 @@
-This is a simulated memory dump file containing various processes and artifacts. To reveal the flag hidden in this file, use Volatility to analyze the dump. The flag is stored in a process memory space labeled 'suspicious_process'.

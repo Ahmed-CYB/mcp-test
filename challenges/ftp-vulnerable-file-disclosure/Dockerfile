@@ -1,5 +1,0 @@
-FROM debian:bookworm-slim
-RUN apt-get update && apt-get install -y vsftpd && rm -rf /var/lib/apt/lists/*
-COPY vsftpd.conf /etc/vsftpd.conf
-EXPOSE 21
-CMD ["vsftpd", "/etc/vsftpd.conf"]

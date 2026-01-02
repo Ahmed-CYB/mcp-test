@@ -1,1 +1,0 @@
-CTF{ftp_weak_creds_exposed}

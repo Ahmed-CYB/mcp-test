@@ -1,1 +1,0 @@
-CTF{insecure_ftp_access}

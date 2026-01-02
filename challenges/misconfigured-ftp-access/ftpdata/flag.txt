@@ -1,1 +1,0 @@
-CTF{unauthorized_ftp_access}

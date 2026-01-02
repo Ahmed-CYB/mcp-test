@@ -1,1 +1,0 @@
-CTF{memory_analysis_reveals_secrets}

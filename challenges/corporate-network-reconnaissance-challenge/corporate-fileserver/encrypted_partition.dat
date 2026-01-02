@@ -1,9 +1,0 @@
-# Encrypted Partition Data
-# Requires file_manager credentials
-# Encryption: Simple XOR with key derived from password
-
-# XOR Key: network (from decrypted file_manager password)
-# Encrypted data (hex): 1a0a1c0b5f0d1c17455f11021c1a0b5f
-
-# This contains the final flag fragment
-# Use XOR decryption with key 'network' to reveal fragment 3

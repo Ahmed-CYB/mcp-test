@@ -1,9 +1,0 @@
-GPG Decryption Key for encrypted_flag.txt.gpg:
-Passphrase: corporate_security_2023
-
-To decrypt the flag file:
-gpg --batch --yes --passphrase corporate_security_2023 --decrypt encrypted_flag.txt.gpg
-
-Actual flag content: CTF{network_recon_snmp_discovery_complete_7a8b9c}
-
-This key was stored in the backup directory for emergency access.

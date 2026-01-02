@@ -1,7 +1,0 @@
-# NFS exports configuration
-# Missing proper access controls - configured for public access
-/srv/nfs/public *(rw,sync,no_subtree_check,no_root_squash,insecure)
-/srv/nfs/archive 192.168.1.0/24(ro,sync,no_subtree_check)
-/srv/nfs/development *(rw,sync,no_subtree_check,all_squash,anonuid=1000,anongid=1000)
-/home/shared *(rw,sync,no_subtree_check,no_root_squash)
-/var/backups/quarterly 10.0.0.0/8(ro,sync,no_subtree_check)
