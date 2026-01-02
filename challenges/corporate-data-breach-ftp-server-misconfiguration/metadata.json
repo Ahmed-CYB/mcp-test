@@ -1,0 +1,31 @@
+{
+  "name": "corporate-data-breach-ftp-server-misconfiguration",
+  "title": "Corporate Data Breach: FTP Server Misconfiguration",
+  "description": "A financial consulting firm's FTP server has been misconfigured by a junior administrator, leaving sensitive client data exposed. As a security consultant, you must identify and exploit these misconfigurations to demonstrate the security risks.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{rdp_backup_systems_need_proper_encryption}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "corporate-fileserver",
+      "type": "victim",
+      "ip": "172.25.193.12",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "security-auditor",
+      "type": "attacker",
+      "ip": "172.25.193.3",
+      "services": []
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-02T08:50:39.612Z",
+  "generator": "universal-structure-agent"
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BackupConfiguration>
+  <SystemInfo>
+    <Version>2.1.4</Version>
+    <InstallDate>2023-08-15</InstallDate>
+    <LastUpdate>2023-11-22</LastUpdate>
+  </SystemInfo>
+  
+  <DatabaseSettings>
+    <Host>db-primary.internal.corp</Host>
+    <Port>5432</Port>
+    <Username>backup_service</Username>
+    <Password>DbBackup789</Password>
+    <Database>financial_records</Database>
+    <SSLMode>disable</SSLMode>
+  </DatabaseSettings>
+  
+  <BackupPaths>
+    <Path priority="high">/var/lib/financial_data</Path>
+    <Path priority="high">/home/shared/client_reports</Path>
+    <Path priority="medium">/opt/trading_logs</Path>
+    <Path priority="low">/tmp/cache_backup</Path>
+  </BackupPaths>
+  
+  <Schedule>
+    <DailyBackup enabled="true" time="02:00"/>
+    <WeeklyFullBackup enabled="true" day="Sunday" time="01:00"/>
+    <RetentionDays>30</RetentionDays>
+  </Schedule>
+  
+  <Security>
+    <EncryptionEnabled>false</EncryptionEnabled>
+    <CompressionLevel>6</CompressionLevel>
+    <VerifyBackups>false</VerifyBackups>
+  </Security>
+  
+  <Notifications>
+    <EmailAlerts enabled="true">
+      <SMTPServer>mail.corporate.local</SMTPServer>
+      <Username>alerts</Username>
+      <Password>MailAlert456</Password>
+      <Recipients>
+        <Email>admin@corporate.local</Email>
+        <Email>backup-team@corporate.local</Email>
+      </Recipients>
+    </EmailAlerts>
+  </Notifications>
+  
+  <!-- Emergency access credentials -->
+  <EmergencyAccess>
+    <Username>emergency_restore</Username>
+    <Password>RestoreEmergency2023</Password>
+    <PrivilegeLevel>full</PrivilegeLevel>
+  </EmergencyAccess>
+  
+  <!-- CTF{rdp_backup_systems_need_proper_encryption} -->
+</BackupConfiguration>
