@@ -12,8 +12,11 @@ services:
       com.ctf.challenge: "corporate-data-breach-assessment"
     networks:
       ctf-corporate-data-breach-assessment-net:
-        ipv4_address: 172.23.205.3
+        ipv4_address: 172.23.197.3
       ctf-instances-network:
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
     stdin_open: true
     tty: true
 
@@ -28,10 +31,9 @@ services:
       com.ctf.challenge: "corporate-data-breach-assessment"
     networks:
       ctf-corporate-data-breach-assessment-net:
-        ipv4_address: 172.23.205.106
+        ipv4_address: 172.23.197.67
     ports:
-      - "445"
-      - "22"
+      - "21"
     stdin_open: true
     tty: true
 
@@ -40,7 +42,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.205.0/24
-          gateway: 172.23.205.1
+        - subnet: 172.23.197.0/24
+          gateway: 172.23.197.1
   ctf-instances-network:
     external: true

@@ -51,6 +51,15 @@ RUN mkdir -p /var/run/sshd && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
+# ✅ FIX: Replace nmap wrapper to always use unprivileged mode
+# The default /usr/bin/nmap wrapper tries to use --privileged which requires capabilities
+# We replace it with a wrapper that always uses --unprivileged mode
+RUN mv /usr/bin/nmap /usr/bin/nmap.original 2>/dev/null || true && \
+    echo '#!/bin/bash' > /usr/bin/nmap && \
+    echo '# Nmap wrapper - always use unprivileged mode (no CAP_NET_RAW required)' >> /usr/bin/nmap && \
+    echo 'exec /usr/lib/nmap/nmap --unprivileged "$@"' >> /usr/bin/nmap && \
+    chmod +x /usr/bin/nmap
+
 # Create challenge directory
 RUN mkdir -p /challenge && chmod 755 /challenge
 

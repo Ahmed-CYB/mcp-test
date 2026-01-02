@@ -2,42 +2,38 @@
 
 ## Scenario Description
 
-A mid-sized consulting firm has hired you to assess their file server security after a recent security audit raised concerns about data exposure. The company's main file server runs Samba with multiple shares for different departments. Your task is to identify misconfigurations and demonstrate potential data exposure risks.
+A mid-sized technology company has hired you to assess their file server security. Intelligence suggests that sensitive employee data may be accessible through their legacy FTP infrastructure. Your mission is to identify vulnerabilities and retrieve the confidential flag from their corporate file server.
 
 ## Challenge Information
 
 - **Categories:** network
 - **Machines:** 2
-- **Stages:** 5
+- **Stages:** 4
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.205.106 | smb, ssh |
-| penetration-tester | attacker | 172.23.205.3 | N/A |
+| corporate-fileserver | victim | 172.23.197.67 | ftp |
+| penetration-tester | attacker | 172.23.197.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Discover and enumerate available SMB shares on the corporate file server
+Perform network reconnaissance to identify active FTP services
 
 ### Stage 2
 
-Identify misconfigured shares with improper access controls
+Analyze FTP service configuration and authentication mechanisms
 
 ### Stage 3
 
-Extract sensitive information from accessible shares
+Exploit identified vulnerabilities to gain unauthorized access
 
 ### Stage 4
 
-Use discovered credentials to access restricted administrative shares
-
-### Stage 5
-
-Locate and retrieve the final flag from the most sensitive data repository
+Navigate the file system to locate and retrieve the hidden corporate flag
 
 ## Getting Started
 
