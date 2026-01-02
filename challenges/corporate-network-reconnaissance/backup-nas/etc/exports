@@ -1,0 +1,3 @@
+/srv/nfs_share *(rw,sync,no_root_squash,no_subtree_check)
+/srv/backup 192.168.1.0/24(rw,sync,no_root_squash)
+/home/testuser 10.0.0.0/8(rw,sync,root_squash)

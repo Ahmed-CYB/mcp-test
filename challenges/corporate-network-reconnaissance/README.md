@@ -2,11 +2,11 @@
 
 ## Scenario Description
 
-A corporate network has been misconfigured with several exposed services. Use network mapping and service enumeration to discover the network topology and locate sensitive information.
+You are a penetration tester hired to assess a small corporate network. Use nmap and other reconnaissance tools to discover all services, enumerate system information, and locate security flags hidden within the network infrastructure.
 
 ## Challenge Information
 
-- **Categories:** network, crypto
+- **Categories:** network
 - **Machines:** 3
 - **Stages:** 5
 
@@ -14,9 +14,9 @@ A corporate network has been misconfigured with several exposed services. Use ne
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| attacker-workstation | attacker | 172.23.201.3 | nmap, wireshark, tcpdump, netcat, hping3, masscan, ssh-client, smbclient, python3, curl, wget |
-| corporate-gateway | victim | 172.23.201.136 | ssh, ftp, telnet, snmp |
-| internal-fileserver | victim | 172.23.201.11 | smb, ssh, tftp |
+| attacker-workstation | attacker | 172.23.201.3 | nmap, wireshark, tcpdump, netcat, hping3, masscan, ssh-client, smbclient, snmp, python3, curl, wget |
+| corporate-server | victim | 172.23.201.135 | ssh, ftp, http, telnet, snmp, mysql |
+| backup-nas | victim | 172.23.201.11 | smb, nfs, ssh, tftp |
 
 ## Challenge Stages
 
@@ -26,19 +26,19 @@ Perform initial network discovery to identify active hosts
 
 ### Stage 2
 
-Conduct detailed service enumeration to identify versions and configurations
+Conduct comprehensive port scanning on discovered targets
 
 ### Stage 3
 
-Use SNMP to gather network topology information
+Use service enumeration to gather detailed information about running services
 
 ### Stage 4
 
-Access internal file shares to retrieve the encrypted flag
+Analyze service banners and SNMP data to locate hidden information
 
 ### Stage 5
 
-Decrypt the final flag using information gathered during reconnaissance
+Access file shares and services to retrieve final flags
 
 ## Getting Started
 
@@ -50,4 +50,3 @@ Decrypt the final flag using information gathered during reconnaissance
 ## Learning Objectives
 
 - Network scanning and service exploitation
-- Cryptographic analysis and decryption techniques

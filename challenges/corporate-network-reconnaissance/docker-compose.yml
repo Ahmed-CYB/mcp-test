@@ -17,30 +17,31 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-reconnaissance-corporate-gateway:
+  ctf-corporate-network-reconnaissance-corporate-server:
     build:
-      context: ./corporate-gateway
+      context: ./corporate-server
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-reconnaissance-corporate-gateway
-    hostname: corporate-gateway
+    container_name: ctf-corporate-network-reconnaissance-corporate-server
+    hostname: corporate-server
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-reconnaissance"
     networks:
       ctf-corporate-network-reconnaissance-net:
-        ipv4_address: 172.23.201.136
+        ipv4_address: 172.23.201.135
     ports:
       - "22"
       - "21"
+      - "80"
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-reconnaissance-internal-fileserver:
+  ctf-corporate-network-reconnaissance-backup-nas:
     build:
-      context: ./internal-fileserver
+      context: ./backup-nas
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-reconnaissance-internal-fileserver
-    hostname: internal-fileserver
+    container_name: ctf-corporate-network-reconnaissance-backup-nas
+    hostname: backup-nas
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-reconnaissance"

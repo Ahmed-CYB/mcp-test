@@ -1,14 +1,13 @@
 {
   "name": "corporate-network-reconnaissance",
   "title": "Corporate Network Reconnaissance",
-  "description": "A corporate network has been misconfigured with several exposed services. Use network mapping and service enumeration to discover the network topology and locate sensitive information.",
+  "description": "You are a penetration tester hired to assess a small corporate network. Use nmap and other reconnaissance tools to discover all services, enumerate system information, and locate security flags hidden within the network infrastructure.",
   "category": "network",
   "subcategories": [
-    "network",
-    "crypto"
+    "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{network_recon_snmp_discovery_complete_7a8b9c}",
+  "flag": "CTF{network_recon_complete_a8f3d}",
   "machines": 3,
   "machineDetails": [
     {
@@ -24,34 +23,38 @@
         "masscan",
         "ssh-client",
         "smbclient",
+        "snmp",
         "python3",
         "curl",
         "wget"
       ]
     },
     {
-      "name": "corporate-gateway",
+      "name": "corporate-server",
       "type": "victim",
-      "ip": "172.23.201.136",
+      "ip": "172.23.201.135",
       "services": [
         "ssh",
         "ftp",
+        "http",
         "telnet",
-        "snmp"
+        "snmp",
+        "mysql"
       ]
     },
     {
-      "name": "internal-fileserver",
+      "name": "backup-nas",
       "type": "victim",
       "ip": "172.23.201.11",
       "services": [
         "smb",
+        "nfs",
         "ssh",
         "tftp"
       ]
     }
   ],
   "stages": 5,
-  "created": "2026-01-02T12:12:17.158Z",
+  "created": "2026-01-02T12:24:30.819Z",
   "generator": "universal-structure-agent"
 }
