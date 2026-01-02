@@ -1,0 +1,9 @@
+ClientID,CompanyName,ContactEmail,Revenue2023,Classification
+1001,Acme Corp,finance@acme.com,2500000,Premium
+1002,Beta Industries,accounting@beta.com,1200000,Standard
+1003,Gamma Solutions,admin@gamma.net,850000,Standard
+1004,Delta Enterprises,cfo@delta.org,3200000,Premium
+1005,Epsilon Ltd,finance@epsilon.biz,950000,Standard
+# CONFIDENTIAL: This data contains sensitive client information
+# Access restricted to authorized personnel only
+# Flag hint: The real treasure is hidden in the system backup

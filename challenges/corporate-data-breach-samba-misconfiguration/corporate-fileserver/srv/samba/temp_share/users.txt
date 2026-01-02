@@ -1,0 +1,13 @@
+# Temporary user list for system migration
+# Generated: 2024-01-15
+
+admin:admin123:Administrator
+backup_user:backup2023:Backup Operator
+temp_admin:temppass:Temporary Admin
+accounting_lead:ledger2024:Accounting Lead
+finance_mgr:budget2024:Finance Manager
+hr_admin:people2024:HR Administrator
+
+# Note: These are temporary credentials for migration
+# Change all passwords after migration complete
+# Legacy system access: port 20 for file transfer
