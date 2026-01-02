@@ -1,0 +1,21 @@
+# Network Configuration Backup
+# Generated: 2024-01-15 14:32:07
+
+Hostname: file-server.corpnet.local
+IP Address: 192.168.1.100
+Subnet Mask: 255.255.255.0
+Gateway: 192.168.1.1
+DNS Servers: 192.168.1.10, 192.168.1.11
+
+# Additional Network Segments
+DMZ_SEGMENT=10.0.1.0/24
+INTERNAL_SEGMENT=172.16.0.0/16
+MANAGEMENT_SEGMENT=192.168.100.0/24
+
+# Service Endpoints
+WEB_SERVER=192.168.1.50:80
+DB_SERVER=172.16.10.5:3306
+BACKUP_SERVER=192.168.100.20:22
+
+# Flag for network discovery challenge
+CTF{nfs_config_enumeration_4f8e9d2a}

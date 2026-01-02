@@ -1,0 +1,53 @@
+{
+  "name": "corporate-network-discovery-challenge",
+  "title": "Corporate Network Discovery Challenge",
+  "description": "A corporate network has been segmented into multiple servers. Use nmap and network reconnaissance techniques to discover all machines, enumerate their services, and extract flags from each system through proper service interaction.",
+  "category": "network",
+  "subcategories": [
+    "network"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{c0rp0r4t3_n3tw0rk_d1sc0v3ry_ch4mp10n}",
+  "machines": 4,
+  "machineDetails": [
+    {
+      "name": "attacker-workstation",
+      "type": "attacker",
+      "ip": "172.27.193.3",
+      "services": []
+    },
+    {
+      "name": "corporate-gateway",
+      "type": "victim",
+      "ip": "172.27.193.53",
+      "services": [
+        "ssh",
+        "ftp",
+        "http"
+      ]
+    },
+    {
+      "name": "file-server",
+      "type": "victim",
+      "ip": "172.27.193.11",
+      "services": [
+        "smb",
+        "nfs",
+        "snmp"
+      ]
+    },
+    {
+      "name": "database-host",
+      "type": "victim",
+      "ip": "172.27.193.12",
+      "services": [
+        "telnet",
+        "mysql",
+        "dns"
+      ]
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-02T13:48:52.849Z",
+  "generator": "universal-structure-agent"
+}

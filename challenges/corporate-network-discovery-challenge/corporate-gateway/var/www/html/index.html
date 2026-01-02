@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corporate Gateway Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { color: #333; border-bottom: 2px solid #007acc; padding-bottom: 20px; }
+        .nav { margin: 30px 0; }
+        .nav a { display: inline-block; margin: 10px 15px 10px 0; padding: 10px 20px; background: #007acc; color: white; text-decoration: none; border-radius: 4px; }
+        .nav a:hover { background: #005999; }
+        .status { margin: 20px 0; padding: 15px; background: #e8f4fd; border-left: 4px solid #007acc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Corporate Gateway Management Portal</h1>
+            <p>Network Administration and Monitoring Interface</p>
+        </div>
+        
+        <div class="nav">
+            <a href="/admin/">Administration Panel</a>
+            <a href="/logs/">System Logs</a>
+            <a href="/status.php">Network Status</a>
+            <a href="/tools/">Network Tools</a>
+        </div>
+        
+        <div class="status">
+            <h3>System Status</h3>
+            <p><strong>Gateway:</strong> Online | <strong>FTP Service:</strong> Active | <strong>SSH Access:</strong> Available</p>
+            <p><strong>Last Update:</strong> 2024-01-20 14:30:25</p>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 12px; color: #666;">
+            <p>For support, contact IT Department at ext. 5500</p>
+            <p>Authorized personnel only - All access is logged and monitored</p>
+        </div>
+    </div>
+</body>
+</html>

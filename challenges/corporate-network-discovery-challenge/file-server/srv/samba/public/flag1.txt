@@ -1,0 +1,1 @@
+CTF{smb_guest_access_discovered_7a9b2c1d}

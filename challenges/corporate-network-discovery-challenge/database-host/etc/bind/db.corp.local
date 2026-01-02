@@ -1,0 +1,23 @@
+$TTL 86400
+@   IN  SOA ns1.corp.local. admin.corp.local. (
+    2023110801  ; Serial
+    3600        ; Refresh
+    1800        ; Retry
+    604800      ; Expire
+    86400       ; Minimum TTL
+)
+
+@           IN  NS  ns1.corp.local.
+ns1         IN  A   192.168.100.10
+database-host   IN  A   192.168.100.10
+web-server      IN  A   192.168.100.20
+file-server     IN  A   192.168.100.30
+mail-server     IN  A   192.168.100.40
+admin-panel     IN  A   192.168.100.50
+backup-system   IN  A   192.168.100.60
+monitoring      IN  A   192.168.100.70
+
+; Service records
+_mysql._tcp     IN  SRV 0 5 3306 database-host.corp.local.
+_telnet._tcp    IN  SRV 0 5 23 database-host.corp.local.
+_info._tcp      IN  SRV 0 5 26 database-host.corp.local.

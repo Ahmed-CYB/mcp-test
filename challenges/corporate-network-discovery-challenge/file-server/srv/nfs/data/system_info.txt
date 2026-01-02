@@ -1,0 +1,27 @@
+System Information Report
+========================
+Server: CORP-FILE-01
+OS: Ubuntu Server 20.04.3 LTS
+Kernel: 5.4.0-91-generic
+Uptime: 47 days, 12:34:56
+Load Average: 0.23, 0.45, 0.67
+
+Installed Services:
+- SSH (Port 22)
+- SMB/CIFS (Port 445)
+- NFS (Port 2049)
+- SNMP (Port 161)
+- RDP (Port 3389) - Recently added for remote admin
+
+Disk Usage:
+/dev/sda1: 85% used (450GB/530GB)
+/dev/sdb1: 23% used (120GB/500GB)
+
+Network Interfaces:
+eth0: 192.168.1.100/24 (Primary)
+eth1: 172.16.0.100/16 (Internal)
+
+Recent Security Notes:
+- RDP service enabled with weak encryption for legacy support
+- SNMP community strings using defaults for monitoring
+- NFS exports configured for development team access

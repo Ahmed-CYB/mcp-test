@@ -1,0 +1,17 @@
+$TTL 86400
+@   IN  SOA ns1.corp.local. admin.corp.local. (
+    2023110801  ; Serial
+    3600        ; Refresh
+    1800        ; Retry
+    604800      ; Expire
+    86400       ; Minimum TTL
+)
+
+@   IN  NS  ns1.corp.local.
+10  IN  PTR database-host.corp.local.
+20  IN  PTR web-server.corp.local.
+30  IN  PTR file-server.corp.local.
+40  IN  PTR mail-server.corp.local.
+50  IN  PTR admin-panel.corp.local.
+60  IN  PTR backup-system.corp.local.
+70  IN  PTR monitoring.corp.local.

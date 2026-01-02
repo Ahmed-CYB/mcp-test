@@ -1,0 +1,77 @@
+#!/bin/bash
+
+echo "Corporate Information System v2.1"
+echo "================================="
+echo "Available commands:"
+echo "- HELP: Show this help"
+echo "- STATUS: System status"
+echo "- USERS: List active users"
+echo "- SERVICES: List running services"
+echo "- NETWORK: Network configuration"
+echo "- ADMIN: Administrative functions"
+echo ""
+
+while read -r line; do
+    command=$(echo "$line" | tr '[:lower:]' '[:upper:]' | tr -d '\r')
+    
+    case "$command" in
+        "HELP")
+            echo "Commands: HELP, STATUS, USERS, SERVICES, NETWORK, ADMIN"
+            ;;
+        "STATUS")
+            echo "System: database-host.corp.local"
+            echo "Uptime: 47 days, 12 hours"
+            echo "Load: 0.23, 0.45, 0.67"
+            echo "Memory: 78% used"
+            ;;
+        "USERS")
+            echo "Active users:"
+            echo "- admin (console)"
+            echo "- dbuser (mysql)"
+            echo "- backup (scheduled)"
+            echo "- guest (network)"
+            ;;
+        "SERVICES")
+            echo "Running services:"
+            echo "- MySQL (port 3306) - ACTIVE"
+            echo "- Telnet (port 23) - ACTIVE"
+            echo "- DNS (port 53) - ACTIVE"
+            echo "- Info Service (port 26) - ACTIVE"
+            echo "- SSH (port 2222) - DISABLED"
+            ;;
+        "NETWORK")
+            echo "Network Configuration:"
+            echo "Primary: 192.168.100.10/24"
+            echo "Gateway: 192.168.100.1"
+            echo "DNS: 8.8.8.8, 192.168.100.53"
+            echo "Other hosts discovered:"
+            echo "- web-server: 192.168.100.20"
+            echo "- file-server: 192.168.100.30"
+            echo "- mail-server: 192.168.100.40"
+            ;;
+        "ADMIN")
+            echo "Administrative Access Required"
+            echo "Please provide credentials:"
+            read -r creds
+            if [[ "$creds" == "admin:corp2023" ]]; then
+                echo "Access Granted!"
+                echo "Flag: CTF{network_recon_reveals_infrastructure_secrets}"
+                echo "Additional network segments:"
+                echo "- DMZ: 10.0.1.0/24"
+                echo "- Internal: 172.16.0.0/16"
+                echo "- Management: 192.168.200.0/24"
+            else
+                echo "Access Denied"
+            fi
+            ;;
+        "QUIT"|"EXIT")
+            echo "Goodbye!"
+            exit 0
+            ;;
+        *)
+            echo "Unknown command: $command"
+            echo "Type HELP for available commands"
+            ;;
+    esac
+    echo ""
+done

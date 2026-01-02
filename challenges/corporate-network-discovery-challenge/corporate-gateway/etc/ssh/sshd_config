@@ -1,0 +1,61 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 2222
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+RekeyLimit default none
+
+SyslogFacility AUTH
+LogLevel INFO
+
+LoginGraceTime 2m
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 6
+MaxSessions 10
+
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys .ssh/authorized_keys2
+
+PasswordAuthentication yes
+PermitEmptyPasswords no
+
+ChallengeResponseAuthentication no
+
+KerberosAuthentication no
+
+GSSAPIAuthentication no
+
+UsePAM yes
+
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+PermitUserEnvironment no
+Compression delayed
+ClientAliveInterval 0
+ClientAliveCountMax 3
+UseDNS no
+PidFile /var/run/sshd.pid
+MaxStartups 10:30:100
+PermitTunnel no
+ChrootDirectory none
+VersionAddendum CorporateGW-SSH-v1.2
+
+Banner /etc/issue.net
+
+AcceptEnv LANG LC_*
+
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+Match User maintenance
+    PasswordAuthentication yes
+    AllowTcpForwarding yes
