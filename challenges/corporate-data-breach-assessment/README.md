@@ -2,46 +2,42 @@
 
 ## Scenario Description
 
-A financial consulting firm has hired you to conduct a security assessment of their file server infrastructure. Intelligence suggests their FTP server may have critical misconfigurations that could expose sensitive client data. Your task is to identify vulnerabilities and retrieve the encrypted client reports to demonstrate the security risk.
+A mid-sized consulting firm has hired you to assess their file server security after a recent security audit raised concerns about data exposure. The company's main file server runs Samba with multiple shares for different departments. Your task is to identify misconfigurations and demonstrate potential data exposure risks.
 
 ## Challenge Information
 
-- **Categories:** network, crypto
+- **Categories:** network
 - **Machines:** 2
-- **Stages:** 6
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.201.61 | ftp |
-| security-auditor | attacker | 172.23.201.3 | N/A |
+| corporate-fileserver | victim | 172.23.205.106 | smb, ssh |
+| penetration-tester | attacker | 172.23.205.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Discover and enumerate the FTP server services and misconfigurations
+Discover and enumerate available SMB shares on the corporate file server
 
 ### Stage 2
 
-Exploit anonymous access or weak authentication to gain initial access
+Identify misconfigured shares with improper access controls
 
 ### Stage 3
 
-Navigate through misconfigured directory permissions to find sensitive files
+Extract sensitive information from accessible shares
 
 ### Stage 4
 
-Locate configuration files containing encryption keys or credentials
+Use discovered credentials to access restricted administrative shares
 
 ### Stage 5
 
-Decrypt the client financial reports to complete the assessment
-
-### Stage 6
-
-Document the security vulnerabilities for the final report
+Locate and retrieve the final flag from the most sensitive data repository
 
 ## Getting Started
 
@@ -53,4 +49,3 @@ Document the security vulnerabilities for the final report
 ## Learning Objectives
 
 - Network scanning and service exploitation
-- Cryptographic analysis and decryption techniques

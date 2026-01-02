@@ -1,32 +1,32 @@
 {
   "name": "corporate-data-breach-assessment",
   "title": "Corporate Data Breach Assessment",
-  "description": "A financial consulting firm has hired you to conduct a security assessment of their file server infrastructure. Intelligence suggests their FTP server may have critical misconfigurations that could expose sensitive client data. Your task is to identify vulnerabilities and retrieve the encrypted client reports to demonstrate the security risk.",
+  "description": "A mid-sized consulting firm has hired you to assess their file server security after a recent security audit raised concerns about data exposure. The company's main file server runs Samba with multiple shares for different departments. Your task is to identify misconfigurations and demonstrate potential data exposure risks.",
   "category": "network",
   "subcategories": [
-    "network",
-    "crypto"
+    "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{Vigenere_Hidden_In_Binary}",
+  "flag": "CTF{smb_misconfiguration_leads_to_data_exposure_2024}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "corporate-fileserver",
       "type": "victim",
-      "ip": "172.23.201.61",
+      "ip": "172.23.205.106",
       "services": [
-        "ftp"
+        "smb",
+        "ssh"
       ]
     },
     {
-      "name": "security-auditor",
+      "name": "penetration-tester",
       "type": "attacker",
-      "ip": "172.23.201.3",
+      "ip": "172.23.205.3",
       "services": []
     }
   ],
-  "stages": 6,
-  "created": "2026-01-02T09:46:11.572Z",
+  "stages": 5,
+  "created": "2026-01-02T12:05:17.382Z",
   "generator": "universal-structure-agent"
 }

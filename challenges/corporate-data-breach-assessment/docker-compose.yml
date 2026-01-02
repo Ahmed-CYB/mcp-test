@@ -6,13 +6,13 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-data-breach-assessment-attacker
-    hostname: security-auditor
+    hostname: penetration-tester
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "corporate-data-breach-assessment"
     networks:
       ctf-corporate-data-breach-assessment-net:
-        ipv4_address: 172.23.201.3
+        ipv4_address: 172.23.205.3
       ctf-instances-network:
     stdin_open: true
     tty: true
@@ -28,9 +28,10 @@ services:
       com.ctf.challenge: "corporate-data-breach-assessment"
     networks:
       ctf-corporate-data-breach-assessment-net:
-        ipv4_address: 172.23.201.61
+        ipv4_address: 172.23.205.106
     ports:
-      - "21"
+      - "445"
+      - "22"
     stdin_open: true
     tty: true
 
@@ -39,7 +40,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.201.0/24
-          gateway: 172.23.201.1
+        - subnet: 172.23.205.0/24
+          gateway: 172.23.205.1
   ctf-instances-network:
     external: true
