@@ -1,0 +1,12 @@
+********************************************************************************
+*                        LEGACY TERMINAL SERVER ACCESS                         *
+*                                                                              *
+*  WARNING: This system contains proprietary network configuration data       *
+*  Authorized personnel only - All access is monitored and logged             *
+*                                                                              *
+*  Network Operations Center: ext-4422                                        *
+*  Emergency Contact: netops@legacysystems.corp                               *
+*                                                                              *
+*  Known Issues: Legacy mail service (port 25) has directory traversal        *
+*  vulnerability - scheduled for patching Q3 2024                             *
+********************************************************************************

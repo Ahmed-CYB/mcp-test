@@ -1,0 +1,13 @@
+SNMP Community Strings - Legacy Systems
+========================================
+
+Default Communities:
+public (read-only)
+private (read-write)
+monitor (read-only)
+
+Custom Communities:
+dev_team_ro (read-only) - 10.20.2.0/24
+legacy_sys (read-write) - 10.20.1.0/24
+
+Security Note: Change default communities before production deployment!

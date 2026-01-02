@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<network_topology>
+    <infrastructure>
+        <web_server ip="192.168.1.100" services="http,https,ssh" />
+        <file_server ip="192.168.10.50" services="smb,netbios" />
+        <legacy_server ip="192.168.20.25" services="snmp,telnet,custom" />
+    </infrastructure>
+    <custom_services>
+        <service name="corporate_monitor" port="28" protocol="tcp">
+            <description>Custom monitoring protocol</description>
+            <access_level>guest_allowed</access_level>
+            <authentication>null_session</authentication>
+        </service>
+    </custom_services>
+    <flag_location>legacy_server_snmp_community_string</flag_location>
+</network_topology>

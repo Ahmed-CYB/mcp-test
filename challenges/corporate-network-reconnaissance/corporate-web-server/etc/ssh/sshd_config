@@ -1,0 +1,24 @@
+Port 22
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+PermitRootLogin no
+PasswordAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile .ssh/authorized_keys
+
+UseDNS no
+X11Forwarding no
+PrintMotd yes
+AcceptEnv LANG LC_*
+
+# Weak configuration
+PermitEmptyPasswords no
+MaxAuthTries 6
+ClientAliveInterval 300
+ClientAliveCountMax 2
+
+AllowUsers webadmin devuser
+DenyUsers root
