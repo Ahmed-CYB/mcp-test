@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  ctf-corporate-data-breach-ftp-infiltration-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-corporate-data-breach-ftp-infiltration-attacker
+    hostname: attacker-kali
+    labels:
+      com.ctf.machine.type: "attacker"
+      com.ctf.challenge: "corporate-data-breach-ftp-infiltration"
+    networks:
+      ctf-corporate-data-breach-ftp-infiltration-net:
+        ipv4_address: 172.29.193.3
+      ctf-instances-network:
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-data-breach-ftp-infiltration-ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-data-breach-ftp-infiltration-ftp-server
+    hostname: ftp-server
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-data-breach-ftp-infiltration"
+    networks:
+      ctf-corporate-data-breach-ftp-infiltration-net:
+        ipv4_address: 172.29.193.107
+    ports:
+      - "21"
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-corporate-data-breach-ftp-infiltration-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.29.193.0/24
+          gateway: 172.29.193.1
+  ctf-instances-network:
+    external: true

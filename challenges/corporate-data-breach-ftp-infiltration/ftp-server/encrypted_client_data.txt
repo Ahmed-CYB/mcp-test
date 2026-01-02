@@ -1,0 +1,22 @@
+CORPORATE FINANCIAL SERVICES - ENCRYPTED CLIENT DATA
+========================================================
+
+File: client_portfolio_2024.enc
+Encryption Method: Rail Fence Cipher
+Security Level: CONFIDENTIAL
+
+Encrypted Data:
+CF{ailecneiinhrcpoyrhpyto_fe_ne}
+T_rfnecptrgataisld_etdcr_ioc
+fercui_nrporh_t_y__g
+
+Additional Security Layer:
+Base64: Q0Z7YWlsZWNuZWlpbmhyY3BveXJocHl0b19mZV9uZX1UX3JmbmVjcHRyZ2F0YWlzbGRfZXRkY3JfaW9jZmVyY3VpX25ycG9yaF90X3lfX2c=
+
+Checksum: MD5(decrypted_flag) = 7a8c4f2e1b9d3e5f6a2c8d4e9f1a3b5c
+
+Access Log:
+[2024-01-15 14:23:45] FTP Login: admin/admin123 - SUCCESS
+[2024-01-15 14:24:12] File Access: encrypted_client_data.txt - DOWNLOADED
+[2024-01-15 14:24:18] Decryption Attempt: FAILED
+[2024-01-15 14:24:25] Connection Closed

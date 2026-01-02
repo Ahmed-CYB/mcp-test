@@ -1,0 +1,32 @@
+{
+  "name": "corporate-data-breach-ftp-infiltration",
+  "title": "Corporate Data Breach - FTP Infiltration",
+  "description": "A financial services company has an exposed FTP server containing sensitive client data. The server uses weak password policies, making it vulnerable to brute force attacks. Intelligence suggests the flag is encrypted within the corporate file repository.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{rail_fence_cipher_corporate_decryption_g}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.29.193.107",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "attacker-kali",
+      "type": "attacker",
+      "ip": "172.29.193.3",
+      "services": []
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-02T16:22:22.522Z",
+  "generator": "universal-structure-agent"
+}

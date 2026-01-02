@@ -1,0 +1,6 @@
+# NFS exports configuration
+# Staging server - temporary configuration for development team
+/home/staging *(rw,sync,no_root_squash,no_subtree_check)
+/var/nfs/general *(rw,sync,no_root_squash,no_subtree_check)
+/opt/company_data 192.168.1.0/24(rw,sync,no_root_squash,no_subtree_check)
+/tmp/shared *(rw,sync,no_root_squash,no_subtree_check,insecure)
