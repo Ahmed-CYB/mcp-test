@@ -1,0 +1,8 @@
+# NFS exports configuration for TechCorp staging server database-gamma
+# WARNING: Temporary configuration for development - remove before production
+/var/staging *(rw,no_root_squash,no_subtree_check)
+/home/shared 192.168.1.0/24(rw,sync)
+/backup/mysql *(ro,insecure,no_root_squash)
+/opt/ldap-config 10.0.0.0/8(rw,no_root_squash,insecure)
+# Legacy FTP share mounted via NFS for compatibility
+/srv/ftp-legacy *(rw,no_root_squash,async,insecure)

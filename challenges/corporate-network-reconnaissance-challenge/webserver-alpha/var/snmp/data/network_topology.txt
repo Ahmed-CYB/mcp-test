@@ -1,0 +1,31 @@
+TechCorp Internal Network Topology
+==================================
+
+Core Switch: core-switch-alpha (192.168.1.10)
+├── Port 1: webserver-alpha (192.168.20.100)
+│   ├── HTTP (80) - Apache 2.4.41
+│   ├── HTTPS (443) - SSL Certificate expires 2024-12-31
+│   ├── SSH (22) - OpenSSH 8.2
+│   └── FTP (21) - vsftpd 3.0.3
+├── Port 2: fileserver-beta (192.168.20.101)
+│   ├── SMB (445/139) - Samba 4.11
+│   ├── SNMP (161) - Net-SNMP 5.8
+│   └── RPC (135) - Microsoft RPC
+└── Port 3: database-gamma (192.168.30.102)
+    ├── MySQL (3306) - MySQL 8.0
+    ├── MSSQL (1433) - SQL Server 2019
+    ├── PostgreSQL (5432) - PostgreSQL 12
+    └── Telnet (23) - Enabled for legacy support
+
+VLAN Configuration:
+- VLAN 10 (Management): 192.168.10.0/24
+- VLAN 20 (Servers): 192.168.20.0/24
+- VLAN 30 (Database): 192.168.30.0/24
+
+SNMP Communities:
+- public (read-only) - Network monitoring
+- internal (read-only) - Internal subnet access
+- private (read-write) - Administrative access
+
+Note: All systems configured with default community strings for ease of management.
+TODO: Implement proper SNMP v3 authentication before production deployment.

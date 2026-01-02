@@ -2,7 +2,7 @@
 
 ## Scenario Description
 
-A corporate network penetration test where participants must use nmap and other network tools to discover and enumerate three target machines with different service configurations. Each machine presents unique scanning challenges and contains flags accessible through proper service enumeration.
+Penetration test of TechCorp's internal network infrastructure. Use network scanning techniques to discover services across three target machines and piece together the complete network picture.
 
 ## Challenge Information
 
@@ -14,28 +14,28 @@ A corporate network penetration test where participants must use nmap and other 
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| scanner-workstation | attacker | 172.23.193.3 | nmap, wireshark, tcpdump, netcat, hping3, masscan, nc, net-tools, iputils-ping, python3, curl, wget, git, vim, nano, bash, ssh-client, smbclient, nfs-common, snmp, tftp |
-| corporate-fileserver | victim | 172.23.193.45 | ftp, ssh, smb, nfs, snmp |
-| legacy-database | victim | 172.23.193.11 | telnet, mysql, snmp, tftp |
-| web-portal | victim | 172.23.193.12 | http, https, ssh, dns |
+| attacker | attacker | 172.23.206.3 | nmap, wireshark, tcpdump, netcat, hping3, masscan, ssh-client, smbclient, nfs-common, snmp, tftp, python3, curl, wget |
+| webserver-alpha | victim | 172.23.206.57 | http, https, ssh, ftp |
+| fileserver-beta | victim | 172.23.206.11 | smb, nfs, ssh, snmp |
+| database-gamma | victim | 172.23.206.12 | mysql, telnet, ssh, ldap |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Initial network discovery using nmap host discovery techniques
+Initial network discovery using nmap to identify live hosts and open ports
 
 ### Stage 2
 
-Port scanning and service enumeration on discovered targets
+Service enumeration and version detection on discovered targets
 
 ### Stage 3
 
-Advanced nmap scripting and OS fingerprinting
+Exploit discovered services to extract flag fragments and network intelligence
 
 ### Stage 4
 
-Service-specific enumeration to locate flags in configurations
+Combine gathered intelligence to reconstruct the complete flag
 
 ## Getting Started
 

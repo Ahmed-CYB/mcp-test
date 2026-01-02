@@ -1,0 +1,33 @@
+# TechCorp Network Reconnaissance Results
+# Automated scan from webserver-alpha (192.168.1.10)
+# Target: database-gamma (192.168.1.30)
+
+Nmap scan report for database-gamma (192.168.1.30)
+Host is up (0.0012s latency).
+
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 3.0.3
+22/tcp   open  ssh         OpenSSH 7.4
+23/tcp   open  telnet      Linux telnetd
+389/tcp  open  ldap        OpenLDAP 2.4.44
+2049/tcp open  nfs         3-4 (RPC #100003)
+3306/tcp open  mysql       MySQL 5.7.25
+
+# Flag fragment from database-gamma: n3tw0rk_r3c0n_
+# Combine with fragments from other machines
+# webserver-alpha fragment: CTF{c0rp0r4t3_
+# fileserver-beta fragment: m4st3r_2023}
+
+# SNMP community strings discovered:
+# public (read-only)
+# techcorp_dev (read-write)
+
+# Network topology from webserver-alpha:
+# 192.168.1.10 - webserver-alpha (HTTP, HTTPS, SSH)
+# 192.168.1.20 - fileserver-beta (SMB, NFS, SNMP)
+# 192.168.1.30 - database-gamma (MySQL, LDAP, Telnet, SSH, NFS)
+
+# Optimal scanning strategy:
+# 1. Start with webserver-alpha for network map
+# 2. Use SNMP on fileserver-beta for device details
+# 3. Enumerate database-gamma services last

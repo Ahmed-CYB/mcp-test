@@ -1,0 +1,9 @@
+#!/bin/bash
+# Staging environment auto-login script
+# TODO: Remove before production deployment
+echo "TechCorp Staging Database Server - database-gamma"
+echo "Auto-login enabled for development"
+echo "User: staging_user"
+echo "Warning: This is a development system"
+export PS1="staging@database-gamma:$ "
+exec /bin/bash --login
