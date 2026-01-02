@@ -1,0 +1,9 @@
+Welcome to Corporate Testing Environment FTP Server
+
+This server contains testing data and development files.
+For internal use only.
+
+Contact: it-support@corptest.local
+Last Updated: 2024-01-15
+
+Note: Some directories may be restricted or contain legacy data.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <environment>testing</environment>
+    <database>
+        <host>testdb.internal</host>
+        <port>3306</port>
+        <user>testuser</user>
+        <password>test123</password>
+    </database>
+    <encryption>
+        <algorithm>ROT13</algorithm>
+        <note>Legacy encryption for backwards compatibility</note>
+    </encryption>
+    <paths>
+        <logs>/var/log/app</logs>
+        <backup>/srv/ftp/backup</backup>
+        <sensitive>/srv/ftp/backup/.hidden</sensitive>
+    </paths>
+</configuration>

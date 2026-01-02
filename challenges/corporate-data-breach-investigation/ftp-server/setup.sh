@@ -1,55 +1,34 @@
 #!/bin/bash
-# Setup script for Financial Consulting FTP Challenge
+# FTP Server Setup Script
 
-echo "Setting up Financial Consulting FTP Server Challenge..."
-
-# Install and configure vsftpd
-apt-get update
-apt-get install -y vsftpd
+echo "Setting up Corporate Testing FTP Server..."
 
 # Create directory structure
-mkdir -p /srv/ftp/public
-mkdir -p /srv/ftp/users/{admin,reports,backup,jdoe,smith,johnson}
+sudo mkdir -p /srv/ftp/public
+sudo mkdir -p /srv/ftp/backup/.hidden
+sudo mkdir -p /var/run/vsftpd/empty
 
-# Set proper permissions
-chown -R ftp:ftp /srv/ftp/public
-chmod 755 /srv/ftp/public
-chmod 644 /srv/ftp/public/*
+# Set permissions
+sudo chmod 755 /srv/ftp
+sudo chmod 755 /srv/ftp/public
+sudo chmod 755 /srv/ftp/backup
+sudo chmod 755 /srv/ftp/backup/.hidden
+sudo chmod 644 /srv/ftp/welcome.txt
+sudo chmod 644 /srv/ftp/public/*
+sudo chmod 644 /srv/ftp/backup/*
+sudo chmod 644 /srv/ftp/backup/.hidden/*
 
-# Create user accounts
-useradd -d /srv/ftp/users/admin -s /bin/false admin
-useradd -d /srv/ftp/users/reports -s /bin/false reports
-useradd -d /srv/ftp/users/backup -s /bin/false backup
-useradd -d /srv/ftp/users/jdoe -s /bin/false jdoe
-useradd -d /srv/ftp/users/smith -s /bin/false smith
-useradd -d /srv/ftp/users/johnson -s /bin/false johnson
+# Create ftpsecure user
+sudo useradd -r -s /bin/false ftpsecure
 
-# Set passwords
-echo 'admin:TempPass789' | chpasswd
-echo 'reports:quarterly' | chpasswd
-echo 'backup:backup2023' | chpasswd
-echo 'jdoe:Welcome2023' | chpasswd
-echo 'smith:Finance123' | chpasswd
-echo 'johnson:Consulting456' | chpasswd
+# Install and configure vsftpd
+sudo apt-get update
+sudo apt-get install -y vsftpd
+sudo systemctl stop vsftpd
+sudo cp vsftpd.conf /etc/vsftpd/vsftpd.conf
+sudo systemctl start vsftpd
+sudo systemctl enable vsftpd
 
-# Set directory permissions
-chown admin:admin /srv/ftp/users/admin
-chown reports:reports /srv/ftp/users/reports
-chown backup:backup /srv/ftp/users/backup
-chmod 750 /srv/ftp/users/*
-
-# Copy configuration files
-cp vsftpd.conf /etc/vsftpd/
-
-# Restart vsftpd service
-systemctl restart vsftpd
-systemctl enable vsftpd
-
-# Configure firewall
-ufw allow 26/tcp
-ufw allow 21000:21010/tcp
-
-echo "FTP server setup complete on port 26"
-echo "Anonymous access enabled with public directory"
-echo "User accounts created with weak passwords"
-echo "Challenge ready for exploitation!"
+echo "FTP Server setup complete!"
+echo "Server listening on port 21 (control) and port 20 (data)"
+echo "Anonymous access enabled with root at /srv/ftp"

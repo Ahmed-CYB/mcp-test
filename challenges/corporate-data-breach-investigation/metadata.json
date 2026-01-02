@@ -1,31 +1,32 @@
 {
   "name": "corporate-data-breach-investigation",
   "title": "Corporate Data Breach Investigation",
-  "description": "A financial consulting firm suspects their FTP server has been compromised. As a security analyst, you must demonstrate how an attacker could gain unauthorized access to their file server containing sensitive client data.",
+  "description": "A corporate whistleblower has leaked information about sensitive files stored on an internal FTP server. Intelligence suggests the server allows anonymous access and contains encrypted evidence of corporate misconduct. Your mission is to infiltrate the FTP server and recover the hidden evidence.",
   "category": "network",
   "subcategories": [
-    "network"
+    "network",
+    "crypto"
   ],
   "difficulty": "medium",
-  "flag": "CTF{ftp_anonymous_access_leads_to_data_breach_2024}",
+  "flag": "CTF{weak_rsa_and_binary_encoding}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.206.190",
+      "ip": "172.23.197.26",
       "services": [
         "ftp"
       ]
     },
     {
-      "name": "attacker",
+      "name": "attacker-workstation",
       "type": "attacker",
-      "ip": "172.23.206.3",
+      "ip": "172.23.197.3",
       "services": []
     }
   ],
-  "stages": 3,
-  "created": "2026-01-02T14:34:24.311Z",
+  "stages": 4,
+  "created": "2026-01-02T15:33:31.809Z",
   "generator": "universal-structure-agent"
 }
