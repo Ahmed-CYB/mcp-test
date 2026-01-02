@@ -1,0 +1,17 @@
+Development Testing Configuration
+
+Test Environment Setup:
+- Server: FILESERVER01
+- Testing Share: /srv/samba/testing
+- Test User: testuser
+- Test Password: testing123
+
+API Testing Credentials:
+- API Key: test_key_67890
+- Test Token: dev_token_abc123
+- Database: test_db_connection
+
+Security Note: This is a development environment.
+Production credentials should never be stored here.
+
+Encryption Key for test data: Q29ycE5ldF9UZXN0aW5nXzIwMjQ=

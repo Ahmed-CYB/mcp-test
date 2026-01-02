@@ -1,25 +1,24 @@
-Investigation Hints for Security Audit:
-=======================================
+SMB Brute Force & Crypto Challenge Hints:
 
-1. FTP Authentication Analysis:
-   - Check the login logs for failed/successful attempts
-   - MD5 hashes can be cracked using rainbow tables or brute force
-   - Look for common passwords in corporate environments
+1. SMB ACCESS:
+   - Enumerate SMB shares first using smbclient or smbmap
+   - Look for credentials or password patterns in public shares
+   - Try common corporate password patterns
+   - Company name + founding year is a common pattern
 
-2. Data Recovery Process:
-   - The encrypted database uses multiple encoding layers
-   - Start with the outermost encoding and work inward
-   - Common encoding types: Hex, Base64, ROT13
+2. DECRYPTION PROCESS:
+   - The encrypted document contains base64 encoded data
+   - First decode the base64 to get raw binary data
+   - Then XOR decrypt using the key found in SMB shares
+   - The XOR key repeats across the entire message
 
-3. Tools Recommended:
-   - hashcat or john for hash cracking
-   - CyberChef for multi-layer decoding
-   - Online MD5 databases for quick lookups
+3. TOOLS NEEDED:
+   - smbclient (SMB access)
+   - hydra (brute force if needed)
+   - base64 decoder
+   - XOR decryption tool (CyberChef, Python, etc.)
 
-4. Attack Vector:
-   - Compromise FTP credentials first
-   - Use credentials to decrypt the stolen database
-   - Corporate flag format: CTF{...}
+4. ATTACK CHAIN:
+   SMB Enum → Credential Discovery → Share Access → Key Retrieval → Decrypt Flag
 
-Remember: This is a controlled security assessment.
-Document all findings for the final report.
+Remember: Look for patterns in corporate environments!

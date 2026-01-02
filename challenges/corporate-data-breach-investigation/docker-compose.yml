@@ -20,12 +20,12 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-corporate-data-breach-investigation-ftp-server:
+  ctf-corporate-data-breach-investigation-corporate-fileserver:
     build:
-      context: ./ftp-server
+      context: ./corporate-fileserver
       dockerfile: Dockerfile
-    container_name: ctf-corporate-data-breach-investigation-ftp-server
-    hostname: ftp-server
+    container_name: ctf-corporate-data-breach-investigation-corporate-fileserver
+    hostname: corporate-fileserver
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-data-breach-investigation"
@@ -33,7 +33,7 @@ services:
       ctf-corporate-data-breach-investigation-net:
         ipv4_address: 172.23.197.26
     ports:
-      - "21"
+      - "22"
     stdin_open: true
     tty: true
 

@@ -1,22 +1,23 @@
 {
   "name": "corporate-data-breach-investigation",
   "title": "Corporate Data Breach Investigation",
-  "description": "A corporate whistleblower has leaked information about sensitive files stored on an internal FTP server. Intelligence suggests the server allows anonymous access and contains encrypted evidence of corporate misconduct. Your mission is to infiltrate the FTP server and recover the hidden evidence.",
+  "description": "A corporate file server running Samba has been reported as potentially compromised. Your task is to demonstrate how an attacker could gain unauthorized access to sensitive corporate documents through SMB brute force attacks and retrieve confidential information.",
   "category": "network",
   "subcategories": [
     "network",
     "crypto"
   ],
   "difficulty": "medium",
-  "flag": "CTF{weak_rsa_and_binary_encoding}",
+  "flag": "CTF{smb_xor_corporate_secrets_exposed_2018}",
   "machines": 2,
   "machineDetails": [
     {
-      "name": "ftp-server",
+      "name": "corporate-fileserver",
       "type": "victim",
       "ip": "172.23.197.26",
       "services": [
-        "ftp"
+        "samba",
+        "ssh"
       ]
     },
     {
@@ -26,7 +27,7 @@
       "services": []
     }
   ],
-  "stages": 4,
-  "created": "2026-01-02T15:33:31.809Z",
+  "stages": 5,
+  "created": "2026-01-02T16:55:07.152Z",
   "generator": "universal-structure-agent"
 }

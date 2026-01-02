@@ -1,0 +1,14 @@
+Employee Database - HR Department
+
+Employee Records:
+1. John Doe (jdoe) - Software Developer - Salary: $75,000
+2. Robert Smith (smithr) - Network Admin - Salary: $68,000
+3. Lisa Johnson (johnson) - HR Manager - Salary: $82,000
+4. Test User (testuser) - Temp Account - Salary: $0
+
+Password Policy:
+- Minimum 8 characters
+- Must contain numbers
+- Default temp passwords follow pattern: username123
+
+Confidential - HR Department Only

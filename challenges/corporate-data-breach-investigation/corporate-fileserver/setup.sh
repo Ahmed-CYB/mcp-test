@@ -2,48 +2,38 @@
 # Corporate File Server Setup Script
 
 # Create SMB directories
-sudo mkdir -p /srv/samba/{public,temp,finance,backups,hr}
+sudo mkdir -p /srv/samba/{public,finance,hr,backup,testing}
 
 # Set permissions
-sudo chmod 755 /srv/samba/public /srv/samba/temp
-sudo chmod 750 /srv/samba/finance /srv/samba/backups /srv/samba/hr
+sudo chmod 755 /srv/samba/public
+sudo chmod 750 /srv/samba/finance
+sudo chmod 750 /srv/samba/hr
+sudo chmod 700 /srv/samba/backup
+sudo chmod 777 /srv/samba/testing
 
-# Create users
-sudo useradd -m backup
-sudo useradd -m anonymous
-sudo useradd -m guest
-sudo useradd -m jdoe
-sudo useradd -m msmith
-sudo useradd -m hradmin
-sudo useradd -m admin
+# Create groups
+sudo groupadd finance
+sudo groupadd hr
+sudo groupadd testgroup
 
-# Set passwords
-echo 'backup:B@ckup2024!' | sudo chpasswd
-echo 'jdoe:Finance123' | sudo chpasswd
-echo 'msmith:Analyst2024' | sudo chpasswd
-echo 'hradmin:HRsecure99' | sudo chpasswd
-echo 'admin:Admin@Corp24' | sudo chpasswd
+# Add users to groups
+sudo usermod -a -G finance jdoe
+sudo usermod -a -G hr johnson
+sudo usermod -a -G testgroup testuser
 
-# Configure Samba users
-sudo smbpasswd -a backup -s <<< $'B@ckup2024!\nB@ckup2024!'
-sudo smbpasswd -a jdoe -s <<< $'Finance123\nFinance123'
-sudo smbpasswd -a msmith -s <<< $'Analyst2024\nAnalyst2024'
-sudo smbpasswd -a hradmin -s <<< $'HRsecure99\nHRsecure99'
-sudo smbpasswd -a admin -s <<< $'Admin@Corp24\nAdmin@Corp24'
-
-# Set file ownership
-sudo chown -R backup:backup /srv/samba/backups
-sudo chown -R jdoe:jdoe /srv/samba/finance
-sudo chown -R hradmin:hradmin /srv/samba/hr
-
-# Create SSH directory for backup user
-sudo mkdir -p /home/backup/.ssh
-sudo chown backup:backup /home/backup/.ssh
+# Set SMB passwords (weak for testing)
+echo -e 'admin123\nadmin123' | sudo smbpasswd -a admin
+echo -e 'password\npassword' | sudo smbpasswd -a jdoe
+echo -e 'smithr123\nsmithr123' | sudo smbpasswd -a smithr
+echo -e 'johnson123\njohnson123' | sudo smbpasswd -a johnson
+echo -e 'testing123\ntesting123' | sudo smbpasswd -a testuser
 
 # Start services
 sudo systemctl enable smbd
 sudo systemctl start smbd
 sudo systemctl enable ssh
-sudo systemctl restart ssh
+sudo systemctl start ssh
 
 echo 'Corporate file server setup complete!'
+echo 'SMB shares available on port 445'
+echo 'SSH available on port 22'

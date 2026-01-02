@@ -2,38 +2,42 @@
 
 ## Scenario Description
 
-A corporate whistleblower has leaked information about sensitive files stored on an internal FTP server. Intelligence suggests the server allows anonymous access and contains encrypted evidence of corporate misconduct. Your mission is to infiltrate the FTP server and recover the hidden evidence.
+A corporate file server running Samba has been reported as potentially compromised. Your task is to demonstrate how an attacker could gain unauthorized access to sensitive corporate documents through SMB brute force attacks and retrieve confidential information.
 
 ## Challenge Information
 
 - **Categories:** network, crypto
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.197.26 | ftp |
+| corporate-fileserver | victim | 172.23.197.26 | samba, ssh |
 | attacker-workstation | attacker | 172.23.197.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Discover and enumerate the FTP server services
+Network reconnaissance to discover SMB service
 
 ### Stage 2
 
-Exploit anonymous FTP access to browse file structure
+SMB share enumeration and access attempt
 
 ### Stage 3
 
-Navigate hidden directory paths to locate sensitive files
+Brute force attack against SMB authentication
 
 ### Stage 4
 
-Extract and decrypt the evidence file to reveal the flag
+Access shared files and locate encrypted flag
+
+### Stage 5
+
+Decrypt flag using discovered credentials or keys
 
 ## Getting Started
 

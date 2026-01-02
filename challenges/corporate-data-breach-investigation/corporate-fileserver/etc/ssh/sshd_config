@@ -28,8 +28,7 @@ TCPKeepAlive yes
 AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
 UsePAM yes
-AllowUsers projectmgr devuser testuser
-Match User testuser
-    PasswordAuthentication yes
-    PubkeyAuthentication no
-    ForceCommand /bin/bash
+AllowUsers admin jdoe smithr johnson testuser
+MaxAuthTries 6
+ClientAliveInterval 300
+ClientAliveCountMax 2

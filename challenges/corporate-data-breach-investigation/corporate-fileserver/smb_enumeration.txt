@@ -1,0 +1,18 @@
+# SMB Share Enumeration Results
+# Target: corporate-fileserver.local (192.168.1.100)
+
+# Available Shares:
+# - public (READ)
+# - confidential_docs (REQUIRES AUTH)
+# - finance_reports (REQUIRES AUTH)
+# - hr_documents (REQUIRES AUTH)
+
+# Commands used:
+# smbclient -L //192.168.1.100 -N
+# enum4linux -a 192.168.1.100
+# smbmap -H 192.168.1.100
+
+# Brute force attack vector identified:
+# Target share: confidential_docs
+# Username discovered: finance_user
+# Password pattern identified from public share documents
