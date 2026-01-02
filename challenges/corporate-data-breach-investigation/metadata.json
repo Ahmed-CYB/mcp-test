@@ -1,35 +1,31 @@
 {
   "name": "corporate-data-breach-investigation",
   "title": "Corporate Data Breach Investigation",
-  "description": "A major corporation suspects their file server has been compromised. As a security consultant, you must demonstrate how an attacker could breach their FTP server and access sensitive project data.",
+  "description": "A financial consulting firm suspects their FTP server has been compromised. As a security analyst, you must demonstrate how an attacker could gain unauthorized access to their file server containing sensitive client data.",
   "category": "network",
   "subcategories": [
-    "network",
-    "crypto"
+    "network"
   ],
   "difficulty": "medium",
-  "flag": "CTF{corporate_data_breach_multi_layer_encoding_exposed}",
+  "flag": "CTF{ftp_anonymous_access_leads_to_data_breach_2024}",
   "machines": 2,
   "machineDetails": [
     {
-      "name": "corporate-fileserver",
+      "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.197.167",
+      "ip": "172.23.206.190",
       "services": [
-        "ftp",
-        "ssh"
+        "ftp"
       ]
     },
     {
-      "name": "penetration-tester",
+      "name": "attacker",
       "type": "attacker",
-      "ip": "172.23.197.3",
-      "services": [
-        "ssh"
-      ]
+      "ip": "172.23.206.3",
+      "services": []
     }
   ],
-  "stages": 5,
-  "created": "2026-01-01T11:01:47.486Z",
+  "stages": 3,
+  "created": "2026-01-02T14:34:24.311Z",
   "generator": "universal-structure-agent"
 }

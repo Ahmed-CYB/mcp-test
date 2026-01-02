@@ -2,42 +2,34 @@
 
 ## Scenario Description
 
-A major corporation suspects their file server has been compromised. As a security consultant, you must demonstrate how an attacker could breach their FTP server and access sensitive project data.
+A financial consulting firm suspects their FTP server has been compromised. As a security analyst, you must demonstrate how an attacker could gain unauthorized access to their file server containing sensitive client data.
 
 ## Challenge Information
 
-- **Categories:** network, crypto
+- **Categories:** network
 - **Machines:** 2
-- **Stages:** 5
+- **Stages:** 3
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| corporate-fileserver | victim | 172.23.197.167 | ftp, ssh |
-| penetration-tester | attacker | 172.23.197.3 | ssh |
+| ftp-server | victim | 172.23.206.190 | ftp |
+| attacker | attacker | 172.23.206.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Reconnaissance - Discover and enumerate FTP service on target server
+Network reconnaissance to identify FTP service
 
 ### Stage 2
 
-Exploitation - Bypass FTP authentication using discovered vulnerability
+Brute force attack against FTP authentication
 
 ### Stage 3
 
-Data Extraction - Access and download encrypted corporate files
-
-### Stage 4
-
-Decryption - Crack encryption using credentials hidden in FTP directory structure
-
-### Stage 5
-
-Flag Capture - Decrypt final database backup to retrieve the flag
+Access and retrieve confidential flag from server
 
 ## Getting Started
 
@@ -49,4 +41,3 @@ Flag Capture - Decrypt final database backup to retrieve the flag
 ## Learning Objectives
 
 - Network scanning and service exploitation
-- Cryptographic analysis and decryption techniques

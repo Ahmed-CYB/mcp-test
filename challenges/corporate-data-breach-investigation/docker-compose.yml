@@ -6,32 +6,31 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-data-breach-investigation-attacker
-    hostname: penetration-tester
+    hostname: attacker
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "corporate-data-breach-investigation"
     networks:
       ctf-corporate-data-breach-investigation-net:
-        ipv4_address: 172.23.197.3
+        ipv4_address: 172.23.206.3
       ctf-instances-network:
     stdin_open: true
     tty: true
 
-  ctf-corporate-data-breach-investigation-corporate-fileserver:
+  ctf-corporate-data-breach-investigation-ftp-server:
     build:
-      context: ./corporate-fileserver
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-corporate-data-breach-investigation-corporate-fileserver
-    hostname: corporate-fileserver
+    container_name: ctf-corporate-data-breach-investigation-ftp-server
+    hostname: ftp-server
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-data-breach-investigation"
     networks:
       ctf-corporate-data-breach-investigation-net:
-        ipv4_address: 172.23.197.167
+        ipv4_address: 172.23.206.190
     ports:
       - "21"
-      - "22"
     stdin_open: true
     tty: true
 
@@ -40,7 +39,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.197.0/24
-          gateway: 172.23.197.1
+        - subnet: 172.23.206.0/24
+          gateway: 172.23.206.1
   ctf-instances-network:
     external: true

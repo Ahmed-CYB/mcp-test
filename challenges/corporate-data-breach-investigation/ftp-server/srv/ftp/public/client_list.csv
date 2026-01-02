@@ -1,0 +1,9 @@
+Client_ID,Company_Name,Contact_Person,Phone,Email,Service_Type
+FC001,TechStartup Inc,Alice Johnson,555-0101,alice@techstartup.com,Tax Consulting
+FC002,Global Retail Corp,Bob Martinez,555-0102,bob.martinez@globalretail.com,Financial Audit
+FC003,Manufacturing LLC,Carol Davis,555-0103,c.davis@manufacturing.com,Investment Advisory
+FC004,Healthcare Systems,David Wilson,555-0104,dwilson@healthsys.com,Compliance Review
+FC005,Education Foundation,Emma Thompson,555-0105,ethompson@edufoundation.org,Budget Planning
+
+Note: Full client details available in secure employee directories
+For confidential information, access /users/reports/ with proper credentials

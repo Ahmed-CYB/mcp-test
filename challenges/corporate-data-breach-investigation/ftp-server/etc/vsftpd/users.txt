@@ -1,0 +1,14 @@
+# FTP Users for Financial Consulting Firm
+# Format: username:password:uid:gid:gecos:homedir:shell
+
+# Regular employees
+jdoe:Welcome2023:1001:1001:John Doe:/srv/ftp/users/jdoe:/bin/false
+smith:Finance123:1002:1002:Sarah Smith:/srv/ftp/users/smith:/bin/false
+johnson:Consulting456:1003:1003:Mike Johnson:/srv/ftp/users/johnson:/bin/false
+
+# IT Admin account - temporary password
+admin:TempPass789:1000:1000:System Administrator:/srv/ftp/users/admin:/bin/false
+
+# Service accounts
+backup:backup2023:1004:1004:Backup Service:/srv/ftp/users/backup:/bin/false
+reports:quarterly:1005:1005:Report Generator:/srv/ftp/users/reports:/bin/false

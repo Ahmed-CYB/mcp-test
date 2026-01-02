@@ -20,14 +20,11 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     nmap \
-    wireshark \
-    tcpdump \
-    netcat-traditional \
-    hping3 \
-    masscan \
-    openssh-server openssh-client \
-    bash \
+     \
     ftp \
+    bash \
+    openssh-server openssh-client \
+    netcat-traditional \
     lftp \
     telnet \
     openssh-client \
@@ -35,7 +32,11 @@ RUN apt-get update && \
     nfs-common \
     snmp \
     tftp-hpa \
+    masscan \
+    wireshark \
+    tcpdump \
     arp-scan \
+    hping3 \
     netdiscover \
     traceroute \
     dnsutils \
