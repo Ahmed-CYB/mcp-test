@@ -1,0 +1,25 @@
+CORPORATE SYSTEM ACCOUNTS
+========================
+
+Admin Accounts:
+- admin:AdminPass2023 (Full privileges)
+- root:RootAccess! (System administrator)
+
+Service Accounts:
+- backup_user:backup123 (Backup operations)
+- ftp_admin:FtpSecure456 (FTP management)
+- monitor:MonitorSvc789 (SNMP monitoring)
+
+Department Accounts:
+- finance_mgr:Finance2023 (Finance department)
+- hr_admin:HRAdmin456 (Human resources)
+- it_support:ITHelp789 (Technical support)
+
+Guest/Temp Accounts:
+- guest:guest123 (Temporary access)
+- contractor:TempWork2023 (External contractors)
+- intern:Intern2023 (Summer interns)
+
+NOTE: Default passwords must be changed on first login
+Password policy: Min 8 chars, alphanumeric + special
+Account lockout: 3 failed attempts = 15 min lockout

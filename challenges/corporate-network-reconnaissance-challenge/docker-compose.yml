@@ -6,7 +6,7 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-network-reconnaissance-challenge-attacker
-    hostname: attacker
+    hostname: attacker-workstation
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "corporate-network-reconnaissance-challenge"
@@ -17,32 +17,31 @@ services:
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-reconnaissance-challenge-webserver-alpha:
+  ctf-corporate-network-reconnaissance-challenge-corporate-fileserver:
     build:
-      context: ./webserver-alpha
+      context: ./corporate-fileserver
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-reconnaissance-challenge-webserver-alpha
-    hostname: webserver-alpha
+    container_name: ctf-corporate-network-reconnaissance-challenge-corporate-fileserver
+    hostname: corporate-fileserver
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-reconnaissance-challenge"
     networks:
       ctf-corporate-network-reconnaissance-challenge-net:
-        ipv4_address: 172.23.206.57
+        ipv4_address: 172.23.206.68
     ports:
-      - "80"
-      - "443"
-      - "22"
       - "21"
+      - "445"
+      - "22"
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-reconnaissance-challenge-fileserver-beta:
+  ctf-corporate-network-reconnaissance-challenge-development-webserver:
     build:
-      context: ./fileserver-beta
+      context: ./development-webserver
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-reconnaissance-challenge-fileserver-beta
-    hostname: fileserver-beta
+    container_name: ctf-corporate-network-reconnaissance-challenge-development-webserver
+    hostname: development-webserver
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-reconnaissance-challenge"
@@ -50,25 +49,23 @@ services:
       ctf-corporate-network-reconnaissance-challenge-net:
         ipv4_address: 172.23.206.11
     ports:
-      - "445"
+      - "80"
       - "22"
     stdin_open: true
     tty: true
 
-  ctf-corporate-network-reconnaissance-challenge-database-gamma:
+  ctf-corporate-network-reconnaissance-challenge-backup-storage:
     build:
-      context: ./database-gamma
+      context: ./backup-storage
       dockerfile: Dockerfile
-    container_name: ctf-corporate-network-reconnaissance-challenge-database-gamma
-    hostname: database-gamma
+    container_name: ctf-corporate-network-reconnaissance-challenge-backup-storage
+    hostname: backup-storage
     labels:
       com.ctf.machine.type: "victim"
       com.ctf.challenge: "corporate-network-reconnaissance-challenge"
     networks:
       ctf-corporate-network-reconnaissance-challenge-net:
         ipv4_address: 172.23.206.12
-    ports:
-      - "22"
     stdin_open: true
     tty: true
 

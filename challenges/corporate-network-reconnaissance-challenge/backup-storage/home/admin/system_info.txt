@@ -1,0 +1,25 @@
+Backup Storage System Information
+================================
+
+Hostname: backup-storage.corp.local
+IP Address: 192.168.1.50
+OS: Ubuntu 18.04.6 LTS
+Kernel: 4.15.0-142-generic
+
+Installed Services:
+- NFS Server (port 2049) - Exports: /backup/logs, /backup/configs, /shared/documents, /home/admin
+- TFTP Server (port 69) - Root: /tftpboot (write enabled)
+- SNMP Agent (port 161) - Communities: public (ro), backup (ro), private (rw)
+- Telnet Daemon (port 23) - Legacy access enabled
+
+Security Configuration:
+- NFS: no_root_squash enabled on admin home
+- TFTP: Write access enabled for configuration updates
+- SNMP: Custom OID contains encoded data
+- Telnet: Weak authentication for emergency access
+
+Maintenance Notes:
+- Weekly vulnerability scans scheduled
+- Flag reconstruction requires all three machine fragments
+- Emergency telnet access: backup:storage123
+- SNMP walk reveals extended OID with base64 data

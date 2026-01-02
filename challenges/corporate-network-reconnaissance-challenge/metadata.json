@@ -1,72 +1,71 @@
 {
   "name": "corporate-network-reconnaissance-challenge",
   "title": "Corporate Network Reconnaissance Challenge",
-  "description": "Penetration test of TechCorp's internal network infrastructure. Use network scanning techniques to discover services across three target machines and piece together the complete network picture.",
+  "description": "A corporate network has been segmented for security, but poor configuration has left multiple services exposed. Use network scanning techniques to map the infrastructure, identify vulnerabilities, and piece together the complete flag from distributed sources.",
   "category": "network",
   "subcategories": [
     "network",
+    "crypto",
     "web"
   ],
-  "difficulty": "medium",
-  "flag": "CTF{n3tw0rk_r3c0n_m4st3r_2024}",
+  "difficulty": "hard",
+  "flag": "CTF{corporate_network_security}",
   "machines": 4,
   "machineDetails": [
     {
-      "name": "attacker",
+      "name": "attacker-workstation",
       "type": "attacker",
       "ip": "172.23.206.3",
       "services": [
         "nmap",
-        "wireshark",
-        "tcpdump",
-        "netcat",
-        "hping3",
         "masscan",
+        "hping3",
+        "netcat",
+        "tcpdump",
+        "wireshark",
         "ssh-client",
         "smbclient",
-        "nfs-common",
         "snmp",
-        "tftp",
-        "python3",
-        "curl",
-        "wget"
+        "telnet",
+        "ftp",
+        "tftp"
       ]
     },
     {
-      "name": "webserver-alpha",
+      "name": "corporate-fileserver",
       "type": "victim",
-      "ip": "172.23.206.57",
+      "ip": "172.23.206.68",
       "services": [
-        "http",
-        "https",
-        "ssh",
-        "ftp"
-      ]
-    },
-    {
-      "name": "fileserver-beta",
-      "type": "victim",
-      "ip": "172.23.206.11",
-      "services": [
+        "ftp",
         "smb",
-        "nfs",
         "ssh",
         "snmp"
       ]
     },
     {
-      "name": "database-gamma",
+      "name": "development-webserver",
+      "type": "victim",
+      "ip": "172.23.206.11",
+      "services": [
+        "http",
+        "ssh",
+        "telnet",
+        "mysql"
+      ]
+    },
+    {
+      "name": "backup-storage",
       "type": "victim",
       "ip": "172.23.206.12",
       "services": [
-        "mysql",
-        "telnet",
-        "ssh",
-        "ldap"
+        "nfs",
+        "tftp",
+        "snmp",
+        "telnet"
       ]
     }
   ],
-  "stages": 4,
-  "created": "2026-01-02T13:00:40.021Z",
+  "stages": 6,
+  "created": "2026-01-02T14:00:23.088Z",
   "generator": "universal-structure-agent"
 }

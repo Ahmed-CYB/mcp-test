@@ -40,6 +40,10 @@ RUN apt-get update && \
     traceroute \
     dnsutils \
     whois \
+    hashcat \
+    john \
+    openssl \
+    hashid \
     burpsuite \
     sqlmap \
     gobuster \

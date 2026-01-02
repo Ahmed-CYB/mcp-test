@@ -2,40 +2,48 @@
 
 ## Scenario Description
 
-Penetration test of TechCorp's internal network infrastructure. Use network scanning techniques to discover services across three target machines and piece together the complete network picture.
+A corporate network has been segmented for security, but poor configuration has left multiple services exposed. Use network scanning techniques to map the infrastructure, identify vulnerabilities, and piece together the complete flag from distributed sources.
 
 ## Challenge Information
 
-- **Categories:** network, web
+- **Categories:** network, crypto, web
 - **Machines:** 4
-- **Stages:** 4
+- **Stages:** 6
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| attacker | attacker | 172.23.206.3 | nmap, wireshark, tcpdump, netcat, hping3, masscan, ssh-client, smbclient, nfs-common, snmp, tftp, python3, curl, wget |
-| webserver-alpha | victim | 172.23.206.57 | http, https, ssh, ftp |
-| fileserver-beta | victim | 172.23.206.11 | smb, nfs, ssh, snmp |
-| database-gamma | victim | 172.23.206.12 | mysql, telnet, ssh, ldap |
+| attacker-workstation | attacker | 172.23.206.3 | nmap, masscan, hping3, netcat, tcpdump, wireshark, ssh-client, smbclient, snmp, telnet, ftp, tftp |
+| corporate-fileserver | victim | 172.23.206.68 | ftp, smb, ssh, snmp |
+| development-webserver | victim | 172.23.206.11 | http, ssh, telnet, mysql |
+| backup-storage | victim | 172.23.206.12 | nfs, tftp, snmp, telnet |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Initial network discovery using nmap to identify live hosts and open ports
+Perform comprehensive network discovery using nmap and other scanning tools
 
 ### Stage 2
 
-Service enumeration and version detection on discovered targets
+Enumerate services on each discovered machine to identify entry points
 
 ### Stage 3
 
-Exploit discovered services to extract flag fragments and network intelligence
+Extract network topology information from the corporate file server
 
 ### Stage 4
 
-Combine gathered intelligence to reconstruct the complete flag
+Access the development web server to find database credentials
+
+### Stage 5
+
+Use gathered credentials to access the backup storage system
+
+### Stage 6
+
+Combine encrypted flag fragments from all three systems to reveal the final flag
 
 ## Getting Started
 
@@ -47,4 +55,5 @@ Combine gathered intelligence to reconstruct the complete flag
 ## Learning Objectives
 
 - Network scanning and service exploitation
+- Cryptographic analysis and decryption techniques
 - Web application vulnerability exploitation

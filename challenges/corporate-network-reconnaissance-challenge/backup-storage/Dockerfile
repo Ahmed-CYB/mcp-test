@@ -1,15 +1,9 @@
-FROM ubuntu:22.04
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM centos:7
 
 # Update and install services
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    openssh-server sudo vim nano curl wget git net-tools iputils-ping ca-certificates unzip python3 python3-pip vsftpd samba openssh-server snmp  \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install Windows-like services (Samba for SMB/CIFS)
-RUN apt-get update && apt-get install -y --no-install-recommends samba samba-common-bin && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN yum install -y --setopt=install_weak_deps=False \
+    openssh-server sudo vim nano curl wget git net-tools iputils nfs-utils tftp net-snmp telnet-server  \
+    && yum clean all
 
 
 # Configure SSH server
@@ -24,5 +18,5 @@ RUN mkdir -p /var/run/sshd && \
 # Create challenge directory
 RUN mkdir -p /challenge && chmod 755 /challenge
 
-EXPOSE 22 21 445 139 135
+EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
