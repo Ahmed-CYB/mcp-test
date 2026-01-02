@@ -1,0 +1,36 @@
+# CTF Challenge Repository .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Docker
+.dockerignore
+
+# Environment files
+.env
+.env.local
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+dist/
+build/
