@@ -1,0 +1,23 @@
+DataCorp Security Advisory
+==========================
+
+The company vault uses a two-step security approach:
+
+1. Rail Fence Cipher Implementation
+   - Pattern follows network infrastructure
+   - Check topology documentation for rail count
+   - Traditional zigzag pattern encryption
+
+2. Base64 Encoding Layer
+   - Standard RFC 4648 implementation
+   - Applied after rail fence encryption
+   - Decode first, then decrypt
+
+Decryption Process:
+- Extract encoded key from vault file
+- Apply base64 decoding
+- Use rail fence decryption with correct rail count
+- Result should be a readable decryption key
+
+Note: The final flag is hidden within the archived documents
+once properly decrypted with the recovered key.

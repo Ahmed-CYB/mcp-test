@@ -1,0 +1,20 @@
+DataCorp System Information
+===========================
+
+Server: corporate-fileserver
+OS: Ubuntu 20.04 LTS
+FTP Service: vsftpd 3.0.5
+
+Service Configuration:
+- FTP running on port 22 (non-standard for firewall bypass)
+- Anonymous access enabled for vendor file drops
+- Local user access enabled
+- SSL disabled for compatibility
+
+Known Issues:
+- Anonymous users can access sensitive directories
+- Backup files not properly secured
+- Weak password policy enforcement
+
+IT Contact: Jake Thompson (j.thompson@datacorp.local)
+System Last Updated: 2024-01-15

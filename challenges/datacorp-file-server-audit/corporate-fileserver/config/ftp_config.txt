@@ -1,0 +1,19 @@
+# DataCorp FTP Server Configuration
+# Last modified: 2024-01-15
+# Administrator: sys_admin
+
+[FTP_SETTINGS]
+allow_anonymous=true
+directory_listing=enabled
+root_path=/var/ftp/
+max_connections=50
+
+[SECURITY]
+encryption_enabled=false
+passive_mode=true
+log_transfers=true
+
+# Note: Archive access requires decryption key
+# Key stored in: /secure/company_vault.enc
+# Format: rail_fence_cipher + base64 encoding
+# Rails: check network topology diagram

@@ -1,0 +1,32 @@
+{
+  "name": "datacorp-file-server-audit",
+  "title": "DataCorp File Server Audit",
+  "description": "A mid-sized technology company has hired you to audit their file server security. Intelligence suggests their FTP server may have configuration vulnerabilities that could expose sensitive corporate data. Your task is to identify and exploit these misconfigurations to demonstrate the security risk.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{rail_fence_base64_vault_compromised_3rails}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "corporate-fileserver",
+      "type": "victim",
+      "ip": "172.29.193.129",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "security-auditor",
+      "type": "attacker",
+      "ip": "172.29.193.3",
+      "services": []
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-02T09:30:49.224Z",
+  "generator": "universal-structure-agent"
+}

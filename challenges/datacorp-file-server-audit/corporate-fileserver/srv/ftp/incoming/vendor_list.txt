@@ -1,0 +1,14 @@
+DataCorp Approved Vendors
+=========================
+
+TechSolutions Inc. - Contact: mike.chen@techsol.com
+CloudServ LLC - Contact: admin@cloudserv.net
+SecureTech Partners - Contact: support@securetech.biz
+
+FTP Access Credentials:
+- Username: vendor_access
+- Password: vendor123
+- Access Level: Read-only to /shared directory
+
+For full system access, contact IT administrator.
+Backup system credentials are stored in encrypted archive.
