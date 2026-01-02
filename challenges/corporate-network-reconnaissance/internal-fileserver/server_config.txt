@@ -1,0 +1,6 @@
+# Internal File Server Configuration
+# SMB Share: //internal-fileserver/backups
+# Last backup: 2024-01-15
+# Encryption method: Classical transposition
+# Rails: Check the server room number
+# Hint: The server is located in room 3

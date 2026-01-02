@@ -1,0 +1,57 @@
+{
+  "name": "corporate-network-reconnaissance",
+  "title": "Corporate Network Reconnaissance",
+  "description": "A corporate network has been misconfigured with several exposed services. Use network mapping and service enumeration to discover the network topology and locate sensitive information.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{network_recon_snmp_discovery_complete_7a8b9c}",
+  "machines": 3,
+  "machineDetails": [
+    {
+      "name": "attacker-workstation",
+      "type": "attacker",
+      "ip": "172.23.201.3",
+      "services": [
+        "nmap",
+        "wireshark",
+        "tcpdump",
+        "netcat",
+        "hping3",
+        "masscan",
+        "ssh-client",
+        "smbclient",
+        "python3",
+        "curl",
+        "wget"
+      ]
+    },
+    {
+      "name": "corporate-gateway",
+      "type": "victim",
+      "ip": "172.23.201.136",
+      "services": [
+        "ssh",
+        "ftp",
+        "telnet",
+        "snmp"
+      ]
+    },
+    {
+      "name": "internal-fileserver",
+      "type": "victim",
+      "ip": "172.23.201.11",
+      "services": [
+        "smb",
+        "ssh",
+        "tftp"
+      ]
+    }
+  ],
+  "stages": 5,
+  "created": "2026-01-02T12:12:17.158Z",
+  "generator": "universal-structure-agent"
+}

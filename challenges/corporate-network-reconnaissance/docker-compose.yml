@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  ctf-corporate-network-reconnaissance-attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile.attacker
+    container_name: ctf-corporate-network-reconnaissance-attacker
+    hostname: attacker-workstation
+    labels:
+      com.ctf.machine.type: "attacker"
+      com.ctf.challenge: "corporate-network-reconnaissance"
+    networks:
+      ctf-corporate-network-reconnaissance-net:
+        ipv4_address: 172.23.201.3
+      ctf-instances-network:
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-reconnaissance-corporate-gateway:
+    build:
+      context: ./corporate-gateway
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-reconnaissance-corporate-gateway
+    hostname: corporate-gateway
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-reconnaissance"
+    networks:
+      ctf-corporate-network-reconnaissance-net:
+        ipv4_address: 172.23.201.136
+    ports:
+      - "22"
+      - "21"
+    stdin_open: true
+    tty: true
+
+  ctf-corporate-network-reconnaissance-internal-fileserver:
+    build:
+      context: ./internal-fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-reconnaissance-internal-fileserver
+    hostname: internal-fileserver
+    labels:
+      com.ctf.machine.type: "victim"
+      com.ctf.challenge: "corporate-network-reconnaissance"
+    networks:
+      ctf-corporate-network-reconnaissance-net:
+        ipv4_address: 172.23.201.11
+    ports:
+      - "445"
+      - "22"
+    stdin_open: true
+    tty: true
+
+networks:
+  ctf-corporate-network-reconnaissance-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.201.0/24
+          gateway: 172.23.201.1
+  ctf-instances-network:
+    external: true
