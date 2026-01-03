@@ -1,31 +1,32 @@
 {
   "name": "corporate-data-breach-ftp-server-infiltration",
   "title": "Corporate Data Breach - FTP Server Infiltration",
-  "description": "A corporate FTP server contains sensitive employee data and backup files. The server has misconfigured anonymous access and weak authentication mechanisms that allow unauthorized access to restricted directories.",
+  "description": "A corporate FTP server contains sensitive documents and an encrypted flag. The server has weak security configurations that allow unauthorized access through various FTP exploitation techniques.",
   "category": "network",
   "subcategories": [
-    "network"
+    "network",
+    "crypto"
   ],
   "difficulty": "medium",
-  "flag": "CTF{ftp_anonymous_leads_to_credential_discovery_2024}",
+  "flag": "CTF{4_r41l_f3nc3_c1ph3r_m4st3ry_1s_th3_k3y}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.198.30",
+      "ip": "172.23.198.14",
       "services": [
         "ftp"
       ]
     },
     {
-      "name": "attacker",
+      "name": "attacker-workstation",
       "type": "attacker",
       "ip": "172.23.198.3",
       "services": []
     }
   ],
-  "stages": 4,
-  "created": "2026-01-03T04:24:55.806Z",
+  "stages": 5,
+  "created": "2026-01-03T04:36:51.766Z",
   "generator": "universal-structure-agent"
 }

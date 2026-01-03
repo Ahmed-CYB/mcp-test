@@ -4,7 +4,7 @@ services:
       context: ./attacker
       dockerfile: Dockerfile.attacker
     container_name: ctf-corporate-data-breach-ftp-server-infiltration-attacker
-    hostname: attacker
+    hostname: attacker-workstation
     labels:
       com.ctf.machine.type: "attacker"
       com.ctf.challenge: "corporate-data-breach-ftp-server-infiltration"
@@ -29,7 +29,7 @@ services:
       com.ctf.challenge: "corporate-data-breach-ftp-server-infiltration"
     networks:
       ctf-corporate-data-breach-ftp-server-infiltration-net:
-        ipv4_address: 172.23.198.30
+        ipv4_address: 172.23.198.14
     ports:
       - "21"
     stdin_open: true

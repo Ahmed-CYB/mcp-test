@@ -1,0 +1,25 @@
+FTP Server Infiltration Hints:
+
+1. Network Discovery:
+   - Standard FTP runs on port 21
+   - Look for backup files and configuration data
+   - Check common directories: /etc/, /var/log/, /home/
+
+2. Authentication:
+   - Try common credentials: admin/admin, admin/password, admin/backup123
+   - Look for credential files in backup locations
+   - FTP servers often store config in predictable locations
+
+3. Cryptographic Analysis:
+   - The encrypted flag uses a classical cipher method
+   - Rail fence ciphers arrange text in a zigzag pattern
+   - Count the number of rails mentioned in configuration files
+   - Read the pattern: top rail, second rail, third rail, bottom rail
+
+4. Decryption Process:
+   - Identify the cipher type from configuration hints
+   - Determine the key (number of rails) from backup files
+   - Arrange the ciphertext in the proper rail pattern
+   - Read off the plaintext in the correct order
+
+Remember: Corporate security often relies on 'security through obscurity' - but configuration files tell the real story!

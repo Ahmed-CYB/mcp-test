@@ -1,0 +1,16 @@
+CORPORATE SECURITY MEMO - CONFIDENTIAL
+
+========================================
+TO: IT Security Team
+FROM: Network Administrator
+SUBJECT: FTP Server Configuration
+========================================
+
+Our new FTP server has been deployed with the following configuration:
+- Anonymous access: DISABLED
+- Encryption: Standard corporate cipher
+- Backup credentials stored in: /etc/ftp_backup.key
+
+IMPORTANT: The following encrypted message contains our quarterly security flag:
+
+CHTaentcgd_h3r4yp1t0_f3nc3_c1ph3r_m4st3r}F{ry_f1w_r41l_f
