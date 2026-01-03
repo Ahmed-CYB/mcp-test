@@ -1,0 +1,11 @@
+{
+  "name": "corporate-ftp-breach",
+  "title": "A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive files. Your task is to identify the vulnerability, gain access to the FTP server, and retrieve the confidential flag containing financial data.",
+  "description": "A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive files. Your task is to identify the vulnerability, gain access to the FTP server, and retrieve the confidential flag containing financial data.",
+  "category": "network",
+  "difficulty": "medium",
+  "flag": "CTF{...}",
+  "created_at": "2026-01-03T20:52:10.558Z",
+  "creator_id": null,
+  "author": "anonymous"
+}

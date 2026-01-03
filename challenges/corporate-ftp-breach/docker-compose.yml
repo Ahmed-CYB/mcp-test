@@ -6,14 +6,29 @@ services:
     container_name: ctf-corporate-ftp-breach-ftp-server
     networks:
       ctf-corporate-ftp-breach-net:
-        ipv4_address: 172.23.209.97
+        ipv4_address: 172.24.193.196
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-ftp-breach-attacker
+    networks:
+      ctf-corporate-ftp-breach-net:
+        ipv4_address: 172.24.193.3
+      ctf-instances-network: {}
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
     restart: unless-stopped
 networks:
   ctf-corporate-ftp-breach-net:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.209.0/24
-          gateway: 172.23.209.1
+        - subnet: 172.24.193.0/24
+          gateway: 172.24.193.1
   ctf-instances-network:
     external: true

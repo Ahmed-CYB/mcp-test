@@ -1,21 +1,22 @@
 # corporate-ftp-breach
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the FTP server, and retrieve the confidential flag containing customer information.
+A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive files. Your task is to identify the vulnerability, gain access to the FTP server, and retrieve the confidential flag containing financial data.
 
 ## Scenario
-TechCorp Inc. recently set up an FTP server for file sharing between departments. The system administrator configured the server hastily before going on vacation. Security reports indicate potential unauthorized access to the file server. As a penetration tester, you need to assess the FTP server's security and retrieve any sensitive information that might be exposed.
+TechCorp's IT department recently set up an FTP server for file sharing between departments. However, due to rushed deployment and inadequate security review, the server contains several misconfigurations. Intelligence suggests that sensitive financial documents are stored on this server. Your mission is to exploit these weaknesses and retrieve the classified information.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.23.209.97 - ftp
+- **ftp-server** (victim): 172.24.193.196 - ftp
+- **attacker** (attacker): 172.24.193.3 - 
 
 ## Hints
-1. Not all FTP servers require authentication - some allow guest access
-2. Corporate file servers often organize data in logical directory structures
-3. The most sensitive information is usually stored in appropriately named directories
+1. The FTP server might allow connections without proper authentication
+2. Anonymous FTP access is often misconfigured in corporate environments
+3. Look for sensitive directories that might contain financial documents
 
 ## Flag Format
-CTF{4n0nym0u5_ftp_1s_d4ng3r0u5_2024}
+CTF{ftp_m1sc0nf1g_3xpl01t3d}
