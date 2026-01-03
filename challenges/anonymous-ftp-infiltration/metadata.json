@@ -1,0 +1,11 @@
+{
+  "name": "anonymous-ftp-infiltration",
+  "title": "A corporate file server has been misconfigured to allow anonymous FTP access. Your task is to identify the vulnerable service and retrieve sensitive company data that was accidentally exposed.",
+  "description": "A corporate file server has been misconfigured to allow anonymous FTP access. Your task is to identify the vulnerable service and retrieve sensitive company data that was accidentally exposed.",
+  "category": "network",
+  "difficulty": "easy",
+  "flag": "CTF{...}",
+  "created_at": "2026-01-03T22:22:09.043Z",
+  "creator_id": null,
+  "author": "anonymous"
+}
