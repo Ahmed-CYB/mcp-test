@@ -1,11 +1,11 @@
 {
   "name": "corporate-ftp-infiltration",
-  "title": "A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden in the corporate directory structure.",
-  "description": "A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden in the corporate directory structure.",
+  "title": "A corporate FTP server has been configured with weak security practices. The system administrator left default credentials and misconfigured anonymous access. Your task is to infiltrate the FTP server and retrieve the confidential document containing sensitive company data.",
+  "description": "A corporate FTP server has been configured with weak security practices. The system administrator left default credentials and misconfigured anonymous access. Your task is to infiltrate the FTP server and retrieve the confidential document containing sensitive company data.",
   "category": "network",
   "difficulty": "medium",
   "flag": "CTF{...}",
-  "created_at": "2026-01-03T20:44:09.761Z",
+  "created_at": "2026-01-03T20:53:48.237Z",
   "creator_id": null,
   "author": "anonymous"
 }

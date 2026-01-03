@@ -1,22 +1,23 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden in the corporate directory structure.
+A corporate FTP server has been configured with weak security practices. The system administrator left default credentials and misconfigured anonymous access. Your task is to infiltrate the FTP server and retrieve the confidential document containing sensitive company data.
 
 ## Scenario
-SecureCorp recently set up an FTP server for file sharing between departments. The system administrator, rushing to meet a deadline, made several configuration mistakes that left the server vulnerable. Intelligence suggests that sensitive corporate documents, including the flag, are stored in a restricted directory. Can you exploit the misconfigurations to access the confidential data?
+You are conducting a penetration test for Acme Corp. During reconnaissance, you discovered an FTP server running on their network. Intelligence suggests that the server contains classified financial reports. The system administrator is known for using default credentials and may have misconfigured anonymous access permissions.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.24.193.83 - ftp
+- **ftp-server** (victim): 172.24.193.119 - ftp
 - **attacker** (attacker): 172.24.193.3 - 
 
 ## Hints
-1. Anonymous FTP access might be enabled - try connecting without credentials
-2. Look for symbolic links or unusual directory structures that might provide access to restricted areas
-3. The corporate directory contains multiple subdirectories - explore them systematically to find the confidential data
+1. Start with a port scan to identify running services on the target machine.
+2. FTP servers sometimes allow anonymous login - try connecting without credentials first.
+3. If anonymous access works, explore the directory structure thoroughly. Some directories might have different permissions.
+4. Look for files with interesting names like 'financial', 'confidential', or 'restricted' - they often contain valuable information.
 
 ## Flag Format
-CTF{ftp_m1sc0nf1g_l34ds_t0_d4t4_br34ch}
+CTF{ftp_anonymous_access_is_dangerous_2024}

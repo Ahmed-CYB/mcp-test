@@ -22,6 +22,7 @@ RUN apt-get update && \
     nmap \
     ftp \
     netcat-traditional \
+    telnet \
     masscan \
     wireshark \
     tcpdump \
