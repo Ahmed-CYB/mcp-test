@@ -1,0 +1,24 @@
+CORPORATE DATA ACCESS POLICY
+
+All employees must follow these guidelines:
+
+1. Use strong passwords (minimum 8 characters)
+2. Do not share login credentials
+3. Report suspicious activity immediately
+4. Regular password changes required
+
+Default credentials for new employees:
+Username format: firstname.lastname
+Temporary password: employee123
+
+HR department credentials:
+Username: hruser
+Password: hr2024
+
+System backup access:
+Username: backupuser
+Password: backup456
+
+For password resets, contact: admin@company.local
+
+Violation of this policy may result in disciplinary action.

@@ -1,0 +1,25 @@
+NETWORK INFRASTRUCTURE OVERVIEW
+
+FTP Server Configuration:
+- Primary Port: 21 (Command)
+- Data Port: 20 (Data Transfer)
+- Anonymous Access: Enabled (public only)
+- SSL/TLS: Disabled (internal network)
+- Passive Mode: Enabled
+- Active Mode: Enabled
+
+Connected Services:
+- SNMP Service: Port 161 (monitoring)
+- SSH Service: Port 22 (admin access)
+- Web Server: Port 80 (internal portal)
+
+Directory Traversal Note:
+Some legacy applications may access parent directories.
+Ensure proper path validation in custom scripts.
+
+Shared Resources:
+- Employee database backups
+- Configuration files
+- System logs
+
+Contact: network.admin@company.local
