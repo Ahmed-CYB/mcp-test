@@ -1,22 +1,22 @@
 # corporate-data-breach
 
 ## Description
-A corporate FTP server has been compromised and sensitive data may be exposed. Your task is to investigate the FTP service, identify vulnerabilities, and retrieve the confidential flag that contains evidence of the data breach.
+TechCorp's internal employee portal has been compromised. Intelligence suggests that sensitive employee data including salary information has been exposed through a SQL injection vulnerability. Your mission is to infiltrate their database and retrieve the confidential flag containing the CEO's personal information.
 
 ## Scenario
-TechCorp Industries recently experienced a security incident. Their FTP server, which was used for internal file transfers, is suspected to have been misconfigured. As a security consultant, you need to assess the FTP service running on their server (192.168.1.100) and recover any sensitive information that might have been exposed.
+You are a security consultant hired to test TechCorp's web application security. The company recently deployed an employee portal at http://target-ip/portal/ that allows employees to view their profiles. However, the development team rushed the deployment and may have left security vulnerabilities. Your goal is to find and exploit any SQL injection vulnerabilities to access restricted data.
 
 ## Difficulty
 medium
 
 ## Machines
-- **techcorp-ftp-server** (victim): 172.23.208.168 - ftp
+- **techcorp-portal** (victim): 172.25.195.153 - http
+- **attacker** (attacker): 172.25.195.3 - 
 
 ## Hints
-1. Start by scanning the target to identify open services and their versions
-2. Check if the FTP service allows anonymous access - no credentials might be needed
-3. Look for interesting directories and files that might contain sensitive information
-4. The evidence of the breach might be stored in a confidential location within the FTP structure
+1. The login form might not properly sanitize user input
+2. Try using SQL injection techniques on the login parameters
+3. Look for ways to extract data from other database tables using UNION queries
 
 ## Flag Format
-CTF{ftp_4n0nym0us_d4t4_br34ch_3xp0s3d}
+CTF{sql_1nj3ct10n_m4st3r_2024}
