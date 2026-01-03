@@ -1,0 +1,20 @@
+FTP Server Investigation Instructions
+
+1. Connect to FTP server using anonymous login
+2. Navigate through available directories
+3. Download suspicious files for analysis
+4. Examine encryption methods used on sensitive data
+5. Decrypt the research data to find evidence of data breach
+
+FTP Connection:
+- Host: localhost
+- Port: 21
+- Username: anonymous
+- Password: (blank)
+
+Directories to investigate:
+- /pub (public files)
+- /logs (access logs)
+- /admin (restricted but accessible)
+
+The flag is hidden in the decrypted research data.

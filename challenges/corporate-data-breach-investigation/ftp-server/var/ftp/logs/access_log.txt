@@ -1,0 +1,10 @@
+FTP Access Log - Suspicious Activity Detected
+
+2024-01-15 14:32:18 - Anonymous login from 192.168.1.100
+2024-01-15 14:32:45 - GET /pub/encrypted_research_data.txt
+2024-01-15 14:33:12 - GET /pub/crypto_keys.txt - FAILED (Permission Denied)
+2024-01-15 14:33:28 - GET /admin/backup_keys.dat - SUCCESS
+2024-01-15 14:33:45 - Connection closed
+
+Note: The attacker accessed encrypted files but may have obtained decryption keys from backup_keys.dat
+Security team should investigate the encryption method used - appears to be layered encryption.
