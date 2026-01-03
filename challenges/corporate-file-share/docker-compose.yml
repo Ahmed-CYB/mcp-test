@@ -1,0 +1,19 @@
+services:
+  fileserver:
+    build:
+      context: ./fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-file-share-fileserver
+    networks:
+      ctf-corporate-file-share-net:
+        ipv4_address: 172.23.211.49
+    restart: unless-stopped
+networks:
+  ctf-corporate-file-share-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.211.0/24
+          gateway: 172.23.211.1
+  ctf-instances-network:
+    external: true
