@@ -1,21 +1,21 @@
 # corporate-ftp-breach
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your mission is to identify the vulnerability, gain access to the server, and retrieve the confidential document containing the flag.
+A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the FTP server, and retrieve the confidential flag containing customer information.
 
 ## Scenario
-TechCorp Industries recently set up an FTP server for file sharing between departments. The system administrator, under pressure to meet deadlines, made several configuration mistakes that left the server vulnerable. Intelligence suggests that sensitive financial documents are stored in a restricted directory. Can you exploit the misconfigurations to access the classified information?
+TechCorp Inc. recently set up an FTP server for file sharing between departments. The system administrator configured the server hastily before going on vacation. Security reports indicate potential unauthorized access to the file server. As a penetration tester, you need to assess the FTP server's security and retrieve any sensitive information that might be exposed.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.23.208.100 - ftp
+- **ftp-server** (victim): 172.23.209.97 - ftp
 
 ## Hints
-1. The FTP server might allow connections without proper authentication.
-2. Anonymous FTP access is often enabled by default. Try connecting with 'anonymous' as the username.
-3. Look for sensitive directories like 'finance' or 'confidential' that might contain important documents.
+1. Not all FTP servers require authentication - some allow guest access
+2. Corporate file servers often organize data in logical directory structures
+3. The most sensitive information is usually stored in appropriately named directories
 
 ## Flag Format
-CTF{ftp_m1sc0nf1g_l3ads_t0_data_br3ach}
+CTF{4n0nym0u5_ftp_1s_d4ng3r0u5_2024}
