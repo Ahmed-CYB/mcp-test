@@ -1,0 +1,27 @@
+TECHCORP SECURITY BRIEFING - PROJECT PHOENIX
+
+=== SECURE COMMUNICATION PROTOCOLS ===
+
+For all Project Phoenix communications, we will use a two-stage encryption process:
+
+1. BINARY ENCODING: All messages must first be converted to binary format
+2. RAIL FENCE CIPHER: Apply rail fence transposition with specified number of rails
+
+REMEMBER: The rail fence cipher writes text in a zigzag pattern across multiple "rails" (lines), then reads off each rail sequentially.
+
+Example with 3 rails:
+Text: HELLO
+Rail 1: H   O
+Rail 2:  E L
+Rail 3:   L
+Result: HOELL
+
+For decryption, reverse the process - arrange the ciphertext back into the rail pattern.
+
+=== SECURITY NOTES ===
+- Binary sequences should be converted to ASCII first
+- Rail count varies by message - check transmission headers
+- Always verify flag format: CTF{...}
+
+Classification: CONFIDENTIAL
+Authorization Level: Phoenix Team Only

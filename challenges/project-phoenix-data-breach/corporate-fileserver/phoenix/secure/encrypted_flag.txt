@@ -1,0 +1,14 @@
+-----BEGIN ENCRYPTED DATA-----
+RW5jcnlwdGlvbiBLZXk6IFBIT0VOSVHBQTDCM0M5RDFfMjAyNA==
+RGF0YTogQ1RGe3Bob2VuaXhfZnRwX2FjY2Vzc19jb21wcm9taXNlZF8yMDI0fQ==
+-----END ENCRYPTED DATA-----
+
+This file contains the Project Phoenix security
+assessment results. Decrypt using the standard
+project encryption key to view contents.
+
+Encryption Method: Base64 encoding
+Key Format: PHOENIX_[8-digit-hex]_2024
+
+Generated: 2024-01-15 14:45:00 UTC
+Classification: CONFIDENTIAL

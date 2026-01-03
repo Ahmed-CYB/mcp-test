@@ -1,0 +1,32 @@
+{
+  "name": "project-phoenix-data-breach",
+  "title": "Project Phoenix Data Breach",
+  "description": "TechCorp's internal FTP server contains sensitive Project Phoenix documentation. As a security consultant, you must assess the server's security posture and retrieve the classified project flag.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{rail_fence_cipher_with_three_rails_is_easy}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "corporate-fileserver",
+      "type": "victim",
+      "ip": "172.23.207.129",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "penetration-tester",
+      "type": "attacker",
+      "ip": "172.23.207.3",
+      "services": []
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-03T10:31:43.156Z",
+  "generator": "universal-structure-agent"
+}
