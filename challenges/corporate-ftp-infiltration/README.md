@@ -1,21 +1,22 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server appears to have weak security configurations. Your mission is to infiltrate the server and retrieve sensitive financial documents that contain the flag. The server uses vsftpd with custom configurations that may have security implications.
+A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden in the corporate directory structure.
 
 ## Scenario
-During a penetration test of Apex Financial Corp, you've discovered an FTP server running on their internal network. Initial reconnaissance suggests the server might be misconfigured, potentially allowing unauthorized access to confidential financial reports. Your goal is to gain access and locate the quarterly earnings report containing sensitive information.
+SecureCorp recently set up an FTP server for file sharing between departments. The system administrator, rushing to meet a deadline, made several configuration mistakes that left the server vulnerable. Intelligence suggests that sensitive corporate documents, including the flag, are stored in a restricted directory. Can you exploit the misconfigurations to access the confidential data?
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.23.210.147 - ftp
+- **ftp-server** (victim): 172.24.193.83 - ftp
+- **attacker** (attacker): 172.24.193.3 - 
 
 ## Hints
-1. Not all FTP servers require authentication - some allow guest access
-2. Anonymous FTP might be enabled - try connecting without credentials using 'anonymous' as username
-3. Once connected, explore the directory structure thoroughly - sensitive data might be in subdirectories
+1. Anonymous FTP access might be enabled - try connecting without credentials
+2. Look for symbolic links or unusual directory structures that might provide access to restricted areas
+3. The corporate directory contains multiple subdirectories - explore them systematically to find the confidential data
 
 ## Flag Format
-CTF{4n0nym0us_ftp_1s_d4ng3r0us_2024}
+CTF{ftp_m1sc0nf1g_l34ds_t0_d4t4_br34ch}
