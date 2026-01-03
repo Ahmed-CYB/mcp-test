@@ -2,42 +2,46 @@
 
 ## Scenario Description
 
-A corporate network has been compromised and sensitive files are being exfiltrated via FTP. Your mission is to infiltrate the FTP server, recover the stolen data, and decrypt the flag containing critical security information.
+A corporate FTP server has been identified during network reconnaissance. The server appears to contain sensitive employee data and system backups. Your mission is to gain unauthorized access and extract the hidden flag from the administrative files.
 
 ## Challenge Information
 
 - **Categories:** network, crypto
 - **Machines:** 2
-- **Stages:** 5
+- **Stages:** 6
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.206.147 | ftp |
-| attacker | attacker | 172.23.206.3 | N/A |
+| corporate-fileserver | victim | 172.23.205.61 | ftp |
+| attacker-workstation | attacker | 172.23.205.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Perform network reconnaissance to identify active FTP service
+Network reconnaissance to identify FTP service and configuration
 
 ### Stage 2
 
-Exploit FTP server vulnerabilities or weak credentials to gain access
+Exploit anonymous FTP access to gather intelligence on user accounts
 
 ### Stage 3
 
-Navigate FTP directory structure to locate encrypted flag file
+Perform credential attacks against discovered user accounts
 
 ### Stage 4
 
-Find decryption key or cipher information within server files
+Navigate directory structure to locate encrypted backup files
 
 ### Stage 5
 
-Decrypt the flag to complete the challenge
+Decrypt backup files to reveal administrative access credentials
+
+### Stage 6
+
+Access restricted administrative directory to capture the final flag
 
 ## Getting Started
 

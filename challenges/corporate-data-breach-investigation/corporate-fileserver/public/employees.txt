@@ -1,0 +1,26 @@
+Employee Directory - Public Information
+=========================================
+
+Department: Human Resources
+- Sarah Johnson (Manager) - sjohnson
+- Mike Chen (Coordinator) - mchen
+- Lisa Rodriguez (Assistant) - lrodriguez
+
+Department: IT Operations
+- David Kim (Administrator) - dkim
+- Jennifer Walsh (Support) - jwalsh
+- Robert Taylor (Analyst) - rtaylor
+
+Department: Finance
+- Amanda Foster (Director) - afoster
+- Thomas Wilson (Analyst) - twilson
+- Maria Santos (Clerk) - msantos
+
+Note: For security purposes, default passwords follow the pattern: username123
+All new employees must change their passwords within 30 days.
+
+System Access Credentials:
+- Backup User: backupuser / backup2023
+- Guest Access: Available via anonymous FTP
+
+Last Updated: March 2024

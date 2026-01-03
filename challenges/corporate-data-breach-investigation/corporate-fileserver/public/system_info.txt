@@ -1,0 +1,23 @@
+Corporate File Server - System Information
+==========================================
+
+Server: CORP-FS-01
+OS: Ubuntu 20.04 LTS
+FTP Service: vsftpd 3.0.3
+Last Maintenance: 2024-03-15
+
+Public Directories:
+- /public - General company information
+- /shared - Department shared files
+
+Restricted Access:
+- /admin - Administrative files (authorized personnel only)
+- /backups - System backups (IT department only)
+- /hr - Employee records (HR department only)
+
+Security Notice:
+This system is configured for internal use only.
+External access should be limited to VPN connections.
+Report any suspicious activity to IT Security.
+
+Contact: IT Help Desk - ext. 2847

@@ -1,0 +1,17 @@
+Corporate Employee Directory - Public Access
+========================================
+
+Active Employees:
+- jsmith (IT Administrator)
+- mdavis (Finance Manager)
+- agarcia (HR Director)
+- rbrown (Security Analyst)
+- kwilson (Database Administrator)
+- lmartinez (Network Engineer)
+
+Anonymous FTP Access Enabled
+For internal file sharing only
+
+[Hidden Section - Access Restricted]
+Admin accounts require special authentication
+Backup files encrypted with corporate cipher

@@ -1,0 +1,25 @@
+Corporate Cipher Analysis Guide
+==============================
+
+Our security team has identified a multi-layered encryption scheme
+used by the corporate backup system. Analysis suggests:
+
+1. The encrypted data appears to be hexadecimal encoded
+2. After hex decoding, the result seems to be Base64 encoded
+3. The final layer may use a simple character substitution
+
+Tools that may be useful:
+- xxd (for hex operations)
+- base64 (for Base64 decoding)
+- tr (for character translation)
+- python3 (for scripting)
+
+Example workflow:
+- Convert hex to binary data
+- Decode the Base64 layer
+- Apply character transformation
+
+The flag format follows standard CTF conventions: CTF{...}
+
+Remember: Corporate data must be handled with appropriate care
+even in training scenarios.

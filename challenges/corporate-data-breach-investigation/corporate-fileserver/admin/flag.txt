@@ -1,0 +1,1 @@
+CTF{corporate_ftp_breach_successful_admin_access_achieved}
