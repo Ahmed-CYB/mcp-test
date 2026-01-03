@@ -1,22 +1,22 @@
 # corporate-file-leak
 
 ## Description
-A corporate file server has been misconfigured, allowing unauthorized access to sensitive company documents. Your task is to enumerate the SMB shares, gain access, and retrieve the confidential flag containing leaked customer data.
+A corporate file server has been misconfigured, allowing unauthorized access to sensitive documents. Your task is to enumerate the Samba shares, identify accessible directories, and retrieve the confidential flag file.
 
 ## Scenario
-TechCorp recently migrated their file server to a new Linux-based SMB solution. The system administrator, rushing to meet the deadline, made several configuration mistakes that left sensitive directories exposed. As a penetration tester, you've been hired to assess the security of their file sharing infrastructure and demonstrate the risks of misconfigured SMB services.
+TechCorp's IT administrator hastily set up a new file server for the accounting department. Due to poor security practices, the Samba configuration contains vulnerabilities that allow anonymous access to certain shares. As a penetration tester, you need to identify these misconfigurations and access the sensitive financial data.
 
 ## Difficulty
 medium
 
 ## Machines
-- **fileserver** (victim): 172.26.193.198 - samba
+- **fileserver** (victim): 172.25.194.198 - samba
+- **attacker** (attacker): 172.25.194.3 - 
 
 ## Hints
-1. Start by scanning for open SMB ports and enumerating available shares
-2. Some shares might allow guest access - check what information is available publicly
-3. Look for credentials or hints in accessible files that might help access restricted shares
-4. The confidential share requires authentication - use discovered credentials to access it
+1. SMB services often run on ports 139 and 445. Start with network scanning.
+2. Some SMB configurations allow anonymous or guest access to shares.
+3. The accounting share might contain sensitive subdirectories worth exploring.
 
 ## Flag Format
-CTF{smb_m1sc0nf1g_l34ds_t0_d4t4_l34k}
+CTF{samba_shares_need_proper_security_controls}

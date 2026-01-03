@@ -21,25 +21,26 @@ RUN mkdir -p /challenge && chmod 755 /challenge
 # Copy challenge files
 COPY . /challenge/
 
-# Create startup script
-RUN cat > /start-services.sh << 'EOFSCRIPT'
-#!/bin/bash
-set -e
-
-# Samba Service Setup
-if [ -f /challenge/smb.conf ]; then
-  cp /challenge/smb.conf /etc/samba/smb.conf
-fi
-/usr/sbin/smbd -D &
-/usr/sbin/nmbd -D &
-# SSH Service Setup
-mkdir -p /var/run/sshd
-/usr/sbin/sshd -D &
-
-# Keep container running
-wait
-EOFSCRIPT
-RUN chmod +x /start-services.sh
+# Create startup script using echo (most reliable method, avoids heredoc issues)
+RUN echo '#!/bin/bash' > /start-services.sh && \
+    echo '#!/bin/bash' >> /start-services.sh && \
+    echo 'set -e' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    echo '# Samba Service Setup' >> /start-services.sh && \
+    echo 'if [ -f /challenge/smb.conf ]; then' >> /start-services.sh && \
+    echo '  cp /challenge/smb.conf /etc/samba/smb.conf' >> /start-services.sh && \
+    echo 'fi' >> /start-services.sh && \
+    echo '/usr/sbin/smbd -D &' >> /start-services.sh && \
+    echo '/usr/sbin/nmbd -D &' >> /start-services.sh && \
+    echo '# SSH Service Setup' >> /start-services.sh && \
+    echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \
+    echo '/usr/sbin/sshd -D &' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    echo '# Keep container running' >> /start-services.sh && \
+    echo 'wait' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    chmod +x /start-services.sh && \
+    test -f /start-services.sh || (echo "ERROR: Failed to create /start-services.sh" && exit 1)
 
 EXPOSE 445
 CMD ["/start-services.sh"]
