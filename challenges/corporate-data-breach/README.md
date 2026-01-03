@@ -1,21 +1,22 @@
 # corporate-data-breach
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag containing leaked customer information.
+A corporate FTP server has been compromised and sensitive data may be exposed. Your task is to investigate the FTP service, identify vulnerabilities, and retrieve the confidential flag that contains evidence of the data breach.
 
 ## Scenario
-TechCorp Industries recently set up an FTP server to share files between departments. However, the system administrator made several configuration mistakes that could lead to a serious data breach. As a penetration tester, you need to assess the security of this FTP server and demonstrate the potential impact of these misconfigurations.
+TechCorp Industries recently experienced a security incident. Their FTP server, which was used for internal file transfers, is suspected to have been misconfigured. As a security consultant, you need to assess the FTP service running on their server (192.168.1.100) and recover any sensitive information that might have been exposed.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.25.193.168 - ftp
+- **techcorp-ftp-server** (victim): 172.23.208.168 - ftp
 
 ## Hints
-1. Not all FTP servers require authentication - some allow guest access
-2. Anonymous FTP often uses 'anonymous' as username with empty or email as password
-3. Directory permissions might allow browsing of sensitive folders even with anonymous access
+1. Start by scanning the target to identify open services and their versions
+2. Check if the FTP service allows anonymous access - no credentials might be needed
+3. Look for interesting directories and files that might contain sensitive information
+4. The evidence of the breach might be stored in a confidential location within the FTP structure
 
 ## Flag Format
-CTF{ftp_m1sc0nf1g_l34ds_t0_d4t4_br34ch}
+CTF{ftp_4n0nym0us_d4t4_br34ch_3xp0s3d}
