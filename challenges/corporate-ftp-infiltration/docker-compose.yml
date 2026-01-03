@@ -1,19 +1,19 @@
 services:
-  corporate-ftp-server:
+  ftp-server:
     build:
-      context: ./corporate-ftp-server
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-corporate-ftp-infiltration-corporate-ftp-server
+    container_name: ctf-corporate-ftp-infiltration-ftp-server
     networks:
       ctf-corporate-ftp-infiltration-net:
-        ipv4_address: 172.23.208.188
+        ipv4_address: 172.23.210.147
     restart: unless-stopped
 networks:
   ctf-corporate-ftp-infiltration-net:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.23.208.0/24
-          gateway: 172.23.208.1
+        - subnet: 172.23.210.0/24
+          gateway: 172.23.210.1
   ctf-instances-network:
     external: true

@@ -1,22 +1,21 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server appears to have weak security configurations. The company stores sensitive documents on their FTP server, but rumor has it that some accounts have default credentials and there might be hidden directories containing confidential information.
+A corporate FTP server appears to have weak security configurations. Your mission is to infiltrate the server and retrieve sensitive financial documents that contain the flag. The server uses vsftpd with custom configurations that may have security implications.
 
 ## Scenario
-You've discovered a corporate FTP server during a penetration test. Initial reconnaissance suggests the server might have multiple user accounts with varying access levels. Your goal is to gain access to the server and locate sensitive corporate documents that contain the flag.
+During a penetration test of Apex Financial Corp, you've discovered an FTP server running on their internal network. Initial reconnaissance suggests the server might be misconfigured, potentially allowing unauthorized access to confidential financial reports. Your goal is to gain access and locate the quarterly earnings report containing sensitive information.
 
 ## Difficulty
 medium
 
 ## Machines
-- **corporate-ftp-server** (victim): 172.23.208.188 - ftp
+- **ftp-server** (victim): 172.23.210.147 - ftp
 
 ## Hints
-1. Start with a port scan to identify running services
-2. Try anonymous FTP access first, then look for user accounts
-3. Some administrators use very simple passwords for convenience
-4. Hidden directories often start with a dot (.)
+1. Not all FTP servers require authentication - some allow guest access
+2. Anonymous FTP might be enabled - try connecting without credentials using 'anonymous' as username
+3. Once connected, explore the directory structure thoroughly - sensitive data might be in subdirectories
 
 ## Flag Format
-CTF{ftp_br34ch_succ3ssful_2024}
+CTF{4n0nym0us_ftp_1s_d4ng3r0us_2024}
