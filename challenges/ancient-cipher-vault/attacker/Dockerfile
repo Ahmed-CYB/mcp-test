@@ -19,10 +19,12 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
+    nmap \
+    ftp \
     coreutils \
+    openssl \
     hashcat \
     john \
-    openssl \
     hashid \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
