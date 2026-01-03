@@ -1,0 +1,11 @@
+2019-03-15 08:30:15 [INFO] Backup process started
+2019-03-15 08:30:16 [INFO] Encrypting corporate documents
+2019-03-15 08:30:17 [INFO] Using key: legacy2019
+2019-03-15 08:30:18 [INFO] File: corporate_leak.enc created
+2019-03-15 08:30:19 [INFO] Backup stored in /home/legacy/
+2019-03-15 08:30:20 [INFO] Backup process completed
+2019-03-15 08:30:21 [WARN] Maintenance account still active
+2019-03-15 08:30:22 [WARN] Guest account password not set
+2019-03-15 08:45:30 [INFO] Telnet service restarted
+2019-03-15 08:45:31 [INFO] Legacy authentication enabled
+2019-03-15 09:00:00 [INFO] System operational
