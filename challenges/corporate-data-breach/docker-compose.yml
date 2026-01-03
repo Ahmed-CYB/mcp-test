@@ -1,12 +1,12 @@
 services:
-  techcorp-ftp:
+  ftp-server:
     build:
-      context: ./techcorp-ftp
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-corporate-data-breach-techcorp-ftp
+    container_name: ctf-corporate-data-breach-ftp-server
     networks:
       ctf-corporate-data-breach-net:
-        ipv4_address: 172.25.193.34
+        ipv4_address: 172.25.193.168
     restart: unless-stopped
 networks:
   ctf-corporate-data-breach-net:
