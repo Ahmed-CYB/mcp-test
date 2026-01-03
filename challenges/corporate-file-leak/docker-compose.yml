@@ -1,0 +1,19 @@
+services:
+  fileserver:
+    build:
+      context: ./fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-file-leak-fileserver
+    networks:
+      ctf-corporate-file-leak-net:
+        ipv4_address: 172.26.193.198
+    restart: unless-stopped
+networks:
+  ctf-corporate-file-leak-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.26.193.0/24
+          gateway: 172.26.193.1
+  ctf-instances-network:
+    external: true
