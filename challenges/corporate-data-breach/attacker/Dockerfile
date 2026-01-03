@@ -19,14 +19,19 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
-    sqlmap \
-    burpsuite \
-    firefox-esr \
-    gobuster \
-    nikto \
-    dirb \
-    ffuf \
-    wfuzz \
+    nmap \
+    ftp \
+    hydra \
+    netcat-traditional \
+    masscan \
+    wireshark \
+    tcpdump \
+    arp-scan \
+    hping3 \
+    netdiscover \
+    traceroute \
+    dnsutils \
+    whois \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server

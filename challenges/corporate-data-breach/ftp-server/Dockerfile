@@ -21,32 +21,33 @@ RUN mkdir -p /challenge && chmod 755 /challenge
 # Copy challenge files
 COPY . /challenge/
 
-# Create startup script
-RUN cat > /start-services.sh << 'EOFSCRIPT'
-#!/bin/bash
-set -e
-
-# FTP Service Setup
-if [ -f /challenge/vsftpd.conf ]; then
-  cp /challenge/vsftpd.conf /etc/vsftpd.conf
-fi
-mkdir -p /var/run/vsftpd/empty /var/ftp/data/classified
-chmod 555 /var/ftp
-chmod 755 /var/ftp/data /var/ftp/data/classified
-if [ -f /challenge/flag.txt ]; then
-  cp /challenge/flag.txt /var/ftp/data/classified/flag.txt
-  chmod 644 /var/ftp/data/classified/flag.txt
-  chown ftp:ftp /var/ftp/data/classified/flag.txt
-fi
-/usr/sbin/vsftpd /etc/vsftpd.conf &
-# SSH Service Setup
-mkdir -p /var/run/sshd
-/usr/sbin/sshd -D &
-
-# Keep container running
-wait
-EOFSCRIPT
-RUN chmod +x /start-services.sh
+# Create startup script using echo (most reliable method, avoids heredoc issues)
+RUN echo '#!/bin/bash' > /start-services.sh && \
+    echo '#!/bin/bash' >> /start-services.sh && \
+    echo 'set -e' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    echo '# FTP Service Setup' >> /start-services.sh && \
+    echo 'if [ -f /challenge/vsftpd.conf ]; then' >> /start-services.sh && \
+    echo '  cp /challenge/vsftpd.conf /etc/vsftpd.conf' >> /start-services.sh && \
+    echo 'fi' >> /start-services.sh && \
+    echo 'mkdir -p /var/run/vsftpd/empty /var/ftp/data/classified' >> /start-services.sh && \
+    echo 'chmod 555 /var/ftp' >> /start-services.sh && \
+    echo 'chmod 755 /var/ftp/data /var/ftp/data/classified' >> /start-services.sh && \
+    echo 'if [ -f /challenge/flag.txt ]; then' >> /start-services.sh && \
+    echo '  cp /challenge/flag.txt /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
+    echo '  chmod 644 /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
+    echo '  chown ftp:ftp /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
+    echo 'fi' >> /start-services.sh && \
+    echo '/usr/sbin/vsftpd /etc/vsftpd.conf &' >> /start-services.sh && \
+    echo '# SSH Service Setup' >> /start-services.sh && \
+    echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \
+    echo '/usr/sbin/sshd -D &' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    echo '# Keep container running' >> /start-services.sh && \
+    echo 'wait' >> /start-services.sh && \
+    echo '' >> /start-services.sh && \
+    chmod +x /start-services.sh && \
+    test -f /start-services.sh || (echo "ERROR: Failed to create /start-services.sh" && exit 1)
 
 EXPOSE 21
 CMD ["/start-services.sh"]

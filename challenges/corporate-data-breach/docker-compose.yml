@@ -1,12 +1,12 @@
 services:
-  techcorp-portal:
+  ftp-server:
     build:
-      context: ./techcorp-portal
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-corporate-data-breach-techcorp-portal
+    container_name: ctf-corporate-data-breach-ftp-server
     networks:
       ctf-corporate-data-breach-net:
-        ipv4_address: 172.25.195.153
+        ipv4_address: 172.24.193.75
     restart: unless-stopped
   attacker:
     build:
@@ -15,7 +15,7 @@ services:
     container_name: ctf-corporate-data-breach-attacker
     networks:
       ctf-corporate-data-breach-net:
-        ipv4_address: 172.25.195.3
+        ipv4_address: 172.24.193.3
       ctf-instances-network: {}
     cap_add:
       - NET_RAW
@@ -28,7 +28,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.25.195.0/24
-          gateway: 172.25.195.1
+        - subnet: 172.24.193.0/24
+          gateway: 172.24.193.1
   ctf-instances-network:
     external: true

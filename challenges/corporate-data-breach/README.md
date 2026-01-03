@@ -1,22 +1,22 @@
 # corporate-data-breach
 
 ## Description
-TechCorp's internal employee portal has been compromised. Intelligence suggests that sensitive employee data including salary information has been exposed through a SQL injection vulnerability. Your mission is to infiltrate their database and retrieve the confidential flag containing the CEO's personal information.
+A corporate FTP server has been compromised and sensitive data may be accessible. The server appears to have weak authentication and potential misconfigurations that allow unauthorized access to classified documents.
 
 ## Scenario
-You are a security consultant hired to test TechCorp's web application security. The company recently deployed an employee portal at http://target-ip/portal/ that allows employees to view their profiles. However, the development team rushed the deployment and may have left security vulnerabilities. Your goal is to find and exploit any SQL injection vulnerabilities to access restricted data.
+TechCorp's internal FTP server (192.168.1.100) was recently flagged by the security team for suspicious activity. Intelligence suggests that weak credentials and FTP misconfigurations may allow attackers to access sensitive corporate data. Your mission is to investigate the FTP service, gain unauthorized access, and retrieve the classified flag containing proof of the data breach.
 
 ## Difficulty
 medium
 
 ## Machines
-- **techcorp-portal** (victim): 172.25.195.153 - http
-- **attacker** (attacker): 172.25.195.3 - 
+- **ftp-server** (victim): 172.24.193.75 - ftp
+- **attacker** (attacker): 172.24.193.3 - 
 
 ## Hints
-1. The login form might not properly sanitize user input
-2. Try using SQL injection techniques on the login parameters
-3. Look for ways to extract data from other database tables using UNION queries
+1. Start with a port scan to identify running services
+2. FTP servers often allow anonymous access - try logging in without credentials first
+3. If anonymous access is restricted, consider that backup accounts often use predictable passwords
 
 ## Flag Format
-CTF{sql_1nj3ct10n_m4st3r_2024}
+CTF{ftp_br34ch_d3t3ct3d_2024}
