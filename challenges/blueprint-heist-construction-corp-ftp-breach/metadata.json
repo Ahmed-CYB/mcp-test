@@ -1,0 +1,32 @@
+{
+  "name": "blueprint-heist-construction-corp-ftp-breach",
+  "title": "Blueprint Heist - Construction Corp FTP Breach",
+  "description": "A construction company's legacy FTP server contains sensitive project blueprints and employee data. The server has weak authentication and contains encrypted files that hold the final flag.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{xor_blueprints_decoded_construction_secrets}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "corporate-ftp",
+      "type": "victim",
+      "ip": "172.23.205.53",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "pentester",
+      "type": "attacker",
+      "ip": "172.23.205.3",
+      "services": []
+    }
+  ],
+  "stages": 4,
+  "created": "2026-01-03T10:04:06.641Z",
+  "generator": "universal-structure-agent"
+}

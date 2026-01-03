@@ -1,0 +1,13 @@
+Construction Corp - Project Notes
+
+Project Manager: Sarah Chen
+Security Protocol: All sensitive files encrypted using XOR with project key
+Key Storage: Embedded in system messages for authorized personnel
+
+Reminder: The key is the same length as our company motto
+Company Motto: "Building Tomorrow's World Today"
+
+For blueprint access, decrypt the .dat file in this directory.
+Project deadline: Q4 2024
+
+Note: Engineering team uses hex encoding for all encrypted data transmission.

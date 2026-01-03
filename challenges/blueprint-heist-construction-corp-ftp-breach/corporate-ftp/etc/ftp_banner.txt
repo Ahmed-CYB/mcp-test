@@ -1,0 +1,10 @@
+Welcome to Construction Corp FTP Server
+======================================
+
+Building Tomorrow's World Today
+
+Public access available at /pub
+Logs available at /logs (authorized personnel only)
+
+For technical support, contact: admin@constructioncorp.local
+Security Notice: All confidential files are encrypted
