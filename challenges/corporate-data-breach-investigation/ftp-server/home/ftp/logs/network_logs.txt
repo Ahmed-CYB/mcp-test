@@ -1,0 +1,7 @@
+2023-11-15 14:32:15 - FTP LOGIN: user 'admin' from 192.168.1.100
+2023-11-15 14:33:22 - FILE ACCESS: /confidential/encrypted_database.db
+2023-11-15 14:34:01 - FILE DOWNLOAD: employee_data.csv
+2023-11-15 14:34:18 - FTP LOGOUT: user 'admin'
+2023-11-15 14:45:33 - FTP LOGIN: user 'backup' from 192.168.1.105
+2023-11-15 14:46:12 - FILE ACCESS: /system/backup_key.txt
+2023-11-15 14:47:05 - FTP LOGOUT: user 'backup'

@@ -1,18 +1,22 @@
-FROM archlinux:latest
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Update and install services
-RUN pacman -Sy --noconfirm \
-    openssh sudo vim nano curl wget git net-tools iputils vsftpd \
-    && pacman -Scc --noconfirm
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    openssh-server sudo vim nano curl wget git net-tools iputils-ping ca-certificates unzip python3 python3-pip vsftpd  \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 
 # Configure SSH server
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config 2>/dev/null || \
-    echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
-    sed -i 's/#PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config 2>/dev/null || \
-    echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+    useradd -m -s /bin/bash kali 2>/dev/null || true && \
+    echo 'kali:kali' | chpasswd && \
+    usermod -aG sudo kali 2>/dev/null || true && \
+    sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
 # Create challenge directory
 RUN mkdir -p /challenge && chmod 755 /challenge
@@ -27,15 +31,15 @@ RUN cat > /start-services.sh << 'EOFSCRIPT'
 set -e
 
 # ftp service setup (AI-generated)
-mkdir -p /var/run/vsftpd/empty && mkdir -p /var/ftp && mkdir -p /srv/ftp/biotech/research/confidential && mkdir -p /srv/ftp/biotech/system && mkdir -p /srv/ftp/biotech/logs && cp /challenge/vsftpd.conf /etc/vsftpd.conf && cp /challenge/flag.txt /srv/ftp/biotech/research/confidential/flag.txt && cp /challenge/research_notes.txt /srv/ftp/biotech/research/research_notes.txt && cp /challenge/protein_data.csv /srv/ftp/biotech/research/protein_data.csv && cp /challenge/backup_service.py /srv/ftp/biotech/system/backup_service.py && cp /challenge/system_log.txt /srv/ftp/biotech/logs/system_log.txt && chmod 755 /var/ftp && chmod 755 /srv/ftp/biotech && chmod 755 /srv/ftp/biotech/research && chmod 755 /srv/ftp/biotech/system && chmod 755 /srv/ftp/biotech/logs && chmod 700 /srv/ftp/biotech/research/confidential && chmod 644 /srv/ftp/biotech/research/confidential/flag.txt && chmod 644 /srv/ftp/biotech/research/research_notes.txt && chmod 644 /srv/ftp/biotech/research/protein_data.csv && chmod 755 /srv/ftp/biotech/system/backup_service.py && chmod 644 /srv/ftp/biotech/logs/system_log.txt && chown -R ftp:ftp /var/ftp && chown -R ftp:ftp /srv/ftp/biotech && python3 /srv/ftp/biotech/system/backup_service.py &  && service vsftpd start || /usr/sbin/vsftpd /etc/vsftpd.conf &
+cp /challenge/vsftpd.conf /etc/vsftpd.conf & && mkdir -p /var/run/vsftpd/empty & && mkdir -p /var/ftp/staging/{backup,config,logs,tools} && chmod 555 /var/ftp && chmod 755 /var/ftp/staging && chmod 755 /var/ftp/staging/backup && chmod 755 /var/ftp/staging/config && chmod 755 /var/ftp/staging/logs && chmod 755 /var/ftp/staging/tools && cp /challenge/flag.txt.enc /var/ftp/staging/backup/ && cp /challenge/readme.txt /var/ftp/staging/ && cp /challenge/system_config.txt /var/ftp/staging/config/ && cp /challenge/access.log /var/ftp/staging/logs/ && cp /challenge/decrypt.py /var/ftp/staging/tools/ && chmod 644 /var/ftp/staging/backup/flag.txt.enc && chmod 644 /var/ftp/staging/readme.txt && chmod 644 /var/ftp/staging/config/system_config.txt && chmod 644 /var/ftp/staging/logs/access.log && chmod 755 /var/ftp/staging/tools/decrypt.py && chown -R ftp:ftp /var/ftp/staging && service vsftpd start || /usr/sbin/vsftpd &
 
 # crypto service setup (AI-generated)
-service vsftpd start && echo 'FTP server started on port 21 with anonymous access enabled'
+service vsftpd start & && useradd -m -s /bin/bash admin && echo 'admin:backup123' | chpasswd && useradd -m -s /bin/bash backup && echo 'backup:system456' | chpasswd && mkdir -p /home/ftp/{confidential,system,data,logs} && chown -R admin:admin /home/ftp && chmod 755 /home/ftp && chmod -R 644 /home/ftp/*
 
 # Keep container running
 wait
 EOFSCRIPT
 RUN chmod +x /start-services.sh
 
-EXPOSE 21 25 53 1433
+EXPOSE 21 25 28 53 1433
 CMD ["/start-services.sh"]

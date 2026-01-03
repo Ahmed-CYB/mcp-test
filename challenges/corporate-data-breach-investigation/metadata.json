@@ -1,20 +1,20 @@
 {
   "name": "corporate-data-breach-investigation",
   "title": "Corporate Data Breach Investigation",
-  "description": "A biotechnology company suspects unauthorized access to their research data server. The FTP server contains sensitive research files that may have been compromised. Your task is to investigate the FTP service and recover the confidential flag that proves data exfiltration occurred.",
+  "description": "A corporate network has been compromised and sensitive files are being exfiltrated via FTP. Your mission is to infiltrate the FTP server, recover the stolen data, and decrypt the flag containing critical security information.",
   "category": "network",
   "subcategories": [
     "network",
     "crypto"
   ],
   "difficulty": "medium",
-  "flag": "CTF{8f3_0ne_time_prediction}",
+  "flag": "CTF{x0r_c1ph3r_cr4ck3d_d4t4b4s3_br34ch3d}",
   "machines": 2,
   "machineDetails": [
     {
       "name": "ftp-server",
       "type": "victim",
-      "ip": "172.23.205.114",
+      "ip": "172.23.206.147",
       "services": [
         "ftp"
       ]
@@ -22,11 +22,11 @@
     {
       "name": "attacker",
       "type": "attacker",
-      "ip": "172.23.205.3",
+      "ip": "172.23.206.3",
       "services": []
     }
   ],
-  "stages": 4,
-  "created": "2026-01-03T09:36:38.499Z",
+  "stages": 5,
+  "created": "2026-01-03T09:47:42.292Z",
   "generator": "universal-structure-agent"
 }

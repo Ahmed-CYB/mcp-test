@@ -1,0 +1,15 @@
+CORPORATE BREACH INVESTIGATION NOTES
+=====================================
+
+1. FTP server appears to be compromised
+2. Sensitive database files have been encrypted
+3. Attackers may have left encryption keys on the server
+4. Database contains critical security information
+5. Multiple user accounts show suspicious activity
+
+HINTS:
+- Check system backup files for encryption keys
+- The database uses XOR encryption with a text key
+- Network logs show which files were accessed
+- Look for files in /confidential and /system directories
+- The flag is hidden in the encrypted database content

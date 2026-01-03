@@ -2,38 +2,42 @@
 
 ## Scenario Description
 
-A biotechnology company suspects unauthorized access to their research data server. The FTP server contains sensitive research files that may have been compromised. Your task is to investigate the FTP service and recover the confidential flag that proves data exfiltration occurred.
+A corporate network has been compromised and sensitive files are being exfiltrated via FTP. Your mission is to infiltrate the FTP server, recover the stolen data, and decrypt the flag containing critical security information.
 
 ## Challenge Information
 
 - **Categories:** network, crypto
 - **Machines:** 2
-- **Stages:** 4
+- **Stages:** 5
 
 ## Network Architecture
 
 | Machine | Type | IP Address | Services |
 |---------|------|------------|----------|
-| ftp-server | victim | 172.23.205.114 | ftp |
-| attacker | attacker | 172.23.205.3 | N/A |
+| ftp-server | victim | 172.23.206.147 | ftp |
+| attacker | attacker | 172.23.206.3 | N/A |
 
 ## Challenge Stages
 
 ### Stage 1
 
-Perform network reconnaissance to identify the FTP server
+Perform network reconnaissance to identify active FTP service
 
 ### Stage 2
 
-Analyze FTP service configuration and available access methods
+Exploit FTP server vulnerabilities or weak credentials to gain access
 
 ### Stage 3
 
-Navigate the FTP directory structure to locate sensitive files
+Navigate FTP directory structure to locate encrypted flag file
 
 ### Stage 4
 
-Decrypt or decode protected files to extract the final flag
+Find decryption key or cipher information within server files
+
+### Stage 5
+
+Decrypt the flag to complete the challenge
 
 ## Getting Started
 
