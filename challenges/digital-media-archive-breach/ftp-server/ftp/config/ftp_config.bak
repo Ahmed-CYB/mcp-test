@@ -1,0 +1,22 @@
+# FTP Server Configuration Backup
+# Last modified: 2024-03-10
+
+[SECURITY_SETTINGS]
+encryption_enabled=true
+cipher_type=substitution_monoalphabetic
+key_rotation=weekly
+
+[CIPHER_REFERENCE]
+# Archive encryption uses simple substitution
+# Key mapping stored in: cipher_key.txt
+# Note: Legacy system uses A-Z mapping
+
+[ACCESS_LOGS]
+anonymous_access=enabled
+last_anonymous_login=2024-03-15_14:32:11
+failed_attempts=0
+
+[BACKUP_STATUS]
+last_backup=2024-03-10
+encrypted_files_count=847
+unencrypted_files_count=23

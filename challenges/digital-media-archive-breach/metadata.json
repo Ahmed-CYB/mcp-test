@@ -1,0 +1,32 @@
+{
+  "name": "digital-media-archive-breach",
+  "title": "Digital Media Archive Breach",
+  "description": "A digital media company's archive server contains sensitive project files. The FTP server has been misconfigured, allowing anonymous access to certain directories. However, the most valuable files are encrypted using a custom cipher.",
+  "category": "network",
+  "subcategories": [
+    "network",
+    "crypto"
+  ],
+  "difficulty": "medium",
+  "flag": "CTF{SUBSTITUTIONAL_CIPHER_FAULT}",
+  "machines": 2,
+  "machineDetails": [
+    {
+      "name": "ftp-server",
+      "type": "victim",
+      "ip": "172.27.193.34",
+      "services": [
+        "ftp"
+      ]
+    },
+    {
+      "name": "attacker",
+      "type": "attacker",
+      "ip": "172.27.193.3",
+      "services": []
+    }
+  ],
+  "stages": 5,
+  "created": "2026-01-03T10:48:12.634Z",
+  "generator": "universal-structure-agent"
+}

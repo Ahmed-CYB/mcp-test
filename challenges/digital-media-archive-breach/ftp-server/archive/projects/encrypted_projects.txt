@@ -1,0 +1,10 @@
+=== ENCRYPTED PROJECT FILES ===
+
+Project Alpha: Rw5jcnlwdGVkIGZpbGU6IENURntmVHBfYW5vbl9wcml2X2VzY19kMXNjMHYzcmVkfQ==
+
+Project Beta: VGhpcyBmaWxlIGNvbnRhaW5zIGNsYXNzaWZpZWQgaW5mb3JtYXRpb24=
+
+Project Gamma: UHJvamVjdCBmaWxlcyBhcmUgZW5jcnlwdGVkIHdpdGggY3VzdG9tIGNpcGhlcg==
+
+NOTE: All project files are encrypted using Base64 encoding for security.
+Decryption keys are stored in the configuration directory.

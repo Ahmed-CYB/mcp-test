@@ -1,0 +1,19 @@
+# Digital Media Archive - Cipher Configuration
+# Internal use only - Testing Environment
+
+CIPHER_TYPE=BASE64
+ENCODING_METHOD=standard
+KEY_ROTATION=disabled
+
+# Decryption Instructions:
+# 1. Files are encoded using Base64
+# 2. Decode the Base64 string to reveal plaintext
+# 3. For security, this config file should not be accessible to anonymous users
+
+# Example decryption (DO NOT USE IN PRODUCTION):
+# echo 'encoded_string' | base64 -d
+
+# SECURITY NOTICE:
+# Anonymous FTP access has been misconfigured
+# Users can access config directory due to privilege escalation
+# This is a critical security vulnerability in testing environment
