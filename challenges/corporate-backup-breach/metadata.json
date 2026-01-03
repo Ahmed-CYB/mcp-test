@@ -1,0 +1,11 @@
+{
+  "name": "corporate-backup-breach",
+  "title": "A corporate server runs multiple services for internal operations. Intelligence suggests they use weak authentication practices and have sensitive backup files accessible through their file sharing services. Your mission is to infiltrate their network and retrieve the confidential project files.",
+  "description": "A corporate server runs multiple services for internal operations. Intelligence suggests they use weak authentication practices and have sensitive backup files accessible through their file sharing services. Your mission is to infiltrate their network and retrieve the confidential project files.",
+  "category": "network",
+  "difficulty": "medium",
+  "flag": "CTF{...}",
+  "created_at": "2026-01-03T21:04:37.543Z",
+  "creator_id": null,
+  "author": "anonymous"
+}
