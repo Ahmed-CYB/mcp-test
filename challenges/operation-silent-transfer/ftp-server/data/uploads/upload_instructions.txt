@@ -1,0 +1,27 @@
+Upload Directory - Instructions
+==============================
+
+This directory is designated for temporary file uploads.
+
+Upload Guidelines:
+- Maximum file size: 10MB
+- Allowed file types: .txt, .doc, .pdf, .enc
+- Files are automatically scanned for security threats
+- Uploaded files are retained for 30 days maximum
+
+Security Notes:
+- All uploads are logged with timestamp and source IP
+- Suspicious files are automatically quarantined
+- Encrypted files require special handling procedures
+
+For large file transfers or special requirements,
+contact the system administrator.
+
+Directory Permissions:
+- Anonymous users: Upload only (no download)
+- Authenticated users: Full access
+- Administrators: Full control
+
+System Status: ACTIVE
+Storage Available: 500MB
+Current Usage: 15%

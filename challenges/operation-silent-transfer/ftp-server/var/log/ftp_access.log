@@ -1,0 +1,16 @@
+FTP Server Access Log - Operation Silent Transfer
+========================================
+
+[2024-01-15 14:23:17] Anonymous login successful from 192.168.1.100
+[2024-01-15 14:23:22] File retrieved: encrypted_intel.txt
+[2024-01-15 14:23:25] Connection closed
+
+[2024-01-15 14:45:33] Login attempt from 10.0.0.50 - user: admin
+[2024-01-15 14:45:34] Authentication failed
+
+[2024-01-15 15:12:08] Anonymous login successful from 172.16.0.25
+[2024-01-15 15:12:15] File listing requested for /challenge directory
+[2024-01-15 15:12:18] Files found: encrypted_intel.txt, hint.txt
+[2024-01-15 15:12:20] Connection terminated
+
+NOTE: Server allows anonymous FTP access to /challenge directory

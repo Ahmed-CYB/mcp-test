@@ -1,0 +1,22 @@
+Public Information Directory
+===========================
+
+This directory contains non-classified operational information.
+
+Available Resources:
+- Mission briefings (unclassified portions)
+- Equipment specifications (general)
+- Training materials
+- Contact information
+
+Note: Classified materials are stored in separate secured directories.
+Access to classified areas requires proper authentication.
+
+Directory Structure:
+/public/ - Public access files
+/classified/ - Restricted access (authentication required)
+/uploads/ - Temporary file storage
+
+Server Status: OPERATIONAL
+Last Maintenance: 2024-01-15
+Next Scheduled Maintenance: 2024-02-15
