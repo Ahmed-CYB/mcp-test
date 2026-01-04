@@ -1,23 +1,24 @@
 # corporate-cipher-breach
 
 ## Description
-A corporate whistleblower has leaked encrypted documents containing evidence of financial fraud. The documents were encrypted using a custom cipher system. Your task is to decrypt the files and recover the evidence to expose the corruption.
+A corporate whistleblower has leaked encrypted documents from MegaCorp's internal servers. Intelligence suggests they used a custom encryption scheme combining classical and modern techniques. Your mission is to decrypt the confidential data and extract the sensitive information hidden within.
 
 ## Scenario
-You are a cybersecurity investigator who has received encrypted files from an anonymous source claiming to have evidence of corporate fraud at MegaCorp Industries. The whistleblower mentions that the company uses a 'layered security approach' for their sensitive documents. You need to decrypt these files to uncover the evidence and find the flag that proves the fraud.
+You are a cybersecurity analyst investigating a data breach at MegaCorp Industries. The attacker left behind several encrypted files on a compromised server. Initial analysis reveals the use of multiple encryption layers including base64 encoding, Caesar cipher, and XOR encryption. The server contains encrypted messages, cipher keys, and configuration files that will help you decrypt the final payload containing corporate secrets.
 
 ## Difficulty
 medium
 
 ## Machines
-- **crypto-server** (victim): 172.30.193.157 - ssh, http
+- **crypto-server** (victim): 172.30.193.104 - ssh
 - **attacker** (attacker): 172.30.193.3 - 
 
 ## Hints
-1. The company uses multiple layers of encryption. Check what services are running on different ports.
-2. ROT13 is a simple Caesar cipher with a shift of 13. Base64 encoding is not encryption but can hide data.
-3. The crypto service on port 8080 can help you decrypt data. Try using curl with POST requests and JSON data.
-4. XOR cipher uses the company name 'MEGACORP' as the key. The evidence directory might be protected but accessible if you know the right path.
+1. The server contains multiple encrypted messages - check all directories under /home/analyst/
+2. Look for clues about the decryption order and methods in the hints directory
+3. Each encryption layer uses a different technique: encoding, classical cipher, and modern encryption
+4. The tools directory contains a Python script that might help with decryption
+5. The keys directory contains the values needed for decryption algorithms
 
 ## Flag Format
-CTF{m3g4c0rp_fr4ud_3xp053d_2024}
+CTF{m4st3r_0f_mult1_l4y3r_crypt0}

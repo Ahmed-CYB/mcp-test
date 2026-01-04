@@ -6,7 +6,7 @@ services:
     container_name: ctf-corporate-cipher-breach-crypto-server
     networks:
       ctf-corporate-cipher-breach-net:
-        ipv4_address: 172.30.193.157
+        ipv4_address: 172.30.193.104
     restart: unless-stopped
   attacker:
     build:

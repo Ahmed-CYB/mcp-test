@@ -19,9 +19,10 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
-    coreutils \
     openssh-server openssh-client \
-    firefox-esr \
+    nano, vim, gedit \
+    coreutils \
+    gnome-calculator \
     hashcat \
     john \
     openssl \
