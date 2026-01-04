@@ -6,7 +6,7 @@ services:
     container_name: ctf-corporate-ftp-breach-ftp-server
     networks:
       ctf-corporate-ftp-breach-net:
-        ipv4_address: 172.24.193.22
+        ipv4_address: 172.24.193.56
     restart: unless-stopped
   attacker:
     build:
