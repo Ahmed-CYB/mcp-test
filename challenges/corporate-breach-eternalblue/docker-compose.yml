@@ -1,0 +1,32 @@
+services:
+  fileserver:
+    build:
+      context: ./fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-breach-eternalblue-fileserver
+    networks:
+      ctf-corporate-breach-eternalblue-net:
+        ipv4_address: 172.24.193.45
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-breach-eternalblue-attacker
+    networks:
+      ctf-corporate-breach-eternalblue-net:
+        ipv4_address: 172.24.193.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-corporate-breach-eternalblue-net:
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.24.193.0/24
+          gateway: 172.24.193.1
