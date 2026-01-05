@@ -1,22 +1,22 @@
 # corporate-ftp-breach
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company documents. Your task is to identify the vulnerability and retrieve the confidential flag.
+A corporate FTP server has been discovered during reconnaissance. The system administrator has implemented what they believe to be secure authentication, but rumors suggest that weak password policies might be in place. Your mission is to gain unauthorized access to the FTP server and retrieve sensitive corporate data.
 
 ## Scenario
-TechCorp Inc. recently deployed an FTP server for internal file sharing. The system administrator configured the server hastily and may have overlooked some security settings. Intelligence suggests that sensitive documents containing the company's quarterly reports are stored on this server. Your mission is to gain access and retrieve the classified information.
+TechCorp Industries has deployed an FTP server for file sharing between departments. The server is protected by username/password authentication, but employees have been complaining about overly complex password requirements. To appease users, the IT department may have relaxed their password policy. Intelligence suggests that standard corporate usernames might be in use with predictable passwords.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.24.193.56 - ftp
-- **attacker** (attacker): 172.24.193.3 - 
+- **ftp-server** (victim): 172.29.193.114 - ftp
+- **attacker** (attacker): 172.29.193.3 - 
 
 ## Hints
-1. The FTP server might allow connections without proper authentication
-2. Check if anonymous login is enabled and explore the directory structure
-3. Look for sensitive files in directories that might seem restricted but are actually accessible
+1. Corporate environments often use predictable naming conventions for user accounts
+2. Password policies in corporate settings sometimes favor convenience over security
+3. Common corporate usernames include: admin, manager, support, backup, guest
 
 ## Flag Format
-CTF{ftp_4n0nym0us_4cc3ss_c0mpr0m1s3d}
+CTF{ftp_brute_force_success_2024}
