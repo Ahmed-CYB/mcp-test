@@ -22,8 +22,8 @@ RUN apt-get update && \
     nmap \
     ftp \
     netcat-traditional \
-    masscan \
     wireshark \
+    masscan \
     tcpdump \
     arp-scan \
     hping3 \
