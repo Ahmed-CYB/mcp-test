@@ -1,23 +1,23 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured, allowing anonymous access to sensitive directories. Your mission is to infiltrate the server, escalate privileges, and retrieve the confidential flag from the restricted area.
+A corporate FTP server has been discovered during reconnaissance. The server appears to use weak authentication mechanisms. Your task is to gain access to the FTP server and retrieve sensitive corporate documents.
 
 ## Scenario
-TechCorp's IT department recently deployed an FTP server for file sharing between departments. Due to a configuration oversight, the server allows anonymous login and has weak user credentials. Intelligence suggests that sensitive corporate documents, including the flag, are stored in a restricted directory accessible only to authenticated users.
+During a penetration test of Acme Corporation, you've discovered an FTP server running on their internal network. Initial scans show that the server allows authentication but may be vulnerable to brute force attacks. Intelligence suggests that employees use common passwords and the company follows predictable naming conventions. Your objective is to brute force the FTP credentials and locate the flag containing sensitive corporate information.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.24.193.134 - ftp
+- **ftp-server** (victim): 172.24.193.122 - ftp
 - **attacker** (attacker): 172.24.193.3 - 
 
 ## Hints
-1. Not all FTP servers require authentication for initial access
-2. Sometimes configuration files contain useful information about user accounts
-3. Weak passwords often follow predictable patterns mentioned in documentation
-4. The flag is in a directory that requires authenticated access as a specific user
+1. Start with network reconnaissance to identify open services and their versions
+2. Common corporate usernames often follow predictable patterns like admin, manager, employee
+3. Corporate passwords frequently contain company names, years, or common patterns like 'password123'
+4. The flag is located in a restricted directory that requires valid credentials to access
 
 ## Flag Format
-CTF{ftp_m1sc0nf1g_l34ds_t0_d4t4_br34ch}
+CTF{ftp_brut3_f0rc3_5ucc355_2024}

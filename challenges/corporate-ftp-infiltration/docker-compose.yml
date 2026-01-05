@@ -6,7 +6,7 @@ services:
     container_name: ctf-corporate-ftp-infiltration-ftp-server
     networks:
       ctf-corporate-ftp-infiltration-net:
-        ipv4_address: 172.24.193.134
+        ipv4_address: 172.24.193.122
     restart: unless-stopped
   attacker:
     build:
@@ -16,7 +16,6 @@ services:
     networks:
       ctf-corporate-ftp-infiltration-net:
         ipv4_address: 172.24.193.3
-      ctf-instances-network: {}
     cap_add:
       - NET_RAW
       - NET_ADMIN
@@ -25,10 +24,10 @@ services:
     restart: unless-stopped
 networks:
   ctf-corporate-ftp-infiltration-net:
+    name: ctf-corporate-ftp-infiltration-net
     driver: bridge
+    internal: false
     ipam:
       config:
         - subnet: 172.24.193.0/24
           gateway: 172.24.193.1
-  ctf-instances-network:
-    external: true
