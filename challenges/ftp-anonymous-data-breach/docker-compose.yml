@@ -1,9 +1,9 @@
 services:
-  ftp-victim:
+  ftp-server:
     build:
-      context: ./ftp-victim
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-ftp-anonymous-data-breach-ftp-victim
+    container_name: ctf-ftp-anonymous-data-breach-ftp-server
     networks:
       ctf-ftp-anonymous-data-breach-net:
         ipv4_address: 172.26.145.159
