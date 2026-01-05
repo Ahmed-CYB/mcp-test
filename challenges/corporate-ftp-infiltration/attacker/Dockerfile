@@ -20,13 +20,10 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     nmap \
-    hydra \
     ftp \
-    medusa \
-    patator \
+    netcat-traditional \
     masscan \
     wireshark \
-    netcat-traditional \
     tcpdump \
     arp-scan \
     hping3 \

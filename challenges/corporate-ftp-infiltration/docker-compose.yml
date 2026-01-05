@@ -6,7 +6,7 @@ services:
     container_name: ctf-corporate-ftp-infiltration-ftp-server
     networks:
       ctf-corporate-ftp-infiltration-net:
-        ipv4_address: 172.24.193.122
+        ipv4_address: 172.24.193.109
     restart: unless-stopped
   attacker:
     build:
