@@ -1,0 +1,33 @@
+services:
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-misconfiguration-ftp-server
+    networks:
+      ctf-ftp-anonymous-misconfiguration-net:
+        ipv4_address: 172.23.145.39
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-misconfiguration-attacker
+    networks:
+      ctf-ftp-anonymous-misconfiguration-net:
+        ipv4_address: 172.23.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-ftp-anonymous-misconfiguration-net:
+    name: ctf-ftp-anonymous-misconfiguration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1
