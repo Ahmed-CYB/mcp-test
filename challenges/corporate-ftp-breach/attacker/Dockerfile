@@ -21,12 +21,9 @@ RUN apt-get update && \
     python3-pip \
     nmap \
     ftp \
-    hydra \
-    medusa \
-    patator \
-    masscan \
-    wireshark \
     netcat-traditional \
+    wireshark \
+    masscan \
     tcpdump \
     arp-scan \
     hping3 \
