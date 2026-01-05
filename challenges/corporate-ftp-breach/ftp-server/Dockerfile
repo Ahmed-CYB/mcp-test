@@ -54,5 +54,5 @@ RUN echo '#!/bin/bash' > /start-services.sh && \
     chmod +x /start-services.sh && \
     test -f /start-services.sh || (echo "ERROR: Failed to create /start-services.sh" && exit 1)
 
-EXPOSE 21 22
+EXPOSE 21
 CMD ["/start-services.sh"]

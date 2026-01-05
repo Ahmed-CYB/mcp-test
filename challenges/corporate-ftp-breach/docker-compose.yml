@@ -6,7 +6,7 @@ services:
     container_name: ctf-corporate-ftp-breach-ftp-server
     networks:
       ctf-corporate-ftp-breach-net:
-        ipv4_address: 172.29.193.127
+        ipv4_address: 172.29.145.24
     restart: unless-stopped
   attacker:
     build:
@@ -15,7 +15,7 @@ services:
     container_name: ctf-corporate-ftp-breach-attacker
     networks:
       ctf-corporate-ftp-breach-net:
-        ipv4_address: 172.29.193.3
+        ipv4_address: 172.29.145.3
     cap_add:
       - NET_RAW
       - NET_ADMIN
@@ -29,5 +29,5 @@ networks:
     internal: false
     ipam:
       config:
-        - subnet: 172.29.193.0/24
-          gateway: 172.29.193.1
+        - subnet: 172.29.145.0/24
+          gateway: 172.29.145.1
