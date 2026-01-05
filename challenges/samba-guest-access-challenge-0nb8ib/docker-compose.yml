@@ -1,0 +1,33 @@
+services:
+  samba-victim:
+    build:
+      context: ./samba-victim
+      dockerfile: Dockerfile
+    container_name: ctf-samba-guest-access-challenge-0nb8ib-samba-victim
+    networks:
+      ctf-samba-guest-access-challenge-0nb8ib-net:
+        ipv4_address: 172.21.145.154
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-samba-guest-access-challenge-0nb8ib-attacker
+    networks:
+      ctf-samba-guest-access-challenge-0nb8ib-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-samba-guest-access-challenge-0nb8ib-net:
+    name: ctf-samba-guest-access-challenge-0nb8ib-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
