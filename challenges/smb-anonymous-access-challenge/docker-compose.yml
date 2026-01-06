@@ -1,0 +1,33 @@
+services:
+  smb-victim:
+    build:
+      context: ./smb-victim
+      dockerfile: Dockerfile
+    container_name: ctf-smb-anonymous-access-challenge-smb-victim
+    networks:
+      ctf-smb-anonymous-access-challenge-net:
+        ipv4_address: 172.21.145.185
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-smb-anonymous-access-challenge-attacker
+    networks:
+      ctf-smb-anonymous-access-challenge-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-smb-anonymous-access-challenge-net:
+    name: ctf-smb-anonymous-access-challenge-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
