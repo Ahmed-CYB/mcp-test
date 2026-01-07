@@ -23,6 +23,7 @@ RUN apt-get update && \
     smbclient \
     enum4linux \
     samba-common-bin \
+    nbtscan \
     masscan \
     wireshark \
     netcat-traditional \

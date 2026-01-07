@@ -6,7 +6,7 @@ services:
     container_name: ctf-samba-guest-access-challenge-samba-server
     networks:
       ctf-samba-guest-access-challenge-net:
-        ipv4_address: 172.26.145.63
+        ipv4_address: 172.26.145.164
     restart: unless-stopped
   attacker:
     build:
