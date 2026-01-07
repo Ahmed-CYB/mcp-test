@@ -1,23 +1,22 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server has been discovered with multiple security misconfigurations. The server allows anonymous access and has been poorly configured by the system administrator. Your task is to identify the vulnerabilities, gain access to the system, and retrieve the confidential flag hidden in the file system.
+A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company documents. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden within the corporate file structure.
 
 ## Scenario
-During a penetration test of Acme Corp's network infrastructure, you've discovered an FTP server running on their internal network. Initial reconnaissance suggests the server may have been hastily configured with default settings. The system administrator appears to have enabled anonymous access for temporary file sharing but forgot to properly secure the server. Intelligence suggests that sensitive corporate data, including access credentials and project files, may be stored on this server.
+TechCorp's IT department recently deployed a new FTP server for file sharing between departments. However, due to rushed deployment and inadequate security review, the server contains multiple misconfigurations that could allow unauthorized access. As a penetration tester, you've been tasked with identifying these vulnerabilities and demonstrating the potential for data exfiltration.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.25.145.47 - ftp
+- **ftp-server** (victim): 172.25.145.31 - ftp
 - **attacker** (attacker): 172.25.145.3 - 
 
 ## Hints
-1. Start with a port scan to identify running services and their versions
-2. FTP servers often allow anonymous login - try common anonymous credentials
-3. Explore the directory structure thoroughly - administrators sometimes hide sensitive files in unexpected locations
-4. Pay attention to file permissions and directory access rights - misconfigurations can lead to information disclosure
+1. Start by scanning the target to identify open services and their versions
+2. Some FTP servers allow anonymous access without authentication - try common anonymous login combinations
+3. Explore the directory structure thoroughly - corporate environments often have organized folder hierarchies
 
 ## Flag Format
-CTF{ftp_4n0nym0us_4cc3ss_c0mpr0m1s3d}
+CTF{ftp_m1sc0nf1g_l3ads_t0_d4ta_br3ach}
