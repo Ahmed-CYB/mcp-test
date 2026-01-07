@@ -1,0 +1,33 @@
+services:
+  target-server:
+    build:
+      context: ./target-server
+      dockerfile: Dockerfile
+    container_name: ctf-network-discovery-nmap-target-server
+    networks:
+      ctf-network-discovery-nmap-net:
+        ipv4_address: 172.27.145.166
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-network-discovery-nmap-attacker
+    networks:
+      ctf-network-discovery-nmap-net:
+        ipv4_address: 172.27.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-network-discovery-nmap-net:
+    name: ctf-network-discovery-nmap-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.27.145.0/24
+          gateway: 172.27.145.1
