@@ -6,7 +6,7 @@ services:
     container_name: ctf-anonymous-ftp-infiltration-ftp-server
     networks:
       ctf-anonymous-ftp-infiltration-net:
-        ipv4_address: 172.24.193.17
+        ipv4_address: 172.25.145.176
     restart: unless-stopped
   attacker:
     build:
@@ -15,8 +15,7 @@ services:
     container_name: ctf-anonymous-ftp-infiltration-attacker
     networks:
       ctf-anonymous-ftp-infiltration-net:
-        ipv4_address: 172.24.193.3
-      ctf-instances-network: {}
+        ipv4_address: 172.25.145.3
     cap_add:
       - NET_RAW
       - NET_ADMIN
@@ -25,10 +24,10 @@ services:
     restart: unless-stopped
 networks:
   ctf-anonymous-ftp-infiltration-net:
+    name: ctf-anonymous-ftp-infiltration-net
     driver: bridge
+    internal: false
     ipam:
       config:
-        - subnet: 172.24.193.0/24
-          gateway: 172.24.193.1
-  ctf-instances-network:
-    external: true
+        - subnet: 172.25.145.0/24
+          gateway: 172.25.145.1
