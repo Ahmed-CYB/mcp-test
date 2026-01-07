@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN mkdir -p /home/share && \
     echo 'CTF{samba_guest_access_pwned}' > /home/share/flag.txt && \
     chmod 644 /home/share/flag.txt && \
-    chown nobody:nobody /home/share/flag.txt
+    chown nobody /home/share/flag.txt
 
 # Create startup script
 RUN echo '#!/bin/bash' > /start.sh && \
