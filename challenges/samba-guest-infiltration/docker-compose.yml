@@ -1,0 +1,33 @@
+services:
+  samba-server:
+    build:
+      context: ./samba-server
+      dockerfile: Dockerfile
+    container_name: ctf-samba-guest-infiltration-samba-server
+    networks:
+      ctf-samba-guest-infiltration-net:
+        ipv4_address: 172.30.145.113
+    restart: unless-stopped
+  attacker-box:
+    build:
+      context: ./attacker-box
+      dockerfile: Dockerfile
+    container_name: ctf-samba-guest-infiltration-attacker-box
+    networks:
+      ctf-samba-guest-infiltration-net:
+        ipv4_address: 172.30.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-samba-guest-infiltration-net:
+    name: ctf-samba-guest-infiltration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.30.145.0/24
+          gateway: 172.30.145.1
