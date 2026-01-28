@@ -1,22 +1,23 @@
 # corporate-data-breach
 
 ## Description
-A corporate FTP server has been compromised and sensitive data may be accessible. The server appears to have weak authentication and potential misconfigurations that allow unauthorized access to classified documents.
+A corporate server has been compromised and sensitive data may be exposed through multiple network services. Your task is to identify vulnerabilities, gain access to the system, and retrieve the confidential flag containing critical business information.
 
 ## Scenario
-TechCorp's internal FTP server (192.168.1.100) was recently flagged by the security team for suspicious activity. Intelligence suggests that weak credentials and FTP misconfigurations may allow attackers to access sensitive corporate data. Your mission is to investigate the FTP service, gain unauthorized access, and retrieve the classified flag containing proof of the data breach.
+You are a penetration tester hired by SecureCorp to assess their network security. Intelligence suggests that their file server may have misconfigurations that could allow unauthorized access. The server runs multiple services and contains sensitive corporate data. Your goal is to identify and exploit these vulnerabilities to demonstrate the security risks.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.24.193.75 - ftp
-- **attacker** (attacker): 172.24.193.3 - 
+- **corporate-server** (victim): 172.25.145.22 - ftp, ssh
+- **attacker** (attacker): 172.25.145.3 - 
 
 ## Hints
-1. Start with a port scan to identify running services
-2. FTP servers often allow anonymous access - try logging in without credentials first
-3. If anonymous access is restricted, consider that backup accounts often use predictable passwords
+1. Start with a comprehensive port scan to identify all running services
+2. Some FTP servers allow anonymous access - check if you can login without credentials
+3. Look for common weak credentials on SSH services, especially admin accounts
+4. Once you gain initial access, explore the system for sensitive files and directories
 
 ## Flag Format
-CTF{ftp_br34ch_d3t3ct3d_2024}
+CTF{c0rp0r4t3_d4t4_br34ch_2024}
