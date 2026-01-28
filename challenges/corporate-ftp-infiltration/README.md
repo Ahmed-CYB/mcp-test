@@ -1,22 +1,23 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company documents. Your task is to identify the vulnerability, gain access to the server, and retrieve the confidential flag hidden within the corporate file structure.
+A corporate FTP server has been misconfigured, allowing anonymous access to sensitive directories. Your task is to identify the vulnerabilities, gain access to the system, and retrieve the confidential flag hidden in the server's file structure.
 
 ## Scenario
-TechCorp's IT department recently deployed a new FTP server for file sharing between departments. However, due to rushed deployment and inadequate security review, the server contains multiple misconfigurations that could allow unauthorized access. As a penetration tester, you've been tasked with identifying these vulnerabilities and demonstrating the potential for data exfiltration.
+TechCorp recently deployed an FTP server for file sharing between departments. However, the system administrator made several configuration mistakes that expose sensitive company data. As a penetration tester, you need to identify these vulnerabilities and demonstrate how an attacker could access confidential information.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.25.145.31 - ftp
+- **ftp-server** (victim): 172.25.145.135 - ftp
 - **attacker** (attacker): 172.25.145.3 - 
 
 ## Hints
 1. Start by scanning the target to identify open services and their versions
-2. Some FTP servers allow anonymous access without authentication - try common anonymous login combinations
-3. Explore the directory structure thoroughly - corporate environments often have organized folder hierarchies
+2. Check if the FTP server allows anonymous login - this is a common misconfiguration
+3. Explore the directory structure thoroughly - sensitive files might be stored in subdirectories
+4. Look for directories with write permissions that might contain uploaded confidential data
 
 ## Flag Format
-CTF{ftp_m1sc0nf1g_l3ads_t0_d4ta_br3ach}
+CTF{ftp_m1sc0nf1g_3xp0s3d_s3cr3ts}
