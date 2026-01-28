@@ -1,22 +1,23 @@
 # samba-guest-infiltration
 
 ## Description
-A corporate file server running Samba has been misconfigured, allowing unauthorized access to sensitive data. The system administrator failed to properly secure the SMB shares, creating a critical security vulnerability. Your mission is to identify and exploit this misconfiguration to retrieve confidential information stored on the server.
+A corporate file server running Samba has been misconfigured, allowing unauthorized access to sensitive company data. Your mission is to exploit the SMB service to gain access to confidential files and retrieve the flag hidden within the shared directories.
 
 ## Scenario
-TechCorp's internal file server has been experiencing strange network activity. The IT department suspects that their Samba configuration might be exposing sensitive files to unauthorized users. As a penetration tester, you've been hired to assess the security of their file sharing infrastructure and determine if confidential data can be accessed without proper authentication.
+TechCorp recently deployed a new file server running Samba for internal document sharing. The system administrator made several configuration mistakes during the initial setup, leaving the server vulnerable to unauthorized access. As a penetration tester, you need to identify and exploit these misconfigurations to demonstrate the security risks and retrieve sensitive information.
 
 ## Difficulty
 medium
 
 ## Machines
-- **samba-server** (victim): 172.30.145.113 - samba, ssh
-- **attacker-box** (attacker): 172.30.145.3 - ssh
+- **samba-server** (victim): 172.30.145.158 - samba, ssh
+- **attacker** (attacker): 172.30.145.3 - ssh
 
 ## Hints
-1. Network services often expose more than intended when misconfigured
-2. SMB shares might allow guest access without authentication
-3. The 'confidential' share name suggests it contains sensitive information
+1. Start by scanning the target to identify open ports and running services
+2. SMB services often allow guest access or null sessions for enumeration
+3. Use smbclient to list and access shares without authentication
+4. Look for shares that allow guest access and browse their contents for sensitive files
 
 ## Flag Format
-CTF{samba_guest_access_anonymous_share}
+CTF{samba_guest_share_infiltration}
