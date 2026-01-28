@@ -1,5 +1,8 @@
 FROM kalilinux/kali-rolling
 
+# Use kali.download and drop other sources so unreachable regional redirects (e.g. mirror.aktkn.sg) are avoided
+RUN rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources 2>/dev/null;     echo 'deb http://kali.download/kali kali-rolling main non-free non-free-firmware contrib' > /etc/apt/sources.list
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # CRITICAL: Always update package lists before installing
@@ -22,6 +25,8 @@ RUN apt-get update && \
     nmap \
     ftp \
     netcat-traditional \
+    hydra \
+    dirb \
     masscan \
     wireshark \
     tcpdump \
