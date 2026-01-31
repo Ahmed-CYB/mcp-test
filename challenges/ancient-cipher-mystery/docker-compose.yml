@@ -1,0 +1,33 @@
+services:
+  crypto-archive:
+    build:
+      context: ./crypto-archive
+      dockerfile: Dockerfile
+    container_name: ctf-ancient-cipher-mystery-crypto-archive
+    networks:
+      ctf-ancient-cipher-mystery-net:
+        ipv4_address: 172.23.145.23
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ancient-cipher-mystery-attacker
+    networks:
+      ctf-ancient-cipher-mystery-net:
+        ipv4_address: 172.23.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-ancient-cipher-mystery-net:
+    name: ctf-ancient-cipher-mystery-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1
