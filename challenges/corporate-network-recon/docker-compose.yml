@@ -1,0 +1,33 @@
+services:
+  corporate-server:
+    build:
+      context: ./corporate-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-recon-corporate-server
+    networks:
+      ctf-corporate-network-recon-net:
+        ipv4_address: 172.23.145.60
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-recon-attacker
+    networks:
+      ctf-corporate-network-recon-net:
+        ipv4_address: 172.23.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-corporate-network-recon-net:
+    name: ctf-corporate-network-recon-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1
