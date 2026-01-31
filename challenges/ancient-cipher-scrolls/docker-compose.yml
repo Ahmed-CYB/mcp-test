@@ -1,0 +1,33 @@
+services:
+  cipher-archive:
+    build:
+      context: ./cipher-archive
+      dockerfile: Dockerfile
+    container_name: ctf-ancient-cipher-scrolls-cipher-archive
+    networks:
+      ctf-ancient-cipher-scrolls-net:
+        ipv4_address: 172.21.145.181
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ancient-cipher-scrolls-attacker
+    networks:
+      ctf-ancient-cipher-scrolls-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-ancient-cipher-scrolls-net:
+    name: ctf-ancient-cipher-scrolls-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
