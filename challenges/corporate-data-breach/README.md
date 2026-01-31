@@ -1,23 +1,23 @@
 # corporate-data-breach
 
 ## Description
-A corporate server has been compromised and sensitive data may be exposed through multiple network services. Your task is to identify vulnerabilities, gain access to the system, and retrieve the confidential flag containing critical business information.
+A corporate employee portal has been discovered with potential security vulnerabilities. The application appears to use a database backend for user authentication and data storage. Your mission is to exploit SQL injection vulnerabilities to extract sensitive information from the database.
 
 ## Scenario
-You are a penetration tester hired by SecureCorp to assess their network security. Intelligence suggests that their file server may have misconfigurations that could allow unauthorized access. The server runs multiple services and contains sensitive corporate data. Your goal is to identify and exploit these vulnerabilities to demonstrate the security risks.
+TechCorp recently deployed a new employee management system accessible via web interface. Security audits revealed the application may be vulnerable to SQL injection attacks. As a penetration tester, you need to identify and exploit these vulnerabilities to demonstrate the risk to sensitive employee data stored in the backend database.
 
 ## Difficulty
 medium
 
 ## Machines
-- **corporate-server** (victim): 172.25.145.22 - ftp, ssh
-- **attacker** (attacker): 172.25.145.3 - 
+- **web-server** (victim): 172.23.145.45 - apache2, mysql
+- **attacker** (attacker): 172.23.145.3 - 
 
 ## Hints
-1. Start with a comprehensive port scan to identify all running services
-2. Some FTP servers allow anonymous access - check if you can login without credentials
-3. Look for common weak credentials on SSH services, especially admin accounts
-4. Once you gain initial access, explore the system for sensitive files and directories
+1. The login form might not properly validate user input before sending it to the database.
+2. Try using SQL injection techniques to bypass authentication. Consider what happens when you use special characters like single quotes.
+3. Use UNION SELECT statements to extract data from other tables. The admin role might give you access to restricted areas.
+4. Look for ways to access the admin panel. You might need to manipulate the SQL query to return administrator privileges.
 
 ## Flag Format
-CTF{c0rp0r4t3_d4t4_br34ch_2024}
+CTF{sql_1nj3ct10n_m4st3r_2024}

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "challengeName": "corporate-data-breach",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": true,
+    "hasAPI": false
+  },
+  "services": {}
+}

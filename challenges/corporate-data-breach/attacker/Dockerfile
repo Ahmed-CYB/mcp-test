@@ -1,5 +1,8 @@
 FROM kalilinux/kali-rolling
 
+# Use kali.download and drop other sources so unreachable regional redirects (e.g. mirror.aktkn.sg) are avoided
+RUN rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources 2>/dev/null;     echo 'deb http://kali.download/kali kali-rolling main non-free non-free-firmware contrib' > /etc/apt/sources.list
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # CRITICAL: Always update package lists before installing
@@ -19,20 +22,14 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
-    nmap \
-    ftp \
-    openssh-server openssh-client \
-    hydra \
-    masscan \
-    wireshark \
-    netcat-traditional \
-    tcpdump \
-    arp-scan \
-    hping3 \
-    netdiscover \
-    traceroute \
-    dnsutils \
-    whois \
+    burpsuite \
+    sqlmap \
+    firefox-esr \
+    gobuster \
+    nikto \
+    dirb \
+    ffuf \
+    wfuzz \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server
