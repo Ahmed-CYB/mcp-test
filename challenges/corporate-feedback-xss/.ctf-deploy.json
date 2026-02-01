@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "challengeName": "corporate-feedback-xss",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": true,
+    "hasAPI": false
+  },
+  "services": {}
+}

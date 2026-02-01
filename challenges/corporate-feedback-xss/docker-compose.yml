@@ -1,0 +1,33 @@
+services:
+  feedback-portal:
+    build:
+      context: ./feedback-portal
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-feedback-xss-feedback-portal
+    networks:
+      ctf-corporate-feedback-xss-net:
+        ipv4_address: 172.21.145.197
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-feedback-xss-attacker
+    networks:
+      ctf-corporate-feedback-xss-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-corporate-feedback-xss-net:
+    name: ctf-corporate-feedback-xss-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
