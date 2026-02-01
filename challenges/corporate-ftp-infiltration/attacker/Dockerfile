@@ -6,8 +6,7 @@ RUN rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources 2>/de
 ENV DEBIAN_FRONTEND=noninteractive
 
 # CRITICAL: Always update package lists before installing
-# Update and install base tools + SSH
-RUN apt-get update && \
+# Update and install base tools + SSHRUN apt-get update && \
     apt-get install -y --no-install-recommends \
     openssh-server \
     sudo \
@@ -23,9 +22,11 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     nmap \
+    hydra \
+    medusa \
     ftp \
     netcat-traditional \
-    hydra \
+    wordlists \
     masscan \
     wireshark \
     tcpdump \
@@ -34,7 +35,7 @@ RUN apt-get update && \
     netdiscover \
     traceroute \
     dnsutils \
-    whois \
+    whois
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH server
@@ -55,10 +56,11 @@ RUN mv /usr/bin/nmap /usr/bin/nmap.original 2>/dev/null || true && \
     echo 'exec /usr/lib/nmap/nmap --unprivileged "$@"' >> /usr/bin/nmap && \
     chmod +x /usr/bin/nmap
 
-# 🔒 SECURITY: Install iptables and iproute2 for network isolation
-RUN apt-get update && \
+# 🔒 SECURITY: Install iptables and iproute2 for network isolationRUN apt-get update && \
     apt-get install -y --no-install-recommends iptables iproute2 && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    iptables \
+    iproute2
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 🔒 SECURITY: Create network isolation script
 # IMPORTANT: Allow Guacamole network (172.22.0.0/16) for SSH access - DO NOT BLOCK

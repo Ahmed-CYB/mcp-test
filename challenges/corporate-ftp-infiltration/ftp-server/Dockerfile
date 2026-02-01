@@ -1,10 +1,12 @@
 FROM ubuntu:22.04
 
-# Update and install packages
-RUN apt-get update && \
+# Update and install packagesRUN apt-get update && \
     apt-get install -y --no-install-recommends openssh-server sudo net-tools vsftpd && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    openssh-server \
+    sudo \
+    net-tools \
+    vsftpd
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Configure SSH
 RUN mkdir -p /var/run/sshd && \
