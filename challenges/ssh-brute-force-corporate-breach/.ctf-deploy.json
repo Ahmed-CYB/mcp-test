@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "challengeName": "ssh-brute-force-corporate-breach",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {}
+}

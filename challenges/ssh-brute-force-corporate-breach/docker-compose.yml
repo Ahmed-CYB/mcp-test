@@ -1,0 +1,33 @@
+services:
+  techcorp-dev-server:
+    build:
+      context: ./techcorp-dev-server
+      dockerfile: Dockerfile
+    container_name: ctf-ssh-brute-force-corporate-breach-techcorp-dev-server
+    networks:
+      ctf-ssh-brute-force-corporate-breach-net:
+        ipv4_address: 172.29.145.89
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ssh-brute-force-corporate-breach-attacker
+    networks:
+      ctf-ssh-brute-force-corporate-breach-net:
+        ipv4_address: 172.29.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-ssh-brute-force-corporate-breach-net:
+    name: ctf-ssh-brute-force-corporate-breach-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.29.145.0/24
+          gateway: 172.29.145.1
