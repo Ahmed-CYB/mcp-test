@@ -1,23 +1,23 @@
 # corporate-ftp-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured, allowing unauthorized access to sensitive company data. Your mission is to exploit the FTP service vulnerabilities to gain access to classified documents and retrieve the hidden flag.
+A corporate FTP server has been misconfigured allowing unauthorized access. The server contains sensitive financial data that needs to be retrieved. Multiple attack vectors exist including anonymous access and credential-based exploitation.
 
 ## Scenario
-TechCorp's IT department recently set up an FTP server for file sharing between departments. However, due to rushed deployment and inadequate security review, the server contains multiple misconfigurations. As a penetration tester, you've been tasked with identifying and exploiting these vulnerabilities to demonstrate the security risks.
+You are conducting a penetration test for TechCorp Industries. Their FTP server at 192.168.1.100 is suspected of having security vulnerabilities. Your task is to gain access to the server and retrieve the confidential quarterly report containing sensitive financial data.
 
 ## Difficulty
 medium
 
 ## Machines
-- **ftp-server** (victim): 172.25.145.197 - ftp, ssh
-- **attacker** (attacker): 172.25.145.3 - 
+- **ftp-server** (victim): 172.23.145.22 - ftp
+- **attacker** (attacker): 172.23.145.3 - 
 
 ## Hints
-1. Start with a port scan to identify running services and their versions
-2. FTP servers often allow anonymous access - check if you can login without credentials
-3. Look for writable directories that might contain sensitive files or allow file uploads
-4. Some FTP accounts use weak or default credentials - try common username/password combinations
+1. Start with a port scan to identify running services on the target
+2. Check if anonymous FTP access is enabled - some servers allow guest access
+3. Look for common FTP credentials like admin:admin, ftp:ftp, or user:password combinations
+4. The confidential directory might contain the sensitive data you're looking for
 
 ## Flag Format
-CTF{ftp_m1sc0nf1gur4t10n_3xpl01t3d}
+CTF{ftp_m1sc0nf1g_3xp0s3d_d4t4}

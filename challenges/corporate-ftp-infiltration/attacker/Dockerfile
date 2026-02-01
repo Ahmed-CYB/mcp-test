@@ -26,7 +26,6 @@ RUN apt-get update && \
     ftp \
     netcat-traditional \
     hydra \
-    dirb \
     masscan \
     wireshark \
     tcpdump \
