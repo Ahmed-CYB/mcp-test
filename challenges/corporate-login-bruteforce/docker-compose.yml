@@ -1,0 +1,33 @@
+services:
+  techcorp-dev-server:
+    build:
+      context: ./techcorp-dev-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-login-bruteforce-techcorp-dev-server
+    networks:
+      ctf-corporate-login-bruteforce-net:
+        ipv4_address: 172.23.145.60
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-login-bruteforce-attacker
+    networks:
+      ctf-corporate-login-bruteforce-net:
+        ipv4_address: 172.23.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-corporate-login-bruteforce-net:
+    name: ctf-corporate-login-bruteforce-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1
