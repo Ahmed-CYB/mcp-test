@@ -1,0 +1,33 @@
+services:
+  dev-server:
+    build:
+      context: ./dev-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-ssh-bruteforce-dev-server
+    networks:
+      ctf-corporate-ssh-bruteforce-net:
+        ipv4_address: 172.27.145.61
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-ssh-bruteforce-attacker
+    networks:
+      ctf-corporate-ssh-bruteforce-net:
+        ipv4_address: 172.27.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-corporate-ssh-bruteforce-net:
+    name: ctf-corporate-ssh-bruteforce-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.27.145.0/24
+          gateway: 172.27.145.1
