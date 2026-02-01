@@ -26,7 +26,6 @@ ENV DEBIAN_FRONTEND=noninteractive
     medusa \
     ftp \
     netcat-traditional \
-    wordlists \
     masscan \
     wireshark \
     tcpdump \
