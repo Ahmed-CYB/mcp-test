@@ -1,0 +1,33 @@
+services:
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-brute-force-corporate-ftp-server
+    networks:
+      ctf-ftp-brute-force-corporate-net:
+        ipv4_address: 172.21.145.130
+    restart: unless-stopped
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-brute-force-corporate-attacker
+    networks:
+      ctf-ftp-brute-force-corporate-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+networks:
+  ctf-ftp-brute-force-corporate-net:
+    name: ctf-ftp-brute-force-corporate-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
