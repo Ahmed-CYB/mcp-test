@@ -1,7 +1,0 @@
-2024-03-15 09:23:45 [INFO] FTP Service Started
-2024-03-15 09:24:12 [INFO] Anonymous access enabled for public directory
-2024-03-15 10:15:33 [SECURITY] Encryption key reminder: "ConstructionKey2024!" - same length as motto
-2024-03-15 10:16:01 [INFO] Blueprint files encrypted and stored
-2024-03-15 11:30:22 [INFO] Project team granted access to /var/ftp/pub
-2024-03-15 14:45:17 [WARNING] Multiple failed login attempts detected
-2024-03-15 15:20:08 [INFO] Security audit completed - encryption verified

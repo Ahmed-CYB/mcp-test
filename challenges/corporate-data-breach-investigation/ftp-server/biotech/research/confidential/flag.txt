@@ -1,1 +1,0 @@
-CTF{biotech_ftp_breach_detected_2024}

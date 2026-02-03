@@ -1,2 +1,0 @@
-When you decrypt the database with the correct key, you should get:
-CTF{x0r_c1ph3r_cr4ck3d_d4t4b4s3_br34ch3d}
