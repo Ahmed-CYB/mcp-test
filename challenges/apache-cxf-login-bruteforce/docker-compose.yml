@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-apache-cxf-login-bruteforce-attacker
+    networks:
+      ctf-apache-cxf-login-bruteforce-net:
+        ipv4_address: 172.30.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  cxf-webapp:
+    build:
+      context: ./cxf-webapp
+      dockerfile: Dockerfile
+    container_name: ctf-apache-cxf-login-bruteforce-cxf-webapp
+    networks:
+      ctf-apache-cxf-login-bruteforce-net:
+        ipv4_address: 172.30.145.180
+    restart: unless-stopped
+networks:
+  ctf-apache-cxf-login-bruteforce-net:
+    name: ctf-apache-cxf-login-bruteforce-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.30.145.0/24
+          gateway: 172.30.145.1
