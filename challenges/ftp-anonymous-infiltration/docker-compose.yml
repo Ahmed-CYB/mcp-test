@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-infiltration-attacker
+    networks:
+      ctf-ftp-anonymous-infiltration-net:
+        ipv4_address: 172.23.146.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-infiltration-ftp-server
+    networks:
+      ctf-ftp-anonymous-infiltration-net:
+        ipv4_address: 172.23.146.145
+    restart: unless-stopped
+networks:
+  ctf-ftp-anonymous-infiltration-net:
+    name: ctf-ftp-anonymous-infiltration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.146.0/24
+          gateway: 172.23.146.1
