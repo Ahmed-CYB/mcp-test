@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-samba-anonymous-access-challenge-attacker
+    networks:
+      ctf-samba-anonymous-access-challenge-net:
+        ipv4_address: 172.23.146.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  samba-server:
+    build:
+      context: ./samba-server
+      dockerfile: Dockerfile
+    container_name: ctf-samba-anonymous-access-challenge-samba-server
+    networks:
+      ctf-samba-anonymous-access-challenge-net:
+        ipv4_address: 172.23.146.40
+    restart: unless-stopped
+networks:
+  ctf-samba-anonymous-access-challenge-net:
+    name: ctf-samba-anonymous-access-challenge-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.146.0/24
+          gateway: 172.23.146.1
