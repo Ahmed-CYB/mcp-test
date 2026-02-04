@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-directory-traversal-medium-attacker
+    networks:
+      ctf-ftp-directory-traversal-medium-net:
+        ipv4_address: 172.25.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-directory-traversal-medium-ftp-server
+    networks:
+      ctf-ftp-directory-traversal-medium-net:
+        ipv4_address: 172.25.145.47
+    restart: unless-stopped
+networks:
+  ctf-ftp-directory-traversal-medium-net:
+    name: ctf-ftp-directory-traversal-medium-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.25.145.0/24
+          gateway: 172.25.145.1
