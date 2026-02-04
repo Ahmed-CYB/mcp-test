@@ -1,0 +1,33 @@
+services:
+  kali-attacker:
+    build:
+      context: ./kali-attacker
+      dockerfile: Dockerfile
+    container_name: ctf-eternalblue-corporate-breach-kali-attacker
+    networks:
+      ctf-eternalblue-corporate-breach-net:
+        ipv4_address: 172.27.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  fileserver:
+    build:
+      context: ./fileserver
+      dockerfile: Dockerfile
+    container_name: ctf-eternalblue-corporate-breach-fileserver
+    networks:
+      ctf-eternalblue-corporate-breach-net:
+        ipv4_address: 172.27.145.163
+    restart: unless-stopped
+networks:
+  ctf-eternalblue-corporate-breach-net:
+    name: ctf-eternalblue-corporate-breach-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.27.145.0/24
+          gateway: 172.27.145.1

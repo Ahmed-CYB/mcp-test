@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "challengeName": "eternalblue-corporate-breach",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "samba": {
+      "configPath": "/etc/samba/smb.conf"
+    }
+  }
+}
