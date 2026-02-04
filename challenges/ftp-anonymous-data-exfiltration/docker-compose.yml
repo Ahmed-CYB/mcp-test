@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-data-exfiltration-attacker
+    networks:
+      ctf-ftp-anonymous-data-exfiltration-net:
+        ipv4_address: 172.30.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-data-exfiltration-ftp-server
+    networks:
+      ctf-ftp-anonymous-data-exfiltration-net:
+        ipv4_address: 172.30.145.196
+    restart: unless-stopped
+networks:
+  ctf-ftp-anonymous-data-exfiltration-net:
+    name: ctf-ftp-anonymous-data-exfiltration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.30.145.0/24
+          gateway: 172.30.145.1

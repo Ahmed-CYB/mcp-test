@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "challengeName": "ftp-anonymous-data-exfiltration",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "ftp": {
+      "daemon": "vsftpd",
+      "configPath": "/etc/vsftpd.conf"
+    }
+  }
+}
