@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "challengeName": "ftp-anonymous-network-discovery",
+  "deploy": {
+    "victimCount": 3,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "ftp": {
+      "daemon": "vsftpd",
+      "configPath": "/etc/vsftpd.conf"
+    }
+  }
+}

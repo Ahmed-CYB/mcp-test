@@ -1,0 +1,51 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-network-discovery-attacker
+    networks:
+      ctf-ftp-anonymous-network-discovery-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  victim1:
+    build:
+      context: ./victim1
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-network-discovery-victim1
+    networks:
+      ctf-ftp-anonymous-network-discovery-net:
+        ipv4_address: 172.21.145.48
+    restart: unless-stopped
+  victim2:
+    build:
+      context: ./victim2
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-network-discovery-victim2
+    networks:
+      ctf-ftp-anonymous-network-discovery-net:
+        ipv4_address: 172.21.145.43
+    restart: unless-stopped
+  victim3:
+    build:
+      context: ./victim3
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-anonymous-network-discovery-victim3
+    networks:
+      ctf-ftp-anonymous-network-discovery-net:
+        ipv4_address: 172.21.145.189
+    restart: unless-stopped
+networks:
+  ctf-ftp-anonymous-network-discovery-net:
+    name: ctf-ftp-anonymous-network-discovery-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
