@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-apache-cxf-xxe-deserialization-attacker
+    networks:
+      ctf-apache-cxf-xxe-deserialization-net:
+        ipv4_address: 172.25.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  victim:
+    build:
+      context: ./victim
+      dockerfile: Dockerfile
+    container_name: ctf-apache-cxf-xxe-deserialization-victim
+    networks:
+      ctf-apache-cxf-xxe-deserialization-net:
+        ipv4_address: 172.25.145.115
+    restart: unless-stopped
+networks:
+  ctf-apache-cxf-xxe-deserialization-net:
+    name: ctf-apache-cxf-xxe-deserialization-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.25.145.0/24
+          gateway: 172.25.145.1
