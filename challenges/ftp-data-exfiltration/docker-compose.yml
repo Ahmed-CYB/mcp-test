@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-data-exfiltration-attacker
+    networks:
+      ctf-ftp-data-exfiltration-net:
+        ipv4_address: 172.20.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  victim:
+    build:
+      context: ./victim
+      dockerfile: Dockerfile
+    container_name: ctf-ftp-data-exfiltration-victim
+    networks:
+      ctf-ftp-data-exfiltration-net:
+        ipv4_address: 172.20.145.68
+    restart: unless-stopped
+networks:
+  ctf-ftp-data-exfiltration-net:
+    name: ctf-ftp-data-exfiltration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.20.145.0/24
+          gateway: 172.20.145.1

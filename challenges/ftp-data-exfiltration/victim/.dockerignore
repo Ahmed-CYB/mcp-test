@@ -1,0 +1,12 @@
+# Exclude Docker/build files from image - must never appear in containers or services
+Dockerfile
+Dockerfile.*
+.dockerignore
+docker-compose.yml
+docker-compose*.yml
+.git
+.gitignore
+.env
+.ctf-deploy.json
+*.md
+README*
