@@ -20,7 +20,7 @@ services:
     container_name: ctf-ftp-brute-force-challenge-ftp-server
     networks:
       ctf-ftp-brute-force-challenge-net:
-        ipv4_address: 172.30.145.109
+        ipv4_address: 172.30.145.160
     restart: unless-stopped
 networks:
   ctf-ftp-brute-force-challenge-net:

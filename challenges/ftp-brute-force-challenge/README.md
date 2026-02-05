@@ -1,24 +1,26 @@
 # ftp-brute-force-challenge
 
 ## Description
-A vulnerable FTP server with weak credentials that can be compromised through brute force attacks. Use wordlist attacks to gain unauthorized access and retrieve the hidden flag.
+A corporate FTP server has been discovered during reconnaissance. The server appears to be running with default or weak credentials. Your task is to perform a brute force attack to gain access and retrieve sensitive information from the server.
 
 ## Scenario
-You've discovered an FTP server running on a corporate network. Intelligence suggests they're using weak passwords from common wordlists. Your mission is to brute force the FTP credentials and retrieve sensitive data.
+During a penetration test of Acme Corp's network infrastructure, you've identified an FTP server running on the target machine. Initial reconnaissance suggests the server may be using weak authentication. Your objective is to brute force the FTP credentials and locate the flag containing sensitive corporate data.
 
 ## Difficulty
 medium
 
 ## Machines
 - **attacker** (attacker): 172.30.145.3 - ssh
-- **ftp-server** (victim): 172.30.145.109 - ftp, ssh
-## Victim credentials
-Find valid credentials using common wordlists (e.g. rockyou.txt, user name lists). Services may accept weak or default credentials.
+- **ftp-server** (victim): 172.30.145.160 - ftp, ssh
+## Victim credentials (brute force)
+- **Username to use**: `support`
+- **Wordlist on attacker machine**: `/usr/share/wordlists/rockyou.txt` (ensure it exists; on Kali it may be `rockyou.txt.gz` — decompress with `gunzip -k /usr/share/wordlists/rockyou.txt.gz` if needed).
+Find the password using the wordlist above (e.g. with Hydra or Medusa).
 
 ## Hints
-1. Start by scanning the target to identify open FTP service and its configuration
-2. Common usernames like 'admin', 'backup', 'guest' are often used with weak passwords
-3. Tools like Hydra can efficiently brute force FTP credentials using wordlists like rockyou.txt
+1. Start with network reconnaissance to identify the FTP service and its version
+2. Common usernames for corporate environments include: admin, backup, guest, user, test
+3. Try dictionary attacks with common passwords before attempting exhaustive brute force
 
 ## Flag Format
 CTF{...}

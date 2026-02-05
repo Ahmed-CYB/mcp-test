@@ -11,5 +11,9 @@
       "daemon": "vsftpd",
       "configPath": "/etc/vsftpd.conf"
     }
+  },
+  "bruteForce": {
+    "username": "support",
+    "wordlistPath": "/usr/share/wordlists/rockyou.txt"
   }
 }

@@ -23,10 +23,9 @@ RUN apt-get update && \
     python3 \
     python3-pip \
     hydra \
-    medusa \
-    ncrack \
-    ftp \
     nmap \
+    ftp \
+    medusa \
     masscan \
     wireshark \
     netcat-traditional \
@@ -38,6 +37,11 @@ RUN apt-get update && \
     dnsutils \
     whois \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Ensure rockyou.txt exists for brute-force challenges (path referenced in .ctf-deploy.json and README)
+RUN mkdir -p /usr/share/wordlists && \
+    (test -f /usr/share/wordlists/rockyou.txt || (apt-get update && apt-get install -y --no-install-recommends wordlists 2>/dev/null; gunzip -k /usr/share/wordlists/rockyou.txt.gz 2>/dev/null; true)) && \
+    (test -f /usr/share/wordlists/rockyou.txt || printf '%s\n' password 123456 admin letmein welcome qwerty root toor pass test guest default changeme P@ssw0rd admin123 temp temp123 12345678 password123 welcome1 > /usr/share/wordlists/rockyou.txt)
 
 # Configure SSH server
 RUN mkdir -p /var/run/sshd && \
