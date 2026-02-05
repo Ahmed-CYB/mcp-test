@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "challengeName": "quantum-cipher-breach",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {},
+  "bruteForce": {
+    "username": "debian",
+    "wordlistPath": "/usr/share/wordlists/rockyou.txt"
+  }
+}

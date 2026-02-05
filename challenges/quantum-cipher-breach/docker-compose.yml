@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-quantum-cipher-breach-attacker
+    networks:
+      ctf-quantum-cipher-breach-net:
+        ipv4_address: 172.21.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  crypto-server:
+    build:
+      context: ./crypto-server
+      dockerfile: Dockerfile
+    container_name: ctf-quantum-cipher-breach-crypto-server
+    networks:
+      ctf-quantum-cipher-breach-net:
+        ipv4_address: 172.21.145.64
+    restart: unless-stopped
+networks:
+  ctf-quantum-cipher-breach-net:
+    name: ctf-quantum-cipher-breach-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.21.145.0/24
+          gateway: 172.21.145.1
