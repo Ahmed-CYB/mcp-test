@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "challengeName": "corporate-breach-boot2root",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "samba": {
+      "configPath": "/etc/samba/smb.conf"
+    },
+    "ftp": {
+      "daemon": "vsftpd",
+      "configPath": "/etc/vsftpd.conf"
+    }
+  }
+}
