@@ -1,0 +1,60 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-discovery-attacker
+    networks:
+      ctf-corporate-network-discovery-net:
+        ipv4_address: 172.25.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  web-server:
+    build:
+      context: ./web-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-discovery-web-server
+    networks:
+      ctf-corporate-network-discovery-net:
+        ipv4_address: 172.25.145.94
+    restart: unless-stopped
+  ftp-server:
+    build:
+      context: ./ftp-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-discovery-ftp-server
+    networks:
+      ctf-corporate-network-discovery-net:
+        ipv4_address: 172.25.145.185
+    restart: unless-stopped
+  file-server:
+    build:
+      context: ./file-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-discovery-file-server
+    networks:
+      ctf-corporate-network-discovery-net:
+        ipv4_address: 172.25.145.93
+    restart: unless-stopped
+  database-server:
+    build:
+      context: ./database-server
+      dockerfile: Dockerfile
+    container_name: ctf-corporate-network-discovery-database-server
+    networks:
+      ctf-corporate-network-discovery-net:
+        ipv4_address: 172.25.145.152
+    restart: unless-stopped
+networks:
+  ctf-corporate-network-discovery-net:
+    name: ctf-corporate-network-discovery-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.25.145.0/24
+          gateway: 172.25.145.1
