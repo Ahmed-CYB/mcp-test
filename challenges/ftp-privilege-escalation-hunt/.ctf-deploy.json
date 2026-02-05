@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "challengeName": "ftp-privilege-escalation-hunt",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "ftp": {
+      "daemon": "vsftpd",
+      "configPath": "/etc/vsftpd.conf"
+    }
+  }
+}
