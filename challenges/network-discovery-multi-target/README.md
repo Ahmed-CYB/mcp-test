@@ -1,28 +1,30 @@
 # network-discovery-multi-target
 
 ## Description
-A comprehensive network scanning challenge featuring multiple victim machines with different vulnerable services. Use nmap to discover services, identify vulnerabilities, and capture flags from each target system. This challenge simulates a realistic penetration testing scenario where you must systematically scan and exploit multiple hosts in a network.
+You are a penetration tester conducting a network assessment. Multiple systems on the target network are running various services with different vulnerabilities. Use network scanning techniques to discover all targets, identify running services, and capture flags from each compromised system.
 
 ## Scenario
-You've gained access to a corporate network and need to perform reconnaissance on multiple servers. Each server runs different services with various security misconfigurations. Your goal is to scan the network, identify all running services, and exploit vulnerabilities to capture flags from each target machine. The network contains a web server, FTP server, and file sharing server - each with different weaknesses to discover.
+A corporate network segment contains several servers with different services. Your task is to perform network reconnaissance, identify vulnerable services on each target, and extract sensitive information (flags) from all discovered systems. Each server may be running different services like web servers, file servers, or database services.
 
 ## Difficulty
 medium
 
 ## Machines
 - **attacker** (attacker): 172.25.145.3 - ssh
-- **victim1** (victim): 172.25.145.121 - http, ssh
-- **victim2** (victim): 172.25.145.160 - ftp, ssh
-- **victim3** (victim): 172.25.145.120 - samba, ssh
+- **web-server** (victim): 172.25.145.185 - http, ssh
+- **ftp-server** (victim): 172.25.145.136 - ftp, ssh
+- **smb-server** (victim): 172.25.145.177 - samba, ssh
+- **database-server** (victim): 172.25.145.128 - mysql, ssh
 ## Victim credentials
-- **victim1**: `dev` / `secret`
-- **victim2**: `challenge` / `welcome`
-- **victim3**: `appuser` / `welcome`
+- **web-server**: `admin` / `letmein`
+- **ftp-server**: `box` / `secret`
+- **smb-server**: `box` / `letmein`
+- **database-server**: `box` / `access`
 
 ## Hints
-1. Start with a comprehensive nmap scan to discover all hosts and services in the network
-2. Each service has different access methods - try anonymous access, guest accounts, and directory traversal
-3. Look for accessible directories and shares that might contain sensitive files
+1. Start with a comprehensive network scan to discover all active hosts and their open ports
+2. Each service may have different authentication mechanisms - try anonymous/guest access first
+3. Look for directory listings, default credentials, and misconfigured services on each target
 
 ## Flag Format
 CTF{...}

@@ -37,6 +37,9 @@ RUN apt-get update && \
     whois \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install tools from GitHub
+RUN git clone https://github.com/mysql/mysql.git /opt/mysql
+
 # Configure SSH server
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \

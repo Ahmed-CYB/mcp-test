@@ -13,32 +13,41 @@ services:
     stdin_open: true
     tty: true
     restart: unless-stopped
-  victim1:
+  web-server:
     build:
-      context: ./victim1
+      context: ./web-server
       dockerfile: Dockerfile
-    container_name: ctf-network-discovery-multi-target-victim1
+    container_name: ctf-network-discovery-multi-target-web-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.121
+        ipv4_address: 172.25.145.185
     restart: unless-stopped
-  victim2:
+  ftp-server:
     build:
-      context: ./victim2
+      context: ./ftp-server
       dockerfile: Dockerfile
-    container_name: ctf-network-discovery-multi-target-victim2
+    container_name: ctf-network-discovery-multi-target-ftp-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.160
+        ipv4_address: 172.25.145.136
     restart: unless-stopped
-  victim3:
+  smb-server:
     build:
-      context: ./victim3
+      context: ./smb-server
       dockerfile: Dockerfile
-    container_name: ctf-network-discovery-multi-target-victim3
+    container_name: ctf-network-discovery-multi-target-smb-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.120
+        ipv4_address: 172.25.145.177
+    restart: unless-stopped
+  database-server:
+    build:
+      context: ./database-server
+      dockerfile: Dockerfile
+    container_name: ctf-network-discovery-multi-target-database-server
+    networks:
+      ctf-network-discovery-multi-target-net:
+        ipv4_address: 172.25.145.128
     restart: unless-stopped
 networks:
   ctf-network-discovery-multi-target-net:

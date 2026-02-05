@@ -2,8 +2,8 @@
   "version": 1,
   "challengeName": "network-discovery-multi-target",
   "deploy": {
-    "victimCount": 3,
-    "hasDatabase": false,
+    "victimCount": 4,
+    "hasDatabase": true,
     "hasAPI": false
   },
   "services": {
