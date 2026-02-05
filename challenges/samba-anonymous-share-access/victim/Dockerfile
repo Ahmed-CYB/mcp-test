@@ -6,12 +6,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Configure SSH
+# Configure SSH (root:toor + optional victim user with challenge-specific credentials)
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    useradd -m -s /bin/bash kali 2>/dev/null || true && \
-    echo 'kali:kali' | chpasswd && \
-    usermod -aG sudo kali 2>/dev/null || true && \
+    RUN useradd -m -s /bin/sh appuser 2>/dev/null || true && \
+    echo 'appuser:getflag' | chpasswd && \
+    usermod -aG sudo appuser 2>/dev/null || true && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
@@ -23,8 +23,9 @@ RUN mkdir -p /challenge && chmod 755 /challenge
 COPY . /challenge/
 
 # Create startup script using echo (most reliable method, avoids heredoc issues)
-RUN echo '#!/bin/bash' > /start-services.sh && \
-    echo '#!/bin/bash' >> /start-services.sh && \
+# Use #!/bin/sh for Alpine/minimal images that may not have /bin/bash
+RUN echo '#!/bin/sh' > /start-services.sh && \
+    echo '#!/bin/sh' >> /start-services.sh && \
     echo 'set -e' >> /start-services.sh && \
     echo '' >> /start-services.sh && \
     echo '# Samba Service Setup' >> /start-services.sh && \
@@ -52,8 +53,16 @@ RUN echo '#!/bin/bash' > /start-services.sh && \
     echo 'fi' >> /start-services.sh && \
     echo 'mkdir -p /tmp/share' >> /start-services.sh && \
     echo 'chmod 777 /tmp/share' >> /start-services.sh && \
+    echo '# Place flag in share (Vulhub-style path)' >> /start-services.sh && \
+    echo 'echo '\''CTF{PhdwKxyQqpGxRsAE6vDyF}'\'' > /tmp/share/flag.txt' >> /start-services.sh && \
+    echo 'chmod 644 /tmp/share/flag.txt' >> /start-services.sh && \
     echo '/usr/sbin/smbd -D &' >> /start-services.sh && \
     echo '/usr/sbin/nmbd -D &' >> /start-services.sh && \
+    echo '# SSH: place flag at default path (Vulhub-style)' >> /start-services.sh && \
+    echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
+    echo 'mkdir -p "/root"' >> /start-services.sh && \
+    echo 'echo '\''CTF{PhdwKxyQqpGxRsAE6vDyF}'\'' > "/root/flag.txt"' >> /start-services.sh && \
+    echo 'chmod 644 "/root/flag.txt"' >> /start-services.sh && \
     echo '# SSH Service Setup' >> /start-services.sh && \
     echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \
     echo '/usr/sbin/sshd -D &' >> /start-services.sh && \
@@ -65,4 +74,5 @@ RUN echo '#!/bin/bash' > /start-services.sh && \
     test -f /start-services.sh || (echo "ERROR: Failed to create /start-services.sh" && exit 1)
 
 EXPOSE 445 22
-CMD ["/start-services.sh"]
+# Run with /bin/sh so script works on all Linux images (Alpine, minimal, etc.)
+CMD ["/bin/sh", "/start-services.sh"]

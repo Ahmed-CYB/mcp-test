@@ -20,7 +20,7 @@ services:
     container_name: ctf-samba-anonymous-share-access-victim
     networks:
       ctf-samba-anonymous-share-access-net:
-        ipv4_address: 172.20.145.176
+        ipv4_address: 172.20.145.23
     restart: unless-stopped
 networks:
   ctf-samba-anonymous-share-access-net:
