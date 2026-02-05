@@ -9,9 +9,9 @@ RUN apt-get update && \
 # Configure SSH (root:toor + optional victim user with challenge-specific credentials)
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    RUN useradd -m -s /bin/sh admin 2>/dev/null || true && \
-    echo 'admin:letmein' | chpasswd && \
-    usermod -aG sudo admin 2>/dev/null || true && \
+    RUN useradd -m -s /bin/sh runner 2>/dev/null || true && \
+    echo 'runner:ctf2024' | chpasswd && \
+    usermod -aG sudo runner 2>/dev/null || true && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
@@ -35,13 +35,13 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo 'mkdir -p /var/www/html' >> /start-services.sh && \
     echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
     echo 'mkdir -p "/var/www/html"' >> /start-services.sh && \
-    echo 'echo '\''CTF{DOXZeltTJM5X8ADDfNT}'\'' > "/var/www/html/flag.txt"' >> /start-services.sh && \
+    echo 'echo '\''CTF{LOfa_pXeAiPIVbeFbT3ecXU2Uq}'\'' > "/var/www/html/flag.txt"' >> /start-services.sh && \
     echo 'chmod 644 "/var/www/html/flag.txt"' >> /start-services.sh && \
     echo '/usr/sbin/apache2ctl -D FOREGROUND &' >> /start-services.sh && \
     echo '# SSH: place flag at default path (Vulhub-style)' >> /start-services.sh && \
     echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
     echo 'mkdir -p "/root"' >> /start-services.sh && \
-    echo 'echo '\''CTF{DOXZeltTJM5X8ADDfNT}'\'' > "/root/flag.txt"' >> /start-services.sh && \
+    echo 'echo '\''CTF{LOfa_pXeAiPIVbeFbT3ecXU2Uq}'\'' > "/root/flag.txt"' >> /start-services.sh && \
     echo 'chmod 644 "/root/flag.txt"' >> /start-services.sh && \
     echo '# SSH Service Setup' >> /start-services.sh && \
     echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \

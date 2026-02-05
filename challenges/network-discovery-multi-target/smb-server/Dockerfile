@@ -6,9 +6,9 @@ RUN apk add --no-cache openssh sudo net-tools samba
 # Configure SSH (root:toor + optional victim user with challenge-specific credentials)
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    RUN useradd -m -s /bin/sh box 2>/dev/null || true && \
-    echo 'box:letmein' | chpasswd && \
-    usermod -aG sudo box 2>/dev/null || true && \
+    RUN useradd -m -s /bin/sh appuser 2>/dev/null || true && \
+    echo 'appuser:letmein' | chpasswd && \
+    usermod -aG sudo appuser 2>/dev/null || true && \
     sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config 2>/dev/null || \
     echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config 2>/dev/null || \
@@ -53,14 +53,14 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo 'mkdir -p /tmp/share' >> /start-services.sh && \
     echo 'chmod 777 /tmp/share' >> /start-services.sh && \
     echo '# Place flag in share (Vulhub-style path)' >> /start-services.sh && \
-    echo 'echo '\''CTF{cbarJt7kk6O5_kaYX6Ie0mmt}'\'' > /tmp/share/flag.txt' >> /start-services.sh && \
+    echo 'echo '\''CTF{pjRaW3DuQfM35t-Y6Aa4fOfjf7H}'\'' > /tmp/share/flag.txt' >> /start-services.sh && \
     echo 'chmod 644 /tmp/share/flag.txt' >> /start-services.sh && \
     echo '/usr/sbin/smbd -D &' >> /start-services.sh && \
     echo '/usr/sbin/nmbd -D &' >> /start-services.sh && \
     echo '# SSH: place flag at default path (Vulhub-style)' >> /start-services.sh && \
     echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
     echo 'mkdir -p "/root"' >> /start-services.sh && \
-    echo 'echo '\''CTF{cbarJt7kk6O5_kaYX6Ie0mmt}'\'' > "/root/flag.txt"' >> /start-services.sh && \
+    echo 'echo '\''CTF{pjRaW3DuQfM35t-Y6Aa4fOfjf7H}'\'' > "/root/flag.txt"' >> /start-services.sh && \
     echo 'chmod 644 "/root/flag.txt"' >> /start-services.sh && \
     echo '# SSH Service Setup' >> /start-services.sh && \
     echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \

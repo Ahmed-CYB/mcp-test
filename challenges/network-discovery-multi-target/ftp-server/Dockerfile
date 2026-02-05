@@ -9,9 +9,9 @@ RUN apt-get update && \
 # Configure SSH (root:toor + optional victim user with challenge-specific credentials)
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    RUN useradd -m -s /bin/sh box 2>/dev/null || true && \
-    echo 'box:secret' | chpasswd && \
-    usermod -aG sudo box 2>/dev/null || true && \
+    RUN useradd -m -s /bin/sh challenge 2>/dev/null || true && \
+    echo 'challenge:p@ssw0rd' | chpasswd && \
+    usermod -aG sudo challenge 2>/dev/null || true && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
@@ -44,7 +44,7 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo '  chmod 644 /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
     echo '  chown ftp:ftp /var/ftp/data/classified/flag.txt 2>/dev/null || chown root:root /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
     echo 'else' >> /start-services.sh && \
-    echo '  echo '\''CTF{cNd8vuKFZ04w1S9z_bNuSqjWN}'\'' > /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
+    echo '  echo '\''CTF{LxGXHwi_llfCg-f89GYMc}'\'' > /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
     echo '  chmod 644 /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
     echo '  chown ftp:ftp /var/ftp/data/classified/flag.txt 2>/dev/null || chown root:root /var/ftp/data/classified/flag.txt' >> /start-services.sh && \
     echo 'fi' >> /start-services.sh && \
@@ -52,7 +52,7 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo '# SSH: place flag at default path (Vulhub-style)' >> /start-services.sh && \
     echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
     echo 'mkdir -p "/root"' >> /start-services.sh && \
-    echo 'echo '\''CTF{cNd8vuKFZ04w1S9z_bNuSqjWN}'\'' > "/root/flag.txt"' >> /start-services.sh && \
+    echo 'echo '\''CTF{LxGXHwi_llfCg-f89GYMc}'\'' > "/root/flag.txt"' >> /start-services.sh && \
     echo 'chmod 644 "/root/flag.txt"' >> /start-services.sh && \
     echo '# SSH Service Setup' >> /start-services.sh && \
     echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \

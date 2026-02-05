@@ -20,7 +20,7 @@ services:
     container_name: ctf-network-discovery-multi-target-web-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.185
+        ipv4_address: 172.25.145.27
     restart: unless-stopped
   ftp-server:
     build:
@@ -29,7 +29,7 @@ services:
     container_name: ctf-network-discovery-multi-target-ftp-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.136
+        ipv4_address: 172.25.145.144
     restart: unless-stopped
   smb-server:
     build:
@@ -38,7 +38,7 @@ services:
     container_name: ctf-network-discovery-multi-target-smb-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.177
+        ipv4_address: 172.25.145.26
     restart: unless-stopped
   database-server:
     build:
@@ -47,7 +47,7 @@ services:
     container_name: ctf-network-discovery-multi-target-database-server
     networks:
       ctf-network-discovery-multi-target-net:
-        ipv4_address: 172.25.145.128
+        ipv4_address: 172.25.145.139
     restart: unless-stopped
 networks:
   ctf-network-discovery-multi-target-net:
