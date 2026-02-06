@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-sql-injection-challenge-attacker
+    networks:
+      ctf-sql-injection-challenge-net:
+        ipv4_address: 172.26.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  victim:
+    build:
+      context: ./victim
+      dockerfile: Dockerfile
+    container_name: ctf-sql-injection-challenge-victim
+    networks:
+      ctf-sql-injection-challenge-net:
+        ipv4_address: 172.26.145.145
+    restart: unless-stopped
+networks:
+  ctf-sql-injection-challenge-net:
+    name: ctf-sql-injection-challenge-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.26.145.0/24
+          gateway: 172.26.145.1
