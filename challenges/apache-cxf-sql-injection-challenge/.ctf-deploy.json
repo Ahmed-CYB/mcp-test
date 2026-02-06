@@ -3,7 +3,7 @@
   "challengeName": "apache-cxf-sql-injection-challenge",
   "deploy": {
     "victimCount": 1,
-    "hasDatabase": false,
+    "hasDatabase": true,
     "hasAPI": false
   },
   "services": {}
