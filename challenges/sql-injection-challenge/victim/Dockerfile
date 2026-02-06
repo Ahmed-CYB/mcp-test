@@ -1,17 +1,18 @@
-FROM ubuntu:22.04
+FROM php:8.2-apache
 
 # Update and install packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends openssh-server sudo net-tools apache2 php php-mysql libapache2-mod-php mariadb-server && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt/lists,sharing=locked \
+    apt-get update && \
+    apt-get install -y --no-install-recommends openssh-server sudo net-tools mariadb-server php-mysql && \
+    apt-get clean
 
 # Configure SSH (root:toor + optional victim user with challenge-specific credentials)
 RUN mkdir -p /var/run/sshd && \
     echo 'root:toor' | chpasswd && \
-    useradd -m -s /bin/sh admin 2>/dev/null || true && \
-    echo 'admin:playground' | chpasswd && \
-    usermod -aG sudo admin 2>/dev/null || true && \
+    useradd -m -s /bin/sh victim 2>/dev/null || true && \
+    echo 'victim:admin' | chpasswd && \
+    usermod -aG sudo victim 2>/dev/null || true && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
@@ -31,7 +32,7 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo '# SQL injection template: MySQL + vulnerable PHP' >> /start-services.sh && \
     echo 'service mariadb start || true' >> /start-services.sh && \
     echo 'sleep 2' >> /start-services.sh && \
-    echo 'mysql -e "CREATE DATABASE IF NOT EXISTS ctf; USE ctf; CREATE TABLE IF NOT EXISTS users(id int,user varchar(100),pass varchar(100)); CREATE TABLE IF NOT EXISTS secrets(flag varchar(255)); INSERT INTO users VALUES(1,'\''admin'\'','\''admin'\''); INSERT INTO secrets VALUES("CTF{vZh8GCbRRJZmO7mXlaHJ1}");" 2>/dev/null || true' >> /start-services.sh && \
+    echo 'mysql -e "CREATE DATABASE IF NOT EXISTS ctf; USE ctf; CREATE TABLE IF NOT EXISTS users(id int,user varchar(100),pass varchar(100)); CREATE TABLE IF NOT EXISTS secrets(flag varchar(255)); INSERT INTO users VALUES(1,'\''admin'\'','\''admin'\''); INSERT INTO secrets VALUES("CTF{6ulpP8AxDF0JYb39Ebjqv}");" 2>/dev/null || true' >> /start-services.sh && \
     echo 'mkdir -p /var/www/html' >> /start-services.sh && \
     echo 'cat > /var/www/html/index.php << '\''ENDPHP'\''' >> /start-services.sh && \
     echo '<?php' >> /start-services.sh && \
@@ -48,7 +49,7 @@ RUN echo '#!/bin/sh' > /start-services.sh && \
     echo '# SSH: place flag at default path (Vulhub-style)' >> /start-services.sh && \
     echo '# Place flag (Vulhub-style location)' >> /start-services.sh && \
     echo 'mkdir -p "/root"' >> /start-services.sh && \
-    echo 'echo '\''CTF{vZh8GCbRRJZmO7mXlaHJ1}'\'' > "/root/flag.txt"' >> /start-services.sh && \
+    echo 'echo '\''CTF{6ulpP8AxDF0JYb39Ebjqv}'\'' > "/root/flag.txt"' >> /start-services.sh && \
     echo 'chmod 644 "/root/flag.txt"' >> /start-services.sh && \
     echo '# SSH Service Setup' >> /start-services.sh && \
     echo 'mkdir -p /var/run/sshd' >> /start-services.sh && \

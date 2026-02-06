@@ -20,7 +20,7 @@ services:
     container_name: ctf-sql-injection-challenge-victim
     networks:
       ctf-sql-injection-challenge-net:
-        ipv4_address: 172.26.145.145
+        ipv4_address: 172.26.145.73
     restart: unless-stopped
 networks:
   ctf-sql-injection-challenge-net:

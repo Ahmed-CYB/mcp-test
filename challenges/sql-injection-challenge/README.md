@@ -11,9 +11,9 @@ medium
 
 ## Machines
 - **attacker** (attacker): 172.26.145.3 - ssh
-- **victim** (victim): 172.26.145.145 - http, ssh
+- **victim** (victim): 172.26.145.73 - http, ssh
 ## Victim credentials
-- **victim**: `admin` / `playground`
+- **victim**: `victim` / `admin`
 
 ## Hints
 1. The user parameter is reflected in a SQL query.
