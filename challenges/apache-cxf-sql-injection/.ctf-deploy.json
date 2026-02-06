@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "challengeName": "apache-cxf-sql-injection",
+  "deploy": {
+    "victimCount": 1,
+    "hasDatabase": true,
+    "hasAPI": false
+  },
+  "services": {}
+}
