@@ -6,7 +6,7 @@ services:
     container_name: ctf-ftp-brute-force-infiltration-attacker
     networks:
       ctf-ftp-brute-force-infiltration-net:
-        ipv4_address: 172.23.146.3
+        ipv4_address: 172.23.145.3
     cap_add:
       - NET_RAW
       - NET_ADMIN
@@ -20,7 +20,7 @@ services:
     container_name: ctf-ftp-brute-force-infiltration-ftp-server
     networks:
       ctf-ftp-brute-force-infiltration-net:
-        ipv4_address: 172.23.146.157
+        ipv4_address: 172.23.145.41
     restart: unless-stopped
 networks:
   ctf-ftp-brute-force-infiltration-net:
@@ -29,5 +29,5 @@ networks:
     internal: false
     ipam:
       config:
-        - subnet: 172.23.146.0/24
-          gateway: 172.23.146.1
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1

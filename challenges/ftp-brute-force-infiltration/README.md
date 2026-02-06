@@ -1,23 +1,28 @@
 # ftp-brute-force-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured with weak authentication. Your task is to perform a brute force attack to gain access and retrieve sensitive information from the server.
+A corporate FTP server has been configured with weak authentication. Multiple user accounts exist on the system, but their passwords follow predictable patterns. Your task is to identify valid credentials through systematic brute force attacks and retrieve the sensitive flag file.
 
 ## Scenario
-During a penetration test of Acme Corp's network infrastructure, you've discovered an FTP server running on the network. Initial reconnaissance suggests the server may have weak credentials. Your objective is to brute force the FTP login credentials and retrieve the confidential flag from the server's directory structure.
+During a penetration test of TechCorp's infrastructure, you've discovered an FTP server running on the network. Initial reconnaissance suggests the system administrator has created several user accounts with weak passwords following common corporate naming conventions. The flag containing sensitive corporate data is hidden somewhere in the FTP directory structure, accessible only to authenticated users.
 
 ## Difficulty
 medium
 
 ## Machines
-- **attacker** (attacker): 172.23.146.3 - ssh
-- **ftp-server** (victim): 172.23.146.157 - ftp, ssh
+- **attacker** (attacker): 172.23.145.3 - ssh
+- **ftp-server** (victim): 172.23.145.41 - ftp, ssh
+## Victim credentials (brute force)
+- **Username to use**: `demo`
+- **Wordlist on attacker machine**: `/usr/share/wordlists/rockyou.txt` (ensure it exists; on Kali it may be `rockyou.txt.gz` — decompress with `gunzip -k /usr/share/wordlists/rockyou.txt.gz` if needed).
+Find the password using the wordlist above (e.g. with Hydra or Medusa).
 
 ## Hints
-1. Start with network reconnaissance to identify the FTP service and its configuration
-2. Common usernames in corporate environments include admin, backup, guest, service, and test
-3. Use a targeted wordlist focusing on common weak passwords and variations
-4. Once authenticated, explore the directory structure thoroughly for sensitive files
+1. Start by scanning the target to identify open services and their versions
+2. Common corporate usernames often include: admin, manager, support, guest, backup
+3. Weak passwords frequently follow patterns like username123, password, or include the current year
+4. Use a targeted wordlist with common corporate passwords and username variations
 
 ## Flag Format
 CTF{...}
+
