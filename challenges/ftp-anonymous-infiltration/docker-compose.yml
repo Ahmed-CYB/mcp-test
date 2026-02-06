@@ -20,7 +20,7 @@ services:
     container_name: ctf-ftp-anonymous-infiltration-ftp-server
     networks:
       ctf-ftp-anonymous-infiltration-net:
-        ipv4_address: 172.25.145.163
+        ipv4_address: 172.25.145.165
     restart: unless-stopped
 networks:
   ctf-ftp-anonymous-infiltration-net:

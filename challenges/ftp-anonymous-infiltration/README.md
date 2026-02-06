@@ -1,24 +1,25 @@
 # ftp-anonymous-infiltration
 
 ## Description
-A corporate FTP server has been misconfigured to allow anonymous access. Intelligence suggests sensitive documents may be stored in hidden directories. Your mission is to infiltrate the FTP server, navigate through the directory structure, and locate the classified information.
+A corporate FTP server has been misconfigured to allow anonymous access. Your task is to infiltrate the server, explore the file system, and locate sensitive information that may contain the flag.
 
 ## Scenario
-TechCorp's file server administrator made a critical mistake while configuring their FTP service. The server allows anonymous connections and contains sensitive corporate data in nested directories. As a penetration tester, you need to exploit this misconfiguration to access the classified documents and prove the security vulnerability.
+TechCorp's file server administrator made a critical error in the FTP configuration, inadvertently enabling anonymous access to the company's internal file repository. As a penetration tester, you've been tasked with demonstrating the security implications of this misconfiguration by accessing the server and retrieving confidential data.
 
 ## Difficulty
 medium
 
 ## Machines
 - **attacker** (attacker): 172.25.145.3 - ssh
-- **ftp-server** (victim): 172.25.145.163 - ftp, ssh
+- **ftp-server** (victim): 172.25.145.165 - ftp, ssh
 ## Victim credentials
-- **ftp-server**: `runner` / `secret`
+- **ftp-server**: `service` / `letmein`
 
 ## Hints
-1. Anonymous FTP access might be enabled on this server
-2. Try connecting to FTP without credentials and explore the directory structure
-3. Look for directories that might contain sensitive information beyond the public folder
+1. Start by scanning the target to identify running services and their versions
+2. FTP servers sometimes allow anonymous access - try connecting without credentials
+3. Explore all available directories and subdirectories systematically
+4. Corporate environments often have structured directory hierarchies - look for business-related folder names
 
 ## Flag Format
 CTF{...}

@@ -22,11 +22,11 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
-    nmap \
     ftp \
+    nmap \
+    netcat-traditional \
     masscan \
     wireshark \
-    netcat-traditional \
     tcpdump \
     arp-scan \
     hping3 \
