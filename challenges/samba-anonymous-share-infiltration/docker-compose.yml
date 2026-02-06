@@ -1,0 +1,33 @@
+services:
+  attacker:
+    build:
+      context: ./attacker
+      dockerfile: Dockerfile
+    container_name: ctf-samba-anonymous-share-infiltration-attacker
+    networks:
+      ctf-samba-anonymous-share-infiltration-net:
+        ipv4_address: 172.23.145.3
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  victim:
+    build:
+      context: ./victim
+      dockerfile: Dockerfile
+    container_name: ctf-samba-anonymous-share-infiltration-victim
+    networks:
+      ctf-samba-anonymous-share-infiltration-net:
+        ipv4_address: 172.23.145.173
+    restart: unless-stopped
+networks:
+  ctf-samba-anonymous-share-infiltration-net:
+    name: ctf-samba-anonymous-share-infiltration-net
+    driver: bridge
+    internal: false
+    ipam:
+      config:
+        - subnet: 172.23.145.0/24
+          gateway: 172.23.145.1
