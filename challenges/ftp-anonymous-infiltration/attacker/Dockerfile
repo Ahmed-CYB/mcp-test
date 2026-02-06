@@ -24,9 +24,9 @@ RUN apt-get update && \
     python3-pip \
     ftp \
     nmap \
-    netcat-traditional \
     masscan \
     wireshark \
+    netcat-traditional \
     tcpdump \
     arp-scan \
     hping3 \
