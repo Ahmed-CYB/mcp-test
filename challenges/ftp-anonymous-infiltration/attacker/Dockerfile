@@ -22,8 +22,8 @@ RUN apt-get update && \
     unzip \
     python3 \
     python3-pip \
-    ftp \
     nmap \
+    ftp \
     masscan \
     wireshark \
     netcat-traditional \

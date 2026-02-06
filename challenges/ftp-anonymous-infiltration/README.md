@@ -1,24 +1,24 @@
 # ftp-anonymous-infiltration
 
 ## Description
-A corporate server has been misconfigured to allow anonymous FTP access. Your mission is to infiltrate the FTP server, navigate through the directory structure, and locate sensitive information that has been inadvertently exposed.
+A corporate FTP server has been misconfigured to allow anonymous access. Intelligence suggests sensitive documents may be stored in hidden directories. Your mission is to infiltrate the FTP server, navigate through the directory structure, and locate the classified information.
 
 ## Scenario
-SecureCorp's IT department recently set up an FTP server for file sharing but made a critical configuration error. The server allows anonymous access and contains confidential files in nested directories. As a penetration tester, you need to exploit this misconfiguration to retrieve the hidden flag.
+TechCorp's file server administrator made a critical mistake while configuring their FTP service. The server allows anonymous connections and contains sensitive corporate data in nested directories. As a penetration tester, you need to exploit this misconfiguration to access the classified documents and prove the security vulnerability.
 
 ## Difficulty
 medium
 
 ## Machines
 - **attacker** (attacker): 172.25.145.3 - ssh
-- **ftp-server** (victim): 172.25.145.36 - ftp, ssh
+- **ftp-server** (victim): 172.25.145.163 - ftp, ssh
 ## Victim credentials
-- **ftp-server**: `machine` / `playground`
+- **ftp-server**: `runner` / `secret`
 
 ## Hints
-1. Start by scanning the target to identify available services
-2. FTP servers sometimes allow anonymous access - try connecting without credentials
-3. Corporate directories often have nested folder structures - explore thoroughly
+1. Anonymous FTP access might be enabled on this server
+2. Try connecting to FTP without credentials and explore the directory structure
+3. Look for directories that might contain sensitive information beyond the public folder
 
 ## Flag Format
 CTF{...}
