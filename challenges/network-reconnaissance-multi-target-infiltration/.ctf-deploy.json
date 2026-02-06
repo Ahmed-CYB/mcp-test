@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "challengeName": "network-reconnaissance-multi-target-infiltration",
+  "deploy": {
+    "victimCount": 4,
+    "hasDatabase": false,
+    "hasAPI": false
+  },
+  "services": {
+    "ftp": {
+      "daemon": "vsftpd",
+      "configPath": "/etc/vsftpd.conf"
+    },
+    "samba": {
+      "configPath": "/etc/samba/smb.conf"
+    }
+  }
+}
